@@ -1,51 +1,51 @@
 // Chart
 /// The first base series color and its light and dark shades.
 /// @group charts
-$series-a: $teal !default;
-$series-a-dark: mix(black, $series-a, 25%) !default;
-$series-a-darker: mix(black, $series-a, 50%) !default;
-$series-a-light: mix(white, $series-a, 25%) !default;
-$series-a-lighter: mix(white, $series-a, 50%) !default;
+$series-a: $teal-500 !default;
+$series-a-dark: $teal-600 !default;
+$series-a-darker: $teal-700 !default;
+$series-a-light: $teal-400 !default;
+$series-a-lighter: $teal-300 !default;
 
 /// The second base series color and its light and dark shades.
 /// @group charts
-$series-b: $blue !default;
-$series-b-dark: mix(black, $series-b, 25%) !default;
-$series-b-darker: mix(black, $series-b, 50%) !default;
-$series-b-light: mix(white, $series-b, 25%) !default;
-$series-b-lighter: mix(white, $series-b, 50%) !default;
+$series-b: $blue-500 !default;
+$series-b-dark: $blue-600 !default;
+$series-b-darker: $blue-700 !default;
+$series-b-light: $blue-400 !default;
+$series-b-lighter: $blue-300 !default;
 
 /// The third base series color and its light and dark shades.
 /// @group charts
-$series-c: $purple !default;
-$series-c-dark: mix(black, $series-c, 25%) !default;
-$series-c-darker: mix(black, $series-c, 50%) !default;
-$series-c-light: mix(white, $series-c, 25%) !default;
-$series-c-lighter: mix(white, $series-c, 50%) !default;
+$series-c: $purple-500 !default;
+$series-c-dark: $purple-600 !default;
+$series-c-darker: $purple-700 !default;
+$series-c-light: $purple-400 !default;
+$series-c-lighter: $purple-300 !default;
 
 /// The fourth base series color and its light and dark shades.
 /// @group charts
-$series-d: $red !default;
-$series-d-dark: mix(black, $series-d, 25%) !default;
-$series-d-darker: mix(black, $series-d, 50%) !default;
-$series-d-light: mix(white, $series-d, 25%) !default;
-$series-d-lighter: mix(white, $series-d, 50%) !default;
+$series-d: $red-500 !default;
+$series-d-dark: $red-600 !default;
+$series-d-darker: $red-700 !default;
+$series-d-light: $red-400 !default;
+$series-d-lighter: $red-300 !default;
 
 /// The fifth base series color and its light and dark shades.
 /// @group charts
-$series-e: $yellow !default;
-$series-e-dark: mix(black, $series-e, 25%) !default;
-$series-e-darker: mix(black, $series-e, 50%) !default;
-$series-e-light: mix(white, $series-e, 25%) !default;
-$series-e-lighter: mix(white, $series-e, 50%) !default;
+$series-e: $yellow-500 !default;
+$series-e-dark: $yellow-600 !default;
+$series-e-darker: $yellow-700 !default;
+$series-e-light: $yellow-400 !default;
+$series-e-lighter: $yellow-300 !default;
 
 /// The sixth base series color and its light and dark shades.
 /// @group charts
-$series-f: $green !default;
-$series-f-dark: mix(black, $series-f, 25%) !default;
-$series-f-darker: mix(black, $series-f, 50%) !default;
-$series-f-light: mix(white, $series-f, 25%) !default;
-$series-f-lighter: mix(white, $series-f, 50%) !default;
+$series-f: $green-500 !default;
+$series-f-dark: $green-600 !default;
+$series-f-darker: $green-700 !default;
+$series-f-light: $green-400 !default;
+$series-f-lighter: $green-300 !default;
 
 /// The series colors in order:
 /// base, light, dark, lighter, darker
