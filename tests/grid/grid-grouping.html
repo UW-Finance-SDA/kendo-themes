@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en" class="k-no-animations" style="--kendo-scrollbar-width:15px;">
+<head>
+    <title>Grid Grouping</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" data-role="kendo-theme" href="/packages/default/dist/all.css">
+    <link rel="stylesheet" href="/packages/html/assets/styles.css">
+    <script src="/packages/html/assets/scripts.js"></script>
+</head>
+<body id="app" class="k-body">
+    <style>
+        .k-grouping-header .k-grouping-dropclue {
+            left: 0;
+        }
+        .k-drag-clue {
+            position: relative;
+        }
+
+    </style>
+    <div id="test-area" class="k-d-grid k-grid-cols-2">
+        <span>angular no grouping</span>
+        <span>jquery no grouping</span>
+        <div class="k-widget k-grid k-grid-no-scrollbar">
+            <div class="k-toolbar k-grid-toolbar">
+                <button class="k-button k-button-md k-button-solid k-button-solid-base k-rounded-md">
+                    <span class="k-button-text">Button</span>
+                </button>
+                <div class="k-button-group k-button-group-solid">
+                    <button class="k-button k-button-md k-button-solid k-button-solid-base k-rounded-md k-icon-button">
+                        <span class="k-button-icon k-icon k-i-bold"></span>
+                    </button>
+                    <button class="k-button k-button-md k-button-solid k-button-solid-base k-rounded-md k-icon-button">
+                        <span class="k-button-icon k-icon k-i-italic"></span>
+                    </button>
+                    <button class="k-button k-button-md k-button-solid k-button-solid-base k-rounded-md k-icon-button">
+                        <span class="k-button-icon k-icon k-i-underline"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="k-grouping-header k-grouping-header-flex">
+                <div class="k-grouping-dropclue"></div>
+                <div class="k-indicator-container">Drag a column header and drop it here to group by that column</div>
+            </div>
+            <div class="k-grid-aria-root">
+                <div class="k-grid-header">
+                    <div class="k-grid-header-wrap">
+                        <table>
+                            <colgroup>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th class="k-header">Name</th>
+                                    <th class="k-header">Price</th>
+                                    <th class="k-header">Available</th>
+                                    <th class="k-header">Units</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+                <div class="k-grid-container">
+                    <div class="k-grid-content k-virtual-content">
+                        <div>
+                            <table class="k-grid-table">
+                                <colgroup>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <td>Chai</td>
+                                        <td>30</td>
+                                        <td>false</td>
+                                        <td>15</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="k-widget k-grid k-grid-no-scrollbar">
+            <div class="k-toolbar k-grid-toolbar">
+                <button class="k-button k-button-md k-button-solid k-button-solid-base k-rounded-md">
+                    <span class="k-button-text">Button</span>
+                </button>
+                <span class="k-button-group">
+                    <button class="k-button k-button-md k-button-solid k-button-solid-base k-rounded-md k-icon-button">
+                        <span class="k-button-icon k-icon k-i-bold"></span>
+                    </button>
+                    <button class="k-button k-button-md k-button-solid k-button-solid-base k-rounded-md k-icon-button">
+                        <span class="k-button-icon k-icon k-i-italic"></span>
+                    </button>
+                    <button class="k-button k-button-md k-button-solid k-button-solid-base k-rounded-md k-icon-button">
+                        <span class="k-button-icon k-icon k-i-underline"></span>
+                    </button>
+                </span>
+            </div>
+            <div class="k-grouping-header">
+                <div class="k-grouping-dropclue"></div>Drag a column header and drop it here to group by that column
+            </div>
+            <div class="k-grid-header">
+                <div class="k-grid-header-wrap">
+                    <table>
+                        <colgroup>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th class="k-header">
+                                    <a class="k-link">Name</a>
+                                </th>
+                                <th class="k-header">
+                                    <a class="k-link">Price</a>
+                                </th>
+                                <th class="k-header">
+                                    <a class="k-link">Available</a>
+                                </th>
+                                <th class="k-header">
+                                    <a class="k-link">Units</a>
+                                </th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+            <div class="k-grid-content">
+                <table>
+                    <colgroup>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <td>Chai</td>
+                            <td>30</td>
+                            <td>false</td>
+                            <td>15</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <span>angular with grouping</span>
+        <span>jquery with grouping</span>
+        <div class="k-widget k-grid k-grid-no-scrollbar">
+            <div class="k-toolbar k-grid-toolbar">
+                <button class="k-button k-button-md k-button-solid k-button-solid-base k-rounded-md">
+                    <span class="k-button-text">Button</span>
+                </button>
+                <span class="k-button-group">
+                    <button class="k-button k-button-md k-button-solid k-button-solid-base k-rounded-md k-icon-button">
+                        <span class="k-button-icon k-icon k-i-bold"></span>
+                    </button>
+                    <button class="k-button k-button-md k-button-solid k-button-solid-base k-rounded-md k-icon-button">
+                        <span class="k-button-icon k-icon k-i-italic"></span>
+                    </button>
+                    <button class="k-button k-button-md k-button-solid k-button-solid-base k-rounded-md k-icon-button">
+                        <span class="k-button-icon k-icon k-i-underline"></span>
+                    </button>
+                </span>
+            </div>
+            <div class="k-grouping-header k-grouping-header-flex">
+                <div class="k-grouping-dropclue"></div>
+                <div class="k-indicator-container">
+                    <div class="k-group-indicator">
+                        <a class="k-link">
+                            <span class="k-icon k-i-sort-asc-sm"></span>Price
+                        </a>
+                        <button class="k-button k-button-md k-button-flat k-button-flat-base k-rounded-md k-icon-button">
+                            <span class="k-button-icon k-icon k-i-close"></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="k-indicator-container">
+                    <div class="k-group-indicator">
+                        <a class="k-link">
+                            <span class="k-icon k-i-sort-desc-sm"></span>Name
+                        </a>
+                        <button class="k-button k-button-md k-button-flat k-button-flat-base k-rounded-md k-icon-button">
+                            <span class="k-button-icon k-icon k-i-close"></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="k-indicator-container">&nbsp;</div>
+            </div>
+            <div class="k-grid-aria-root">
+                <div class="k-grid-header">
+                    <div class="k-grid-header-wrap">
+                        <table>
+                            <colgroup>
+                                <col class="k-group-col">
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th class="k-group-cell k-header"></th>
+                                    <th class="k-header">Name</th>
+                                    <th class="k-header">Price</th>
+                                    <th class="k-header">Discontinued</th>
+                                    <th class="k-header">Units</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+                <div class="k-grid-container">
+                    <div class="k-grid-content k-virtual-content">
+                        <div>
+                            <table class="k-grid-table">
+                                <colgroup>
+                                    <col class="k-group-col">
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                    <tr class="k-grouping-row">
+                                        <td colspan="5">
+                                            <p class="k-reset">
+                                                <span class="k-icon k-i-expand"></span>Price: 19
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr class="k-grouping-row">
+                                        <td colspan="5">
+                                            <p class="k-reset">
+                                                <span class="k-icon k-i-collapse"></span>Price: 30
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="k-group-cell"></td>
+                                        <td>Chai</td>
+                                        <td>30</td>
+                                        <td>false</td>
+                                        <td>15</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="k-grid k-grid-no-scrollbar k-widget k-grid-display-block">
+            <div class="k-toolbar k-grid-toolbar">
+                <button class="k-button k-button-md k-button-solid k-button-solid-base k-rounded-md">
+                    <span class="k-button-text">Button</span>
+                </button>
+                <div class="k-button-group k-button-group-solid">
+                    <button class="k-button k-button-md k-button-solid k-button-solid-base k-rounded-md k-icon-button">
+                        <span class="k-button-icon k-icon k-i-bold"></span>
+                    </button>
+                    <button class="k-button k-button-md k-button-solid k-button-solid-base k-rounded-md k-icon-button">
+                        <span class="k-button-icon k-icon k-i-italic"></span>
+                    </button>
+                    <button class="k-button k-button-md k-button-solid k-button-solid-base k-rounded-md k-icon-button">
+                        <span class="k-button-icon k-icon k-i-underline"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="k-grouping-header">
+                <div class="k-grouping-dropclue"></div>
+                <div class="k-group-indicator">
+                    <a class="k-link">
+                        <span class="k-icon k-i-sort-asc-sm"></span>Price
+                    </a>
+                    <button class="k-button k-button-md k-button-flat k-button-flat-base k-rounded-md k-icon-button">
+                        <span class="k-button-icon k-icon k-i-close"></span>
+                    </button>
+                </div>
+                <div class="k-group-indicator">
+                    <a class="k-link">
+                        <span class="k-icon k-i-sort-desc-sm"></span>Name
+                    </a>
+                    <button class="k-button k-button-md k-button-flat k-button-flat-base k-rounded-md k-icon-button">
+                        <span class="k-button-icon k-icon k-i-close"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="k-grid-header">
+                <div class="k-grid-header-wrap">
+                    <table>
+                        <colgroup>
+                            <col class="k-group-col">
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th class="k-group-cell k-header" scope="col"></th>
+                                <th class="k-header">
+                                    <a class="k-link">Name</a>
+                                </th>
+                                <th class="k-header">
+                                    <a class="k-link">Price</a>
+                                </th>
+                                <th class="k-header">
+                                    <a class="k-link">Available</a>
+                                </th>
+                                <th class="k-header">
+                                    <a class="k-link">Units</a>
+                                </th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+            <div class="k-grid-content">
+                <table style="height: auto;">
+                    <colgroup>
+                        <col class="k-group-col">
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr class="k-grouping-row">
+                            <td colspan="5">
+                                <p class="k-reset">
+                                    <span class="k-icon k-i-expand"></span>Price: 19
+                                </p>
+                            </td>
+                        </tr>
+                        <tr class="k-grouping-row">
+                            <td colspan="5">
+                                <p class="k-reset">
+                                    <span class="k-icon k-i-collapse"></span>Price: 30
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="k-group-cell">&nbsp;</td>
+                            <td>Chai</td>
+                            <td>30</td>
+                            <td>false</td>
+                            <td>15</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <span>angular grid drag clue</span>
+        <span>jquery grid drag clue</span>
+        <section class="section">
+            <div class="k-header k-drag-clue">
+                <span class="k-drag-status k-icon k-i-cancel"></span>Drag clue
+            </div>
+        </section>
+        <section class="section">
+            <div class="k-header k-drag-clue k-group-clue">
+                <span class="k-drag-status k-icon k-i-plus"></span>Drag clue
+            </div>
+        </section>
+    </div>
+</body>
+</html>

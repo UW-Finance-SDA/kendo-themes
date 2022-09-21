@@ -1,8 +1,8 @@
 ---
 title: Multi Select
-category: components
+category: accessibility
 slug: multi-select
-position: 28
+position: 30
 ---
 # MultiSelect Keyboard Support
 

@@ -1,9 +1,8 @@
 @include exports("gantt/layout") {
 
-    $row-height: #{$line-height-em} + #{2 * $cell-padding} + #{$grid-cell-horizontal-border-width};
+    $row-height: #{$line-height-em} + #{2 * $table-cell-padding-y} + #{$grid-cell-horizontal-border-width};
 
     .k-gantt {
-        @include use-background-clip();
         border-width: $gantt-border-width;
         border-style: solid;
         box-sizing: border-box;
@@ -38,7 +37,7 @@
         }
 
         &.k-gantt-planned .k-grid-content tr {
-            height: calc( #{$line-height-em * 1.7} + #{$grid-cell-padding-y * 2} + #{$grid-cell-horizontal-border-width} );
+            height: calc( #{$line-height-em} * 1.7 + #{$grid-cell-padding-y * 2} + #{$grid-cell-horizontal-border-width} );
         }
 
         // Layout
@@ -71,7 +70,7 @@
             .k-grid-header th.k-grid-header-sticky {
                 z-index: 5;
             }
-            .k-grid-header tr:first-child th:last-child ,
+            .k-grid-header tr:first-child th:last-child,
             tbody td:last-child {
                 padding: 0;
             }
@@ -83,7 +82,7 @@
                 }
             }
 
-            tr.k-state-selected > td:last-child {
+            tr.k-selected > td:last-child {
                 background: transparent;
             }
 
@@ -122,10 +121,11 @@
                 background: none;
 
                 .k-task-milestone-content {
-                    width: .875em;
-                    height: .875em;
+                    width: 100%;
+                    height: 100%;
                     border-width: 1px;
                     border-style: solid;
+                    box-sizing: border-box;
                     transform: rotate(45deg);
                 }
             }
@@ -151,23 +151,25 @@
                 display: block;
             }
 
-            // Dependency lines SVG
-            .k-gantt-dependencies-svg {
-                position: absolute;
-                overflow: visible;
-                pointer-events: none;
-                z-index: 2;
-
-                polyline {
-                    stroke-width: $gantt-line-size;
-                }
-            }
-
             // Table with columns borders
             .k-gantt-columns {
                 background: transparent;
                 pointer-events: none;
                 table-layout: fixed;
+            }
+        }
+
+        // Dependency lines SVG
+        .k-gantt-dependencies-svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow: visible;
+            pointer-events: none;
+            z-index: 2;
+
+            polyline {
+                stroke-width: $gantt-line-size;
             }
         }
     }
@@ -217,9 +219,9 @@
             }
             .k-gantt-pdf,
             .k-gantt-create {
-                padding: $button-padding-y;
-                width: $button-calc-size;
-                height: $button-calc-size;
+                padding: $kendo-button-padding-y;
+                width: $kendo-button-calc-size;
+                height: $kendo-button-calc-size;
 
                 .k-button-icon {}
                 .k-button-text {
@@ -253,11 +255,12 @@
             height: 100%;
             border-width: 0;
         }
-        .k-grid-header {
+        .k-grid-header,
+        .k-grid-footer {
             padding: 0 !important; // sass-lint:disable-line no-important
         }
         .k-grid-header tr {
-            height: calc( #{$line-height-em * 2} + #{$grid-header-padding-y * 4} + 2px );
+            height: calc( #{$line-height-em} * 2 + #{$grid-header-padding-y * 4} + 2px );
             vertical-align: bottom;
         }
         .k-grid-content {
@@ -269,6 +272,12 @@
         }
         .k-gantt-treelist-nested-columns .k-grid-header tr {
             height: calc( #{$line-height-em} + #{$grid-header-padding-y * 2} + 1px );
+        }
+
+        &.k-gantt-treelist-scrollable {
+            .k-grid-content {
+                overflow: scroll;
+            }
         }
     }
 
@@ -342,7 +351,7 @@
         border-color: currentColor;
         position: absolute;
     }
-    .k-gantt-line.k-state-selected {
+    .k-gantt-line.k-selected {
         z-index: 3;
     }
 
@@ -369,7 +378,7 @@
             position: relative;
             vertical-align: middle;
         }
-        td::after { content: "\a0"; }
+        td::after { content: "\200b"; }
     }
     .k-task-wrap {
         margin: 0 -21px;
@@ -415,7 +424,7 @@
         transform: translate(-50%, -50%);
     }
     .k-task-dot:hover::before,
-    .k-task-dot.k-state-hover::before {
+    .k-task-dot.k-hover::before {
         border-width: 1px;
     }
     .k-task-start { left: 0; }
@@ -447,6 +456,7 @@
         height: 1em;
         border-width: 1px;
         border-style: solid;
+        box-sizing: border-box;
         transform: rotate(45deg);
     }
 
@@ -496,9 +506,10 @@
     // Single task
     .k-single-wrap {}
     .k-task-single {
-        @include border-radius( $border-radius );
+        @include border-radius( $kendo-border-radius-md );
         border-width: $gantt-task-border-width;
         border-style: solid;
+        box-sizing: border-box;
         cursor: default;
 
         .k-resize-handle {
@@ -528,7 +539,7 @@
         }
     }
     .k-task-complete {
-        @include border-radius( $border-radius );
+        @include border-radius( $kendo-border-radius-md );
         width: 20%;
         position: absolute;
         z-index: 1;
@@ -582,6 +593,7 @@
     // Task tooltip
     .k-task-details {
         padding: $padding-y $padding-x;
+        white-space: nowrap;
 
         strong {
             font-size: $font-size-lg;
@@ -597,7 +609,6 @@
     }
 
     // Planned position
-
     .k-gantt-planned {
         .k-gantt-dependencies,
         .k-task-dot,
@@ -628,7 +639,6 @@
     }
 
     // Planned element
-
     .k-task-planned {
         margin: 0 0 $gantt-planned-margin-y;
         line-height: $gantt-planned-line-height;
@@ -661,7 +671,6 @@
     }
 
     // Planned Tooltip
-
     .k-planned-tooltip {
         .k-task-content {
             display: block;
@@ -669,7 +678,6 @@
     }
 
     // Delay offset
-
     .k-task-offset-wrap .k-task-content .k-resize-e {
         display: none;
     }
@@ -699,6 +707,40 @@
     .k-task-single:hover + .k-task-offset .k-resize-handle,
     .k-task-offset:hover .k-resize-handle {
         visibility: visible;
+    }
+
+
+    // Dependency Validation Tooltip
+    .k-gantt-tooltip-validation {
+        max-width: $gantt-validation-tooltip-width;
+        display: block;
+
+        &::before {
+            content: "";
+            width: 4px;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+    .k-gantt-tooltip-validation-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .k-gantt-tooltip-validation-label {
+        display: inline-flex;
+        min-width: $gantt-validation-tooltip-label-width;
+    }
+    .k-gantt-tooltip-validation-value {
+        font-weight: $font-weight-bold;
+    }
+    .k-gantt-tooltip-validation-label,
+    .k-gantt-tooltip-validation-value {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 }
 
@@ -734,7 +776,6 @@
 
     .k-gantt-edit-form {}
 
-    .k-gantt-edit-form .k-edit-buttons {}
     .k-gantt-edit-form .k-gantt-update {}
     .k-gantt-edit-form .k-gantt-cancel {}
     .k-gantt-edit-form .k-gantt-delete {
@@ -746,7 +787,8 @@
 
 @include exports("gantt/rtl") {
 
-    .k-rtl {
+    .k-rtl,
+    [dir="rtl"] {
 
         .k-gantt-rows,
         .k-gantt-columns {
@@ -824,6 +866,11 @@
 
         .k-gantt-timeline .k-milestone-wrap .k-task-start {
             right: $gantt-rtl-milestone-dot-start-margin-x;
+        }
+
+        .k-gantt-tooltip-validation::before {
+            left: auto;
+            right: 0;
         }
     }
 }

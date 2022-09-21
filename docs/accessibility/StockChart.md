@@ -1,8 +1,8 @@
 ---
 title: Stock Chart
-category: components
+category: accessibility
 slug: stock-chart
-position: 39
+position: 41
 ---
 # StockChart Keyboard Support
 

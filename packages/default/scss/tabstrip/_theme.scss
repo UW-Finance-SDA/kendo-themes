@@ -11,7 +11,7 @@
 
 
     // Items
-    .k-tabstrip-items {
+    .k-tabstrip-items-wrapper {
         @include fill(
             $tabstrip-text,
             $tabstrip-bg,
@@ -27,7 +27,7 @@
             );
 
             &:hover,
-            &.k-state-hover {
+            &.k-hover {
                 @include fill(
                     $tabstrip-item-hovered-text,
                     $tabstrip-item-hovered-bg,
@@ -36,8 +36,9 @@
                 );
             }
 
-            &.k-state-active,
-            &.k-state-selected {
+            &:active,
+            &.k-active,
+            &.k-selected {
                 @include fill(
                     $tabstrip-item-selected-text,
                     $tabstrip-item-selected-bg,
@@ -46,8 +47,13 @@
                 );
             }
 
-            &.k-state-focused {
+            &:focus,
+            &.k-focus {
                 @include box-shadow( $tabstrip-item-focused-shadow );
+            }
+
+            &.k-tabstrip-dragging {
+                @include box-shadow( $tabstrip-item-dragging-shadow );
             }
         }
 
@@ -55,6 +61,7 @@
 
 
     // Content
+    .k-tabstrip-content,
     .k-tabstrip > .k-content {
         @include fill(
             $tabstrip-content-text,
@@ -63,7 +70,7 @@
         );
 
         &:focus,
-        &.k-state-focused {
+        &.k-focus {
             outline-color: $tabstrip-content-border-focused;
         }
     }
@@ -72,8 +79,8 @@
     // Selected indicator
     @if ($tabstrip-indicator-size) {
 
-        .k-tabstrip-items {
-            .k-item.k-state-active::after {
+        .k-tabstrip-items-wrapper {
+            .k-item.k-active::after {
                 border-color: $tabstrip-indicator-color;
             }
         }

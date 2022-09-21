@@ -2,7 +2,7 @@
 
     // Base
     .k-progressbar {
-        @include border-radius( $border-radius );
+        @include border-radius( $kendo-border-radius );
         --kendo-progressbar-progress: 0;
         border-width: $progressbar-border-width;
         border-style: solid;
@@ -18,9 +18,15 @@
         -webkit-touch-callout: none;
         -webkit-tap-highlight-color: $rgba-transparent;
 
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
 
         // Selection
-        > .k-state-selected {
+        > .k-selected {
             border-width: 0;
             border-style: solid;
             display: flex;
@@ -80,7 +86,7 @@
 
     // Horizontal
     .k-progressbar-horizontal {
-        width: 27em;
+        width: $progressbar-horizontal-width;
         height: $progressbar-height;
         grid-template-columns: 1fr;
         grid-template-rows: 100%;
@@ -90,7 +96,7 @@
             flex-direction: row;
         }
 
-        > .k-state-selected {
+        > .k-selected {
             width: 0;
             width: calc( var( --kendo-progressbar-progress, 0 ) * 1% ); // sass-lint:disable-line no-duplicate-properties
             flex-direction: row;
@@ -116,7 +122,7 @@
         // Horizontal reverse
         &.k-progressbar-reverse {
 
-            > .k-state-selected {
+            > .k-selected {
                 flex-direction: row-reverse;
                 justify-self: flex-end;
             }
@@ -140,7 +146,7 @@
             writing-mode: vertical-lr;
         }
 
-        > .k-state-selected {
+        > .k-selected {
             height: 0;
             height: calc( var( --kendo-progressbar-progress, 0 ) * 1% ); // sass-lint:disable-line no-duplicate-properties
             flex-direction: column-reverse;
@@ -169,7 +175,7 @@
         &.k-progressbar-reverse {
             flex-direction: column;
 
-            > .k-state-selected {
+            > .k-selected {
                 flex-direction: column;
                 align-self: flex-start;
             }
@@ -180,7 +186,7 @@
     // Indeterminate
     .k-progressbar-indeterminate {
         .k-progress-status-wrap,
-        .k-state-selected,
+        .k-selected,
         .k-item {
             display: none;
         }
@@ -190,8 +196,8 @@
     // Blazor specific
     .telerik-blazor.k-progressbar-horizontal {
 
-        > .k-state-selected,
-        > .k-state-selected > .k-progress-status-wrap {
+        > .k-selected,
+        > .k-selected > .k-progress-status-wrap {
             transition: width .1s ease-in-out;
         }
     }
@@ -219,7 +225,7 @@
         display: -ms-inline-grid;
 
         > .k-progress-status-wrap,
-        > .k-state-selected {
+        > .k-selected {
             -ms-grid-column: 1;
             -ms-grid-row: 1;
         }
@@ -228,7 +234,7 @@
         -ms-grid-columns: 1fr;
         -ms-grid-rows: $progressbar-height;
 
-        &.k-progressbar-reverse > .k-state-selected {
+        &.k-progressbar-reverse > .k-selected {
             -ms-grid-column-align: end;
         }
     }
@@ -236,13 +242,56 @@
         -ms-grid-columns: $progressbar-height;
         -ms-grid-rows: 1fr;
 
-        > .k-state-selected {
+        > .k-selected {
             -ms-grid-row-align: end;
         }
 
-        &.k-progressbar-reverse > .k-state-selected {
+        &.k-progressbar-reverse > .k-selected {
             -ms-grid-row-align: start;
         }
+    }
+
+}
+
+@include exports("circular-progressbar/layout") {
+
+    .k-circular-progressbar {
+        display: inline-block;
+        text-align: left;
+        position: relative;
+    }
+
+    .k-circular-progressbar-surface {
+        height: 100%;
+
+        & > div {
+            width: 100%;
+            height: 100%;
+        }
+
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .k-circular-progressbar-scale {
+        fill: none;
+    }
+
+    .k-circular-progressbar-arc {
+        transform-box: fill-box;
+        transform-origin: center center;
+        transform: rotate(-90deg);
+        stroke-linecap: round;
+        fill: none;
+    }
+
+    .k-circular-progressbar-label {
+        position: absolute;
+        text-align: center;
+        padding: 0;
+        margin: 0;
     }
 
 }

@@ -15,6 +15,12 @@
         flex-direction: row;
         -webkit-touch-callout: none;
         -webkit-tap-highlight-color: $rgba-transparent;
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
     }
 
 
@@ -104,24 +110,6 @@
 
         .k-breadcrumb-input-container {
             border-color: transparent;
-        }
-
-        .k-textbox {
-            width: 100%;
-            height: 100%;
-        }
-    }
-
-
-    // Legacy
-    .k-ie9 {
-        .k-breadcrumb,
-        .k-breadcrumb-container {
-            display: block;
-        }
-
-        .k-breadcrumb-item {
-            display: inline-block;
         }
     }
 

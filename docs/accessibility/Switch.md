@@ -1,8 +1,8 @@
 ---
 title: Switch
-category: components
+category: accessibility
 slug: switch
-position: 40
+position: 42
 ---
 # Switch Keyboard Support
 

@@ -26,30 +26,60 @@ The following table lists the available variables for customization.
 </thead>
 <tbody>
         <tr>
-    <td>$list-bg</td>
-    <td></td>
-    <td>$component-bg</td>
-    <td></td>
+    <td>$kendo-list-bg</td>
+    <td>Color</td>
+<td>
+
+`$component-bg`
+
+</td>
+<td>
+
+<span class="color-preview" style="background-color: #ffffff"></span>
+
+`#ffffff`
+
+</td>
 </tr>
 <tr>
     <td colspan="4" class="theme-variables-description-container"><div><b>Description</b><div class="theme-variables-description">The background of the list.</div></div>
     </td>
 </tr>
 <tr>
-    <td>$list-text</td>
-    <td></td>
-    <td>$component-text</td>
-    <td></td>
+    <td>$kendo-list-text</td>
+    <td>Color</td>
+<td>
+
+`$component-text`
+
+</td>
+<td>
+
+<span class="color-preview" style="background-color: #656565"></span>
+
+`#656565`
+
+</td>
 </tr>
 <tr>
     <td colspan="4" class="theme-variables-description-container"><div><b>Description</b><div class="theme-variables-description">The text color of the list.</div></div>
     </td>
 </tr>
 <tr>
-    <td>$list-border</td>
-    <td></td>
-    <td>$component-border</td>
-    <td>rgba( black, .08 )</td>
+    <td>$kendo-list-border</td>
+    <td>Color</td>
+<td>
+
+`$component-border`
+
+</td>
+<td>
+
+<span class="color-preview" style="background-color: rgba(0, 0, 0, 0.08)"></span>
+
+`rgba(0, 0, 0, 0.08)`
+
+</td>
 </tr>
 <tr>
     <td colspan="4" class="theme-variables-description-container"><div><b>Description</b><div class="theme-variables-description">The border color of the list.</div></div>

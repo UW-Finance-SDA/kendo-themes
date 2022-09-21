@@ -1,8 +1,8 @@
 ---
 title: Chart
-category: components
+category: accessibility
 slug: chart
-position: 6
+position: 7
 ---
 # Chart Keyboard Support
 

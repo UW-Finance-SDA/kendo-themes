@@ -4,6 +4,7 @@ suite('Numeric', () => {
 
     before( () => {
         loadFixture('/html/numeric.html');
+        window.kendo.Html.init();
     });
     after( () => {
         clearFixture();
@@ -16,7 +17,7 @@ suite('Numeric', () => {
     });
 
     test('Numeric select size should be 28:28', () => {
-        let select = $('#numeric .k-select');
+        let select = $('#numeric .k-select') || $('#numeric .k-input-spinner');
 
         assert.equal( select.offsetWidth, metrics.numeric.select.width );
         assert.equal( select.offsetHeight, metrics.numeric.select.height );

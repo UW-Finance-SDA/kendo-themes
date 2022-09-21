@@ -1,8 +1,8 @@
 ---
 title: Check Box
-category: components
+category: accessibility
 slug: check-box
-position: 7
+position: 8
 ---
 # CheckBox Keyboard Support
 

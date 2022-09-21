@@ -1,8 +1,8 @@
 ---
 title: Notification
-category: components
+category: accessibility
 slug: notification
-position: 29
+position: 31
 ---
 # Notification Keyboard Support
 

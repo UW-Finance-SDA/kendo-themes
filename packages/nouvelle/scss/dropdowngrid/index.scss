@@ -1,0 +1,26 @@
+// Module meta
+$_kendo-module-meta: (
+    name: "dropdowngrid",
+    dependencies: ()
+);
+
+
+// Component
+@import "_variables.scss";
+@import "_layout.scss";
+@import "_theme.scss";
+
+
+// Register
+@include module-register( $_kendo-module-meta... );
+
+
+// Expose
+@mixin dropdowngrid-styles() {
+    @include module-render( "dropdowngrid" ) {
+        @include kendo-dropdowngrid--layout();
+        @include kendo-dropdowngrid--extended-layout();
+        @include kendo-dropdowngrid--theme();
+        @include kendo-dropdowngrid--extended-theme();
+    }
+}

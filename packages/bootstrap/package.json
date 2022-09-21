@@ -1,7 +1,7 @@
 {
   "name": "@progress/kendo-theme-bootstrap",
-  "description": "Bootstrap v4 theme for Kendo UI",
-  "version": "4.36.0",
+  "description": "Bootstrap theme for Kendo UI",
+  "version": "5.8.2-dev.0",
   "author": "Progress",
   "license": "Apache-2.0",
   "keywords": [
@@ -14,12 +14,16 @@
   "files": [
     "dist/",
     "scss/",
-    "modules/",
     "lib/"
   ],
+  "homepage": "https://github.com/telerik/kendo-themes/tree/master/packages/bootstrap",
   "repository": {
     "type": "git",
-    "url": "https://github.com/telerik/kendo-themes.git"
+    "url": "https://github.com/telerik/kendo-themes.git",
+    "directory": "packages/bootstrap"
+  },
+  "bugs": {
+    "url": "https://github.com/telerik/kendo-themes/issues/new?labels=bug,T:Bootstrap&template=bug_report.md"
   },
   "publishConfig": {
     "access": "public"
@@ -27,28 +31,22 @@
   "kendo": {
     "themebuilder": {
       "swatches": {
-        "path": "lib/themebuilder",
-        "default": "bootstrap.json"
+        "path": "lib/swatches",
+        "default": "bootstrap-main.json"
       }
     }
   },
   "scripts": {
-    "sass": "gulp sass",
-    "sass:watch": "gulp sass:watch",
-    "sass:swatches": "gulp sass:swatches",
-    "sass:flat": "gulp sass:flat",
-    "dart": "gulp dart",
-    "dart:watch": "gulp dart:watch",
-    "dart:swatches": "gulp dart:swatches",
-    "dart:flat": "gulp dart:flat",
-    "prepublishOnly": "./build/embed-dependencies 'bootstrap' '@progress/kendo-theme-default'",
-    "postpublish": "rm -rf modules && git checkout scss"
+    "build": "sass-build",
+    "sass": "sass-build",
+    "prepublishOnly": "node ../../scripts/themes-prepublish.js",
+    "postpublish": "echo 'no postpublish for bootstrap theme'"
   },
-  "peerDependencies": {
-    "bootstrap": "^4.5.2"
+  "dependencies": {
+    "@progress/kendo-theme-default": "^5.8.2-dev.0",
+    "bootstrap": "^5.2.1"
   },
   "devDependencies": {
-    "@progress/kendo-theme-default": "^4.39.0",
-    "bootstrap": "^4.5.2"
+    "sass-build": "^1.0.0"
   }
 }

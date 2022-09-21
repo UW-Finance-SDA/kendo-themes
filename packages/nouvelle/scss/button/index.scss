@@ -1,7 +1,29 @@
-// Dependencies
+// Module meta
+$_kendo-module-meta: (
+    name: "button",
+    dependencies: (
+        "icon",
+        "badge"
+    )
+);
 
 
 // Component
 @import "_variables.scss";
 @import "_layout.scss";
 @import "_theme.scss";
+
+
+// Register
+@include module-register( $_kendo-module-meta... );
+
+
+// Expose
+@mixin button-styles() {
+    @include module-render( "button" ) {
+        @include kendo-button--layout();
+        @include kendo-button--extended-layout();
+        @include kendo-button--theme();
+        @include kendo-button--extended-theme();
+    }
+}

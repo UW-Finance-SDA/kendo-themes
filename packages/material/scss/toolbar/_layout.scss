@@ -20,17 +20,28 @@
         .k-split-button {
             @include box-shadow( none );
         }
-
-        // Switch
-        .k-switch {
-            font-size: $font-size-xs;
-        }
     }
 
+
+    // Overflow container
     .k-overflow-container {
 
-        .k-button-group {
+        .k-button {
             @include box-shadow( none );
+            font-weight: normal;
+            text-transform: unset;
+
+            &::before {
+                display: none;
+            }
+
+            &:disabled,
+            &.k-disabled {
+                opacity: .6;
+                filter: grayscale(.1);
+            }
         }
+
     }
+
 }

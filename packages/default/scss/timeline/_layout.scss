@@ -11,6 +11,14 @@
         -webkit-touch-callout: none;
         -webkit-tap-highlight-color: $rgba-transparent;
 
+        *,
+        *::before,
+        *::after,
+        &::before,
+        &::after {
+            box-sizing: border-box;
+        }
+
         ul {
             margin: 0;
             padding: 0;
@@ -24,11 +32,10 @@
             display: inline-block;
             text-align: center;
             padding: $timeline-flag-padding-y $timeline-flag-padding-x;
-            border-radius: $border-radius;
+            border-radius: $kendo-border-radius;
             line-height: $timeline-flag-line-height;
             min-width: $timeline-flag-min-width;
             max-width: $timeline-flag-max-width;
-            box-sizing: border-box;
             position: relative;
             z-index: 1;
         }
@@ -89,7 +96,7 @@
                 }
 
                 &::-webkit-scrollbar-thumb {
-                    border-radius: $border-radius;
+                    border-radius: $kendo-border-radius;
                 }
             }
         }
@@ -108,19 +115,17 @@
         margin: $timeline-spacing-y 0;
         width: 100%;
         position: relative;
-        box-sizing: border-box;
         border: 0;
     }
 
     .k-timeline-vertical,
-    .k-timeline-horizontal .k-timeline-track-wrap  {
+    .k-timeline-horizontal .k-timeline-track-wrap {
         &::after {
             content: "";
             position: absolute;
             top: 0;
             border-width: $timeline-track-border-width;
             border-style: solid;
-            background-clip: padding-box;
         }
     }
 
@@ -131,11 +136,11 @@
             padding-left: $timeline-vertical-padding-calc;
         }
 
-        &::after  {
+        &::after {
             height: 100%;
             width: $timeline-track-size;
             transform: translateX(-50%);
-            border-radius: $border-radius-lg;
+            border-radius: $kendo-border-radius-lg;
         }
 
         .k-timeline-flag-wrap {
@@ -219,7 +224,7 @@
         &.k-timeline-alternating {
             padding-left: $timeline-spacing-x;
 
-            &::after  {
+            &::after {
                 left: 50%;
             }
 
@@ -299,12 +304,10 @@
 
         .k-timeline-card {
             height: 100%;
-            box-sizing: border-box;
         }
 
         .k-card {
             max-height: 100%;
-            box-sizing: border-box;
         }
 
         .k-timeline-events-list {
@@ -349,7 +352,7 @@
                 }
             }
 
-            .k-timeline-flag  {
+            .k-timeline-flag {
                 margin-bottom: $timeline-flag-margin-bottom-calc;
                 position: relative;
                 min-width: $timeline-horizontal-flag-min-width;

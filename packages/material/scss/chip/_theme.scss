@@ -2,76 +2,62 @@
 
 @include exports( "chip/theme/material" ) {
 
-    // Single selection
-    .k-selection-single {
-        .k-chip-selected {
-            .k-remove-icon {
-                color: rgba( $chip-outline-single-selected-text, .87 );
+    // Solid
+    .k-chip-solid {
+        border-color: transparent;
+    }
+    @each $name, $color in $kendo-chip-theme-colors {
+        .k-chip-solid-#{$name} {
+            &:hover,
+            &.k-hover {
+                @include fill(
+                    $bg: rgba($color, .16 ),
+                    $color: $color
+                );
+            }
+
+            &:focus,
+            &.k-focus {
+                @include box-shadow( none );
+                @include fill(
+                    $bg: rgba($color, .24),
+                    $color: $color
+                );
+            }
+
+            &.k-selected {
+                @include fill(
+                    $bg: rgba( $color, .24 ),
+                    $color: $color
+                );
             }
         }
     }
 
-    // Chip solid
-    .k-chip-solid,
-    .k-chip-filled {
-        .k-remove-icon {
-            color: $subtle-text;
-        }
-
-        &.k-chip-info {
-            .k-remove-icon {
-                color: rgba( $chip-outline-info-text, .87 );
+    // Outline
+    @each $name, $color in $kendo-chip-theme-colors {
+        .k-chip-outline-#{$name} {
+            &:focus,
+            &.k-focus {
+                @include box-shadow( none );
+                @include fill( $bg: rgba( $color, .24 ) );
             }
-        }
 
-        &.k-chip-success {
-            .k-remove-icon {
-                color: rgba( $chip-outline-success-text, .87 );
+            &:hover,
+            &.k-hover {
+                @include fill(
+                    $bg: rgba($color, .08 ),
+                    $color: $color
+                );
             }
-        }
 
-        &.k-chip-warning {
-            .k-remove-icon {
-                color: rgba( $chip-outline-warning-text, .87 );
-            }
-        }
-
-        &.k-chip-error {
-            .k-remove-icon {
-                color: rgba( $chip-outline-error-text, .87 );
+            &.k-selected {
+                @include fill(
+                    $bg: rgba( $color, .24 ),
+                    $color: $color
+                );
             }
         }
     }
 
-
-    // Chip outline
-    .k-chip-outline {
-        .k-remove-icon {
-            color: $subtle-text;
-        }
-
-        &.k-chip-info {
-            .k-remove-icon {
-                color: rgba( $chip-outline-info-text, .87 );
-            }
-        }
-
-        &.k-chip-success {
-            .k-remove-icon {
-                color: rgba( $chip-outline-success-text, .87 );
-            }
-        }
-
-        &.k-chip-warning {
-            .k-remove-icon {
-                color: rgba( $chip-outline-warning-text, .87 );
-            }
-        }
-
-        &.k-chip-error {
-            .k-remove-icon {
-                color: rgba( $chip-outline-error-text, .87 );
-            }
-        }
-    }
 }

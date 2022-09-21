@@ -1,8 +1,8 @@
 ---
 title: Editor
-category: components
+category: accessibility
 slug: editor
-position: 18
+position: 19
 ---
 # Editor Keyboard Support
 

@@ -1,0 +1,159 @@
+@use "sass:map";
+@use "../core/color-system" as *;
+@use "../core/_variables.scss" as *;
+
+/// Background color of the badge.
+/// @group badge
+$kendo-badge-bg: var( --kendo-component-bg, initial ) !default;
+/// Text color of the badge.
+/// @group badge
+$kendo-badge-text: var( --kendo-component-text, initial ) !default;
+/// Border color of the badge.
+/// @group badge
+$kendo-badge-border: var( --kendo-component-border, initial ) !default;
+
+/// Border width of the badge.
+/// @group badge
+$kendo-badge-border-width: map-get( $kendo-spacing, hair ) !default;
+
+/// Font weight of the badge.
+/// @group badge
+$kendo-badge-font-weight: var( --kendo-font-weight, normal ) !default;
+
+/// Horizontal padding of the badge.
+/// @group badge
+$kendo-badge-padding-x-sm: map-get( $kendo-spacing, thin ) !default;
+$kendo-badge-padding-x-md: map-get( $kendo-spacing, 1 ) !default;
+$kendo-badge-padding-x-lg: map-get( $kendo-spacing, 1 ) + map-get( $kendo-spacing, thin ) !default;
+
+/// Vertical padding of the badge.
+/// @group badge
+$kendo-badge-padding-y-sm: map-get( $kendo-spacing, thin ) !default;
+$kendo-badge-padding-y-md: map-get( $kendo-spacing, 1 ) !default;
+$kendo-badge-padding-y-lg: map-get( $kendo-spacing, 1 ) + map-get( $kendo-spacing, thin ) !default;
+
+/// Font sizes of the badge.
+/// @group badge
+$kendo-badge-font-size-sm: var( --kendo-font-size-xs, inherit ) !default;
+$kendo-badge-font-size-md: var( --kendo-font-size-xs, inherit ) !default;
+$kendo-badge-font-size-lg: var( --kendo-font-size-xs, inherit ) !default;
+
+/// Line heights of the badge.
+/// @group badge
+$kendo-badge-line-height-sm: var( --kendo-line-height-xs, normal ) !default;
+$kendo-badge-line-height-md: var( --kendo-line-height-xs, normal ) !default;
+$kendo-badge-line-height-lg: var( --kendo-line-height-xs, normal ) !default;
+
+/// Badge min width used for circle badge.
+/// @group badge
+$kendo-badge-min-width-sm: calc( #{$kendo-badge-line-height-sm} * 1em + #{$kendo-badge-padding-y-sm} * 2 + #{$kendo-badge-border-width} * 2 ) !default;
+$kendo-badge-min-width-md: calc( #{$kendo-badge-line-height-md} * 1em + #{$kendo-badge-padding-y-md} * 2 + #{$kendo-badge-border-width} * 2 ) !default;
+$kendo-badge-min-width-lg: calc( #{$kendo-badge-line-height-lg} * 1em + #{$kendo-badge-padding-y-lg} * 2 + #{$kendo-badge-border-width} * 2 ) !default;
+
+
+/// Sizes map for the badge.
+/// @group badge
+$kendo-badge-sizes: (
+    sm: (
+        padding-x: $kendo-badge-padding-x-sm,
+        padding-y: $kendo-badge-padding-y-sm,
+        font-size: $kendo-badge-font-size-sm,
+        line-height: $kendo-badge-line-height-sm,
+        min-width: $kendo-badge-min-width-sm
+    ),
+    md: (
+        padding-x: $kendo-badge-padding-x-md,
+        padding-y: $kendo-badge-padding-y-md,
+        font-size: $kendo-badge-font-size-md,
+        line-height: $kendo-badge-line-height-md,
+        min-width: $kendo-badge-min-width-md
+    ),
+    lg: (
+        padding-x: $kendo-badge-padding-x-lg,
+        padding-y: $kendo-badge-padding-y-lg,
+        font-size: $kendo-badge-font-size-lg,
+        line-height: $kendo-badge-line-height-lg,
+        min-width: $kendo-badge-min-width-lg
+    )
+) !default;
+
+
+/// Theme variations for the badge.
+$kendo-badge-brand-colors: (
+    primary: primary,
+    error: error,
+    success: success,
+    info: info,
+    secondary: neutral,
+    tertiary: tertiary,
+ );
+
+// Matrix with badge theme colors in the order: bg, color, border
+$_tc-badge-matrix: (
+    solid: (
+        normal: (100, $white, 100)
+    ),
+    outline: (
+        normal: ($white, 100, 100)
+    )
+);
+
+$_tc-badge-warning-matrix: (
+    solid: (
+        normal: (100, get-theme-color-var( neutral-160 ), 100)
+    ),
+    outline: (
+        normal: ($white, 100, 100)
+    )
+);
+
+$_tc-badge-dark-matrix: (
+    solid: (
+        normal: (160, $white, 160)
+    ),
+    outline: (
+        normal: ($white, 160, 160)
+    )
+);
+
+$_tc-badge-light-matrix: (
+    solid: (
+        normal: (50, 160, 50)
+    ),
+    outline: (
+        normal: ($white, 50, 50)
+    )
+);
+
+/// Theme colors map for the badge variations.
+$kendo-badge-theme-colors: ();
+
+@each $fill-mode, $ui-states in $_tc-badge-matrix {
+    @each $brand-color, $palette in $kendo-badge-brand-colors {
+        $kendo-badge-theme-colors: map.deep-merge(
+            $kendo-badge-theme-colors,
+            generate-fill-mode-theme-variation( $fill-mode, $brand-color, $palette, $ui-states )
+        );
+    };
+}
+
+@each $fill-mode, $ui-states in $_tc-badge-warning-matrix {
+    $kendo-badge-theme-colors: map.deep-merge(
+        $kendo-badge-theme-colors,
+        generate-fill-mode-theme-variation( $fill-mode, warning, warning, $ui-states )
+    );
+}
+
+@each $fill-mode, $ui-states in $_tc-badge-dark-matrix {
+    $kendo-badge-theme-colors: map.deep-merge(
+        $kendo-badge-theme-colors,
+        generate-fill-mode-theme-variation( $fill-mode, dark, neutral, $ui-states )
+    );
+}
+
+@each $fill-mode, $ui-states in $_tc-badge-light-matrix {
+    $kendo-badge-theme-colors: map.deep-merge(
+        $kendo-badge-theme-colors,
+        generate-fill-mode-theme-variation( $fill-mode, light, neutral, $ui-states )
+    );
+}

@@ -2,7 +2,6 @@
 
     // Appearance
     .k-scheduler {
-        @extend .k-text-selection !optional;
         @include fill(
             $scheduler-text,
             $scheduler-bg,
@@ -55,96 +54,15 @@
 
 
     //Scheduler navigation
-    ul.k-scheduler-navigation {
-
-        li {
-            &.k-state-focused {
-                @include box-shadow( $list-item-focused-shadow );
-            }
-        }
-
-        .k-nav-today,
-        .k-nav-prev,
-        .k-nav-next {
-            @include fill(
-                $button-text,
-                $button-bg,
-                $button-border,
-                $button-gradient
-            );
-
-            &:hover,
-            &.k-state-hover {
-                @include fill(
-                    $button-hovered-text,
-                    $button-hovered-bg,
-                    $button-hovered-border,
-                    $button-hovered-gradient
-                );
-             }
-        }
-    }
+    .k-scheduler-navigation {}
 
 
     // View switcher
-    ul.k-scheduler-views {
-        &.k-state-expanded { background-color: $base-bg; }
-
-        li {
-            @include fill(
-                $button-text,
-                $button-bg,
-                $button-border,
-                $button-gradient
-            );
-
-            &:hover,
-            &.k-state-hover {
-                @include fill(
-                    $button-hovered-text,
-                    $button-hovered-bg,
-                    $button-hovered-border,
-                    $button-hovered-gradient
-                );
-            }
-            &.k-state-selected {
-                @include fill(
-                    $button-selected-text,
-                    $button-selected-bg,
-                    $button-selected-border,
-                    $button-selected-gradient
-                );
-            }
-            &:focus,
-            &.k-state-focus,
-            &.k-state-focused {
-                @include box-shadow( $button-focused-shadow );
-            }
-        }
-    }
+    .k-scheduler-views {}
 
 
     // Scheduler footer
-    .k-scheduler-footer {
-
-        li {
-            @include fill(
-                $button-text,
-                $button-bg,
-                $button-border,
-                $button-gradient
-            );
-
-            &:hover {
-                @include fill(
-                    $button-hovered-text,
-                    $button-hovered-bg,
-                    $button-hovered-border,
-                    $button-hovered-gradient
-                );
-            }
-        }
-    }
+    .k-scheduler-footer {}
 
 
     // Scheduler content
@@ -164,8 +82,8 @@
         );
     }
 
-    .k-scheduler-layout td.k-state-selected,
-    .k-scheduler-layout .k-scheduler-cell.k-state-selected {
+    .k-scheduler-layout td.k-selected,
+    .k-scheduler-layout .k-scheduler-cell.k-selected {
         background-color: rgba($selected-bg, .25);
     }
 
@@ -187,7 +105,8 @@
         );
         @include box-shadow( $scheduler-event-shadow );
 
-        &.k-state-hover {
+        &:hover,
+        &.k-hover {
             @include fill(
                 $scheduler-event-hover-text,
                 $scheduler-event-hover-bg,
@@ -197,7 +116,7 @@
             @include box-shadow( $scheduler-event-hover-shadow );
         }
 
-        &.k-state-selected {
+        &.k-selected {
             @include fill(
                 $scheduler-event-selected-text,
                 $scheduler-event-selected-bg,
@@ -210,6 +129,9 @@
     .k-event-inverse {
         color: contrast-wcag( $scheduler-event-text );
     }
+    .k-event-ongoing {
+        @include box-shadow( $scheduler-event-ongoing-shadow );
+    }
 
 
     // Drag hint
@@ -220,7 +142,7 @@
     .k-scheduler-marquee {}
     .k-scheduler-marquee::before,
     .k-scheduler-marquee::after {
-        border-color: $primary-button-border;
+        border-color: $primary;
     }
 
     // Edit dialog
@@ -260,9 +182,9 @@
 
         // Hover
         .k-scheduler-content tr:hover,
-        .k-scheduler-content tr.k-state-hover,
+        .k-scheduler-content tr.k-hover,
         .k-scheduler-content .k-scheduler-row:hover,
-        .k-scheduler-content .k-scheduler-row.k-state-hover {
+        .k-scheduler-content .k-scheduler-row.k-hover {
             @include fill(
                 $hovered-text,
                 $hovered-bg,
@@ -273,8 +195,8 @@
 
         .k-scheduler-content tr:hover .k-scheduler-datecolumn,
         .k-scheduler-content tr:hover .k-scheduler-groupcolumn,
-        .k-scheduler-content tr.k-state-hover .k-scheduler-datecolumn,
-        .k-scheduler-content tr.k-state-hover .k-scheduler-groupcolumn {
+        .k-scheduler-content tr.k-hover .k-scheduler-datecolumn,
+        .k-scheduler-content tr.k-hover .k-scheduler-groupcolumn {
             @include fill(
                 $scheduler-text,
                 $scheduler-bg,
@@ -283,11 +205,11 @@
         }
 
         // Selected
-        .k-scheduler-content tr.k-state-selected {
+        .k-scheduler-content tr.k-selected {
             background-color: rgba($selected-bg, .25);
         }
-        .k-scheduler-content tr.k-state-selected .k-scheduler-datecolumn,
-        .k-scheduler-content tr.k-state-selected .k-scheduler-groupcolumn {
+        .k-scheduler-content tr.k-selected .k-scheduler-datecolumn,
+        .k-scheduler-content tr.k-selected .k-scheduler-groupcolumn {
             background-color: $scheduler-bg;
         }
     }
@@ -299,15 +221,12 @@
 
     // Year view
     .k-scheduler-yearview {
-        .k-month-header {
-            @include fill( $color: $scheduler-yearview-month-header-text );
-        }
 
         .k-day-indicator {
             @include fill( $bg: $scheduler-yearview-indicator-bg );
         }
 
-        .k-state-selected .k-day-indicator {
+        .k-selected .k-day-indicator {
             @include fill( $bg: $scheduler-yearview-indicator-selected-bg );
         }
     }

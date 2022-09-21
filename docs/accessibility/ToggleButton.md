@@ -1,8 +1,8 @@
 ---
 title: Toggle Button
-category: components
+category: accessibility
 slug: toggle-button
-position: 46
+position: 48
 ---
 # ToggleButton Keyboard Support
 

@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en" class="k-no-animations" style="--kendo-scrollbar-width:15px;">
+<head>
+    <title>PivotGrid jQuery</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" data-role="kendo-theme" href="/packages/default/dist/all.css">
+    <link rel="stylesheet" href="/packages/html/assets/styles.css">
+    <script src="/packages/html/assets/scripts.js"></script>
+</head>
+<body id="app" class="k-body">
+    <div id="test-area">
+        <div class="hidden-on-narrow k-widget k-pivot" style="height: 580px;">
+            <table class="k-pivot-layout">
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="k-pivot-rowheaders" style="width: 163px;">
+                                <div class="k-pivot-toolbar k-toolbar k-settings-measures k-pivot-setting" style="height: 72px;">
+                                    <div class="k-chip k-chip-md k-chip-solid k-chip-solid-base k-rounded-md">
+                                        <span class="k-chip-content">
+                                            <span class="k-chip-label k-text-ellipsis">[Measures].[Reseller Freight Cost]</span>
+                                        </span>
+                                        <span class="k-chip-actions">
+                                            <span class="k-chip-action k-chip-more-action">
+                                                <span class="k-icon k-i-more-vertical"></span>
+                                            </span>
+                                            <span class="k-chip-action k-chip-remove-action">
+                                                <span class="k-icon k-i-x-circle"></span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="k-pivot-toolbar k-toolbar k-settings-rows k-pivot-setting" style="height: 94px;">
+                                    <div class="k-chip k-chip-md k-chip-solid k-chip-solid-base k-rounded-md">
+                                        <span class="k-chip-content">
+                                            <span class="k-chip-label k-text-ellipsis">[Geography].[City]</span>
+                                        </span>
+                                        <span class="k-chip-actions">
+                                            <span class="k-chip-action k-chip-more-action">
+                                                <span class="k-icon k-i-more-vertical"></span>
+                                            </span>
+                                            <span class="k-chip-action k-chip-remove-action">
+                                                <span class="k-icon k-i-x-circle"></span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="k-grid k-widget k-alt" style="height: 363px;">
+                                    <table>
+                                        <colgroup>
+                                            <col>
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <td class="k-first">
+                                                    <span class="k-icon k-i-expand"></span>
+                                                    <span>All Geographies</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="k-pivot-table">
+                                <div class="k-pivot-toolbar k-toolbar k-settings-columns k-pivot-setting" style="height: 72px;">
+                                    <div class="k-chip k-chip-md k-chip-solid k-chip-solid-base k-rounded-md">
+                                        <span class="k-chip-content">
+                                            <span class="k-chip-label k-text-ellipsis">[Date].[Calendar]</span>
+                                        </span>
+                                        <span class="k-chip-actions">
+                                            <span class="k-chip-action k-chip-more-action">
+                                                <span class="k-icon k-i-more-vertical"></span>
+                                            </span>
+                                            <span class="k-chip-action k-chip-remove-action">
+                                                <span class="k-icon k-i-x-circle"></span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div class="k-chip k-chip-md k-chip-solid k-chip-solid-base k-rounded-md">
+                                        <span class="k-chip-content">
+                                            <span class="k-chip-label k-text-ellipsis">[Product].[Category]</span>
+                                        </span>
+                                        <span class="k-chip-actions">
+                                            <span class="k-chip-action k-chip-more-action">
+                                                <span class="k-icon k-i-more-vertical"></span>
+                                            </span>
+                                            <span class="k-chip-action k-chip-remove-action">
+                                                <span class="k-icon k-i-x-circle"></span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="k-grid k-widget">
+                                    <div class="k-grid-header">
+                                        <div class="k-grid-header-wrap" style="height: 110px;">
+                                            <table style="width: 199%;">
+                                                <colgroup>
+                                                    <col>
+                                                    <col>
+                                                    <col>
+                                                    <col>
+                                                    <col>
+                                                </colgroup>
+                                                <tbody>
+                                                    <tr>
+                                                        <th class="k-header" colspan="4">
+                                                            <span class="k-icon k-i-collapse"></span>
+                                                            <span>All Periods</span>
+                                                        </th>
+                                                        <th class="k-header k-alt" colspan="1" rowspan="2">
+                                                            <span>All Periods</span>
+                                                        </th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="k-header">
+                                                            <span class="k-icon k-i-expand"></span>
+                                                            <span>CY 2005</span>
+                                                        </th>
+                                                        <th class="k-header">
+                                                            <span class="k-icon k-i-expand"></span>
+                                                            <span>CY 2006</span>
+                                                        </th>
+                                                        <th class="k-header">
+                                                            <span class="k-icon k-i-expand"></span>
+                                                            <span>CY 2007</span>
+                                                        </th>
+                                                        <th class="k-header">
+                                                            <span class="k-icon k-i-expand"></span>
+                                                            <span>CY 2008</span>
+                                                        </th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="k-header">
+                                                            <span class="k-icon k-i-expand"></span>
+                                                            <span>All Products</span>
+                                                        </th>
+                                                        <th class="k-header">
+                                                            <span class="k-icon k-i-expand"></span>
+                                                            <span>All Products</span>
+                                                        </th>
+                                                        <th class="k-header">
+                                                            <span class="k-icon k-i-expand"></span>
+                                                            <span>All Products</span>
+                                                        </th>
+                                                        <th class="k-header">
+                                                            <span class="k-icon k-i-expand"></span>
+                                                            <span>All Products</span>
+                                                        </th>
+                                                        <th class="k-header">
+                                                            <span class="k-icon k-i-expand"></span>
+                                                            <span>All Products</span>
+                                                        </th>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="k-grid-content" style="height: 380px;">
+                                        <table style="width: 199%;">
+                                            <colgroup>
+                                                <col>
+                                                <col>
+                                                <col>
+                                                <col>
+                                                <col>
+                                            </colgroup>
+                                            <tbody>
+                                                <tr>
+                                                    <td>$201,635.92</td>
+                                                    <td>$603,610.94</td>
+                                                    <td>$805,067.19</td>
+                                                    <td>$400,951.86</td>
+                                                    <td class="k-alt">$2,011,265.92</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

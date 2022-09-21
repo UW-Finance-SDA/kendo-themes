@@ -1,9 +1,10 @@
 /// <reference path='lib/types.d.ts' />
 
-suite('Colorpicker', () => {
+suite.skip('Colorpicker', () => {
 
     before( () => {
         loadFixture('/html/colorpicker.html');
+        window.kendo.Html.init();
     });
     after( () => {
         clearFixture();

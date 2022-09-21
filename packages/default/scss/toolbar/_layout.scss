@@ -2,7 +2,6 @@
 
     // Base
     .k-toolbar {
-        @include use-background-clip();
         margin: 0;
         padding: $toolbar-padding-y $toolbar-padding-x;
         border-width: $toolbar-border-width;
@@ -26,7 +25,7 @@
         // Remove once we decide to not size empty containers
         &::before {
             content: "";
-            height: $button-calc-size;
+            height: $kendo-button-calc-size;
             margin-inline-start: -$toolbar-spacing;
         }
 
@@ -37,26 +36,13 @@
         > * {
             flex-shrink: 0;
             display: inline-flex;
-            align-items: stretch;
             align-content: center;
             vertical-align: middle;
 
             > label {
                 margin-inline-end: $toolbar-spacing;
+                align-self: center;
             }
-        }
-
-        .k-button,
-        .k-button-group,
-        .k-separator,
-        .k-split-button,
-        .k-textbox,
-        .k-widget,
-        label {
-            align-self: center;
-        }
-        .k-split-button > .k-button {
-            align-self: stretch;
         }
 
 
@@ -76,13 +62,23 @@
         .k-split-button {}
 
 
+        // Input
+        .k-input,
+        .k-picker {
+            width: $toolbar-input-width;
+        }
+        .k-color-picker {
+            width: min-content;
+        }
+
         // Overflow anchor
         .k-overflow-anchor {
             @include border-radius( 0 );
             margin: 0;
             padding: $toolbar-padding-y;
-            width: $toolbar-inner-calc-size;
+            width: auto;
             height: 100%;
+            aspect-ratio: 1;
             border-width: 0;
             border-color: inherit;
             box-sizing: border-box;
@@ -104,14 +100,16 @@
             height: $line-height-em;
             border-width: 0 0 0 1px;
             border-style: solid;
+            align-self: center;
         }
 
 
         // Spacer
         .k-toolbar-spacer {
             height: $line-height-em;
-            flex: 1 1 auto;
+            flex: 1 0 0%;
         }
+
 
         // Template
         .k-toolbar-template {
@@ -119,17 +117,43 @@
             align-items: center;
         }
 
+        // Template item
+        .k-toolbar-item:focus {
+            text-decoration: none;
+            outline: 0;
+        }
+
+    }
+
+
+    // Toolbar group
+    .k-toolbar-group {
+        display: flex;
+        flex-direction: inherit;
+        flex-wrap: nowrap;
+        gap: inherit;
     }
 
 
     // Angular specific
     kendo-toolbar-renderer {
+        display: inline-block;
         border-color: inherit;
     }
 
 
     // Overflow container
     .k-overflow-container {
+        font-size: $kendo-menu-popup-font-size-md;
+        line-height: $kendo-menu-popup-line-height-md;
+
+        > .k-item {
+            border-color: inherit;
+        }
+
+        .k-separator {
+            margin: map-get( $spacing, 1 ) 0;
+        }
 
         // Group
         .k-overflow-tool-group {
@@ -138,16 +162,34 @@
 
         // Button
         .k-overflow-button {
+            padding: $kendo-menu-popup-item-padding-y-md $kendo-menu-popup-item-padding-x-md;
             width: 100%;
+            height: auto;
+            border-width: 0;
+            border-radius: 0;
+            aspect-ratio: auto;
+            color: inherit;
+            background-color: transparent;
+            background-image: none;
+            font: inherit;
+            cursor: pointer;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            align-content: center;
+            gap: $icon-spacing;
+            justify-content: flex-start;
+            position: relative;
         }
 
         // Button group
         .k-button-group {
+            @include box-shadow( none );
             display: flex;
-            flex-direction: column;
+            flex-flow: column nowrap;
 
             .k-button {
-                margin: if( $button-border-width == 0, null, 0);
+                margin: if( $kendo-button-border-width == 0, null, 0);
             }
         }
 
@@ -204,6 +246,7 @@
         .k-toolbar {
             padding: 0;
             border-width: 0;
+            flex-shrink: 1;
             color: inherit;
             background: none;
         }

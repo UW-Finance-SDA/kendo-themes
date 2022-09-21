@@ -1,9 +1,10 @@
 /// <reference path='lib/types.d.ts' />
 
-suite('Autocomplete', () => {
+suite.skip('Autocomplete', () => {
 
     before( () => {
         loadFixture('/html/autocomplete.html');
+        window.kendo.Html.init();
     });
     after( () => {
         clearFixture();

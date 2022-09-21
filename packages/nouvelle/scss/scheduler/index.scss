@@ -1,0 +1,26 @@
+// Module meta
+$_kendo-module-meta: (
+    name: "scheduler",
+    dependencies: ()
+);
+
+
+// Component
+@import "_variables.scss";
+@import "_layout.scss";
+@import "_theme.scss";
+
+
+// Register
+@include module-register( $_kendo-module-meta... );
+
+
+// Expose
+@mixin scheduler-styles() {
+    @include module-render( "scheduler" ) {
+        @include kendo-scheduler--layout();
+        @include kendo-scheduler--extended-layout();
+        @include kendo-scheduler--theme();
+        @include kendo-scheduler--extended-theme();
+    }
+}

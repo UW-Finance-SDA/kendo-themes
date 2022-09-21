@@ -1,7 +1,7 @@
 {
   "name": "@progress/kendo-theme-default",
   "description": "SASS resources for the default Kendo UI theme",
-  "version": "4.39.0",
+  "version": "5.8.2-dev.0",
   "author": "Progress",
   "license": "Apache-2.0",
   "keywords": [
@@ -13,12 +13,16 @@
   "files": [
     "dist/",
     "scss/",
-    "modules/",
     "lib/"
   ],
+  "homepage": "https://github.com/telerik/kendo-themes/tree/master/packages/default",
   "repository": {
     "type": "git",
-    "url": "https://github.com/telerik/kendo-themes.git"
+    "url": "https://github.com/telerik/kendo-themes.git",
+    "directory": "packages/default"
+  },
+  "bugs": {
+    "url": "https://github.com/telerik/kendo-themes/issues/new?labels=bug,T:Default&template=bug_report.md"
   },
   "publishConfig": {
     "access": "public"
@@ -26,24 +30,18 @@
   "kendo": {
     "themebuilder": {
       "swatches": {
-        "path": "lib/themebuilder",
-        "default": "default.json"
+        "path": "lib/swatches",
+        "default": "default-main.json"
       }
     }
   },
   "scripts": {
-    "sass": "gulp sass",
-    "sass:watch": "gulp sass:watch",
-    "sass:swatches": "gulp sass:swatches",
-    "sass:flat": "gulp sass:flat",
-    "dart": "gulp dart",
-    "dart:watch": "gulp dart:watch",
-    "dart:swatches": "gulp dart:swatches",
-    "dart:flat": "gulp dart:flat",
-    "twbs-compat": "gulp sass --file ./build/twbs-compat.scss",
-    "prepublishOnly": "echo 'no prebublish for default theme'"
+    "build": "sass-build",
+    "sass": "sass-build",
+    "prepublishOnly": "node ../../scripts/themes-prepublish.js",
+    "postpublish": "echo 'no postpublish for default theme'"
   },
   "devDependencies": {
-    "bootstrap": "^4.5.2"
+    "sass-build": "^1.0.0"
   }
 }

@@ -4,6 +4,7 @@ suite('Slider', () => {
 
     before( ()=> {
         loadFixture('/html/slider.html');
+        window.kendo.Html.init();
     });
     after( ()=> {
         clearFixture();
@@ -31,7 +32,7 @@ suite('Slider', () => {
         assert.equal( track.offsetHeight, metrics.slider.track.height );
     });
 
-    test('Slider handle size should be 16:16', () => {
+    test('Slider handle size should be 14:14', () => {
         let handle = $('#slider-horizontal .k-slider-track > .k-draghandle');
 
         assert.equal( handle.offsetWidth, metrics.slider.handle.width );

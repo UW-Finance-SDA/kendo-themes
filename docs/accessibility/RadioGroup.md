@@ -1,8 +1,8 @@
 ---
 title: Radio Group
-category: components
+category: accessibility
 slug: radio-group
-position: 34
+position: 36
 ---
 # RadioGroup Keyboard Support
 

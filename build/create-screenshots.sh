@@ -3,9 +3,8 @@ set -e
 shopt -s extglob
 
 THEME="${1:-default}"
-TEMP_DIR="./tests/.tmp/visual"
+TEMP_DIR=".tmp/visual/"
 THEME_DIR="$TEMP_DIR/$THEME"
-SRC_DIR="$THEME_DIR/src"
 
 if [ -z "$THEME" ]; then
     echo "Usage: create-screenshots <default|bootstrap|material|classic>"
@@ -15,16 +14,19 @@ else
 fi
 
 mkdir -p "$THEME_DIR"
-cp -r ./tests/visual/!(output) "$THEME_DIR"
+cp -r tests/!(_output) $THEME_DIR
+cp -r packages/html/assets $THEME_DIR
+cp packages/$THEME/dist/all.css $THEME_DIR/assets/all.css
 
-# replace theme reference
-find "$SRC_DIR" -name '*.html' -print0 | xargs -0 sed -i -E \
-    -e "s#/packages/default/dist/#/../../../packages/$THEME/dist/#"
+# replace references
+find "$THEME_DIR" -name '*.html' -print0 | xargs -0 sed -i -E \
+    -e "s#/packages/default/dist/#../assets/#" \
+    -e "s#/packages/html/assets/#../assets/#"
 
 # capture screenshots. see .pastshotsrc for config options
 npm install --no-save pastshots@1.6 optipng
 
 npx pastshots \
-    --serve "$SRC_DIR/**/*.html" \
+    --serve "$THEME_DIR/**/*.html" \
     --port $((RANDOM % 1000 + 8000)) \
-    --output "./tests/visual/output/$THEME"
+    --output "./tests/_output/$THEME"

@@ -27,6 +27,16 @@
         overflow-y: auto;
         position: fixed;
         z-index: 10002;
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+    }
+    .k-actionsheet-fullscreen {
+        max-height: 100%;
+        height: 100%;
     }
 
 
@@ -41,6 +51,35 @@
         font-size: $actionsheet-header-font-size;
         font-family: $actionsheet-header-font-family;
         line-height: $actionsheet-header-line-height;
+        flex: none;
+    }
+
+
+    // Actionsheet titlebar
+    .k-actionsheet-titlebar {
+        @extend .k-actionsheet-header !optional;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+    }
+    .k-actionsheet-title {
+        flex: 1;
+    }
+    .k-actionsheet-actions {
+        flex: none;
+    }
+
+
+    // Actionsheet content
+    .k-actionsheet-content {
+        flex: 1;
+        overflow: auto;
+    }
+
+
+    // Actionsheet footer
+    .k-actionsheet-footer {
+        flex: none;
     }
 
 
@@ -83,7 +122,6 @@
     }
     .k-actionsheet-item-description {
         font-size: $actionsheet-item-description-font-size;
-        opacity: $actionsheet-item-description-opacity;
     }
 
 
@@ -117,7 +155,7 @@
         border-left-width: if( $actionsheet-border-width, 0, null );
         left: 0;
         top: 50%;
-        transform: translatey( -50% );
+        transform: translateY( -50% );
     }
     .k-actionsheet-right {
         @include border-left-radius( $actionsheet-border-radius );
@@ -125,7 +163,7 @@
         border-right-width: if( $actionsheet-border-width, 0, null );
         right: 0;
         top: 50%;
-        transform: translatey( -50% );
+        transform: translateY( -50% );
     }
 
 
@@ -136,6 +174,37 @@
         bottom: auto;
         left: auto;
         transform: none;
+    }
+
+
+    // Adaptive action sheet
+    .k-adaptive-actionsheet {
+        max-width: 100%;
+        width: 100%;
+
+        // TMP: this should be moved to action sheet
+        display: flex;
+        flex-flow: column nowrap;
+
+        .k-calendar {
+            margin-inline: auto;
+            border-width: 0;
+            display: flex;
+        }
+
+        .k-timeselector {
+            height: 100%;
+            border-width: 0;
+            overflow: hidden;
+
+            .k-time-part {
+                display: contents;
+            }
+
+            .k-time-list-wrapper {
+                height: 100%;
+            }
+        }
     }
 
 }

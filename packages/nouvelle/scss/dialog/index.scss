@@ -1,0 +1,26 @@
+// Module meta
+$_kendo-module-meta: (
+    name: "dialog",
+    dependencies: ()
+);
+
+
+// Component
+@import "_variables.scss";
+@import "_layout.scss";
+@import "_theme.scss";
+
+
+// Register
+@include module-register( $_kendo-module-meta... );
+
+
+// Expose
+@mixin dialog-styles() {
+    @include module-render( "dialog" ) {
+        @include kendo-dialog--layout();
+        @include kendo-dialog--extended-layout();
+        @include kendo-dialog--theme();
+        @include kendo-dialog--extended-theme();
+    }
+}

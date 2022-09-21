@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en" class="k-no-animations" style="--kendo-scrollbar-width:15px;">
+<head>
+    <title>ButtonGroup</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" data-role="kendo-theme" href="/packages/default/dist/all.css">
+    <link rel="stylesheet" href="/packages/html/assets/styles.css">
+    <script src="/packages/html/assets/scripts.js"></script>
+</head>
+<body id="app" class="k-body">
+    <style>
+        #test-area>section {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+
+    </style>
+    <div id="test-area" class="k-d-grid k-grid-cols-1">
+        <section>
+            <div>
+                <div class="k-button-group k-button-group-solid">
+                    <button class="k-group-start k-button k-button-md k-button-solid k-button-solid-base k-rounded-md">
+                        <span class="k-button-text">Button</span>
+                    </button>
+                    <button class="k-button k-button-md k-button-solid k-button-solid-base k-rounded-md k-hover">
+                        <span class="k-button-text">Hover</span>
+                    </button>
+                    <button class="k-button k-button-md k-button-solid k-button-solid-base k-rounded-md k-focus">
+                        <span class="k-button-text">Focus</span>
+                    </button>
+                    <button class="k-button k-button-md k-button-solid k-button-solid-base k-rounded-md k-active">
+                        <span class="k-button-text">Active</span>
+                    </button>
+                    <button class="k-button k-button-md k-button-solid k-button-solid-base k-rounded-md k-selected">
+                        <span class="k-button-text">Selected</span>
+                    </button>
+                    <button class="k-button k-button-md k-button-solid k-button-solid-base k-rounded-md k-focus k-selected">
+                        <span class="k-button-text">Selected + Focus</span>
+                    </button>
+                    <button class="k-group-end k-button k-button-md k-button-solid k-button-solid-base k-rounded-md k-disabled">
+                        <span class="k-button-text">Disabled</span>
+                    </button>
+                </div>
+            </div>
+            <div>
+                <div class="k-button-group k-button-group-outline">
+                    <button class="k-group-start k-button k-button-md k-button-outline k-button-outline-base k-rounded-md">
+                        <span class="k-button-text">Button</span>
+                    </button>
+                    <button class="k-button k-button-md k-button-outline k-button-outline-base k-rounded-md k-hover">
+                        <span class="k-button-text">Hover</span>
+                    </button>
+                    <button class="k-button k-button-md k-button-outline k-button-outline-base k-rounded-md k-focus">
+                        <span class="k-button-text">Focus</span>
+                    </button>
+                    <button class="k-button k-button-md k-button-outline k-button-outline-base k-rounded-md k-active">
+                        <span class="k-button-text">Active</span>
+                    </button>
+                    <button class="k-button k-button-md k-button-outline k-button-outline-base k-rounded-md k-selected">
+                        <span class="k-button-text">Selected</span>
+                    </button>
+                    <button class="k-button k-button-md k-button-outline k-button-outline-base k-rounded-md k-focus k-selected">
+                        <span class="k-button-text">Selected + Focus</span>
+                    </button>
+                    <button class="k-group-end k-button k-button-md k-button-outline k-button-outline-base k-rounded-md k-disabled">
+                        <span class="k-button-text">Disabled</span>
+                    </button>
+                </div>
+            </div>
+            <div>
+                <div class="k-button-group k-button-group-flat">
+                    <button class="k-group-start k-button k-button-md k-button-flat k-button-flat-base k-rounded-md">
+                        <span class="k-button-text">Button</span>
+                    </button>
+                    <button class="k-button k-button-md k-button-flat k-button-flat-base k-rounded-md k-hover">
+                        <span class="k-button-text">Hover</span>
+                    </button>
+                    <button class="k-button k-button-md k-button-flat k-button-flat-base k-rounded-md k-focus">
+                        <span class="k-button-text">Focus</span>
+                    </button>
+                    <button class="k-button k-button-md k-button-flat k-button-flat-base k-rounded-md k-active">
+                        <span class="k-button-text">Active</span>
+                    </button>
+                    <button class="k-button k-button-md k-button-flat k-button-flat-base k-rounded-md k-selected">
+                        <span class="k-button-text">Selected</span>
+                    </button>
+                    <button class="k-button k-button-md k-button-flat k-button-flat-base k-rounded-md k-focus k-selected">
+                        <span class="k-button-text">Selected + Focus</span>
+                    </button>
+                    <button class="k-group-end k-button k-button-md k-button-flat k-button-flat-base k-rounded-md k-disabled">
+                        <span class="k-button-text">Disabled</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <section style="background-color: rgb(120, 120, 120); color: rgb(255, 255, 255);">
+            <div>
+                <div class="k-button-group k-button-group-solid">
+                    <button class="k-group-start k-button k-button-md k-button-solid k-button-solid-base k-rounded-md">
+                        <span class="k-button-text">Button</span>
+                    </button>
+                    <button class="k-button k-button-md k-button-solid k-button-solid-base k-rounded-md k-hover">
+                        <span class="k-button-text">Hover</span>
+                    </button>
+                    <button class="k-button k-button-md k-button-solid k-button-solid-base k-rounded-md k-focus">
+                        <span class="k-button-text">Focus</span>
+                    </button>
+                    <button class="k-button k-button-md k-button-solid k-button-solid-base k-rounded-md k-active">
+                        <span class="k-button-text">Active</span>
+                    </button>
+                    <button class="k-button k-button-md k-button-solid k-button-solid-base k-rounded-md k-selected">
+                        <span class="k-button-text">Selected</span>
+                    </button>
+                    <button class="k-button k-button-md k-button-solid k-button-solid-base k-rounded-md k-focus k-selected">
+                        <span class="k-button-text">Selected + Focus</span>
+                    </button>
+                    <button class="k-group-end k-button k-button-md k-button-solid k-button-solid-base k-rounded-md k-disabled">
+                        <span class="k-button-text">Disabled</span>
+                    </button>
+                </div>
+            </div>
+            <div>
+                <div class="k-button-group k-button-group-outline">
+                    <button class="k-group-start k-button k-button-md k-button-outline k-button-outline-base k-rounded-md">
+                        <span class="k-button-text">Button</span>
+                    </button>
+                    <button class="k-button k-button-md k-button-outline k-button-outline-base k-rounded-md k-hover">
+                        <span class="k-button-text">Hover</span>
+                    </button>
+                    <button class="k-button k-button-md k-button-outline k-button-outline-base k-rounded-md k-focus">
+                        <span class="k-button-text">Focus</span>
+                    </button>
+                    <button class="k-button k-button-md k-button-outline k-button-outline-base k-rounded-md k-active">
+                        <span class="k-button-text">Active</span>
+                    </button>
+                    <button class="k-button k-button-md k-button-outline k-button-outline-base k-rounded-md k-selected">
+                        <span class="k-button-text">Selected</span>
+                    </button>
+                    <button class="k-button k-button-md k-button-outline k-button-outline-base k-rounded-md k-focus k-selected">
+                        <span class="k-button-text">Selected + Focus</span>
+                    </button>
+                    <button class="k-group-end k-button k-button-md k-button-outline k-button-outline-base k-rounded-md k-disabled">
+                        <span class="k-button-text">Disabled</span>
+                    </button>
+                </div>
+            </div>
+            <div>
+                <div class="k-button-group k-button-group-flat">
+                    <button class="k-group-start k-button k-button-md k-button-flat k-button-flat-base k-rounded-md">
+                        <span class="k-button-text">Button</span>
+                    </button>
+                    <button class="k-button k-button-md k-button-flat k-button-flat-base k-rounded-md k-hover">
+                        <span class="k-button-text">Hover</span>
+                    </button>
+                    <button class="k-button k-button-md k-button-flat k-button-flat-base k-rounded-md k-focus">
+                        <span class="k-button-text">Focus</span>
+                    </button>
+                    <button class="k-button k-button-md k-button-flat k-button-flat-base k-rounded-md k-active">
+                        <span class="k-button-text">Active</span>
+                    </button>
+                    <button class="k-button k-button-md k-button-flat k-button-flat-base k-rounded-md k-selected">
+                        <span class="k-button-text">Selected</span>
+                    </button>
+                    <button class="k-button k-button-md k-button-flat k-button-flat-base k-rounded-md k-focus k-selected">
+                        <span class="k-button-text">Selected + Focus</span>
+                    </button>
+                    <button class="k-group-end k-button k-button-md k-button-flat k-button-flat-base k-rounded-md k-disabled">
+                        <span class="k-button-text">Disabled</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <section style="color: rgb(255, 0, 255);">
+            <div>
+                <div class="k-button-group k-button-group-solid">
+                    <button class="k-group-start k-button k-button-md k-button-solid k-button-solid-base k-rounded-md">
+                        <span class="k-button-text">Button</span>
+                    </button>
+                    <button class="k-button k-button-md k-button-solid k-button-solid-base k-rounded-md k-hover">
+                        <span class="k-button-text">Hover</span>
+                    </button>
+                    <button class="k-button k-button-md k-button-solid k-button-solid-base k-rounded-md k-focus">
+                        <span class="k-button-text">Focus</span>
+                    </button>
+                    <button class="k-button k-button-md k-button-solid k-button-solid-base k-rounded-md k-active">
+                        <span class="k-button-text">Active</span>
+                    </button>
+                    <button class="k-button k-button-md k-button-solid k-button-solid-base k-rounded-md k-selected">
+                        <span class="k-button-text">Selected</span>
+                    </button>
+                    <button class="k-button k-button-md k-button-solid k-button-solid-base k-rounded-md k-focus k-selected">
+                        <span class="k-button-text">Selected + Focus</span>
+                    </button>
+                    <button class="k-group-end k-button k-button-md k-button-solid k-button-solid-base k-rounded-md k-disabled">
+                        <span class="k-button-text">Disabled</span>
+                    </button>
+                </div>
+            </div>
+            <div>
+                <div class="k-button-group k-button-group-outline">
+                    <button class="k-group-start k-button k-button-md k-button-outline k-button-outline-base k-rounded-md">
+                        <span class="k-button-text">Button</span>
+                    </button>
+                    <button class="k-button k-button-md k-button-outline k-button-outline-base k-rounded-md k-hover">
+                        <span class="k-button-text">Hover</span>
+                    </button>
+                    <button class="k-button k-button-md k-button-outline k-button-outline-base k-rounded-md k-focus">
+                        <span class="k-button-text">Focus</span>
+                    </button>
+                    <button class="k-button k-button-md k-button-outline k-button-outline-base k-rounded-md k-active">
+                        <span class="k-button-text">Active</span>
+                    </button>
+                    <button class="k-button k-button-md k-button-outline k-button-outline-base k-rounded-md k-selected">
+                        <span class="k-button-text">Selected</span>
+                    </button>
+                    <button class="k-button k-button-md k-button-outline k-button-outline-base k-rounded-md k-focus k-selected">
+                        <span class="k-button-text">Selected + Focus</span>
+                    </button>
+                    <button class="k-group-end k-button k-button-md k-button-outline k-button-outline-base k-rounded-md k-disabled">
+                        <span class="k-button-text">Disabled</span>
+                    </button>
+                </div>
+            </div>
+            <div>
+                <div class="k-button-group k-button-group-flat">
+                    <button class="k-group-start k-button k-button-md k-button-flat k-button-flat-base k-rounded-md">
+                        <span class="k-button-text">Button</span>
+                    </button>
+                    <button class="k-button k-button-md k-button-flat k-button-flat-base k-rounded-md k-hover">
+                        <span class="k-button-text">Hover</span>
+                    </button>
+                    <button class="k-button k-button-md k-button-flat k-button-flat-base k-rounded-md k-focus">
+                        <span class="k-button-text">Focus</span>
+                    </button>
+                    <button class="k-button k-button-md k-button-flat k-button-flat-base k-rounded-md k-active">
+                        <span class="k-button-text">Active</span>
+                    </button>
+                    <button class="k-button k-button-md k-button-flat k-button-flat-base k-rounded-md k-selected">
+                        <span class="k-button-text">Selected</span>
+                    </button>
+                    <button class="k-button k-button-md k-button-flat k-button-flat-base k-rounded-md k-focus k-selected">
+                        <span class="k-button-text">Selected + Focus</span>
+                    </button>
+                    <button class="k-group-end k-button k-button-md k-button-flat k-button-flat-base k-rounded-md k-disabled">
+                        <span class="k-button-text">Disabled</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

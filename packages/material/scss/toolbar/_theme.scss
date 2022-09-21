@@ -4,14 +4,16 @@
 
     .k-toolbar {
 
-        .k-button,
-        .k-button-secondary {
-            background-color: try-shade( $button-bg );
-        }
+        .k-button-solid-base {
+            background-color: try-shade( $kendo-button-bg );
+            border-color: try-shade( $kendo-button-bg );
 
-        .k-button-primary,
-        .k-button.k-primary {
-            background-color: $primary-button-bg;
+            &.k-input-button,
+            &.k-input-spinner .k-spinner-increase,
+            &.k-input-spinner .k-spinner-decrease {
+                background: none;
+                border-color: transparent;
+            }
         }
 
     }

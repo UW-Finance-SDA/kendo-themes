@@ -1,8 +1,8 @@
 ---
 title: Numeric Text Box
-category: components
+category: accessibility
 slug: numeric-text-box
-position: 30
+position: 32
 ---
 # NumericTextBox Keyboard Support
 

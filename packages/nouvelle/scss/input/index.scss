@@ -1,7 +1,26 @@
-// Dependencies
+// Module meta
+$_kendo-module-meta: (
+    name: "input",
+    dependencies: ()
+);
 
 
 // Component
 @import "_variables.scss";
 @import "_layout.scss";
 @import "_theme.scss";
+
+
+// Register
+@include module-register( $_kendo-module-meta... );
+
+
+// Expose
+@mixin input-styles() {
+    @include module-render( "input" ) {
+        @include kendo-input--layout();
+        @include kendo-input--extended-layout();
+        @include kendo-input--theme();
+        @include kendo-input--extended-theme();
+    }
+}

@@ -1,0 +1,26 @@
+// Module meta
+$_kendo-module-meta: (
+    name: "tabstrip",
+    dependencies: ()
+);
+
+
+// Component
+@import "_variables.scss";
+@import "_layout.scss";
+@import "_theme.scss";
+
+
+// Register
+@include module-register( $_kendo-module-meta... );
+
+
+// Expose
+@mixin tabstrip-styles() {
+    @include module-render( "tabstrip" ) {
+        @include kendo-tabstrip--layout();
+        @include kendo-tabstrip--extended-layout();
+        @include kendo-tabstrip--theme();
+        @include kendo-tabstrip--extended-theme();
+    }
+}

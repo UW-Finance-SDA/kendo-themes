@@ -27,9 +27,19 @@ The following table lists the available variables for customization.
 <tbody>
         <tr>
     <td>$popup-bg</td>
-    <td></td>
-    <td>mix( black, $component-bg, 2% )</td>
-    <td>mix( black, $component-bg, 2% )</td>
+    <td>Color</td>
+<td>
+
+`mix( black, $component-bg, 2% )`
+
+</td>
+<td>
+
+<span class="color-preview" style="background-color: #fafafa"></span>
+
+`#fafafa`
+
+</td>
 </tr>
 <tr>
     <td colspan="4" class="theme-variables-description-container"><div><b>Description</b><div class="theme-variables-description">The background of the popup.</div></div>
@@ -37,9 +47,19 @@ The following table lists the available variables for customization.
 </tr>
 <tr>
     <td>$popup-text</td>
-    <td></td>
-    <td>$component-text</td>
-    <td></td>
+    <td>Color</td>
+<td>
+
+`$component-text`
+
+</td>
+<td>
+
+<span class="color-preview" style="background-color: #656565"></span>
+
+`#656565`
+
+</td>
 </tr>
 <tr>
     <td colspan="4" class="theme-variables-description-container"><div><b>Description</b><div class="theme-variables-description">The text color of the popup.</div></div>
@@ -47,9 +67,19 @@ The following table lists the available variables for customization.
 </tr>
 <tr>
     <td>$popup-border</td>
-    <td></td>
-    <td>$component-border</td>
-    <td>rgba( black, .08 )</td>
+    <td>Color</td>
+<td>
+
+`$component-border`
+
+</td>
+<td>
+
+<span class="color-preview" style="background-color: rgba(0, 0, 0, 0.08)"></span>
+
+`rgba(0, 0, 0, 0.08)`
+
+</td>
 </tr>
 <tr>
     <td colspan="4" class="theme-variables-description-container"><div><b>Description</b><div class="theme-variables-description">The border color of the popup.</div></div>

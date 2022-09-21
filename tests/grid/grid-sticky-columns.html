@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en" class="k-no-animations" style="--kendo-scrollbar-width:15px;">
+<head>
+    <title>Grid Sticky Columns</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" data-role="kendo-theme" href="/packages/default/dist/all.css">
+    <link rel="stylesheet" href="/packages/html/assets/styles.css">
+    <script src="/packages/html/assets/scripts.js"></script>
+</head>
+<body id="app" class="k-body">
+    <div id="test-area" class="k-d-grid">
+        <div class="k-widget k-grid" role="grid" style="height: 400px; width: 500px;">
+            <div class="k-grid-header">
+                <div class="k-grid-header-wrap">
+                    <table style="width: 1100px;">
+                        <colgroup>
+                            <col width="250px">
+                            <col width="150px">
+                            <col width="200px">
+                            <col width="250px">
+                            <col width="250px">
+                        </colgroup>
+                        <thead>
+                            <tr role="row" style="touch-action: none;">
+                                <th colspan="1" rowspan="1" class="k-header k-grid-header-sticky" style="left: 0px; right: 250px; border-right-width: 1px;">
+                                    <a class="k-link">Product Name</a>
+                                </th>
+                                <th colspan="1" rowspan="1" class="k-header">
+                                    <a class="k-link">Units In Stock</a>
+                                </th>
+                                <th colspan="1" rowspan="1" class="k-header">
+                                    <a class="k-link">Price</a>
+                                </th>
+                                <th colspan="1" rowspan="1" class="k-header k-grid-header-sticky" style="left: 250px; right: 0px; border-right-width: 1px;">
+                                    <a class="k-link">Units On Order</a>
+                                </th>
+                                <th colspan="1" rowspan="1" class="k-header">
+                                    <a class="k-link">Reorder Level</a>
+                                </th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+            <div class="k-grid-container">
+                <div class="k-grid-content k-virtual-content">
+                    <div style="position: relative;">
+                        <table class="k-grid-table" style="width: 1100px;">
+                            <colgroup>
+                                <col width="250px">
+                                <col width="150px">
+                                <col width="200px">
+                                <col width="250px">
+                                <col width="250px">
+                            </colgroup>
+                            <tbody>
+                                <tr class="k-master-row" role="row">
+                                    <td colspan="1" class="k-grid-content-sticky" style="left: 0px; right: 250px; border-right-width: 1px;">Chai</td>
+                                    <td colspan="1">39</td>
+                                    <td colspan="1">18</td>
+                                    <td colspan="1" class="k-grid-content-sticky" style="left: 250px; right: 0px; border-right-width: 1px;">0</td>
+                                    <td colspan="1">10</td>
+                                </tr>
+                                <tr class="k-master-row k-alt" role="row">
+                                    <td colspan="1" class="k-grid-content-sticky" style="left: 0px; right: 250px; border-right-width: 1px;">Chang</td>
+                                    <td colspan="1">17</td>
+                                    <td colspan="1">19</td>
+                                    <td colspan="1" class="k-grid-content-sticky" style="left: 250px; right: 0px; border-right-width: 1px;">40</td>
+                                    <td colspan="1">25</td>
+                                </tr>
+                                <tr class="k-master-row k-selected" role="row">
+                                    <td colspan="1" class="k-grid-content-sticky" style="left: 0px; right: 250px; border-right-width: 1px;">Aniseed Syrup(Selected)</td>
+                                    <td colspan="1">13</td>
+                                    <td colspan="1">10</td>
+                                    <td colspan="1" class="k-grid-content-sticky" style="left: 250px; right: 0px; border-right-width: 1px;">70</td>
+                                    <td colspan="1">25</td>
+                                </tr>
+                                <tr class="k-master-row k-alt k-selected" role="row">
+                                    <td colspan="1" class="k-grid-content-sticky" style="left: 0px; right: 250px; border-right-width: 1px;">Chef Anton (Alt Selected)</td>
+                                    <td colspan="1">53</td>
+                                    <td colspan="1">22</td>
+                                    <td colspan="1" class="k-grid-content-sticky" style="left: 250px; right: 0px; border-right-width: 1px;">0</td>
+                                    <td colspan="1">0</td>
+                                </tr>
+                                <tr class="k-master-row k-selected k-hover" role="row">
+                                    <td colspan="1" class="k-grid-content-sticky" style="left: 0px; right: 250px; border-right-width: 1px;">Chef (Selected+Hover)</td>
+                                    <td colspan="1">0</td>
+                                    <td colspan="1">21.35</td>
+                                    <td colspan="1" class="k-grid-content-sticky" style="left: 250px; right: 0px; border-right-width: 1px;">0</td>
+                                    <td colspan="1">0</td>
+                                </tr>
+                                <tr class="k-master-row k-alt k-selected k-hover" role="row">
+                                    <td colspan="1" class="k-grid-content-sticky" style="left: 0px; right: 250px; border-right-width: 1px;">Gran (Alt Selected+Hover)</td>
+                                    <td colspan="1">120</td>
+                                    <td colspan="1">25</td>
+                                    <td colspan="1" class="k-grid-content-sticky" style="left: 250px; right: 0px; border-right-width: 1px;">0</td>
+                                    <td colspan="1">25</td>
+                                </tr>
+                                <tr class="k-master-row" role="row">
+                                    <td colspan="1" class="k-grid-content-sticky" style="left: 0px; right: 250px; border-right-width: 1px;">Uncle Bob's Organic Dried Pears</td>
+                                    <td colspan="1">15</td>
+                                    <td colspan="1">30</td>
+                                    <td colspan="1" class="k-grid-content-sticky" style="left: 250px; right: 0px; border-right-width: 1px;">0</td>
+                                    <td colspan="1">10</td>
+                                </tr>
+                                <tr class="k-master-row k-alt" role="row">
+                                    <td colspan="1" class="k-grid-content-sticky" style="left: 0px; right: 250px; border-right-width: 1px;">Northwoods Cranberry Sauce</td>
+                                    <td colspan="1">6</td>
+                                    <td colspan="1">40</td>
+                                    <td colspan="1" class="k-grid-content-sticky" style="left: 250px; right: 0px; border-right-width: 1px;">0</td>
+                                    <td colspan="1">0</td>
+                                </tr>
+                                <tr class="k-master-row" role="row">
+                                    <td colspan="1" class="k-grid-content-sticky" style="left: 0px; right: 250px; border-right-width: 1px;">Mishi Kobe Niku</td>
+                                    <td colspan="1">29</td>
+                                    <td colspan="1">97</td>
+                                    <td colspan="1" class="k-grid-content-sticky" style="left: 250px; right: 0px; border-right-width: 1px;">0</td>
+                                    <td colspan="1">0</td>
+                                </tr>
+                                <tr class="k-master-row k-alt" role="row">
+                                    <td colspan="1" class="k-grid-content-sticky" style="left: 0px; right: 250px; border-right-width: 1px;">Ikura</td>
+                                    <td colspan="1">31</td>
+                                    <td colspan="1">31</td>
+                                    <td colspan="1" class="k-grid-content-sticky" style="left: 250px; right: 0px; border-right-width: 1px;">0</td>
+                                    <td colspan="1">0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="k-height-container">
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="k-grid k-widget telerik-blazor">
+            <div class="k-grouping-header k-grouping-header-flex">
+                <div class="k-indicator-container">
+                    <div class="k-group-indicator">
+                        <span class="k-link" style="cursor: default;">Active Projects</span>
+                        <button class="k-button k-button-md k-button-flat k-button-flat-base k-rounded-md k-icon-button">
+                            <span class="k-button-icon k-icon k-i-close"></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="k-indicator-container" style="touch-action: none;"></div>
+            </div>
+            <div class="k-grid-header">
+                <div class="k-grid-header-wrap">
+                    <table>
+                        <colgroup>
+                            <col class="k-group-col">
+                            <col style="width: 100px;">
+                            <col style="width: 200px;">
+                            <col style="width: 100px;">
+                            <col style="width: 100px;">
+                            <col style="width: 100px;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th colspan="1" rowspan="1" class="k-group-cell k-header"></th>
+                                <th class="k-header" colspan="1">Name</th>
+                                <th class="k-header k-grid-header-sticky" colspan="1" style="left: 0px; right: 0px;">Team</th>
+                                <th class="k-header k-grid-header-sticky" colspan="1">Active Projects</th>
+                                <th class="k-header" colspan="1">Salary</th>
+                                <th class="k-header" colspan="1">On Vacation</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+            <div class="k-grid-container">
+                <div class="k-grid-content k-virtual-content">
+                    <div style="position: relative;">
+                        <div class="k-virtual-position">
+                            <table class="k-grid-table" style="height: auto;">
+                                <colgroup>
+                                    <col class="k-group-col">
+                                    <col style="width: 100px;">
+                                    <col style="width: 200px;">
+                                    <col style="width: 100px;">
+                                    <col style="width: 100px;">
+                                    <col style="width: 100px;">
+                                </colgroup>
+                                <tbody>
+                                    <tr class="k-grouping-row">
+                                        <td colspan="6">
+                                            <p class="k-reset">
+                                                <span class="k-icon k-i-collapse"></span>
+                                                <span>Currently active projects: 2 &nbsp;</span>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr class="k-master-row">
+                                        <td class="k-group-cell"></td>
+                                        <td colspan="1">Employee 0</td>
+                                        <td colspan="1" class="k-grid-content-sticky" style="left: 0px; right: 0px;">Team 0</td>
+                                        <td colspan="1" class="k-grid-content-sticky">2</td>
+                                        <td colspan="1">1429</td>
+                                        <td colspan="1">True</td>
+                                    </tr>
+                                    <tr class="k-master-row k-alt">
+                                        <td class="k-group-cell"></td>
+                                        <td colspan="1">Employee 4</td>
+                                        <td colspan="1" class="k-grid-content-sticky" style="left: 0px; right: 0px;">Team 1</td>
+                                        <td colspan="1" class="k-grid-content-sticky">2</td>
+                                        <td colspan="1">2915</td>
+                                        <td colspan="1">True</td>
+                                    </tr>
+                                    <tr class="k-group-footer">
+                                        <td class="k-group-cell"></td>
+                                        <td></td>
+                                        <td class="k-grid-footer-sticky" style="left: 0px; right: 0px;">Team size: 7</td>
+                                        <td class="k-grid-footer-sticky"></td>
+                                        <td>Total: X</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr class="k-grouping-row">
+                                        <td colspan="6">
+                                            <p class="k-reset">
+                                                <span class="k-icon k-i-collapse"></span>
+                                                <span>Currently active projects: 5 &nbsp;</span>
+                                                <span class="warning">These people work on too many projects</span>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr class="k-master-row k-hover">
+                                        <td class="k-group-cell"></td>
+                                        <td colspan="1">Employee 1</td>
+                                        <td colspan="1" class="k-grid-content-sticky  " style="left: 0px; right: 0px;">Team 1 (Hovered)</td>
+                                        <td colspan="1" class="k-grid-content-sticky">5</td>
+                                        <td colspan="1">2307</td>
+                                        <td colspan="1">False</td>
+                                    </tr>
+                                    <tr class="k-master-row k-alt k-selected">
+                                        <td class="k-group-cell"></td>
+                                        <td colspan="1">Employee 2</td>
+                                        <td colspan="1" class="k-grid-content-sticky" style="left: 0px; right: 0px;">Team 2 (Selected)</td>
+                                        <td colspan="1" class="k-grid-content-sticky">5</td>
+                                        <td colspan="1">4225</td>
+                                        <td colspan="1">True</td>
+                                    </tr>
+                                    <tr class="k-master-row k-hover k-selected">
+                                        <td class="k-group-cell"></td>
+                                        <td colspan="1">Employee 3</td>
+                                        <td colspan="1" class="k-grid-content-sticky  " style="left: 0px; right: 0px;">Team 0 (Selected and Hovered)</td>
+                                        <td colspan="1" class="k-grid-content-sticky">5</td>
+                                        <td colspan="1">4593</td>
+                                        <td colspan="1">False</td>
+                                    </tr>
+                                    <tr class="k-master-row k-alt">
+                                        <td class="k-group-cell"></td>
+                                        <td colspan="1">Employee 5</td>
+                                        <td colspan="1" class="k-grid-content-sticky" style="left: 0px; right: 0px;">Team 2</td>
+                                        <td colspan="1" class="k-grid-content-sticky">5</td>
+                                        <td colspan="1">2906</td>
+                                        <td colspan="1">False</td>
+                                    </tr>
+                                    <tr class="k-group-footer">
+                                        <td class="k-group-cell"></td>
+                                        <td></td>
+                                        <td class="k-grid-content-sticky" style="left: 0px; right: 0px;">Team size: 18</td>
+                                        <td class="k-grid-content-sticky"></td>
+                                        <td>Total: Y</td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="k-height-container">
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

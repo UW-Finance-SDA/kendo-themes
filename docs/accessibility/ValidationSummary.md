@@ -1,8 +1,8 @@
 ---
 title: Validation Summary
-category: components
+category: accessibility
 slug: validation-summary
-position: 53
+position: 55
 ---
 # ValidationSummary Keyboard Support
 

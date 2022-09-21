@@ -1,8 +1,8 @@
 ---
 title: Upload
-category: components
+category: accessibility
 slug: upload
-position: 51
+position: 53
 ---
 # Upload Keyboard Support
 

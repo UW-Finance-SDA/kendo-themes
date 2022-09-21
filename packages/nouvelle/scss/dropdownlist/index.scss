@@ -1,9 +1,26 @@
-// Dependencies
-@import "../input/_variables.scss";
-@import "../button/_variables.scss";
+// Module meta
+$_kendo-module-meta: (
+    name: "dropdownlist",
+    dependencies: ()
+);
 
 
 // Component
 @import "_variables.scss";
 @import "_layout.scss";
 @import "_theme.scss";
+
+
+// Register
+@include module-register( $_kendo-module-meta... );
+
+
+// Expose
+@mixin dropdownlist-styles() {
+    @include module-render( "dropdownlist" ) {
+        @include kendo-dropdownlist--layout();
+        @include kendo-dropdownlist--extended-layout();
+        @include kendo-dropdownlist--theme();
+        @include kendo-dropdownlist--extended-theme();
+    }
+}

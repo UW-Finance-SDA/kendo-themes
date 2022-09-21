@@ -6,21 +6,13 @@ const glob = require("glob");
 const fse = require("fs-extra");
 const gulp = require("gulp");
 const sassdoc = require("sassdoc");
-const baka = require("@joneff/baka");
-const merge = require('lodash.merge');
-const { parse } = require('sass-variable-parser');
-const nodeSass = require("node-sass");
 const dartSass = require("sass");
-const postcss = require("postcss");
-const autoprefixer = require("autoprefixer");
-const calc = require("postcss-calc");
 
-const { sassBuild, sassCompile } = require('@progress/kendo-theme-tasks/src/build/sass-build');
 const { sassFlatten } = require('@progress/kendo-theme-tasks/src/build/sass-flatten');
-const aioImporterFactory = require('@progress/kendo-theme-tasks/lib/sassImporters/aio-importer');
 const { embedFileBase64 } = require('@progress/kendo-theme-tasks/src/embedFile');
-const { getArg, logger, colors } = require("@progress/kendo-theme-tasks/src/utils");
+const { getArg, getEnvArg, logger, colors } = require("@progress/kendo-theme-tasks/src/utils");
 const { utilsDocs } = require('@progress/kendo-theme-tasks/src/docs');
+const { createComponent } = require('@progress/kendo-theme-tasks/src/create');
 
 
 // Settings
@@ -28,111 +20,63 @@ const paths = {
     sass: {
         all: "packages/*/scss/**/*.scss",
         assets: "packages/*/scss/**/*.{png,gif,ttf,woff}",
-        themes: "packages/*",
+        themes: "packages/!(html)",
         theme: "scss/all.scss",
-        swatches: "scss/swatches/!(_)*.scss",
+        swatches: "lib/swatches/*.json",
         inline: "dist/all.scss",
         dist: "dist"
     }
 };
 
-const sassCache = new Set();
-let nodeModules = 'node_modules';
-function getNodeModules() {
-    return nodeModules;
-}
-
-const defaults = {
-
-    sassOptions: {
-        importer: [
-            aioImporterFactory({
-                cache: sassCache,
-                nodeModules: getNodeModules
-            })
-        ]
-    },
-
-    postcssOptions: {
-        implementation: postcss,
-        plugins: [
-            calc({
-                precision: 10
-            }),
-            autoprefixer()
-        ]
-    }
-};
-
-const nodeSassOptions = {
-    implementation: nodeSass
-};
-const dartSassOptions = {
-    implementation: dartSass
-};
-
-
 // #region helpers
-function buildAll( cwds, options ) {
-
-    let opts = merge( {}, defaults, options );
-
-    cwds.forEach( cwd => {
-        sassCache.clear();
-        nodeModules = path.resolve( cwd, 'node_modules' );
-
-        let file = path.resolve( cwd, opts.file );
-        let output = merge( {}, opts.output, { path: path.resolve( cwd, opts.output.path ) } );
-
-        sassBuild({ ...opts, file, output });
-    });
-}
-
-function buildSwatches( cwds, options ) {
-
-    let opts = merge( {}, defaults, options );
-
-    flattenAll( cwds, { file: paths.sass.theme, output: opts.output } );
-
-    cwds.forEach( cwd => {
-        let files = glob.sync( path.resolve( cwd, paths.sass.swatches ) );
-
-        files.forEach( file => {
-            sassCache.clear();
-            nodeModules = path.resolve( cwd, 'node_modules' );
-
-            let output = merge( {}, opts.output, { path: path.resolve( cwd, opts.output.path ) } );
-
-            sassBuild({ ...opts, file, output });
-        });
-    });
-}
-
-function compileAll( cwds, options ) {
-
-    let opts = merge( {}, defaults, options );
-
-    cwds.forEach( cwd => {
-        let files = glob.sync( path.resolve( cwd, 'scss/!(common|styling)*/_index.scss' ) );
-
-        files.forEach( file => {
-            sassCache.clear();
-            nodeModules = path.resolve( cwd, 'node_modules' );
-
-            sassCompile({ ...opts, file, });
-        });
-    });
-}
-
 function flattenAll( cwds, options ) {
 
     cwds.forEach( cwd => {
         let file = path.resolve( cwd, options.file );
-        let outFile = path.resolve( cwd, options.output.path, 'all.scss' );
+        let output = { path: path.resolve( cwd, options.output.path ), filename: 'all.scss' };
         let nodeModules = path.resolve( cwd, 'node_modules' );
 
-        sassFlatten( file, outFile, { nodeModules } );
+        if (fs.existsSync( file )) {
+            sassFlatten({ file, output, nodeModules });
+        }
     });
+}
+
+function writeSwatches( cwds, options ) {
+
+    cwds.forEach( cwd => {
+        let fileGlob = path.resolve( cwd, options.swatches ).split(path.sep).join(path.posix.sep);
+        let files = glob.sync( fileGlob );
+
+        files.forEach( file => {
+            let json = JSON.parse( fs.readFileSync( file, 'utf-8' ) );
+
+            if ( json.hidden === true ) {
+                return;
+            }
+
+            let sassFile = path.resolve( cwd, options.output.path, `${path.basename( file, '.json')}.scss` );
+            let sassContent = swatchJsonTransformer( json );
+            fs.writeFileSync( sassFile, sassContent );
+        });
+    });
+}
+
+function swatchJsonTransformer(json) {
+    const sassContent = [];
+    let { groups } = json;
+
+    groups.forEach( (group) => {
+        for ( const [ name, meta ] of Object.entries(group.variables) ) {
+            sassContent.push(`$${name}: ${meta.value};`);
+        }
+    });
+
+    sassContent.push('');
+
+    sassContent.push(`@import "all.scss";`);
+
+    return sassContent.join( '\n' );
 }
 // #endregion
 
@@ -159,92 +103,48 @@ gulp.task("assets", function() {
 // #endregion
 
 
-// #region node-sass
-gulp.task("sass", () => {
-    let file = getArg('--file') || paths.sass.theme;
+// #region dist
+function distFlat() {
+    let file = paths.sass.theme;
     let output = { path: getArg('--output-path') || paths.sass.dist };
-    let themes = glob.sync( getArg('--theme') || paths.sass.themes );
-
-    buildAll( themes, { file, output, sassOptions: nodeSassOptions } );
-
-    return Promise.resolve();
-});
-
-gulp.task("sass:watch", () => {
-    gulp.watch(paths.sass.all, gulp.series("sass"));
-});
-
-gulp.task("sass:swatches", () => {
-    let output = { path: getArg('--output-path') || paths.sass.dist };
-    let themes = glob.sync( getArg('--theme') || paths.sass.themes );
-
-    buildSwatches( themes, { output, sassOptions: nodeSassOptions } );
-
-    return Promise.resolve();
-});
-
-gulp.task("sass:flat", () => {
-    let file = getArg('--file') || paths.sass.theme;
-    let output = { path: getArg('--output-path') || paths.sass.dist };
-    let themes = glob.sync( getArg('--theme') || paths.sass.themes );
-    let inline = paths.sass.inline;
+    let themes = glob.sync( getArg('--theme') || paths.sass.themes, {
+        ignore: [
+            'packages/fluent'
+        ]
+    });
 
     flattenAll( themes, { file, output } );
-    buildAll( themes, { file: inline, output, sassOptions: nodeSassOptions } );
 
     return Promise.resolve();
-});
+}
+gulp.task("dist:flat", distFlat);
 
-gulp.task("sass:standalone", () => {
-    let themes = glob.sync( getArg('--theme') || paths.sass.themes );
-    compileAll( themes, { sassOptions: nodeSassOptions } );
-
-    return Promise.resolve();
-});
-// #endregion
-
-
-// #region dart-sass
-gulp.task("dart", () => {
-    let file = getArg('--file') || paths.sass.theme;
+function distSwatches() {
+    let file = paths.sass.theme;
     let output = { path: getArg('--output-path') || paths.sass.dist };
     let themes = glob.sync( getArg('--theme') || paths.sass.themes );
-
-    buildAll( themes, { file, output, sassOptions: dartSassOptions } );
-
-    return Promise.resolve();
-});
-
-gulp.task("dart:watch", () => {
-    gulp.watch(paths.sass.all, gulp.series("dart"));
-});
-
-gulp.task("dart:swatches", () => {
-    let output = { path: getArg('--output-path') || paths.sass.dist };
-    let themes = glob.sync( getArg('--theme') || paths.sass.themes );
-
-    buildSwatches( themes, { output, sassOptions: dartSassOptions } );
-
-    return Promise.resolve();
-});
-
-gulp.task("dart:flat", () => {
-    let file = getArg('--file') || paths.sass.theme;
-    let output = { path: getArg('--output-path') || paths.sass.dist };
-    let themes = glob.sync( getArg('--theme') || paths.sass.themes );
-    let inline = paths.sass.inline;
+    let swatches = paths.sass.swatches;
 
     flattenAll( themes, { file, output } );
-    buildAll( themes, { file: inline, output, sassOptions: dartSassOptions } );
+    writeSwatches( themes, { swatches, output } );
 
     return Promise.resolve();
-});
+}
+gulp.task("dist:swatches", distSwatches);
 // #endregion
 
 
 // #region docs
 gulp.task("docs", () => {
-    let themes = glob.sync(paths.sass.themes);
+    let themes = glob.sync(paths.sass.themes, {
+        ignore: [
+            'packages/fluent',
+            'packages/utils'
+        ]
+    });
+
+    distFlat();
+    resolveVars();
 
     return Promise.all(
         themes.map( theme => {
@@ -253,19 +153,13 @@ gulp.task("docs", () => {
                 return Promise.resolve();
             }
 
-            // Temporary workaround before we move docs generation to theme-tasks
-            let themeFiles = glob.sync(theme + "/scss/**/*.scss");
-
-            if ( theme === './packages/default' ) {
-                themeFiles = themeFiles.filter(function(item) {
-                    return !item.startsWith("./packages/default/scss/utils/_");
-                });
-            }
+            let themeFiles = glob.sync(theme + "/dist/all.scss");
 
             let sassdocrc = JSON.parse( fs.readFileSync( path.join(theme, ".sassdocrc"), "utf8" ) );
             return sassdoc(themeFiles, {
-                dest: path.join(theme, "/.tmp/docs"),
-                dist: path.join(theme, "/docs"),
+                json: path.join(theme, "dist", 'variables.json'),
+                dest: path.join(theme, ".tmp"),
+                dist: path.join(theme, "docs"),
                 theme: "./docs/sassdoc-theme.js",
                 meta: sassdocrc.meta,
                 groups: {
@@ -281,7 +175,7 @@ gulp.task("docs", () => {
 gulp.task("docs:check", function() {
     //git diff --exit-code --quiet -- docs/
     return gulp.task("docs")().then(function() {
-        let status = cp.spawnSync("git", [ "diff", "--exit-code", "--quiet", "--", "**/docs/*" ]) .status;
+        let status = cp.spawnSync("git", [ "diff", "--exit-code", "--quiet", "--", "**/docs/*" ]).status;
 
         if (status !== 0) {
             throw new Error("Docs are out of date");
@@ -302,38 +196,68 @@ gulp.task("utils-docs", () => {
 });
 // #endregion
 
+// #region Components
 
-gulp.task("resolve-vars", () => {
-    let themes = glob.sync(paths.sass.themes);
+/**
+ * A task that creates all the needed files for a new component.
+ *
+ * @example npm run create-component --name=accordion
+ * @example gulp create-component --name accordion
+ *
+ * @param {string} [name] - The name of the new component.
+ */
+gulp.task("create-component", function( done ) {
+    const name = getArg('--name') || getEnvArg('name') || null;
+
+    createComponent({ name });
+    done();
+});
+
+// #endregion
+
+function resolveVars() {
+    let themes = glob.sync(paths.sass.themes, {
+        ignore: [
+            'packages/fluent',
+            'packages/utils'
+        ]
+    });
     const cwd = process.cwd();
 
+    distFlat();
+
     themes.forEach( theme => {
-        let variablesJson = path.resolve( cwd, `${theme}/.tmp/variables.json` );
-        let variablesScss = path.resolve( cwd, `${theme}/.tmp/variables.scss` );
+        let variablesJson = path.resolve( cwd, `${theme}/dist/variables.json` );
+        let variablesScss = path.resolve( cwd, `${theme}/dist/variables.scss` );
+        let content = {};
 
         fse.ensureFileSync( variablesJson );
-        fse.ensureFileSync( variablesScss );
+        fse.copyFileSync('./lib/variables.scss', variablesScss );
 
-        baka.compile(
-            path.join( cwd, `${theme}/scss/_variables.scss` ),
-            variablesScss,
-            {
-                nodeModules: `${theme}/node_modules`
-            }
-        );
+        dartSass.compile(variablesScss, {
+            functions: {
+                'k-resolve-var($key, $type, $value)': (args) => {
+                    const _key = args[0].toString();
+                    const _type = args[1].toString();
+                    const _val = args[2].toString();
 
-        let content = fs.readFileSync( variablesScss, 'utf-8' );
+                    content[_key] = {
+                        type: _type,
+                        value: _val
+                    };
 
-        content = content.replace(/ url\("data.*?\)/g, 'none');
-        content = content.replace(/\/\/.*/gm, '');
-        content = content.replace(/\n/gm, '');
-        content = content.replace(/;/gm, ';\n');
+                    return new dartSass.SassString('');
+                }
+            },
+            logger: dartSass.Logger.silent
+        });
 
-        const variables = parse( content, { camelCase: false } );
-
-        fs.writeFileSync( variablesJson, JSON.stringify( variables, null, 4 ) );
+        fs.writeFileSync( variablesJson, JSON.stringify( content, null, 4 ) );
 
     });
 
     return Promise.resolve();
-});
+}
+gulp.task('resolve-vars', resolveVars);
+
+module.exports.resolveVars = resolveVars;

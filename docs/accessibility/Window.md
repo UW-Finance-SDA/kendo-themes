@@ -1,8 +1,8 @@
 ---
 title: Window
-category: components
+category: accessibility
 slug: window
-position: 55
+position: 57
 ---
 # Window Keyboard Support
 

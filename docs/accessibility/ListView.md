@@ -1,8 +1,8 @@
 ---
 title: List View
-category: components
+category: accessibility
 slug: list-view
-position: 23
+position: 24
 ---
 # ListView Keyboard Support
 

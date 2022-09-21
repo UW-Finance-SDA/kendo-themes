@@ -1,6 +1,8 @@
 // Chat
 $chat-padding-x: 16px !default;
 $chat-padding-y: 16px !default;
+$chat-width: 500px !default;
+$chat-height: 600px !default;
 $chat-border-width: 1px !default;
 $chat-font-family: $font-family !default;
 $chat-font-size: $font-size !default;
@@ -30,13 +32,10 @@ $chat-bubble-border-radius-sm: 2px !default;
 $chat-avatar-size: 32px !default;
 $chat-avatar-spacing: $chat-item-spacing-x !default;
 
-$chat-message-box-padding-x: $chat-padding-x !default;
-$chat-message-box-padding-y: 10px !default;
-
-$chat-toolbar-padding-x: $chat-padding-x !default;
-$chat-toolbar-padding-y: 10px !default;
-$chat-toolbar-spacing: 20px !default;
-$chat-toolbar-bg: try-shade( $button-bg, .5 ) !default;
+$chat-toolbar-padding-x: $toolbar-padding-x !default;
+$chat-toolbar-padding-y: $toolbar-padding-y !default;
+$chat-toolbar-spacing: $toolbar-spacing !default;
+$chat-toolbar-bg: try-shade( $kendo-button-bg, .5 ) !default;
 $chat-toolbar-text: $toolbar-text !default;
 $chat-toolbar-border: inherit !default;
 
@@ -71,15 +70,3 @@ $chat-quick-reply-border: $primary !default;
 $chat-quick-reply-hover-bg: $primary !default;
 $chat-quick-reply-hover-text: $primary-contrast !default;
 $chat-quick-reply-hover-border: $primary !default;
-
-$chat-message-box-bg: white !default;
-$chat-message-box-text: $input-text !default;
-$chat-message-box-border: inherit !default;
-$chat-message-box-focus-shadow: 0 0 40px rgba( $input-text, .1 ) !default;
-
-$chat-message-box-button-hover-text: $primary !default;
-
-$chat-toolbar-box-button-hover-text: $primary !default;
-$chat-toolbar-box-button-hover-bg: none !default;
-
-$chat-toolbar-box-scroll-button-shadow: 0 0 20px 5px $chat-bg !default;

@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en" class="k-no-animations" style="--kendo-scrollbar-width:15px;">
+<head>
+    <title>Chip Size Rounded</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" data-role="kendo-theme" href="/packages/default/dist/all.css">
+    <link rel="stylesheet" href="/packages/html/assets/styles.css">
+    <script src="/packages/html/assets/scripts.js"></script>
+</head>
+<body id="app" class="k-body">
+    <style>
+        #test-area {
+            gap: 10px;
+            grid-template-columns: 120px repeat(3, 1fr);
+        }
+
+    </style>
+    <div id="test-area" class="k-d-grid">
+        <span>
+            <small>rounded / size</small>
+        </span>
+        <span>small</span>
+        <span>medium</span>
+        <span>large</span>
+        <span>none</span>
+        <span>
+            <div class="k-chip k-chip-sm k-chip-solid k-chip-solid-base">
+                <span class="k-chip-content">
+                    <span class="k-chip-label k-text-ellipsis">Text</span>
+                </span>
+            </div>
+        </span>
+        <span>
+            <div class="k-chip k-chip-md k-chip-solid k-chip-solid-base">
+                <span class="k-chip-content">
+                    <span class="k-chip-label k-text-ellipsis">Text</span>
+                </span>
+            </div>
+        </span>
+        <span>
+            <div class="k-chip k-chip-lg k-chip-solid k-chip-solid-base">
+                <span class="k-chip-content">
+                    <span class="k-chip-label k-text-ellipsis">Text</span>
+                </span>
+            </div>
+        </span>
+        <span>^ icon</span>
+        <span>
+            <div class="k-chip k-chip-sm k-chip-solid k-chip-solid-base">
+                <span class="k-chip-icon k-icon k-i-map-marker-target"></span>
+                <span class="k-chip-content">
+                    <span class="k-chip-label k-text-ellipsis">Text</span>
+                </span>
+            </div>
+        </span>
+        <span>
+            <div class="k-chip k-chip-md k-chip-solid k-chip-solid-base">
+                <span class="k-chip-icon k-icon k-i-map-marker-target"></span>
+                <span class="k-chip-content">
+                    <span class="k-chip-label k-text-ellipsis">Text</span>
+                </span>
+            </div>
+        </span>
+        <span>
+            <div class="k-chip k-chip-lg k-chip-solid k-chip-solid-base">
+                <span class="k-chip-icon k-icon k-i-map-marker-target"></span>
+                <span class="k-chip-content">
+                    <span class="k-chip-label k-text-ellipsis">Text</span>
+                </span>
+            </div>
+        </span>
+        <span>^ avatar</span>
+        <span>
+            <div class="k-chip k-chip-sm k-chip-solid k-chip-solid-base">
+                <div class="k-avatar k-rounded-full k-avatar-md k-avatar-solid k-avatar-solid-primary k-chip-avatar">
+                    <span class="k-avatar-image">
+                        <img src="/packages/html/assets/avatar.jpg">
+                    </span>
+                </div>
+                <span class="k-chip-content">
+                    <span class="k-chip-label k-text-ellipsis">Text</span>
+                </span>
+            </div>
+        </span>
+        <span>
+            <div class="k-chip k-chip-md k-chip-solid k-chip-solid-base">
+                <div class="k-avatar k-rounded-full k-avatar-md k-avatar-solid k-avatar-solid-primary k-chip-avatar">
+                    <span class="k-avatar-image">
+                        <img src="/packages/html/assets/avatar.jpg">
+                    </span>
+                </div>
+                <span class="k-chip-content">
+                    <span class="k-chip-label k-text-ellipsis">Text</span>
+                </span>
+            </div>
+        </span>
+        <span>
+            <div class="k-chip k-chip-lg k-chip-solid k-chip-solid-base">
+                <div class="k-avatar k-rounded-full k-avatar-md k-avatar-solid k-avatar-solid-primary k-chip-avatar">
+                    <span class="k-avatar-image">
+                        <img src="/packages/html/assets/avatar.jpg">
+                    </span>
+                </div>
+                <span class="k-chip-content">
+                    <span class="k-chip-label k-text-ellipsis">Text</span>
+                </span>
+            </div>
+        </span>
+        <span>small</span>
+        <span>
+            <div class="k-chip k-chip-sm k-chip-solid k-chip-solid-base k-rounded-sm">
+                <span class="k-chip-content">
+                    <span class="k-chip-label k-text-ellipsis">Text</span>
+                </span>
+            </div>
+        </span>
+        <span>
+            <div class="k-chip k-chip-md k-chip-solid k-chip-solid-base k-rounded-sm">
+                <span class="k-chip-content">
+                    <span class="k-chip-label k-text-ellipsis">Text</span>
+                </span>
+            </div>
+        </span>
+        <span>
+            <div class="k-chip k-chip-lg k-chip-solid k-chip-solid-base k-rounded-sm">
+                <span class="k-chip-content">
+                    <span class="k-chip-label k-text-ellipsis">Text</span>
+                </span>
+            </div>
+        </span>
+        <span>^ icon</span>
+        <span>
+            <div class="k-chip k-chip-sm k-chip-solid k-chip-solid-base k-rounded-sm">
+                <span class="k-chip-icon k-icon k-i-map-marker-target"></span>
+                <span class="k-chip-content">
+                    <span class="k-chip-label k-text-ellipsis">Text</span>
+                </span>
+            </div>
+        </span>
+        <span>
+            <div class="k-chip k-chip-md k-chip-solid k-chip-solid-base k-rounded-sm">
+                <span class="k-chip-icon k-icon k-i-map-marker-target"></span>
+                <span class="k-chip-content">
+                    <span class="k-chip-label k-text-ellipsis">Text</span>
+                </span>
+            </div>
+        </span>
+        <span>
+            <div class="k-chip k-chip-lg k-chip-solid k-chip-solid-base k-rounded-sm">
+                <span class="k-chip-icon k-icon k-i-map-marker-target"></span>
+                <span class="k-chip-content">
+                    <span class="k-chip-label k-text-ellipsis">Text</span>
+                </span>
+            </div>
+        </span>
+        <span>^ avatar</span>
+        <span>
+            <div class="k-chip k-chip-sm k-chip-solid k-chip-solid-base k-rounded-sm">
+                <div class="k-avatar k-rounded-full k-avatar-md k-avatar-solid k-avatar-solid-primary k-chip-avatar">
+                    <span class="k-avatar-image">
+                        <img src="/packages/html/assets/avatar.jpg">
+                    </span>
+                </div>
+                <span class="k-chip-content">
+                    <span class="k-chip-label k-text-ellipsis">Text</span>
+                </span>
+            </div>
+        </span>
+        <span>
+            <div class="k-chip k-chip-md k-chip-solid k-chip-solid-base k-rounded-sm">
+                <div class="k-avatar k-rounded-full k-avatar-md k-avatar-solid k-avatar-solid-primary k-chip-avatar">
+                    <span class="k-avatar-image">
+                        <img src="/packages/html/assets/avatar.jpg">
+                    </span>
+                </div>
+                <span class="k-chip-content">
+                    <span class="k-chip-label k-text-ellipsis">Text</span>
+                </span>
+            </div>
+        </span>
+        <span>
+            <div class="k-chip k-chip-lg k-chip-solid k-chip-solid-base k-rounded-sm">
+                <div class="k-avatar k-rounded-full k-avatar-md k-avatar-solid k-avatar-solid-primary k-chip-avatar">
+                    <span class="k-avatar-image">
+                        <img src="/packages/html/assets/avatar.jpg">
+                    </span>
+                </div>
+                <span class="k-chip-content">
+                    <span class="k-chip-label k-text-ellipsis">Text</span>
+                </span>
+            </div>
+        </span>
+        <span>medium</span>
+        <span>
+            <div class="k-chip k-chip-sm k-chip-solid k-chip-solid-base k-rounded-md">
+                <span class="k-chip-content">
+                    <span class="k-chip-label k-text-ellipsis">Text</span>
+                </span>
+            </div>
+        </span>
+        <span>
+            <div class="k-chip k-chip-md k-chip-solid k-chip-solid-base k-rounded-md">
+                <span class="k-chip-content">
+                    <span class="k-chip-label k-text-ellipsis">Text</span>
+                </span>
+            </div>
+        </span>
+        <span>
+            <div class="k-chip k-chip-lg k-chip-solid k-chip-solid-base k-rounded-md">
+                <span class="k-chip-content">
+                    <span class="k-chip-label k-text-ellipsis">Text</span>
+                </span>
+            </div>
+        </span>
+        <span>^ icon</span>
+        <span>
+            <div class="k-chip k-chip-sm k-chip-solid k-chip-solid-base k-rounded-md">
+                <span class="k-chip-icon k-icon k-i-map-marker-target"></span>
+                <span class="k-chip-content">
+                    <span class="k-chip-label k-text-ellipsis">Text</span>
+                </span>
+            </div>
+        </span>
+        <span>
+            <div class="k-chip k-chip-md k-chip-solid k-chip-solid-base k-rounded-md">
+                <span class="k-chip-icon k-icon k-i-map-marker-target"></span>
+                <span class="k-chip-content">
+                    <span class="k-chip-label k-text-ellipsis">Text</span>
+                </span>
+            </div>
+        </span>
+        <span>
+            <div class="k-chip k-chip-lg k-chip-solid k-chip-solid-base k-rounded-md">
+                <span class="k-chip-icon k-icon k-i-map-marker-target"></span>
+                <span class="k-chip-content">
+                    <span class="k-chip-label k-text-ellipsis">Text</span>
+                </span>
+            </div>
+        </span>
+        <span>^ avatar</span>
+        <span>
+            <div class="k-chip k-chip-sm k-chip-solid k-chip-solid-base k-rounded-md">
+                <div class="k-avatar k-rounded-full k-avatar-md k-avatar-solid k-avatar-solid-primary k-chip-avatar">
+                    <span class="k-avatar-image">
+                        <img src="/packages/html/assets/avatar.jpg">
+                    </span>
+                </div>
+                <span class="k-chip-content">
+                    <span class="k-chip-label k-text-ellipsis">Text</span>
+                </span>
+            </div>
+        </span>
+        <span>
+            <div class="k-chip k-chip-md k-chip-solid k-chip-solid-base k-rounded-md">
+                <div class="k-avatar k-rounded-full k-avatar-md k-avatar-solid k-avatar-solid-primary k-chip-avatar">
+                    <span class="k-avatar-image">
+                        <img src="/packages/html/assets/avatar.jpg">
+                    </span>
+                </div>
+                <span class="k-chip-content">
+                    <span class="k-chip-label k-text-ellipsis">Text</span>
+                </span>
+            </div>
+        </span>
+        <span>
+            <div class="k-chip k-chip-lg k-chip-solid k-chip-solid-base k-rounded-md">
+                <div class="k-avatar k-rounded-full k-avatar-md k-avatar-solid k-avatar-solid-primary k-chip-avatar">
+                    <span class="k-avatar-image">
+                        <img src="/packages/html/assets/avatar.jpg">
+                    </span>
+                </div>
+                <span class="k-chip-content">
+                    <span class="k-chip-label k-text-ellipsis">Text</span>
+                </span>
+            </div>
+        </span>
+        <span>large</span>
+        <span>
+            <div class="k-chip k-chip-sm k-chip-solid k-chip-solid-base k-rounded-lg">
+                <span class="k-chip-content">
+                    <span class="k-chip-label k-text-ellipsis">Text</span>
+                </span>
+            </div>
+        </span>
+        <span>
+            <div class="k-chip k-chip-md k-chip-solid k-chip-solid-base k-rounded-lg">
+                <span class="k-chip-content">
+                    <span class="k-chip-label k-text-ellipsis">Text</span>
+                </span>
+            </div>
+        </span>
+        <span>
+            <div class="k-chip k-chip-lg k-chip-solid k-chip-solid-base k-rounded-lg">
+                <span class="k-chip-content">
+                    <span class="k-chip-label k-text-ellipsis">Text</span>
+                </span>
+            </div>
+        </span>
+        <span>^ icon</span>
+        <span>
+            <div class="k-chip k-chip-sm k-chip-solid k-chip-solid-base k-rounded-lg">
+                <span class="k-chip-icon k-icon k-i-map-marker-target"></span>
+                <span class="k-chip-content">
+                    <span class="k-chip-label k-text-ellipsis">Text</span>
+                </span>
+            </div>
+        </span>
+        <span>
+            <div class="k-chip k-chip-md k-chip-solid k-chip-solid-base k-rounded-lg">
+                <span class="k-chip-icon k-icon k-i-map-marker-target"></span>
+                <span class="k-chip-content">
+                    <span class="k-chip-label k-text-ellipsis">Text</span>
+                </span>
+            </div>
+        </span>
+        <span>
+            <div class="k-chip k-chip-lg k-chip-solid k-chip-solid-base k-rounded-lg">
+                <span class="k-chip-icon k-icon k-i-map-marker-target"></span>
+                <span class="k-chip-content">
+                    <span class="k-chip-label k-text-ellipsis">Text</span>
+                </span>
+            </div>
+        </span>
+        <span>^ avatar</span>
+        <span>
+            <div class="k-chip k-chip-sm k-chip-solid k-chip-solid-base k-rounded-lg">
+                <div class="k-avatar k-rounded-full k-avatar-md k-avatar-solid k-avatar-solid-primary k-chip-avatar">
+                    <span class="k-avatar-image">
+                        <img src="/packages/html/assets/avatar.jpg">
+                    </span>
+                </div>
+                <span class="k-chip-content">
+                    <span class="k-chip-label k-text-ellipsis">Text</span>
+                </span>
+            </div>
+        </span>
+        <span>
+            <div class="k-chip k-chip-md k-chip-solid k-chip-solid-base k-rounded-lg">
+                <div class="k-avatar k-rounded-full k-avatar-md k-avatar-solid k-avatar-solid-primary k-chip-avatar">
+                    <span class="k-avatar-image">
+                        <img src="/packages/html/assets/avatar.jpg">
+                    </span>
+                </div>
+                <span class="k-chip-content">
+                    <span class="k-chip-label k-text-ellipsis">Text</span>
+                </span>
+            </div>
+        </span>
+        <span>
+            <div class="k-chip k-chip-lg k-chip-solid k-chip-solid-base k-rounded-lg">
+                <div class="k-avatar k-rounded-full k-avatar-md k-avatar-solid k-avatar-solid-primary k-chip-avatar">
+                    <span class="k-avatar-image">
+                        <img src="/packages/html/assets/avatar.jpg">
+                    </span>
+                </div>
+                <span class="k-chip-content">
+                    <span class="k-chip-label k-text-ellipsis">Text</span>
+                </span>
+            </div>
+        </span>
+        <span>full</span>
+        <span>
+            <div class="k-chip k-chip-sm k-chip-solid k-chip-solid-base k-rounded-full">
+                <span class="k-chip-content">
+                    <span class="k-chip-label k-text-ellipsis">Text</span>
+                </span>
+            </div>
+        </span>
+        <span>
+            <div class="k-chip k-chip-md k-chip-solid k-chip-solid-base k-rounded-full">
+                <span class="k-chip-content">
+                    <span class="k-chip-label k-text-ellipsis">Text</span>
+                </span>
+            </div>
+        </span>
+        <span>
+            <div class="k-chip k-chip-lg k-chip-solid k-chip-solid-base k-rounded-full">
+                <span class="k-chip-content">
+                    <span class="k-chip-label k-text-ellipsis">Text</span>
+                </span>
+            </div>
+        </span>
+        <span>^ icon</span>
+        <span>
+            <div class="k-chip k-chip-sm k-chip-solid k-chip-solid-base k-rounded-full">
+                <span class="k-chip-icon k-icon k-i-map-marker-target"></span>
+                <span class="k-chip-content">
+                    <span class="k-chip-label k-text-ellipsis">Text</span>
+                </span>
+            </div>
+        </span>
+        <span>
+            <div class="k-chip k-chip-md k-chip-solid k-chip-solid-base k-rounded-full">
+                <span class="k-chip-icon k-icon k-i-map-marker-target"></span>
+                <span class="k-chip-content">
+                    <span class="k-chip-label k-text-ellipsis">Text</span>
+                </span>
+            </div>
+        </span>
+        <span>
+            <div class="k-chip k-chip-lg k-chip-solid k-chip-solid-base k-rounded-full">
+                <span class="k-chip-icon k-icon k-i-map-marker-target"></span>
+                <span class="k-chip-content">
+                    <span class="k-chip-label k-text-ellipsis">Text</span>
+                </span>
+            </div>
+        </span>
+        <span>^ avatar</span>
+        <span>
+            <div class="k-chip k-chip-sm k-chip-solid k-chip-solid-base k-rounded-full">
+                <div class="k-avatar k-rounded-full k-avatar-md k-avatar-solid k-avatar-solid-primary k-chip-avatar">
+                    <span class="k-avatar-image">
+                        <img src="/packages/html/assets/avatar.jpg">
+                    </span>
+                </div>
+                <span class="k-chip-content">
+                    <span class="k-chip-label k-text-ellipsis">Text</span>
+                </span>
+            </div>
+        </span>
+        <span>
+            <div class="k-chip k-chip-md k-chip-solid k-chip-solid-base k-rounded-full">
+                <div class="k-avatar k-rounded-full k-avatar-md k-avatar-solid k-avatar-solid-primary k-chip-avatar">
+                    <span class="k-avatar-image">
+                        <img src="/packages/html/assets/avatar.jpg">
+                    </span>
+                </div>
+                <span class="k-chip-content">
+                    <span class="k-chip-label k-text-ellipsis">Text</span>
+                </span>
+            </div>
+        </span>
+        <span>
+            <div class="k-chip k-chip-lg k-chip-solid k-chip-solid-base k-rounded-full">
+                <div class="k-avatar k-rounded-full k-avatar-md k-avatar-solid k-avatar-solid-primary k-chip-avatar">
+                    <span class="k-avatar-image">
+                        <img src="/packages/html/assets/avatar.jpg">
+                    </span>
+                </div>
+                <span class="k-chip-content">
+                    <span class="k-chip-label k-text-ellipsis">Text</span>
+                </span>
+            </div>
+        </span>
+    </div>
+</body>
+</html>

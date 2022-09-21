@@ -1,8 +1,8 @@
 ---
 title: Range Slider
-category: components
+category: accessibility
 slug: range-slider
-position: 35
+position: 37
 ---
 # RangeSlider Keyboard Support
 

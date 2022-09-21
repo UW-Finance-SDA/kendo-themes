@@ -8,18 +8,18 @@ $scheduler-bg: $component-bg !default;
 $scheduler-text: $component-text !default;
 $scheduler-border: $component-border !default;
 
-$scheduler-toolbar-bg: try-shade( $button-bg, .5 ) !default;
+$scheduler-toolbar-bg: try-shade( $kendo-button-bg, .5 ) !default;
 $scheduler-toolbar-text: null !default;
 $scheduler-toolbar-border: null !default;
 $scheduler-toolbar-gradient: null !default;
 
-$scheduler-footer-bg: try-shade( $button-bg, .5 ) !default;
+$scheduler-footer-bg: try-shade( $kendo-button-bg, .5 ) !default;
 $scheduler-footer-text: null !default;
 $scheduler-footer-border: null !default;
 $scheduler-footer-gradient: null !default;
 
 $scheduler-event-min-height: 25px !default;
-$scheduler-event-border-radius: $border-radius !default;
+$scheduler-event-border-radius: $kendo-border-radius-md !default;
 $scheduler-event-line-height: calc( #{$scheduler-event-min-height} - (2 * #{$padding-y-sm}) ) !default;
 
 $scheduler-event-bg: $primary !default;
@@ -40,6 +40,10 @@ $scheduler-event-selected-border: null !default;
 $scheduler-event-selected-gradient: null !default;
 $scheduler-event-selected-shadow: $box-shadow-depth-3 !default;
 
+$scheduler-event-ongoing-shadow: inset 0px 0px 0px 1px #ff0000 !default;
+
+$scheduler-cell-padding-x: map-get( $spacing, 2 ) !default;
+$scheduler-cell-padding-y: map-get( $spacing, 2 ) !default;
 $scheduler-cell-height: $line-height * 1rem !default;
 $scheduler-datecolumn-width: 12rem !default;
 $scheduler-timecolumn-width: 11rem !default;
@@ -57,11 +61,6 @@ $scheduler-othermonth-text: null !default;
 
 $scheduler-yearview-padding-x: map-get( $spacing, 5 ) !default;
 $scheduler-yearview-padding-y: $scheduler-yearview-padding-x !default;
-
-$scheduler-yearview-month-header-font-weight: bold !default;
-$scheduler-yearview-month-header-font-size: inherit !default;
-$scheduler-yearview-month-header-opacity: 1 !default;
-$scheduler-yearview-month-header-text: $base-text !default;
 
 $scheduler-yearview-calendar-gap: map-get( $spacing, 5 ) !default;
 
@@ -89,7 +88,7 @@ $scheduler-tooltip-events-gap: $padding-y !default;
 
 $scheduler-tooltip-event-padding-x: $padding-x-sm !default;
 $scheduler-tooltip-event-padding-y: map-get( $spacing, 2 ) !default;
-$scheduler-tooltip-event-border-radius: $border-radius !default;
-$scheduler-tooltip-event-gap: $padding-x-sm  !default;
+$scheduler-tooltip-event-border-radius: $kendo-border-radius-md !default;
+$scheduler-tooltip-event-gap: $padding-x-sm !default;
 
 $scheduler-tooltip-callout-text: $scheduler-tooltip-bg !default;

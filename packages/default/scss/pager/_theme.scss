@@ -1,12 +1,18 @@
 @include exports("pager/theme") {
 
-    .k-pager-wrap {
-        @extend .k-text-selection !optional;
+    .k-pager-wrap,
+    .k-pager {
         @include fill(
             $pager-text,
             $pager-bg,
             $pager-border
         );
+
+        &:focus,
+        &.k-focus {
+            @include fill( $bg: $pager-focus-bg );
+            @include box-shadow( $pager-focus-shadow );
+        }
     }
 
 
@@ -18,7 +24,7 @@
         );
 
         &:hover,
-        &.k-state-hover {
+        &.k-hover {
             @include fill(
                 $pager-item-hover-text,
                 $pager-item-hover-bg,
@@ -26,7 +32,7 @@
             );
         }
 
-        &.k-state-selected {
+        &.k-selected {
             @include fill(
                 $pager-item-selected-text,
                 $pager-item-selected-bg,
@@ -35,7 +41,7 @@
         }
 
         &:focus,
-        &.k-state-focus {
+        &.k-focus {
             background-color: $pager-item-focus-bg;
             @include box-shadow( $pager-item-focus-shadow );
         }
@@ -58,7 +64,7 @@
             );
 
             &:hover,
-            &.k-state-hover {
+            &.k-hover {
                 @include fill(
                     $pager-number-hover-text,
                     $pager-number-hover-bg,
@@ -67,12 +73,12 @@
             }
 
             &:focus,
-            &.k-state-focus {
+            &.k-focus {
                 background-color: $pager-number-focus-bg;
                 @include box-shadow( $pager-number-focus-shadow );
             }
 
-            &.k-state-selected {
+            &.k-selected {
                 @include fill(
                     $pager-number-selected-text,
                     $pager-number-selected-bg,
@@ -90,7 +96,6 @@
 
 
 
-
     // Responsive
     .k-pager-md,
     .k-pager-sm {
@@ -105,7 +110,7 @@
                 );
 
                 &:hover,
-                &.k-state-hover {
+                &.k-hover {
                     @include fill(
                         $dropdownlist-hovered-text,
                         $dropdownlist-hovered-bg,
@@ -114,7 +119,7 @@
                 }
             }
 
-            &.k-state-expanded {
+            &.k-expanded {
                 @include fill(
                     $popup-text,
                     $popup-bg,
@@ -125,18 +130,18 @@
                 .k-link {
 
                     &:hover,
-                    &.k-state-hover {
+                    &.k-hover {
                         @include fill(
-                            $list-item-hovered-text,
-                            $list-item-hovered-bg
-                        )
+                            $kendo-list-item-hover-text,
+                            $kendo-list-item-hover-bg
+                        );
                     }
 
-                    &.k-state-selected {
+                    &.k-selected {
                         @include fill(
-                            $list-item-selected-text,
-                            $list-item-selected-bg
-                        )
+                            $kendo-list-item-selected-text,
+                            $kendo-list-item-selected-bg
+                        );
                     }
 
                 }

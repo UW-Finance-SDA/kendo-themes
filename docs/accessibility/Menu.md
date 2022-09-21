@@ -1,8 +1,8 @@
 ---
 title: Menu
-category: components
+category: accessibility
 slug: menu
-position: 27
+position: 29
 ---
 # Menu Keyboard Support
 

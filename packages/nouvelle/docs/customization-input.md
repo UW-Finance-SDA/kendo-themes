@@ -26,90 +26,180 @@ The following table lists the available variables for customization.
 </thead>
 <tbody>
         <tr>
-    <td>$input-bg</td>
-    <td></td>
-    <td>$component-bg</td>
-    <td></td>
+    <td>$kendo-input-bg</td>
+    <td>Color</td>
+<td>
+
+`$component-bg`
+
+</td>
+<td>
+
+<span class="color-preview" style="background-color: #ffffff"></span>
+
+`#ffffff`
+
+</td>
 </tr>
 <tr>
     <td colspan="4" class="theme-variables-description-container"><div><b>Description</b><div class="theme-variables-description">The background of the input.</div></div>
     </td>
 </tr>
 <tr>
-    <td>$input-text</td>
-    <td></td>
-    <td>$component-text</td>
-    <td></td>
+    <td>$kendo-input-text</td>
+    <td>Color</td>
+<td>
+
+`$component-text`
+
+</td>
+<td>
+
+<span class="color-preview" style="background-color: #656565"></span>
+
+`#656565`
+
+</td>
 </tr>
 <tr>
     <td colspan="4" class="theme-variables-description-container"><div><b>Description</b><div class="theme-variables-description">The text color of the input.</div></div>
     </td>
 </tr>
 <tr>
-    <td>$input-border</td>
-    <td></td>
-    <td>$interactive-border</td>
-    <td>rgba( black, .08 )</td>
+    <td>$kendo-input-border</td>
+    <td>Color</td>
+<td>
+
+`$component-border`
+
+</td>
+<td>
+
+<span class="color-preview" style="background-color: rgba(0, 0, 0, 0.08)"></span>
+
+`rgba(0, 0, 0, 0.08)`
+
+</td>
 </tr>
 <tr>
     <td colspan="4" class="theme-variables-description-container"><div><b>Description</b><div class="theme-variables-description">The border color of the input.</div></div>
     </td>
 </tr>
 <tr>
-    <td>$input-hover-bg</td>
-    <td></td>
-    <td>$input-bg</td>
-    <td></td>
+    <td>$kendo-input-hover-bg</td>
+    <td>Color</td>
+<td>
+
+`$kendo-input-bg`
+
+</td>
+<td>
+
+<span class="color-preview" style="background-color: #ffffff"></span>
+
+`#ffffff`
+
+</td>
 </tr>
 <tr>
     <td colspan="4" class="theme-variables-description-container"><div><b>Description</b><div class="theme-variables-description">The background of hovered input.</div></div>
     </td>
 </tr>
 <tr>
-    <td>$input-hover-text</td>
-    <td></td>
-    <td>$input-text</td>
-    <td></td>
+    <td>$kendo-input-hover-text</td>
+    <td>Color</td>
+<td>
+
+`$kendo-input-text`
+
+</td>
+<td>
+
+<span class="color-preview" style="background-color: #656565"></span>
+
+`#656565`
+
+</td>
 </tr>
 <tr>
     <td colspan="4" class="theme-variables-description-container"><div><b>Description</b><div class="theme-variables-description">The text color of hovered input.</div></div>
     </td>
 </tr>
 <tr>
-    <td>$input-hover-border</td>
-    <td></td>
-    <td>$hover-border</td>
-    <td>rgba( black, .15 )</td>
+    <td>$kendo-input-hover-border</td>
+    <td>Color</td>
+<td>
+
+`try-shade( $kendo-input-border, 1 )`
+
+</td>
+<td>
+
+<span class="color-preview" style="background-color: rgba(0, 0, 0, 0.1536)"></span>
+
+`rgba(0, 0, 0, 0.1536)`
+
+</td>
 </tr>
 <tr>
     <td colspan="4" class="theme-variables-description-container"><div><b>Description</b><div class="theme-variables-description">The border color of hovered input.</div></div>
     </td>
 </tr>
 <tr>
-    <td>$input-focus-text</td>
-    <td></td>
-    <td>$input-text</td>
-    <td></td>
-</tr>
-<tr>
-    <td colspan="4" class="theme-variables-description-container"><div><b>Description</b><div class="theme-variables-description">The text color of focus input.</div></div>
-    </td>
-</tr>
-<tr>
-    <td>$input-focus-bg</td>
-    <td></td>
-    <td>$input-bg</td>
-    <td></td>
+    <td>$kendo-input-focus-bg</td>
+    <td>Color</td>
+<td>
+
+`$kendo-input-hover-bg`
+
+</td>
+<td>
+
+<span class="color-preview" style="background-color: #ffffff"></span>
+
+`#ffffff`
+
+</td>
 </tr>
 <tr>
     <td colspan="4" class="theme-variables-description-container"><div><b>Description</b><div class="theme-variables-description">The background color of focus input.</div></div>
     </td>
 </tr>
 <tr>
-    <td>$input-focus-border</td>
-    <td></td>
-    <td>$input-hover-border</td>
-    <td>rgba( black, .15 )</td>
+    <td>$kendo-input-focus-text</td>
+    <td>Color</td>
+<td>
+
+`$kendo-input-hover-text`
+
+</td>
+<td>
+
+<span class="color-preview" style="background-color: #656565"></span>
+
+`#656565`
+
+</td>
+</tr>
+<tr>
+    <td colspan="4" class="theme-variables-description-container"><div><b>Description</b><div class="theme-variables-description">The text color of focus input.</div></div>
+    </td>
+</tr>
+<tr>
+    <td>$kendo-input-focus-border</td>
+    <td>Color</td>
+<td>
+
+`$kendo-input-hover-border`
+
+</td>
+<td>
+
+<span class="color-preview" style="background-color: rgba(0, 0, 0, 0.1536)"></span>
+
+`rgba(0, 0, 0, 0.1536)`
+
+</td>
 </tr>
 <tr>
     <td colspan="4" class="theme-variables-description-container"><div><b>Description</b><div class="theme-variables-description">The border color of focus input.</div></div>

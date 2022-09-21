@@ -1,18 +1,19 @@
 // Progressbar
 $progressbar-height: 5px !default;
+$progressbar-horizontal-width: 100% !default;
 $progressbar-animation-timing: null !default;
 $progressbar-border-width: 0px !default;
 $progressbar-font-family: $font-family !default;
 $progressbar-font-size: $font-size-sm !default;
 $progressbar-line-height: 1 !default;
 
-$progressbar-bg: material-color( $primary-palette, lighter ) !default;
-$progressbar-text: material-color( $primary-palette, lighter-contrast ) !default;
+$progressbar-bg: try-tint( $primary, 8 ) !default;
+$progressbar-text: $component-text !default;
 $progressbar-border: null !default;
 $progressbar-gradient: null !default;
 
-$progressbar-fill-bg:  material-color( $primary-palette, default ) !default;
-$progressbar-fill-text: material-color( $primary-palette, default-contrast ) !default;
+$progressbar-fill-bg: $primary !default;
+$progressbar-fill-text: $primary-contrast !default;
 $progressbar-fill-border: null !default;
 $progressbar-fill-gradient: null !default;
 
@@ -22,3 +23,7 @@ $progressbar-indeterminate-border: $progressbar-border !default;
 $progressbar-indeterminate-gradient: null !default;
 
 $progressbar-chunk-border: $component-bg !default;
+
+// Circular Progressbar
+$kendo-circular-progressbar-arc-stroke: $primary !default;
+$kendo-circular-progressbar-scale-stroke: $progressbar-bg !default;

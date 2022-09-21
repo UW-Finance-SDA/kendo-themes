@@ -1,0 +1,26 @@
+// Module meta
+$_kendo-module-meta: (
+    name: "typography",
+    dependencies: ()
+);
+
+
+// Component
+@import "_variables.scss";
+@import "_layout.scss";
+@import "_theme.scss";
+
+
+// Register
+@include module-register( $_kendo-module-meta... );
+
+
+// Expose
+@mixin typography-styles() {
+    @include module-render( "typography" ) {
+        @include kendo-typography--layout();
+        @include kendo-typography--extended-layout();
+        @include kendo-typography--theme();
+        @include kendo-typography--extended-theme();
+    }
+}

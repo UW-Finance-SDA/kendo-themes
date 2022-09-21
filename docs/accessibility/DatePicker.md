@@ -1,8 +1,8 @@
 ---
 title: Date Picker
-category: components
+category: accessibility
 slug: date-picker
-position: 13
+position: 14
 ---
 # DatePicker Keyboard Support
 

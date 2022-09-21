@@ -2,13 +2,13 @@
 
 @include exports("action-buttons/theme/material") {
 
-    .k-actions,
-    .k-action-buttons,
-    .k-columnmenu-actions {
-        .k-button:not(.k-primary),
-        .k-button-secondary {
-            background-color: try-shade( $button-bg );
+    .k-actions {
+
+        .k-button-solid-base {
+            background-color: try-shade( $kendo-button-bg );
+            border-color: try-shade( $kendo-button-bg );
         }
+
     }
 
 }

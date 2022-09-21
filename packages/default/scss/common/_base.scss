@@ -76,8 +76,7 @@
     // Panels
     .k-block,
     .k-panel {
-        @extend .k-text-selection !optional;
-        @include border-radius( $border-radius );
+        @include border-radius( $kendo-border-radius-md );
         @include fill(
             $panel-text,
             $panel-bg,
@@ -89,7 +88,7 @@
         box-sizing: border-box;
 
         > .k-header {
-            @include border-top-radius( $border-radius );
+            @include border-top-radius( $kendo-border-radius-md );
             @include fill(
                 $header-text,
                 $header-bg,
@@ -114,14 +113,13 @@
 @include exports( "common/disabled" ) {
 
     // Disabled state
-    .k-state-disabled,
+    .k-disabled,
     .k-widget[disabled],
     .k-disabled {
         @include disabled( $disabled-styling );
 
 
-        .k-link,
-        .k-button {
+        .k-link {
             cursor: default;
             outline: 0;
         }
@@ -129,7 +127,7 @@
 
         // Nested disabled
         [disabled],
-        .k-state-disabled {
+        .k-disabled {
             opacity: 1;
             filter: grayscale(0);
         }

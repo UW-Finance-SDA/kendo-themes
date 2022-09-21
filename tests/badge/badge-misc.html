@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en" class="k-no-animations" style="--kendo-scrollbar-width:15px;">
+<head>
+    <title>Badge Misc</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" data-role="kendo-theme" href="/packages/default/dist/all.css">
+    <link rel="stylesheet" href="/packages/html/assets/styles.css">
+    <script src="/packages/html/assets/scripts.js"></script>
+</head>
+<body id="app" class="k-body">
+    <style>
+        .k-badge-container {
+            padding: 5px;
+            width: 80px;
+            min-height: 30px;
+            box-sizing: border-box;
+            background-color: skyblue;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+    </style>
+    <div id="test-area" class="k-d-grid k-grid-cols-6">
+        <span></span>
+        <span class="col">Baseline</span>
+        <span class="col">Rectangle</span>
+        <span class="col">Rounded</span>
+        <span class="col">Pill</span>
+        <span class="col">Circle</span>
+        <span>Small</span>
+        <span>
+            <span class="k-badge k-badge-sm k-badge-solid k-badge-solid-success">99</span>
+        </span>
+        <span>
+            <span class="k-badge k-badge-sm k-badge-solid k-badge-solid-success">
+                <span class="k-badge-icon k-icon k-i-check"></span>
+            </span>
+        </span>
+        <span>
+            <span class="k-badge k-rounded-sm k-badge-sm k-badge-solid k-badge-solid-success">
+                <span class="k-badge-icon k-icon k-i-check"></span>
+            </span>
+        </span>
+        <span>
+            <span class="k-badge k-rounded-full k-badge-sm k-badge-solid k-badge-solid-success">
+                <span class="k-badge-icon k-icon k-i-check"></span>
+            </span>
+        </span>
+        <span>
+            <span class="k-badge k-rounded-full k-badge-sm k-badge-solid k-badge-solid-success">
+                <span class="k-badge-icon k-icon k-i-check"></span>
+            </span>
+        </span>
+        <span>^ outline</span>
+        <span>
+            <span class="k-badge k-badge-sm k-badge-outline k-badge-outline-primary">99</span>
+        </span>
+        <span>
+            <span class="k-badge k-badge-sm k-badge-outline k-badge-outline-primary">
+                <span class="k-badge-icon k-icon k-i-x-circle"></span>
+            </span>
+        </span>
+        <span>
+            <span class="k-badge k-rounded-sm k-badge-sm k-badge-outline k-badge-outline-primary">
+                <span class="k-badge-icon k-icon k-i-x-circle"></span>
+            </span>
+        </span>
+        <span>
+            <span class="k-badge k-rounded-full k-badge-sm k-badge-outline k-badge-outline-primary">
+                <span class="k-badge-icon k-icon k-i-x-circle"></span>
+            </span>
+        </span>
+        <span>
+            <span class="k-badge k-rounded-full k-badge-sm k-badge-outline k-badge-outline-primary">
+                <span class="k-badge-icon k-icon k-i-x-circle"></span>
+            </span>
+        </span>
+        <span>Normal</span>
+        <span>
+            <span class="k-badge k-badge-md k-badge-solid k-badge-solid-info">99</span>
+        </span>
+        <span>
+            <span class="k-badge k-badge-md k-badge-solid k-badge-solid-info">
+                <span class="k-badge-icon k-icon k-i-calendar"></span>
+            </span>
+        </span>
+        <span>
+            <span class="k-badge k-rounded-md k-badge-md k-badge-solid k-badge-solid-info">
+                <span class="k-badge-icon k-icon k-i-calendar"></span>
+            </span>
+        </span>
+        <span>
+            <span class="k-badge k-rounded-full k-badge-md k-badge-solid k-badge-solid-info">
+                <span class="k-badge-icon k-icon k-i-calendar"></span>
+            </span>
+        </span>
+        <span>
+            <span class="k-badge k-rounded-full k-badge-md k-badge-solid k-badge-solid-info">
+                <span class="k-badge-icon k-icon k-i-calendar"></span>
+            </span>
+        </span>
+        <span>^ outline</span>
+        <span>
+            <span class="k-badge k-badge-md k-badge-outline k-badge-outline-tertiary">99</span>
+        </span>
+        <span>
+            <span class="k-badge k-badge-md k-badge-outline k-badge-outline-tertiary">
+                <span class="k-badge-icon k-icon k-i-plus-circle"></span>
+            </span>
+        </span>
+        <span>
+            <span class="k-badge k-rounded-md k-badge-md k-badge-outline k-badge-outline-tertiary">
+                <span class="k-badge-icon k-icon k-i-plus-circle"></span>
+            </span>
+        </span>
+        <span>
+            <span class="k-badge k-rounded-full k-badge-md k-badge-outline k-badge-outline-tertiary">
+                <span class="k-badge-icon k-icon k-i-plus-circle"></span>
+            </span>
+        </span>
+        <span>
+            <span class="k-badge k-rounded-full k-badge-md k-badge-outline k-badge-outline-tertiary">
+                <span class="k-badge-icon k-icon k-i-plus-circle"></span>
+            </span>
+        </span>
+        <span>Large</span>
+        <span>
+            <span class="k-badge k-badge-lg k-badge-solid k-badge-solid-warning">99</span>
+        </span>
+        <span>
+            <span class="k-badge k-badge-lg k-badge-solid k-badge-solid-warning">
+                <span class="k-badge-icon k-icon k-i-bell"></span>
+            </span>
+        </span>
+        <span>
+            <span class="k-badge k-rounded-lg k-badge-lg k-badge-solid k-badge-solid-warning">
+                <span class="k-badge-icon k-icon k-i-bell"></span>
+            </span>
+        </span>
+        <span>
+            <span class="k-badge k-rounded-full k-badge-lg k-badge-solid k-badge-solid-warning">
+                <span class="k-badge-icon k-icon k-i-bell"></span>
+            </span>
+        </span>
+        <span>
+            <span class="k-badge k-rounded-full k-badge-lg k-badge-solid k-badge-solid-warning">
+                <span class="k-badge-icon k-icon k-i-bell"></span>
+            </span>
+        </span>
+        <span>^ outline</span>
+        <span>
+            <span class="k-badge k-badge-lg k-badge-outline k-badge-outline-error">99</span>
+        </span>
+        <span>
+            <span class="k-badge k-badge-lg k-badge-outline k-badge-outline-error">
+                <span class="k-badge-icon k-icon k-i-x-circle"></span>
+            </span>
+        </span>
+        <span>
+            <span class="k-badge k-rounded-lg k-badge-lg k-badge-outline k-badge-outline-error">
+                <span class="k-badge-icon k-icon k-i-x-circle"></span>
+            </span>
+        </span>
+        <span>
+            <span class="k-badge k-rounded-full k-badge-lg k-badge-outline k-badge-outline-error">
+                <span class="k-badge-icon k-icon k-i-x-circle"></span>
+            </span>
+        </span>
+        <span>
+            <span class="k-badge k-rounded-full k-badge-lg k-badge-outline k-badge-outline-error">
+                <span class="k-badge-icon k-icon k-i-x-circle"></span>
+            </span>
+        </span>
+        <span></span>
+        <span>Rectangle</span>
+        <span>Rounded</span>
+        <span>Pill</span>
+        <span>Circle</span>
+        <span>Dot</span>
+        <span>Inline</span>
+        <div class="k-badge-container">
+            <span class="k-badge k-badge-md k-badge-solid k-badge-solid-primary k-badge-border-cutout">Rect</span>
+        </div>
+        <div class="k-badge-container">
+            <span class="k-badge k-rounded-md k-badge-md k-badge-solid k-badge-solid-primary k-badge-border-cutout">Round</span>
+        </div>
+        <div class="k-badge-container">
+            <span class="k-badge k-rounded-full k-badge-md k-badge-solid k-badge-solid-primary k-badge-border-cutout">Pill</span>
+        </div>
+        <div class="k-badge-container">
+            <span class="k-badge k-rounded-full k-badge-md k-badge-solid k-badge-solid-primary k-badge-border-cutout">1</span>
+        </div>
+        <div class="k-badge-container">
+            <span class="k-badge k-rounded-full k-badge-md k-badge-solid k-badge-solid-primary k-badge-border-cutout"></span>
+        </div>
+        <span>Edge</span>
+        <div class="k-badge-container">
+            <span class="k-badge k-badge-md k-badge-solid k-badge-solid-primary k-badge-edge k-top-end k-badge-border-cutout">Rect</span>
+        </div>
+        <div class="k-badge-container">
+            <span class="k-badge k-rounded-md k-badge-md k-badge-solid k-badge-solid-primary k-badge-edge k-top-end k-badge-border-cutout">Round</span>
+        </div>
+        <div class="k-badge-container">
+            <span class="k-badge k-rounded-full k-badge-md k-badge-solid k-badge-solid-primary k-badge-edge k-top-end k-badge-border-cutout">Pill</span>
+        </div>
+        <div class="k-badge-container">
+            <span class="k-badge k-rounded-full k-badge-md k-badge-solid k-badge-solid-primary k-badge-edge k-top-end k-badge-border-cutout">1</span>
+        </div>
+        <div class="k-badge-container">
+            <span class="k-badge k-rounded-full k-badge-md k-badge-solid k-badge-solid-primary k-badge-edge k-top-end k-badge-border-cutout"></span>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+@mixin kendo-imageeditor--layout() {
+
+    // sass-lint:disable-block no-important no-ids
+    #test-area .k-imageeditor {
+        display: none !important;
+    }
+
+}
+
+
+
+
+@mixin kendo-imageeditor--extended-layout() {}

@@ -2,7 +2,6 @@
 
     // Spreadsheet
     .k-spreadsheet {
-        @include use-background-clip();
         width: 800px;
         height: 600px;
         border-width: $spreadsheet-border-width;
@@ -48,28 +47,27 @@
         display: inline-flex;
         flex-direction: row;
         position: absolute;
-        z-index: 1;
+        z-index: 2;
         top: 0;
         left: 0;
-
-        .k-button {}
-        .k-button:not(:hover) {
-            border-color: transparent;
-            color: inherit;
-            background-color: transparent;
-            background-image: none;
-        }
     }
 
 
     // Tabstrip
     .k-spreadsheet-tabstrip {
         padding-top: $toolbar-padding-y;
+        position: relative;
+        z-index: 1;
+    }
+    .k-spreadsheet-tabstrip .k-tabstrip-items-wrapper {
+        margin: 0;
     }
     .k-spreadsheet-tabstrip .k-loading {
+        // TODO: better name
         display: none;
     }
-    .k-spreadsheet-tabstrip .k-content {
+    .k-spreadsheet-tabstrip .k-content,
+    .k-spreadsheet-tabstrip .k-tabstrip-content {
         @include border-radius( 0 );
         padding: 0;
         border-width: 0;
@@ -90,16 +88,11 @@
         [data-tool="merge"],
         [data-tool="freeze"] {
             width: auto;
-            min-width: $form-line-height * 1em;
+            min-width: calc( #{$form-line-height} * 1em );
         }
-        [data-tool="fontSize"] {
-            width: 5 * $spacer;
-        }
-        [data-tool="fontFamily"] {
-            width: 6 * $spacer;
-        }
-        [data-tool="format"] {
-            width: 4 * $spacer;
+
+        .k-color-picker {
+            width: min-content;
         }
     }
 
@@ -120,18 +113,6 @@
         border-width: 0 1px 0 0;
         border-style: solid;
         border-color: inherit;
-
-        .k-combobox {
-            width: 100%;
-            font-size: inherit;
-        }
-        .k-combobox .k-dropdown-wrap {
-            @include border-radius( 0 );
-            border-width: 0;
-        }
-        .k-combobox .k-select {
-            @include border-radius( 0 );
-        }
     }
     .k-spreadsheet-formula-bar {
         border-color: inherit;
@@ -140,19 +121,13 @@
         align-items: center;
         flex: 1;
 
-        &::before {
-            @extend .k-i-formula-fx;
-            font-size: $icon-size;
-            font-family: "WebComponentsIcons";
-            font-style: normal;
-            font-variant: normal;
-            font-weight: normal;
-            line-height: 1;
-
+        > .k-i-formula-fx {
             padding: 0 $padding-y;
+            box-sizing: content-box;
             border-width: 0 1px 0 0;
             border-style: solid;
             border-color: inherit;
+            flex-shrink: 0;
         }
 
         .k-tooltip,
@@ -162,8 +137,8 @@
         }
 
         .k-spreadsheet-formula-input {
-            padding: $input-padding-y $input-padding-x;
-            line-height: $input-line-height;
+            padding: $kendo-input-padding-y $kendo-input-padding-x;
+            line-height: $kendo-input-line-height;
 
             &.k-spreadsheet-array-formula {
                 &::before {
@@ -202,7 +177,7 @@
         min-width: 100px;
 
         .k-item {
-            padding: $list-item-padding-y $list-item-padding-x;
+            padding: $kendo-list-item-padding-y-md $kendo-list-item-padding-x-md;
         }
     }
     .k-syntax-func,
@@ -224,17 +199,17 @@
 
     // Sheets bar
     .k-spreadsheet-sheets-bar {
-        padding: 0 $padding-y $padding-y;
+        padding: 0 0 map-get( $spacing, 1 ) map-get( $spacing, 1 );
         border-width: 1px 0 0;
         border-style: solid;
         border-color: inherit;
         display: flex;
         flex-direction: row;
-        align-items: center;
+        align-items: flex-start;
         position: relative;
     }
     .k-spreadsheet-sheets-bar-add {
-        margin-right: $padding-y;
+        align-self: center;
 
         &:not(:hover) {
             border-color: transparent;
@@ -243,24 +218,15 @@
         }
     }
     .k-spreadsheet-sheets-items {
-        margin-top: -1px;
         flex: 1;
         overflow: hidden;
 
-        // sass-lint:disable no-important
-        .k-tabstrip-items {
-            margin: 0 $button-calc-size !important;
+        .k-tabstrip-items-wrapper {
+            margin: 0;
             border-width: 0;
         }
-        .k-tabstrip-prev {
-            left: 0 !important;
-        }
-        .k-tabstrip-next {
-            right: 0 !important;
-        }
-        // sass-lint:enable no-important
 
-        .k-item  {
+        .k-item {
             .k-link {
                 display: inline-block;
             }
@@ -273,6 +239,7 @@
                 display: inline-flex;
                 flex-direction: row;
                 vertical-align: middle;
+                align-self: center;
             }
         }
     }
@@ -287,9 +254,10 @@
         font-family: Arial, Verdana, Sans-serif;
         flex: 1;
         position: relative;
+        overflow: hidden;
 
         // disabled cells in the Spreadsheet should allow navigation if link is used
-        .k-state-disabled {
+        .k-disabled {
             pointer-events: auto;
         }
     }
@@ -457,7 +425,6 @@
         box-sizing: border-box;
         position: absolute;
         line-height: normal;
-        background-clip: padding-box;
         white-space: pre;
         overflow: hidden;
     }
@@ -598,7 +565,7 @@
         box-sizing: border-box;
     }
     .k-spreadsheet-filter {
-        @include border-radius( $border-radius );
+        @include border-radius( $kendo-border-radius );
         line-height: 1;
         position: absolute;
         cursor: pointer;
@@ -646,55 +613,44 @@
         }
 
         // Details
-        .k-details {
+        .k-details,
+        .k-expander {
             padding: 0;
             border-width: 1px 0 0;
             border-style: solid;
             border-color: inherit;
         }
-        .k-details-summary {
-            padding: $padding-y;
+        .k-expander {
+            border: 0;
+            background: inherit;
+        }
+        .k-details-summary,
+        .k-columnmenu-item {
+            padding: $kendo-menu-popup-item-padding-y $kendo-menu-popup-item-padding-x;
+            display: flex;
+            align-items: center;
             cursor: pointer;
 
             > .k-icon {
                 margin-right: $padding-y;
             }
         }
-        .k-details-content {
-            padding: $padding-y $padding-x $padding-y $filter-menu-padding-left;
-
-            > .k-textbox,
-            > .k-widget {
-                width: 100%;
-                margin-bottom: 3px;
-            }
-
-            .k-space-right {
-                background-image: none;
-            }
+        .k-details-content,
+        .k-columnmenu-item-content {
+            padding: map-get( $spacing, 2 );
+            display: flex;
+            flex-flow: column nowrap;
+            gap: map-get( $spacing, 2 );
 
             .k-filter-and {
-                width: 75px;
-                margin: 8px 0;
-            }
-        }
-
-        .k-actions,
-        .k-action-buttons,
-        .k-columnmenu-actions {
-            .k-button {
-                flex: 1 1 50%;
+                width: min-content;
+                align-self: flex-start;
             }
         }
 
         .k-actions {
-            &.k-actions-start,
-            &.k-actions-center,
-            &.k-actions-end {
-                .k-button {
-                    flex: 0 1 auto;
-                }
-            }
+            margin: 0;
+            padding: 0;
         }
     }
 
@@ -712,17 +668,6 @@
             display: block;
         }
 
-        .k-button {
-            @include border-radius( 0 );
-            border-width: 0;
-            color: inherit;
-            background: none;
-        }
-        .k-button-icontext {
-            display: flex;
-            justify-content: flex-start;
-        }
-
         .k-reset-color,
         .k-custom-color {
             @include border-radius( 0 );
@@ -733,9 +678,6 @@
         }
         .k-reset-color { border-bottom-width: 1px; }
         .k-custom-color { border-top-width: 1px; }
-        .k-spreadsheet-color-palette {
-            padding: $popup-padding-y;
-        }
         .k-spreadsheet-border-type-palette {
             width: 12.5rem;
             height: 5rem;
@@ -876,7 +818,7 @@
             background-position: 50% 50%;
 
             &:hover div,
-            &.k-state-hovered div {
+            &.k-hover div {
                 margin: 0;
                 align-self: center;
                 opacity: 1;
@@ -902,7 +844,7 @@
 
         &.k-spreadsheet-active-drawing {
             outline-style: $spreadsheet-drawing-outline-style;
-            outline-width:  $spreadsheet-drawing-outline-width;
+            outline-width: $spreadsheet-drawing-outline-width;
         }
 
         .k-spreadsheet-drawing-image {
@@ -941,7 +883,7 @@
         .k-spreadsheet-insert-image-dialog {
             .k-spreadsheet-has-image {
                 &:hover,
-                &.k-state-hovered {
+                &.k-hover {
                     border-radius: $spreadsheet-insert-image-dialog-preview-overlay-border-radius;
                 }
             }

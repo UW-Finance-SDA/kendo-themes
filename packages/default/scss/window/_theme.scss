@@ -2,7 +2,6 @@
 
     // Window
     .k-window {
-        @extend .k-text-selection !optional;
         @include fill(
             $window-text,
             $window-bg,
@@ -13,7 +12,7 @@
 
     .k-window {
         &:focus,
-        &.k-state-focused {
+        &.k-focus {
             @include box-shadow( $window-focused-shadow );
         }
     }

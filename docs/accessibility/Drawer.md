@@ -1,8 +1,8 @@
 ---
 title: Drawer
-category: components
+category: accessibility
 slug: drawer
-position: 16
+position: 17
 ---
 # Drawer Keyboard Support
 

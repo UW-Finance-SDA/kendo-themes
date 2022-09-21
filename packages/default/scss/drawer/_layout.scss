@@ -2,8 +2,7 @@
 
     .k-drawer-container {
         display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
+        flex-flow: row nowrap;
         align-items: flex-start;
     }
     kendo-drawer.k-drawer,
@@ -12,6 +11,7 @@
     }
     .k-drawer {
         height: 100%;
+        max-width: 100%;
         border-width: 0;
         border-style: solid;
         box-sizing: border-box;
@@ -26,6 +26,12 @@
         overflow: hidden;
         -webkit-touch-callout: none;
         -webkit-tap-highlight-color: $rgba-transparent;
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
 
         // Borders
         .k-drawer-mini &.k-drawer-start,
@@ -130,8 +136,7 @@
         font-size: $drawer-item-font-size;
         line-height: $drawer-item-line-height;
         display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
+        flex-flow: row nowrap;
         cursor: pointer;
 
         > .k-drawer-link {
@@ -139,8 +144,7 @@
             padding: $drawer-item-padding-y $drawer-item-padding-x;
             color: inherit;
             display: flex;
-            flex-direction: row;
-            flex-wrap: nowrap;
+            flex-flow: row nowrap;
             flex: 1 0 auto;
         }
 
@@ -160,6 +164,20 @@
             padding: 0 $drawer-item-padding-x;
             display: inline-block;
             white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .k-drawer-toggle {
+            margin-inline-start: auto;
+            cursor: pointer;
+        }
+
+        // Hierarchy items
+        @for $i from 1 through $drawer-item-level-count {
+            &.k-level-#{$i} {
+                padding-inline-start: ( $drawer-item-level-padding-x * $i );
+            }
         }
     }
     .k-drawer-separator {

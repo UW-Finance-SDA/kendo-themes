@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en" class="k-no-animations" style="--kendo-scrollbar-width:15px;">
+<head>
+    <title>Adaptive Scheduler Time Zones</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" data-role="kendo-theme" href="/packages/default/dist/all.css">
+    <link rel="stylesheet" href="/packages/html/assets/styles.css">
+    <script src="/packages/html/assets/scripts.js"></script>
+</head>
+<body id="app" class="k-body">
+    <div id="test-area" class="k-d-grid k-grid-cols-1">
+        <section>
+            <div class="k-pane-wrapper k-widget" style="height: 600px;">
+                <div class="k-pane">
+                    <div class="k-popup-edit-form k-scheduler-edit-form k-mobile-list k-view k-widget">
+                        <div class="k-appbar k-appbar-primary">
+                            <button class="k-header-cancel k-button k-button-md k-button-flat k-button-flat-base k-rounded-md k-icon-button">
+                                <span class="k-button-icon k-icon k-i-arrow-chevron-left"></span>
+                            </button>
+                            <span class="k-spacer"></span>
+                            <span>Time zones</span>
+                            <span class="k-spacer"></span>
+                            <button class="k-header-done k-button k-button-md k-button-flat k-button-flat-base k-rounded-md k-icon-button">
+                                <span class="k-button-icon k-icon k-i-check"></span>
+                            </button>
+                        </div>
+                        <div class="k-stretched-view k-content">
+                            <div class="k-popup-edit-form k-scheduler-edit-form k-scheduler-timezones">
+                                <ul class="k-listgroup k-listgroup-flush">
+                                    <li class="k-item k-listgroup-item">
+                                        <label class="k-label k-listgroup-form-row">
+                                            <span class="k-listgroup-form-field-label k-item-title">Use separate start and end time zones</span>
+                                            <span class="k-listgroup-form-field-wrapper">
+                                                <input type="checkbox" checked="">
+                                            </span>
+                                        </label>
+                                    </li>
+                                    <li class="k-item k-listgroup-item">
+                                        <label class="k-label k-listgroup-form-row">
+                                            <span class="k-listgroup-form-field-label k-item-title">Start timezone</span>
+                                            <div class="k-listgroup-form-field-wrapper">
+                                                <div class="k-mobiletimezoneeditor">
+                                                    <select>
+                                                        <option>No timezone</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </li>
+                                    <li class="k-item k-listgroup-item k-zonepicker">
+                                        <label class="k-label k-listgroup-form-row">
+                                            <span class="k-listgroup-form-field-label k-item-title"></span>
+                                            <div class="k-listgroup-form-field-wrapper">
+                                                <select>
+                                                    <option value="Europe/London">London</option>
+                                                </select>
+                                            </div>
+                                        </label>
+                                    </li>
+                                    <li class="k-item k-listgroup-item">
+                                        <label class="k-label k-listgroup-form-row">
+                                            <span class="k-listgroup-form-field-label k-item-title">End timezone</span>
+                                            <div class="k-listgroup-form-field-wrapper">
+                                                <div class="k-mobiletimezoneeditor">
+                                                    <select>
+                                                        <option>(GMT) Casablanca</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </li>
+                                    <li class="k-item k-listgroup-item k-zonepicker">
+                                        <label class="k-label k-listgroup-form-row">
+                                            <span class="k-listgroup-form-field-label k-item-title"></span>
+                                            <div class="k-listgroup-form-field-wrapper">
+                                                <select>
+                                                    <option value="Atlantic/Reykjavik">Reykjavik</option>
+                                                </select>
+                                            </div>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

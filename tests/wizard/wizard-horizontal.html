@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en" class="k-no-animations" style="--kendo-scrollbar-width:15px;">
+<head>
+    <title>Wizard Horizontal</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" data-role="kendo-theme" href="/packages/default/dist/all.css">
+    <link rel="stylesheet" href="/packages/html/assets/styles.css">
+    <script src="/packages/html/assets/scripts.js"></script>
+</head>
+<body id="app" class="k-body">
+    <style>
+        section {
+            border: 1px solid #6c757d4f;
+        }
+        section>p {
+            background-color: #6c757d4f;
+        }
+
+    </style>
+    <div id="test-area" class="k-d-grid">
+        <section>
+            <p>Horizontal wizard, Content is rendered below the Stepper</p>
+            <div id="wizard" class="k-widget k-wizard k-wizard-horizontal">
+                <nav class="k-stepper k-widget" style="display: grid; grid-template-columns: repeat(6, 1fr);">
+                    <ol class="k-step-list k-step-list-horizontal" style="grid-column: 1 / -1;">
+                        <li class="k-step k-step-first k-step-done k-step-success" style="max-height: 33.333%;">
+                            <a href="#" class="k-step-link">
+                                <span class="k-step-indicator">
+                                    <span class="k-step-indicator-text">1</span>
+                                </span>
+                                <span class="k-step-label">
+                                    <span class="k-step-text">Account Info with too long label</span>
+                                    <span class="k-icon k-i-check"></span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="k-step k-step-current k-focus k-step-error" style="max-height: 33.333%;">
+                            <a href="#" class="k-step-link">
+                                <span class="k-step-indicator">
+                                    <span class="k-step-indicator-text">2</span>
+                                </span>
+                                <span class="k-step-label">
+                                    <span class="k-step-text">Personal Info</span>
+                                    <span class="k-validation-icon k-icon k-i-warning"></span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="k-step k-step-last k-step-optional" style="max-height: 33.333%;">
+                            <a href="#" class="k-step-link">
+                                <span class="k-step-indicator">
+                                    <span class="k-step-indicator-text">3</span>
+                                </span>
+                                <span class="k-step-label">
+                                    <span class="k-step-text">Payment Details</span>
+                                    <span class="k-step-label-optional">(Optional)</span>
+                                </span>
+                            </a>
+                        </li>
+                    </ol>
+                    <div class="k-widget k-progressbar k-progressbar-horizontal" style="grid-column: 2 / 6;">
+                        <span class="k-progress-status-wrap k-progress-end"></span>
+                        <div class="k-selected" style="height: 100%; width: 50%;">
+                            <span class="k-progress-status-wrap k-progress-end" style="height: 100%; width: 200%;"></span>
+                        </div>
+                    </div>
+                </nav>
+                <div class="k-wizard-steps">
+                    <div class="k-wizard-step k-focus">
+                        <div class="k-wizard-content">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+                        <div class="k-wizard-buttons">
+                            <span class="k-wizard-buttons-left">
+                                <button class="k-button k-button-md k-button-solid k-button-solid-base k-rounded-md">
+                                    <span class="k-button-text">Reset</span>
+                                </button>
+                                <span class="k-wizard-pager">Step 1 of 2</span>
+                            </span>
+                            <span class="k-wizard-buttons-right">
+                                <button class="k-button k-button-md k-button-solid k-button-solid-base k-rounded-md">
+                                    <span class="k-button-text">Previous</span>
+                                </button>
+                                <button class="k-button k-button-md k-button-solid k-button-solid-primary k-rounded-md">
+                                    <span class="k-button-text">Next</span>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <p>Horizontal wizard -&gt; Long content; Height set</p>
+            <div id="wizard" class="k-widget k-wizard k-wizard-horizontal" style="height: 300px;">
+                <nav class="k-stepper k-widget" style="display: grid; grid-template-columns: repeat(6, 1fr);">
+                    <ol class="k-step-list k-step-list-horizontal" style="grid-column: 1 / -1;">
+                        <li class="k-step k-step-first k-step-done k-step-success" style="max-height: 33.333%;">
+                            <a href="#" class="k-step-link">
+                                <span class="k-step-indicator">
+                                    <span class="k-step-indicator-text">1</span>
+                                </span>
+                                <span class="k-step-label">
+                                    <span class="k-step-text">Account Info with too long label</span>
+                                    <span class="k-icon k-i-check"></span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="k-step k-step-current k-focus k-step-error" style="max-height: 33.333%;">
+                            <a href="#" class="k-step-link">
+                                <span class="k-step-indicator">
+                                    <span class="k-step-indicator-text">2</span>
+                                </span>
+                                <span class="k-step-label">
+                                    <span class="k-step-text">Personal Info</span>
+                                    <span class="k-validation-icon k-icon k-i-warning"></span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="k-step k-step-last k-step-optional" style="max-height: 33.333%;">
+                            <a href="#" class="k-step-link">
+                                <span class="k-step-indicator">
+                                    <span class="k-step-indicator-text">3</span>
+                                </span>
+                                <span class="k-step-label">
+                                    <span class="k-step-text">Payment Details</span>
+                                    <span class="k-step-label-optional">(Optional)</span>
+                                </span>
+                            </a>
+                        </li>
+                    </ol>
+                    <div class="k-widget k-progressbar k-progressbar-horizontal" style="grid-column: 2 / 6;">
+                        <span class="k-progress-status-wrap k-progress-end"></span>
+                        <div class="k-selected" style="height: 100%; width: 50%;">
+                            <span class="k-progress-status-wrap k-progress-end" style="height: 100%; width: 200%;"></span>
+                        </div>
+                    </div>
+                </nav>
+                <div class="k-wizard-steps">
+                    <div class="k-wizard-step">
+                        <div class="k-wizard-content">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+                        <div class="k-wizard-buttons">
+                            <span class="k-wizard-buttons-left">
+                                <button class="k-button k-button-md k-button-solid k-button-solid-base k-rounded-md">
+                                    <span class="k-button-text">Reset</span>
+                                </button>
+                                <span class="k-wizard-pager">Step 1 of 2</span>
+                            </span>
+                            <span class="k-wizard-buttons-right">
+                                <button class="k-button k-button-md k-button-solid k-button-solid-base k-rounded-md">
+                                    <span class="k-button-text">Previous</span>
+                                </button>
+                                <button class="k-button k-button-md k-button-solid k-button-solid-primary k-rounded-md">
+                                    <span class="k-button-text">Next</span>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <p>Horizontal wizard -&gt; Short content</p>
+            <div id="wizard" class="k-widget k-wizard k-wizard-horizontal">
+                <nav class="k-stepper k-widget" style="display: grid; grid-template-columns: repeat(6, 1fr);">
+                    <ol class="k-step-list k-step-list-horizontal" style="grid-column: 1 / -1;">
+                        <li class="k-step k-step-first k-step-done k-step-success" style="max-height: 33.333%;">
+                            <a href="#" class="k-step-link">
+                                <span class="k-step-indicator">
+                                    <span class="k-step-indicator-text">1</span>
+                                </span>
+                                <span class="k-step-label">
+                                    <span class="k-step-text">Account Info with too long label</span>
+                                    <span class="k-icon k-i-check"></span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="k-step k-step-current k-focus k-step-error" style="max-height: 33.333%;">
+                            <a href="#" class="k-step-link">
+                                <span class="k-step-indicator">
+                                    <span class="k-step-indicator-text">2</span>
+                                </span>
+                                <span class="k-step-label">
+                                    <span class="k-step-text">Personal Info</span>
+                                    <span class="k-validation-icon k-icon k-i-warning"></span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="k-step k-step-last k-step-optional" style="max-height: 33.333%;">
+                            <a href="#" class="k-step-link">
+                                <span class="k-step-indicator">
+                                    <span class="k-step-indicator-text">3</span>
+                                </span>
+                                <span class="k-step-label">
+                                    <span class="k-step-text">Payment Details</span>
+                                    <span class="k-step-label-optional">(Optional)</span>
+                                </span>
+                            </a>
+                        </li>
+                    </ol>
+                    <div class="k-widget k-progressbar k-progressbar-horizontal" style="grid-column: 2 / 6;">
+                        <span class="k-progress-status-wrap k-progress-end"></span>
+                        <div class="k-selected" style="height: 100%; width: 50%;">
+                            <span class="k-progress-status-wrap k-progress-end" style="height: 100%; width: 200%;"></span>
+                        </div>
+                    </div>
+                </nav>
+                <div class="k-wizard-steps">
+                    <div class="k-wizard-step">
+                        <div class="k-wizard-content">Short content</div>
+                        <div class="k-wizard-buttons">
+                            <span class="k-wizard-buttons-left">
+                                <button class="k-button k-button-md k-button-solid k-button-solid-base k-rounded-md">
+                                    <span class="k-button-text">Reset</span>
+                                </button>
+                                <span class="k-wizard-pager">Step 1 of 2</span>
+                            </span>
+                            <span class="k-wizard-buttons-right">
+                                <button class="k-button k-button-md k-button-solid k-button-solid-base k-rounded-md">
+                                    <span class="k-button-text">Previous</span>
+                                </button>
+                                <button class="k-button k-button-md k-button-solid k-button-solid-primary k-rounded-md">
+                                    <span class="k-button-text">Next</span>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <p>Horizontal wizard -&gt; Short content; Height set</p>
+            <div id="wizard" class="k-widget k-wizard k-wizard-horizontal" style="height: 300px;">
+                <nav class="k-stepper k-widget" style="display: grid; grid-template-columns: repeat(6, 1fr);">
+                    <ol class="k-step-list k-step-list-horizontal" style="grid-column: 1 / -1;">
+                        <li class="k-step k-step-first k-step-done k-step-success" style="max-height: 33.333%;">
+                            <a href="#" class="k-step-link">
+                                <span class="k-step-indicator">
+                                    <span class="k-step-indicator-text">1</span>
+                                </span>
+                                <span class="k-step-label">
+                                    <span class="k-step-text">Account Info with too long label</span>
+                                    <span class="k-icon k-i-check"></span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="k-step k-step-current k-focus k-step-error" style="max-height: 33.333%;">
+                            <a href="#" class="k-step-link">
+                                <span class="k-step-indicator">
+                                    <span class="k-step-indicator-text">2</span>
+                                </span>
+                                <span class="k-step-label">
+                                    <span class="k-step-text">Personal Info</span>
+                                    <span class="k-validation-icon k-icon k-i-warning"></span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="k-step k-step-last k-step-optional" style="max-height: 33.333%;">
+                            <a href="#" class="k-step-link">
+                                <span class="k-step-indicator">
+                                    <span class="k-step-indicator-text">3</span>
+                                </span>
+                                <span class="k-step-label">
+                                    <span class="k-step-text">Payment Details</span>
+                                    <span class="k-step-label-optional">(Optional)</span>
+                                </span>
+                            </a>
+                        </li>
+                    </ol>
+                    <div class="k-widget k-progressbar k-progressbar-horizontal" style="grid-column: 2 / 6;">
+                        <span class="k-progress-status-wrap k-progress-end"></span>
+                        <div class="k-selected" style="height: 100%; width: 50%;">
+                            <span class="k-progress-status-wrap k-progress-end" style="height: 100%; width: 200%;"></span>
+                        </div>
+                    </div>
+                </nav>
+                <div class="k-wizard-steps">
+                    <div class="k-wizard-step">
+                        <div class="k-wizard-content">Short content</div>
+                        <div class="k-wizard-buttons">
+                            <span class="k-wizard-buttons-left">
+                                <button class="k-button k-button-md k-button-solid k-button-solid-base k-rounded-md">
+                                    <span class="k-button-text">Reset</span>
+                                </button>
+                                <span class="k-wizard-pager">Step 1 of 2</span>
+                            </span>
+                            <span class="k-wizard-buttons-right">
+                                <button class="k-button k-button-md k-button-solid k-button-solid-base k-rounded-md">
+                                    <span class="k-button-text">Previous</span>
+                                </button>
+                                <button class="k-button k-button-md k-button-solid k-button-solid-primary k-rounded-md">
+                                    <span class="k-button-text">Next</span>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <p>Horizontal wizard -&gt; Short content; Big height set</p>
+            <div id="wizard" class="k-widget k-wizard k-wizard-horizontal" style="height: 300px;">
+                <nav class="k-stepper k-widget" style="display: grid; grid-template-columns: repeat(6, 1fr);">
+                    <ol class="k-step-list k-step-list-horizontal" style="grid-column: 1 / -1;">
+                        <li class="k-step k-step-first k-step-done k-step-success" style="max-height: 33.333%;">
+                            <a href="#" class="k-step-link">
+                                <span class="k-step-indicator">
+                                    <span class="k-step-indicator-text">1</span>
+                                </span>
+                                <span class="k-step-label">
+                                    <span class="k-step-text">Account Info with too long label</span>
+                                    <span class="k-icon k-i-check"></span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="k-step k-step-current k-focus k-step-error" style="max-height: 33.333%;">
+                            <a href="#" class="k-step-link">
+                                <span class="k-step-indicator">
+                                    <span class="k-step-indicator-text">2</span>
+                                </span>
+                                <span class="k-step-label">
+                                    <span class="k-step-text">Personal Info</span>
+                                    <span class="k-validation-icon k-icon k-i-warning"></span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="k-step k-step-last k-step-optional" style="max-height: 33.333%;">
+                            <a href="#" class="k-step-link">
+                                <span class="k-step-indicator">
+                                    <span class="k-step-indicator-text">3</span>
+                                </span>
+                                <span class="k-step-label">
+                                    <span class="k-step-text">Payment Details</span>
+                                    <span class="k-step-label-optional">(Optional)</span>
+                                </span>
+                            </a>
+                        </li>
+                    </ol>
+                    <div class="k-widget k-progressbar k-progressbar-horizontal" style="grid-column: 2 / 6;">
+                        <span class="k-progress-status-wrap k-progress-end"></span>
+                        <div class="k-selected" style="height: 100%; width: 50%;">
+                            <span class="k-progress-status-wrap k-progress-end" style="height: 100%; width: 200%;"></span>
+                        </div>
+                    </div>
+                </nav>
+                <div class="k-wizard-steps">
+                    <div class="k-wizard-step">
+                        <div class="k-wizard-content">Short content</div>
+                        <div class="k-wizard-buttons">
+                            <span class="k-wizard-buttons-left">
+                                <button class="k-button k-button-md k-button-solid k-button-solid-base k-rounded-md">
+                                    <span class="k-button-text">Reset</span>
+                                </button>
+                                <span class="k-wizard-pager">Step 1 of 2</span>
+                            </span>
+                            <span class="k-wizard-buttons-right">
+                                <button class="k-button k-button-md k-button-solid k-button-solid-base k-rounded-md">
+                                    <span class="k-button-text">Previous</span>
+                                </button>
+                                <button class="k-button k-button-md k-button-solid k-button-solid-primary k-rounded-md">
+                                    <span class="k-button-text">Next</span>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

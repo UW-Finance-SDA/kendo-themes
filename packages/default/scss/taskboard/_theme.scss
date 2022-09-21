@@ -2,7 +2,6 @@
 
     // TaskBoard
     .k-taskboard {
-        @extend .k-text-selection !optional;
         @include fill(
             $taskboard-text,
             $taskboard-bg,
@@ -29,7 +28,7 @@
         );
     }
     .k-taskboard-column:focus,
-    .k-taskboard-column.k-state-focus {
+    .k-taskboard-column.k-focus {
         @include fill(
             $taskboard-column-focus-text,
             $taskboard-column-focus-bg,
@@ -47,7 +46,7 @@
             $taskboard-pane-text,
             $taskboard-pane-bg,
             $taskboard-pane-border
-        )
+        );
     }
 
     .k-taskboard-pane-header {
@@ -67,33 +66,33 @@
             @include fill( $color: $taskboard-card-header-text );
 
             &:focus,
-            &.k-state-focus {
+            &.k-focus {
                 @include fill( $color: $taskboard-card-header-focus-text );
             }
 
             &:hover,
-            &.k-state-hover {
+            &.k-hover {
                 @include fill( $color: $taskboard-card-header-hover-text );
             }
         }
 
         &:focus,
-        &.k-state-focus {
+        &.k-focus {
             @include fill( $border: $taskboard-card-focus-border );
             @include box-shadow( $taskboard-card-focus-shadow );
         }
 
         &:hover,
-        &.k-state-hover {
+        &.k-hover {
             @include fill( $border: $taskboard-card-hover-border );
         }
 
-        &.k-state-selected {
+        &.k-selected {
             @include fill( $border: $taskboard-card-selected-border );
             @include box-shadow( $taskboard-card-selected-shadow );
         }
 
-        &.k-state-disabled {
+        &.k-disabled {
             @include disabled( $disabled-styling );
         }
     }

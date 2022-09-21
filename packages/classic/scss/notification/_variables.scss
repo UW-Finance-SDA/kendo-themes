@@ -2,7 +2,7 @@
 $notification-padding-x: 8px !default;
 $notification-padding-y: 4px !default;
 $notification-border-width: 1px !default;
-$notification-border-radius: $border-radius !default;
+$notification-border-radius: $kendo-border-radius-md !default;
 
 $notification-shadow: $popup-shadow !default;
 
@@ -17,18 +17,20 @@ $notification-bg: $component-bg !default;
 $notification-text: $component-text !default;
 $notification-border: $component-border !default;
 
-$notification-themes: () !default;
+@function notification-theme( $colors ) {
+    $_theme: ();
 
-@function notification-theme($name: null, $color: null) {
-    // sass-lint:disable indentation
-    @return (
-        border: $color,
-        color: contrast-wcag( $color ),
-        bg: $color
-    );;
-    // sass-lint:enable indentation
+    // sass-lint:disable-block indentation
+    @each $name, $color in $colors {
+        $_theme: map-merge(( $name: (
+            color: contrast-wcag( $color ),
+            background-color: $color,
+            border: $color,
+        )), $_theme );
+    }
+
+    @return $_theme;
 }
 
-@each $theme, $props in $theme-colors {
-    $notification-themes: map-merge($notification-themes, ($theme: notification-theme($theme, $props)) );
-}
+$kendo-notification-theme-colors: $kendo-theme-colors !default;
+$kendo-notification-theme: notification-theme( $kendo-notification-theme-colors ) !default;

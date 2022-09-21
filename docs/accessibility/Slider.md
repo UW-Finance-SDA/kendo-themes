@@ -1,8 +1,8 @@
 ---
 title: Slider
-category: components
+category: accessibility
 slug: slider
-position: 37
+position: 39
 ---
 # Slider Keyboard Support
 

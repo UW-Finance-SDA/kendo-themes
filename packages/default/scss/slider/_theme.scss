@@ -7,7 +7,7 @@
 
         .k-slider-track,
         .k-slider-selection {
-            @include border-radius( $border-radius );
+            @include border-radius( $kendo-border-radius );
         }
 
         .k-slider-track {
@@ -16,10 +16,6 @@
 
         .k-slider-selection {
             @include fill( $bg: $slider-selection-bg );
-        }
-
-        .k-button {
-            @include border-radius( 50% );
         }
 
         .k-draghandle {
@@ -51,25 +47,19 @@
             }
 
             &:focus,
-            &.k-state-focused {
+            &.k-focus {
                 @include box-shadow( $slider-draghandle-focused-shadow );
             }
         }
 
-        &.k-state-focused {
+        &.k-focus {
             .k-draghandle {
                 @include box-shadow( $slider-draghandle-focused-shadow );
             }
         }
 
-        &.k-state-disabled {
+        &.k-disabled {
             opacity: $slider-disabled-opacity;
-        }
-
-        .k-slider-wrap {
-            &:focus {
-                outline: none;
-            }
         }
     }
 

@@ -1,8 +1,8 @@
 ---
 title: Tree List
-category: components
+category: accessibility
 slug: tree-list
-position: 49
+position: 51
 ---
 # TreeList Keyboard Support
 

@@ -1,8 +1,8 @@
 ---
 title: Loader Container
-category: components
+category: accessibility
 slug: loader-container
-position: 25
+position: 26
 ---
 # LoaderContainer Keyboard Support
 

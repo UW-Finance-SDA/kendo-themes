@@ -3,6 +3,687 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.8.1](https://github.com/telerik/kendo-themes/compare/v5.8.0...v5.8.1) (2022-09-13)
+
+**Note:** Version bump only for package @progress/kendo-theme-classic
+
+
+
+
+
+# [5.8.0](https://github.com/telerik/kendo-themes/compare/v5.7.0...v5.8.0) (2022-09-12)
+
+**Note:** Version bump only for package @progress/kendo-theme-classic
+
+
+
+
+
+# [5.7.0](https://github.com/telerik/kendo-themes/compare/v5.6.0...v5.7.0) (2022-09-05)
+
+
+### Bug Fixes
+
+* add calc function when calculating line-height-em ([0f7a691](https://github.com/telerik/kendo-themes/commit/0f7a691cf2a2b3ca97c3757b9d72a265f68c16d2))
+* **button:** add default to -button-padding-y-lg value ([f6b1afe](https://github.com/telerik/kendo-themes/commit/f6b1afe82106ce2cdeb58fc610d8a2ecdb52cf4f))
+* **card:** improve callout styles and remove unnecessery variables ([7e8ab03](https://github.com/telerik/kendo-themes/commit/7e8ab03a1b23ce185ed2eb158af27264c7c87c3d))
+* **colorpicker:** import missing coloreditor dependency ([64dbc07](https://github.com/telerik/kendo-themes/commit/64dbc07afab098784c3854f067ae5c7d29b4a662))
+* **daterangepicker:** allow $kendo-daterange-picker-input-width customization ([8dee65a](https://github.com/telerik/kendo-themes/commit/8dee65a5e3bbb7260d72daf627ac2de1c39d93a8))
+* **dropdowngrid:** import missing table dependency ([53a72b8](https://github.com/telerik/kendo-themes/commit/53a72b847e1bedd5093e33f42cfcd0a4d425c9a8))
+* **popover:** improve callout styles and remove unnecessery variables ([26055ad](https://github.com/telerik/kendo-themes/commit/26055ada230a0161e8b51b327d18991f4d831a7b))
+
+
+### Features
+
+* **badge:** update styles to match updated badge component options ([83d705d](https://github.com/telerik/kendo-themes/commit/83d705df1680096b80f16fe1e0ad18b6507e34d2))
+* **pdf-viewer:** update component to match latest design ([8e25562](https://github.com/telerik/kendo-themes/commit/8e255626a39faff48d314558f91abde666bcc24f))
+
+
+
+
+
+# [5.6.0](https://github.com/telerik/kendo-themes/compare/v5.5.0...v5.6.0) (2022-07-25)
+
+
+### Bug Fixes
+
+* **button:** tweak large size so it's compatible with guidelines for mobile ([34752f1](https://github.com/telerik/kendo-themes/commit/34752f189ab6deb7b13815bd438d678cb27d658b))
+* **input:** tweak large size so it's compatible with guidelines for mobile ([7972c1b](https://github.com/telerik/kendo-themes/commit/7972c1bf15d3abb24deb92d362ce000f2cae6040))
+* **list:** tweak large size so it's compatible with guidelines for mobile ([29bb58e](https://github.com/telerik/kendo-themes/commit/29bb58e3adbde15e1fb2a6d0b7607bf4e5c4692e))
+* make the -chip-spacing to be overwrittable [#3665](https://github.com/telerik/kendo-themes/issues/3665) ([55c4abd](https://github.com/telerik/kendo-themes/commit/55c4abdae0de3c7d7c3b58fbfbc234bb31651cd4))
+* **progressbar:** expose width property and set default value ([ad776ca](https://github.com/telerik/kendo-themes/commit/ad776cae4a0b983ff260415f8a06ffde7b2eff3d))
+* **treeview:** tweak large size so it's compatible with guidelines for mobile ([fdc2a56](https://github.com/telerik/kendo-themes/commit/fdc2a56d3c489c360046f41f032f75e06ab461f9))
+
+
+### Features
+
+* **calendar:** add sizes for calendar component ([0dc4981](https://github.com/telerik/kendo-themes/commit/0dc49817124f832e105efd2a93428b28e3a7b9cf))
+* **progressbar:** add circular progressbar styles ([2b30b41](https://github.com/telerik/kendo-themes/commit/2b30b415e3cff46cd0e577e374fc610784f5d3e1))
+* **signature:** add signature component styles ([a71e6d6](https://github.com/telerik/kendo-themes/commit/a71e6d6e220eed2ab3cf61dfa5b0353b57378f2f))
+* **time-selector:** add sizes for time-selector component ([00195fe](https://github.com/telerik/kendo-themes/commit/00195feb29ccf250265780c4164f8c96b51ea537))
+
+
+
+
+
+# [5.5.0](https://github.com/telerik/kendo-themes/compare/v5.4.1...v5.5.0) (2022-06-13)
+
+
+### Bug Fixes
+
+* **input:** ensure outline input and picker use the same border-color ([5a8a651](https://github.com/telerik/kendo-themes/commit/5a8a6510767bc121a887f75e6905f524b4b588d8))
+* **panelbar:** expose $panelbar-border-style variable ([cf5afac](https://github.com/telerik/kendo-themes/commit/cf5afac85f27756ba55cc2557ee6ae1a26f31b2b))
+* scope solid input and picker styles ([66e9357](https://github.com/telerik/kendo-themes/commit/66e935745a0d6982edc157d5d5eebc8b5b45e190))
+
+
+### Features
+
+* **drawer:** add hierarchical item levels ([115098b](https://github.com/telerik/kendo-themes/commit/115098ba210004f8541fdffa0d744c94f96e324d))
+
+
+
+
+
+## [5.4.1](https://github.com/telerik/kendo-themes/compare/v5.4.0...v5.4.1) (2022-05-05)
+
+**Note:** Version bump only for package @progress/kendo-theme-classic
+
+
+
+
+
+# [5.4.0](https://github.com/telerik/kendo-themes/compare/v5.3.1...v5.4.0) (2022-05-02)
+
+
+### Bug Fixes
+
+* **chip:** chip text color to depend on the base-text color rather than button-text ([773465c](https://github.com/telerik/kendo-themes/commit/773465c8e2baee7fba719b748bf49260a55923f0))
+* **dropdown:** update hover background-color and text to match design ([95c5a9d](https://github.com/telerik/kendo-themes/commit/95c5a9dad12611ecb73c00955701f9af459fa26e))
+* extract menu-button styles as a separate module ([b20201a](https://github.com/telerik/kendo-themes/commit/b20201a837e927078cbd9a624a2873d14e9a9ce7))
+* extract split-button styles as a separate module ([b52a8ba](https://github.com/telerik/kendo-themes/commit/b52a8baca8c02d2a3e91991a5113e42fb04dc42e))
+* **gantt:** dependency validation tooltip adjustments ([bf7c6e8](https://github.com/telerik/kendo-themes/commit/bf7c6e855815ab0260010b5f6fcd7e3cc314f015))
+* **input:** add inline-start border to input button in default and material ([133d29f](https://github.com/telerik/kendo-themes/commit/133d29fd2a272d1c283bee51db5bb9d48d8673d1))
+* **input:** apply correct hover border-color to input in default theme ([b4da2c1](https://github.com/telerik/kendo-themes/commit/b4da2c1701893b454eb6e307baa9f760e340ff64))
+* **input:** apply correct styles to focused outline picker when hovered ([9cec247](https://github.com/telerik/kendo-themes/commit/9cec2470c83263f8bb9e57ab5eb079c8aef51fda))
+* **input:** ensure correct styles are applied to input and picker when in invalid state ([4cce02a](https://github.com/telerik/kendo-themes/commit/4cce02a481645c4ad65057fa1f80e434fd7dcc6b))
+* **input:** fix flat picker :focus:hover behavior in bootstrap ([6939394](https://github.com/telerik/kendo-themes/commit/69393948336fea28b366ab44877abe9ccf0d1db0))
+* **input:** give flat input and picker border-radius on focus to match design ([7a1cbdc](https://github.com/telerik/kendo-themes/commit/7a1cbdc9a4168b55f9b94d973b6ca2a9d875488e))
+* **input:** give flat picker background-color on hover state ([1e54437](https://github.com/telerik/kendo-themes/commit/1e544376abf05684b63f92e158ed989b95170c6a))
+* **input:** update flat input border-color on focus to match design ([275748c](https://github.com/telerik/kendo-themes/commit/275748c75e239f88aa1436450573f8b49f0f42ef))
+* **input:** update input focus border-color in default to match design ([fd01025](https://github.com/telerik/kendo-themes/commit/fd0102565ed238033ce383402e1422c936d71fbe))
+* **menu:** add missing button dependency ([d070d37](https://github.com/telerik/kendo-themes/commit/d070d37049b532b84d29e3352477e56137d1364e))
+* **treeview:** allow sizing customization through default treeview variables ([61b180d](https://github.com/telerik/kendo-themes/commit/61b180dc4c3febcf541f224d6526886725d83470))
+* update outline input and picker border-colors to match design ([469a96b](https://github.com/telerik/kendo-themes/commit/469a96bf3be269aff3641c12efe86a859d36470e))
+
+
+
+
+
+## [5.3.1](https://github.com/telerik/kendo-themes/compare/v5.3.0...v5.3.1) (2022-04-07)
+
+**Note:** Version bump only for package @progress/kendo-theme-classic
+
+
+
+
+
+# [5.3.0](https://github.com/telerik/kendo-themes/compare/v5.2.0...v5.3.0) (2022-04-04)
+
+
+### Bug Fixes
+
+* **actionsheet:** use subtle text variable for description styling ([043ca4a](https://github.com/telerik/kendo-themes/commit/043ca4a79b9d715d70515f617e01f9d33ee92903))
+* **button:** allow $kendo-solid-button-shade-function to be customized ([83f8965](https://github.com/telerik/kendo-themes/commit/83f8965511228f40953b91b54a7c839a5832256f))
+* **chip:** text color in dark swatches ([1682fcc](https://github.com/telerik/kendo-themes/commit/1682fcc9462d1acd565c304625c62e7e658f5f5e))
+* **colorgradient:** use subtle text variable for input labels ([860853a](https://github.com/telerik/kendo-themes/commit/860853ad96477b67ef3e93d9dee86ce769ed32fb))
+* **dropzone:** use subtle text variable for note styling ([8a416c1](https://github.com/telerik/kendo-themes/commit/8a416c1afdcd6b22406fdcbba4c18c89d035b7e0))
+* **expansion-panel:** use subtle text variable for sub title styling ([53ca03c](https://github.com/telerik/kendo-themes/commit/53ca03ccfa171812b36d5f0046990fa47860a113))
+* **taskboard:** use hover color for focus state ([f81ba93](https://github.com/telerik/kendo-themes/commit/f81ba930018e05d03037cd00f93f1b2f936c5e56))
+
+
+### Features
+
+* **common/loading:** add variables for loading indicator ([d271873](https://github.com/telerik/kendo-themes/commit/d271873d571d43776a2e86f09a6f9ea59cbc66af))
+* **scheduler:** add ongoing event styles ([60c6108](https://github.com/telerik/kendo-themes/commit/60c6108ed3c69fb28f2c8d0ccf3d38bdd0ba80e6))
+* **utils:** add aspect-ratio utility classes ([51dfc5a](https://github.com/telerik/kendo-themes/commit/51dfc5a990d1ae19251207e23cf0dec6faaa57df))
+
+
+
+
+
+# [5.2.0](https://github.com/telerik/kendo-themes/compare/v5.1.1...v5.2.0) (2022-02-21)
+
+
+### Bug Fixes
+
+* **input:** conditionally set spinner offset to calculated or auto ([04d5b35](https://github.com/telerik/kendo-themes/commit/04d5b3529870030ac38777be838680c1d7d0e8a5))
+* **notification:** customizable theme variables ([ed8ae78](https://github.com/telerik/kendo-themes/commit/ed8ae7893d41b306e1e00ba0111e47682918329b))
+* **pivotgrid:** add missing padding between icon and text in pivotgrid cells ([e84fe7c](https://github.com/telerik/kendo-themes/commit/e84fe7c60f82419d555e24ff14002f8a245da50c))
+* rename border-radius to kendo-border-radius ([54698d6](https://github.com/telerik/kendo-themes/commit/54698d6a96fecbd1cb7123ca9be488f696c8974d))
+* utilize border radius variables in classic theme ([69968ac](https://github.com/telerik/kendo-themes/commit/69968acf604dc9af07677f9b52131b4fcc370966))
+
+
+### Features
+
+* add disabled state variables for input and picker high-level components ([d85b305](https://github.com/telerik/kendo-themes/commit/d85b3058c5015b235213699e67539cce03f3feaa))
+* **gantt:** add dependency validation tooltip styles ([ebd1031](https://github.com/telerik/kendo-themes/commit/ebd1031d520f40295b9716c6e0fd68a5ac2efd05))
+* improve component options sizings as per desing ([d927a16](https://github.com/telerik/kendo-themes/commit/d927a1684e42d06700ba1fd0bcb830af6508e7ca))
+
+
+
+
+
+## [5.1.1](https://github.com/telerik/kendo-themes/compare/v5.1.0...v5.1.1) (2022-01-24)
+
+
+### Bug Fixes
+
+* scope theme colors variables to avoid conflicts with bootstrap ([3713876](https://github.com/telerik/kendo-themes/commit/37138761677d9ee14dc48a7a8b80209839e33be2))
+
+
+
+
+
+# [5.1.0](https://github.com/telerik/kendo-themes/compare/v5.0.1...v5.1.0) (2022-01-24)
+
+
+### Bug Fixes
+
+* **button:** use kendo-button prefix in swatch definitions ([bf482e6](https://github.com/telerik/kendo-themes/commit/bf482e6f0c2c39426fd9eefbe71759743ae4332a))
+
+
+
+
+
+## [5.0.1](https://github.com/telerik/kendo-themes/compare/v5.0.0...v5.0.1) (2022-01-19)
+
+
+### Bug Fixes
+
+* **button:** apply correct styling to clear button ([351a902](https://github.com/telerik/kendo-themes/commit/351a902d69cb487b871cafb038836542019af824))
+* **daterangepicker:** set default width for dateinputs ([de493c9](https://github.com/telerik/kendo-themes/commit/de493c9bec4c56568c79551da2d476f4a1e6afca))
+
+
+
+
+
+# [5.0.0](https://github.com/telerik/kendo-themes/compare/v4.44.0...v5.0.0) (2022-01-18)
+
+
+### Features
+
+* **avatar:** add rounded customization to avatar ([9d663e4](https://github.com/telerik/kendo-themes/commit/9d663e4e5c1f9d00517760033413106039f8d028))
+* **button:** add size, shape and color customization to button ([db31d3f](https://github.com/telerik/kendo-themes/commit/db31d3f2c5da75d8a02e16f4824835574af45e14))
+* **checkbox:** add sizing property to checkbox ([b60493d](https://github.com/telerik/kendo-themes/commit/b60493ddf78fd435c62a52718acbc292f7cd76f6))
+* **chip:** add size rounded customization to chip ([1c2c8c0](https://github.com/telerik/kendo-themes/commit/1c2c8c06405f52dfeccf74e7331c5167eb375539))
+* **color-picker:** add size, shape and color customization to color picker ([ea83616](https://github.com/telerik/kendo-themes/commit/ea83616e29f6585548fa128ac38817c1904034ea))
+* **daterange-picker:** add size, rounded and full customization to date range picker ([5f48054](https://github.com/telerik/kendo-themes/commit/5f480546f3ed150bf25712a55d85c808cd6a8ecf))
+* **dropdown-tree:** add size, shape and color customization to dropdown tree ([7907d94](https://github.com/telerik/kendo-themes/commit/7907d94a8af62115cb5fdae0df630b7c0ec24c83))
+* **fab:** standartize appearance options ([6a9dfdb](https://github.com/telerik/kendo-themes/commit/6a9dfdb6012e97b9be1b249d2a2265ce00ab7f23))
+* **input:** add new high-level input component ([6f45cf0](https://github.com/telerik/kendo-themes/commit/6f45cf0e1c4aeeca31cf8607e7f5b16f51dec598))
+* **list:** add size customization to list ([1509542](https://github.com/telerik/kendo-themes/commit/15095429fba919f86a59e2f862b7b5415122f2b4))
+* **menu-button:** add size customization to menu button ([45a0864](https://github.com/telerik/kendo-themes/commit/45a0864e88e903dbd7e551694a57e5e7a6c6c9b8))
+* **menu:** add size customization to menu list and menu items ([7e0b9d1](https://github.com/telerik/kendo-themes/commit/7e0b9d19ae57558cd7af98c70312ebd023931496))
+* **multiselect:** add size, rounded and fill customization to multiselect ([11a2cab](https://github.com/telerik/kendo-themes/commit/11a2cab78f73b4b29914d3c314de9106c35dd77f))
+* **radio:** add sizing property to radio ([afb6cc3](https://github.com/telerik/kendo-themes/commit/afb6cc3e03b2150f89049027075d099e05d79f2c))
+* **switch:** add size and rounded customization to switch ([10a7a02](https://github.com/telerik/kendo-themes/commit/10a7a02274d986ebe22d15b19d9665a6c14136e9))
+* **table:** add sizing to table component ([ae7b643](https://github.com/telerik/kendo-themes/commit/ae7b64322559cddf808db0f29c66b0d4db5d0b80))
+* **textarea:** add size, rounded and fill customization to textarea ([cc6c6fb](https://github.com/telerik/kendo-themes/commit/cc6c6fb5dc91c946a9dedbb5dffe8308e888b5f5))
+* **textbox:** add size, rounded and fill customization to textbox ([797937e](https://github.com/telerik/kendo-themes/commit/797937ed0cb604e5695eb98a568424bd03a0c357))
+* **treeview:** add sizing property to treeview ([0b92f78](https://github.com/telerik/kendo-themes/commit/0b92f781ea4e242833a1bcdda5006f188ccf38a0))
+
+
+### infra
+
+* **publishing:** do not include flattened dependencies in distributions ([6dd9537](https://github.com/telerik/kendo-themes/commit/6dd95376dd86cd2182987195ee8b79938e19c285))
+
+
+### BREAKING CHANGES
+
+* **fab:** Convert monolithic FAB styles to multiple class names.
+
+Styles are split in multiple class names with each being scoped to a
+single FAB appearance property:
+
+* `shape` - controls if the FAB is square or not;
+* `size` - controls the overall physical size of a FAB;
+* `themeColor` - controls which color is used to style a FAB;
+* `fillMode` - controls how the color is applied;
+* `rounded` - controls what border radius is applied to a FAB.
+* **fab:** the shape option now supports `rectangle` and `square`.
+* **fab:** themeColor class is now composite - `k-fab-{fillMode}-{themeColor}`.
+* **fab:** Add kendo prefix to all FAB variables
+* **treeview:** Add sizing property to TreeView
+* **multiselect:** Use high-level input for multiselect base
+
+Multiselect reuses the input base component size, rounded and fill
+component options.
+* **multiselect:** Use chip list for item selection
+* **chip:** Add kendo prefix to all avatar variables
+
+Change variable names from `$chip-*` to `$kendo-chip-*`.
+* **table:** Add kendo prefix to all table variables
+
+Change variable names from `$table-*` to `$kendo-table-*`.
+* **list:** List size is now applied by a dedicated class.
+* **list:** Rename list state variables.
+* **list:** Add kendo prefix to all list variables
+
+Change variable name from `$list-*` to `$kendo-list-*`.
+* **menu:** Convert monolithic menu styles to multiple class names
+* **menu-button:** Convert monolithic menu button styles to multiple class names
+* **avatar:** Removed shape option from avatar.
+
+The avatar has fixed width and height, thus no dedicated shape option
+is needed. Instead, the avatar has rounded appearance property set
+to circle by default.
+
+The styles of the avatar are split into multiple class names with each
+being scoped to a single appearance property:
+
+* `size` controls the overall physical size of an avatar;
+* `themeColor` controls which color is used to style an avatar;
+* `fillMode` controls how the color is applied;
+* `rounded` controls what border radius is applied to an avatar.
+
+Each property generates component specific class name `k-avatar-{size}`,
+ `k-avatar-{fillMode}`, `k-avatar-{fillMode}-{themeColor}`.
+
+Note: without `fillMode`, there is no way to apply themeColor, that's why
+the `themeColor` class is composite.
+
+The only notable exception is rounded, which sets the same class name
+for all components -- `k-rounded-{rounded}`.
+
+You can find more information about the values of each property in the
+documentation of the button component -- /docs/components/avatar.
+* **avatar:** Add kendo prefix to all avatar variables
+
+Change variable names from `$avatar-*` to `$kendo-avatar-*`.
+* **daterange-picker:** Use high-level input for date range picker base
+
+Date range picker reuses the input base component size, rounded and fill
+component options.
+* **color-picker:** Use high-level picker for color picker base
+
+Color picker reuses the picker base component size, rounded and fill
+component options.
+* **dropdown-tree:** Use high-level picker for dropdown tree base
+
+Dropdown tree reuses the picker base component size, rounded and fill
+component options.
+* **textarea:** Use high-level input for textarea base
+
+Textarea reuses the input base component size, rounded and fill
+component options.
+* **textbox:** Use high-level input for textbox base base
+
+Textbox reuses the input base component size, rounded and fill
+component options.
+* **input:** Add new high-level input and picker component
+
+Previously, the various form components did not share or reuse code.
+Now, we have have to base components: input and picker, that
+hold the bulk of styling needed. In addition, styles are split in multiple class names
+with each being scoped to a single component appearance property:
+
+* `size` controls the overall physical size of a component;
+* `themeColor` controls which color is used to style a component;
+* `fillMode` controls how the color is applied;
+* `rounded` controls what border radius is applied to a component.
+
+Each property generates component specific class name `k-input-{size}`,
+`k-input-{fillMode}`, `k-input-{fillMode}-{themeColor}`.
+
+Note: without `fillMode`, there is no way to apply themeColor, that's why
+the `themeColor` class is composite.
+
+The only notable exception is rounded, which sets the same class name
+for all components -- `k-rounded-{rounded}`.
+
+You can find more information about the values of each property in the
+documentation of each respective component -- /docs/components/....
+* **input:** Remove residual styles
+
+No further customization is applied to input and picker components when
+hosted inside other components, except in very few specific cases.
+* **input:** Add kendo prefix to all variables
+
+Change variable names from `$input-*` to `$kendo-input-*`.
+* **radio:** Add sizing property to radio
+
+There is a new aptly named property, `size`, for radio button which
+controls the overall physical size of a radio button.
+* **radio:** Add kendo prefix to all radio variables
+
+Change variable names from `$radio-*` to `$kendo-radio-*`.
+* **checkbox:** Convert monolithic checkbox styles to multiple class names
+
+Previously, `k-checkbox` held all the styling information related to
+the checkbox component. Now, styles are split in multiple class names
+with each being scoped to a single checkbox appearance property:
+
+* `size` controls the overall physical size of a checkbox;
+* `rounded` controls what border radius is applied to a checkbox.
+* **checkbox:** Add kendo prefix to all checkbox variables
+
+Change variable names from `$checkbox-*` to `$kendo-checkbox-*`.
+* **switch:** Convert monolithic switch styles to multiple class names
+
+Previously, switch class names held too much styling information that
+made customizing the switch hard. Now, styles are split in multiple
+class names with each being scoped to a single switch appearance property:
+
+* `size` controls the overall physical size of a switch;
+* `trackRounded` controls what border radius is applied to the switch track;
+* `thumbRounded` controls what border radius is applied to the switch thumb.
+
+You can find more information about the values of each property in the
+documentation of the button component -- /docs/components/switch.
+* **switch:** Remove residual switch styles
+
+No further customization is applied to buttons when hosted inside other
+components, except in very few specific cases.
+* **switch:** Add kendo prefix to all switch variables
+
+Change variable name from `$switch-*` to `$kendo-switch-*`.
+* **button:** Convert monolithic button styles to multiple class names
+
+Previously, `k-button` held all the styling information related to
+the button component. Now, styles are split in multiple class names
+with each being scoped to a single button appearance property:
+
+* `shape` controls if the button is square or not;
+* `size` controls the overall physical size of a button;
+* `themeColor` controls which color is used to style a button;
+* `fillMode` controls how the color is applied;
+* `rounded` controls what border radius is applied to a button.
+
+Each property generates component specific class name `k-button-square`,
+`k-button-{size}`, `k-button-{fillMode}`, `k-button-{fillMode}-{themeColor}`.
+
+Note: without `fillMode`, there is no way to apply themeColor, that's why
+the `themeColor` class is composite.
+
+The only notable exception is rounded, which sets the same class name
+for all components -- `k-rounded-{rounded}`.
+
+You can find more information about the values of each property in the
+documentation of the button component -- /docs/components/button.
+* **button:** Remove residual button styles
+
+No further customization is applied to buttons when hosted inside other
+components, except in very few specific cases.
+
+For instance, in Material theme we would slightly dim the normal buttons
+and remove the shadow, which may or may not be desired.
+* **button:** Add kendo prefix to all button variables
+
+Change variable names from `$button-*` to `$kendo-button-*`.
+* **publishing:** Do not include flattened dependencies in distributions
+
+
+
+
+
+# [4.44.0](https://github.com/telerik/kendo-themes/compare/v4.43.0...v4.44.0) (2022-01-18)
+
+
+### Bug Fixes
+
+* add styles for virtual scroller component ([0e1c521](https://github.com/telerik/kendo-themes/commit/0e1c5210675533794e37a29e33a10f8347ccb29b))
+* **appbar:** make horizontal and vertical padding symetrical ([6504cad](https://github.com/telerik/kendo-themes/commit/6504cad125689e70462d2701a6143db0131d6122))
+* **autocomplete:** convert styles to universal v4 rendering ([dbf7bcf](https://github.com/telerik/kendo-themes/commit/dbf7bcf055e2b2a3213c71568ab65c011226b0df))
+* **button:** add extra styles for link button ([f90e61d](https://github.com/telerik/kendo-themes/commit/f90e61dfe510332b0f5494cedb45e97518e60246))
+* **button:** add extra styles for outline button ([8100b97](https://github.com/telerik/kendo-themes/commit/8100b971f661d2b06b49f0667bcba212b1710e9b))
+* **button:** add extra styles for solid button ([3aabce4](https://github.com/telerik/kendo-themes/commit/3aabce47cd23e9dc09ab02cb778d48b7c18f1a36))
+* **button:** do not override button focus shadow in button group ([b806e0e](https://github.com/telerik/kendo-themes/commit/b806e0e4a1892ce05113ec8bc6ee73ba03c9c886))
+* **chat:** remove border from message box buttons ([38ba0dc](https://github.com/telerik/kendo-themes/commit/38ba0dc4b17f0841cfbb181dd1e5e906ec7c4d70))
+* **chat:** remove redundant textbox styles ([339c301](https://github.com/telerik/kendo-themes/commit/339c3018ae465b3e28ad3f5b022aad88eea69ff1))
+* **checkbox-radio:** add styles for checkbox radio wrap for better alignment ([3f2e22f](https://github.com/telerik/kendo-themes/commit/3f2e22f921b9f3e529847de2129a86f639cc00be))
+* **checkbox:** classic checkbox should have 4px border radius to reflect less themes ([0e2a4b8](https://github.com/telerik/kendo-themes/commit/0e2a4b8a8a7974092d142aa85472eaff4898c12c))
+* **checkbox:** improve ripple styles ([122a208](https://github.com/telerik/kendo-themes/commit/122a20889233daff2f1a841f80b711a5c3dd8cad))
+* **color-editor:** make gap between current and preview color consistent ([6e2a06f](https://github.com/telerik/kendo-themes/commit/6e2a06f09a69d9b15d277693fdd2e7e1e29e746d))
+* **color-picker:** convert styles to match universal rendering ([9d46df1](https://github.com/telerik/kendo-themes/commit/9d46df1bd909e47f5b856b36376f8d96cb032a6a))
+* **column-menu:** ensure all child content is 100% wide ([fd954fe](https://github.com/telerik/kendo-themes/commit/fd954fefeb601aa1f7cd7f2b27183302f29ac09c))
+* **column-menu:** use corretly derived padding variables ([6da6b59](https://github.com/telerik/kendo-themes/commit/6da6b598e9f854dace47071f73c542799948b012))
+* **combobox:** update styles to match universal v4 rendering ([8408f7c](https://github.com/telerik/kendo-themes/commit/8408f7cd906ae4342992fefcf434e817d1f6ffb6))
+* **daterange-picker:** extract daterange picker styles as a separate module ([02b3560](https://github.com/telerik/kendo-themes/commit/02b35602f512836a8b81a79f8e64d1aa5d0dabc0))
+* ensure correct font sizes for xs sm md lg and xl ([1615afa](https://github.com/telerik/kendo-themes/commit/1615afa6446fa827249776f70e6301f677fd251d))
+* **form:** make form-buttons alias of action buttons ([0510a42](https://github.com/telerik/kendo-themes/commit/0510a42a0bfda2638a76f6b3be8067f5832c63c7))
+* **image-editor:** introduce variable to set action pane width ([fff9c07](https://github.com/telerik/kendo-themes/commit/fff9c070fdb2033c4529359d77eee5e8178e7858))
+* **input:** use 200px default width instead of guessing ([85fce4a](https://github.com/telerik/kendo-themes/commit/85fce4a32d62756d0a0c2f07888d4d0a1fb1a920))
+* **list:** better alignment for checkboxes in multiline scenario ([d87921a](https://github.com/telerik/kendo-themes/commit/d87921a6b3cfdc0ba946d5a8ba6b219a47fd7210))
+* **listbox:** ser default width to 10 em (20 characters) ([6be4719](https://github.com/telerik/kendo-themes/commit/6be47190f8e555fa4af35ac81f1718558ed2656a))
+* **list:** use correct colors for various list parts ([efac2c6](https://github.com/telerik/kendo-themes/commit/efac2c63acbe0adc30c7e23c95b141a63e08c773))
+* **list:** use correct variable values for list and items ([15bfcb3](https://github.com/telerik/kendo-themes/commit/15bfcb3e45ad979c77bbcc53c34e4a4ec360fe2e))
+* **numeric:** convert styles to v4 universal rendering ([f12f787](https://github.com/telerik/kendo-themes/commit/f12f787c61171768046adfd49df3f60ed41e399a))
+* **pager:** set default width for inputs 5 em (10 characters) ([f8332af](https://github.com/telerik/kendo-themes/commit/f8332affe2b4c074c33cfe730f9f90ce362be0c7))
+* **pdf-viewer:** reuse toolbar variables for pdf-viewer search ([5c0f71c](https://github.com/telerik/kendo-themes/commit/5c0f71ce76eb50b00cff3ec811c05b65cdd2031c))
+* **popup:** make padding of popups 0 ([d567a72](https://github.com/telerik/kendo-themes/commit/d567a72fec402302c950542c7dcb8b78261d3285))
+* **radio:** improve ripple styles ([9c2cc66](https://github.com/telerik/kendo-themes/commit/9c2cc66b554771c7972dc2f0ab383501c3a14b21))
+* **searchbox:** convert styles to v4 universal rendering ([d38a6d4](https://github.com/telerik/kendo-themes/commit/d38a6d4ace56126477268019014507e22973ed39))
+* set default input width to 10 em (20 characters) ([17fbebc](https://github.com/telerik/kendo-themes/commit/17fbebc6cec70e0f6f1ce268cfeb428fec96760b))
+* **slider:** classic slider should be 56 pixels wide ([de0fec4](https://github.com/telerik/kendo-themes/commit/de0fec46d0aae23281ab879f8b5b63873f4282af))
+* **switch:** align classic theme colors with less themes ([b647dcf](https://github.com/telerik/kendo-themes/commit/b647dcf2e33e65709834c8feadc757b8c4fb4712))
+* **table:** add styles for sticky table group header ([da9199f](https://github.com/telerik/kendo-themes/commit/da9199f4de94ad95b297beb5b65e1f0df6252390))
+* **tabstrip:** unify tabstrip content padding ([d35feb9](https://github.com/telerik/kendo-themes/commit/d35feb9f605622c3470a6de9bfcccce5f823ba03))
+* **toolbar:** add menu component as dependency to toolbar component ([90eeb13](https://github.com/telerik/kendo-themes/commit/90eeb136f5907b860d46fdc3c1f9f8307620e6a6))
+* **toolbar:** move styles for toolbar overflow container in toolbar files ([148a0ab](https://github.com/telerik/kendo-themes/commit/148a0ab0543b81f6fa8d98a37efb100c308e043e))
+* **treeview:** streamline treeview styles to match design better ([23a80f3](https://github.com/telerik/kendo-themes/commit/23a80f38e3ab7e679c17a04c75c0a6bf8b0641b8))
+* **treeview:** use correct variable values for treeview and items ([37f271a](https://github.com/telerik/kendo-themes/commit/37f271a22eb9fae1e22db1461e5d53d4d73dcee5))
+* use correct font-size for inputs ([f59582f](https://github.com/telerik/kendo-themes/commit/f59582f1275f3dac2644adb88ea8096bb1d9e3df))
+* **utils:** replace circle and pill with full border-radius option ([4bf37c6](https://github.com/telerik/kendo-themes/commit/4bf37c6b16b29ccad4581e43c52f205309cc160f))
+
+
+### Features
+
+* **date-input:** extract date input styles into a separate folder ([061868a](https://github.com/telerik/kendo-themes/commit/061868a44f4c6970f3d2d2a34a673583f0de5710))
+* **date-picker:** extract date picker styles into a separate folder ([c3633bd](https://github.com/telerik/kendo-themes/commit/c3633bdc34bf2c4b469b894553cfde4253b147bc))
+* **datetime-picker:** extract datetime picker styles into a separate folder ([e269119](https://github.com/telerik/kendo-themes/commit/e269119f023f258a956c3d6c759243dd58359ced))
+* **list:** extract styles for list component ([bff7748](https://github.com/telerik/kendo-themes/commit/bff7748940888055efd36b1a76af7b4698ed6fc8))
+* **panelbar:** adds variables to allow customization when expanding panelbar ([37215ea](https://github.com/telerik/kendo-themes/commit/37215ea1ac7ab95d13c35fc20c7c7154fcb1735b))
+* **table:** add styles for table component ([639ea3f](https://github.com/telerik/kendo-themes/commit/639ea3fd84a07968f366da8950b630bd911d6ea0))
+* **time-picker:** extract time picker styles into a separate folder ([d5e5888](https://github.com/telerik/kendo-themes/commit/d5e58886b895798bfac52e041da140dcfa09c428))
+* **time-selector:** extract time selector styles into a separate folder ([d16b90c](https://github.com/telerik/kendo-themes/commit/d16b90c90d26ad600e452f9bd7b6ff21c89a10d4))
+
+
+### Reverts
+
+* revert d9ca91e24c5ab5dee9736bdc8888bcb37147f3c7 ([acfc62b](https://github.com/telerik/kendo-themes/commit/acfc62bb4ebc5e69aeb3d3491c66596b201eef31))
+
+
+
+
+
+# [4.43.0](https://github.com/telerik/kendo-themes/compare/v4.42.0...v4.43.0) (2021-11-29)
+
+
+### Bug Fixes
+
+* **autocomplete:** use correct colors for invalid state ([f2f0144](https://github.com/telerik/kendo-themes/commit/f2f0144ffe1e1a3811805ff37314d054f6153f88))
+* **chat:** remove redundant styles for textbox ([37587e2](https://github.com/telerik/kendo-themes/commit/37587e26c337fad2dccfaf4d37cd0163a0877010))
+* **chat:** reuse button input and toolbar variables ([371e9c4](https://github.com/telerik/kendo-themes/commit/371e9c4bfbd100e7755f44bb76a636968ff8f7f8))
+* **editor:** use explicit box-sizing for image resizing ([98f459e](https://github.com/telerik/kendo-themes/commit/98f459e872f2b5b81625fc0b9324fc7c4057c138))
+* resolve w3c validator errors ([c65cb67](https://github.com/telerik/kendo-themes/commit/c65cb677d1496dcfcfd61c1c022d2ca9188c5e36))
+* use consistent border width for select button in inputs and pickers ([d517f2a](https://github.com/telerik/kendo-themes/commit/d517f2a9eae362972d7430a59e0a2feff5999d2f))
+* **utils:** use different border-radius for different themes ([c3991c7](https://github.com/telerik/kendo-themes/commit/c3991c775cce8c11faf88650f80d9a582ceef887))
+
+
+### Features
+
+* **editor:** add styles for resizable images ([b621712](https://github.com/telerik/kendo-themes/commit/b621712a51a363973654faa018653e48d94e88a4))
+
+
+
+
+
+# [4.42.0](https://github.com/telerik/kendo-themes/compare/v4.41.2...v4.42.0) (2021-10-18)
+
+
+### Bug Fixes
+
+* **button:** update button dependencies to include typography ([5bff00a](https://github.com/telerik/kendo-themes/commit/5bff00ab89eb309a128f82ad74bf67256b4582b7))
+* **captcha:** import missing dependencies ([0c79daa](https://github.com/telerik/kendo-themes/commit/0c79daa03ef7bc68c320962e19be604384723e9a))
+* **orgchart:** import missing dependencies ([bc8d649](https://github.com/telerik/kendo-themes/commit/bc8d649a36a42b55413ba5de9ec2a8c1c5011068))
+* **swatches:** classic green swatch does not have correct base theme ([1197d6f](https://github.com/telerik/kendo-themes/commit/1197d6fef9f55d1c47d5279919152b5a3d235dfd))
+
+
+### Features
+
+* **chip:** update component to match latest design ([5b63b95](https://github.com/telerik/kendo-themes/commit/5b63b95ce548cfd1e803220896444cb6261a9c79))
+* **colorpicker:** update component rendering and styles to match latest design ([a0bb137](https://github.com/telerik/kendo-themes/commit/a0bb13754a341bcbdae1604d3c07ee9575dac9d8))
+* **fab:** update styles to match the latest design ([31c1615](https://github.com/telerik/kendo-themes/commit/31c16158c6341bf748eb93e87f13d142acb3ec26))
+* **utils:** extract theme color utility classes into utils module ([e1b51df](https://github.com/telerik/kendo-themes/commit/e1b51df9857221e0bf40a23d13be7416b4e3a425))
+
+
+
+
+
+# [4.42.0-dev.0](https://github.com/telerik/kendo-themes/compare/v4.41.2...v4.42.0-dev.0) (2021-10-18)
+
+
+### Bug Fixes
+
+* **button:** update button dependencies to include typography ([5bff00a](https://github.com/telerik/kendo-themes/commit/5bff00ab89eb309a128f82ad74bf67256b4582b7))
+* **captcha:** import missing dependencies ([0c79daa](https://github.com/telerik/kendo-themes/commit/0c79daa03ef7bc68c320962e19be604384723e9a))
+* **orgchart:** import missing dependencies ([bc8d649](https://github.com/telerik/kendo-themes/commit/bc8d649a36a42b55413ba5de9ec2a8c1c5011068))
+* **swatches:** classic green swatch does not have correct base theme ([1197d6f](https://github.com/telerik/kendo-themes/commit/1197d6fef9f55d1c47d5279919152b5a3d235dfd))
+
+
+### Features
+
+* **chip:** update component to match latest design ([5b63b95](https://github.com/telerik/kendo-themes/commit/5b63b95ce548cfd1e803220896444cb6261a9c79))
+* **colorpicker:** update component rendering and styles to match latest design ([a0bb137](https://github.com/telerik/kendo-themes/commit/a0bb13754a341bcbdae1604d3c07ee9575dac9d8))
+* **fab:** update styles to match the latest design ([31c1615](https://github.com/telerik/kendo-themes/commit/31c16158c6341bf748eb93e87f13d142acb3ec26))
+* **utils:** extract theme color utility classes into utils module ([e1b51df](https://github.com/telerik/kendo-themes/commit/e1b51df9857221e0bf40a23d13be7416b4e3a425))
+
+
+
+
+
+## [4.41.2](https://github.com/telerik/kendo-themes/compare/v4.41.1...v4.41.2) (2021-09-13)
+
+
+### Bug Fixes
+
+* **button:** clear button should inherit color ([289985f](https://github.com/telerik/kendo-themes/commit/289985f29ae50acf6bb14f9df41213fca47e80db))
+* **combobox:** select arrow doesnt have padding in classic theme ([6959648](https://github.com/telerik/kendo-themes/commit/6959648a1dc6599d1b2862c920e396bdf255f4bc))
+* **dark-swatches:** use conditional border color based on theme luminosity ([14c2d01](https://github.com/telerik/kendo-themes/commit/14c2d019a1f85d3c5db096d3138c0e0a0cd03d8a))
+* **dataviz:** dont override selection colors with series colors ([0a53881](https://github.com/telerik/kendo-themes/commit/0a538811a2317f7d4ab8fc0b24d3c82cae96c3ec))
+* **dataviz:** use conditional black or white colors for chart lines ([e205eda](https://github.com/telerik/kendo-themes/commit/e205edad342d8040ae5d0d7bf03351e4cd294ab9))
+* **skeleton:** use correct colors in dark swatches ([fbdde90](https://github.com/telerik/kendo-themes/commit/fbdde90251d5ca35924ef983ba5fd4cf156adab4))
+* **textarea:** textarea uses incorrect colors in material dark swatches ([98558db](https://github.com/telerik/kendo-themes/commit/98558db977ed4cf12ab8fa88abe7f3fe5d981131))
+
+
+
+
+
+## 4.41.2-dev.2 (2021-09-13)
+
+**Note:** Version bump only for package @progress/kendo-theme-classic
+
+
+
+
+
+## 4.41.2-dev.1 (2021-09-11)
+
+**Note:** Version bump only for package @progress/kendo-theme-classic
+
+
+
+
+
+## 4.41.2-dev.0 (2021-09-08)
+
+**Note:** Version bump only for package @progress/kendo-theme-classic
+
+
+
+
+
+## 4.41.1 (2021-09-06)
+
+
+### Bug Fixes
+
+* **sheduler:** scheduler resource cells should not flex ([8e848d3](https://github.com/telerik/kendo-themes/commit/8e848d351452aa6eedf7c5336138991ebad4b4b1))
+
+
+
+
+
+# [4.41.0](https://github.com/telerik/kendo-themes/compare/v4.40.1...v4.41.0) (2021-08-13)
+
+
+### Bug Fixes
+
+* **grid:** import skeleton dependency ([632c4b8](https://github.com/telerik/kendo-themes/commit/632c4b83c0f40d4b91eb6767c29907e89d7aced6))
+
+
+### Features
+
+* add captcha styles ([f0eef52](https://github.com/telerik/kendo-themes/commit/f0eef525d6fbc2bcae26f6502a78eb1073b4023c))
+* add orgchart styles ([2e237ef](https://github.com/telerik/kendo-themes/commit/2e237ef8b358a94869f8dfc3068dbcdabd2aa083))
+* add popover styles ([28f352c](https://github.com/telerik/kendo-themes/commit/28f352cdd80f777a11db5054f15c1e164e1d21b5))
+* **pager:** add focusable styles to component ([9971077](https://github.com/telerik/kendo-themes/commit/9971077fbf87e55209050925405578b59b9b42ef))
+* **tabstrip:** extend scrollable and sortable tabs styles ([29ae422](https://github.com/telerik/kendo-themes/commit/29ae422b08e2a6936563eed1898af329e24bf162))
+
+
+
+
+
+## 4.40.1 (2021-07-28)
+
+**Note:** Version bump only for package @progress/kendo-theme-classic
+
+
+
+
+
+<a name="4.40.0"></a>
+# 4.40.0 (2021-07-26)
+
+
+### Bug Fixes
+
+* **calendar:** update calendar cell focus shadow to match design ([fa62d57](https://github.com/telerik/kendo-themes/commit/fa62d57))
+* update list item focus shadow to match design ([6f7e29c](https://github.com/telerik/kendo-themes/commit/6f7e29c))
+* **calendar:** add calendar caption styles, reuse existing styles and remove legacy styles ([6d5f33e](https://github.com/telerik/kendo-themes/commit/6d5f33e))
+* **checkbox:** update checkbox borders to match design more closely ([2450229](https://github.com/telerik/kendo-themes/commit/2450229))
+* **rating:** use correct color for rating icons ([5be1c92](https://github.com/telerik/kendo-themes/commit/5be1c92))
+* remove usages of background-clip styling ([accb3ef](https://github.com/telerik/kendo-themes/commit/accb3ef))
+* **checkbox:** use single set of variables for styling indeterminate state indicator ([5380db2](https://github.com/telerik/kendo-themes/commit/5380db2))
+* **listgroup:** unlink listgroup variables from cell variables ([7f72e0b](https://github.com/telerik/kendo-themes/commit/7f72e0b))
+* remove unused cell-padding-sm variable ([0812298](https://github.com/telerik/kendo-themes/commit/0812298))
+* rename cell-padding variables to table-cell-padding ([14205be](https://github.com/telerik/kendo-themes/commit/14205be))
+* **calendar:** remove legacy styles for kendo-react calendar ([0d6411e](https://github.com/telerik/kendo-themes/commit/0d6411e))
+* **editor:** remove explicit shading of editor find replace dialog ([432b6a2](https://github.com/telerik/kendo-themes/commit/432b6a2))
+* **grid:** extract grid edit cell variables ([8a33349](https://github.com/telerik/kendo-themes/commit/8a33349))
+* **grid:** use more predictable spacing between buttons in command cells ([b000af4](https://github.com/telerik/kendo-themes/commit/b000af4))
+* **mediaplayer:** do not apply additional styling for media player toolbar ([32aee36](https://github.com/telerik/kendo-themes/commit/32aee36))
+* **mediaplayer:** use consistent padding for media player header ([3461ecf](https://github.com/telerik/kendo-themes/commit/3461ecf))
+* **pager:** use consistent padding for pager ([e17a60f](https://github.com/telerik/kendo-themes/commit/e17a60f))
+* **scheduler:** introduce variables for scheduler cell padding ([0760a37](https://github.com/telerik/kendo-themes/commit/0760a37))
+* **scrollview:** change light/dark bg opacity ([d1d2250](https://github.com/telerik/kendo-themes/commit/d1d2250))
+* **taskboard:** pane spacing is not consistent with action buttons ([9ff8244](https://github.com/telerik/kendo-themes/commit/9ff8244))
+* **toolbar:** use consistent padding for toolbar ([9fbce08](https://github.com/telerik/kendo-themes/commit/9fbce08))
+* **upload:** disconnect upload variables from toolbar ([31fc9a3](https://github.com/telerik/kendo-themes/commit/31fc9a3))
+* **upload:** use spacing map to size upload items ([42bad6b](https://github.com/telerik/kendo-themes/commit/42bad6b))
+* update swatches schema ([b2fa497](https://github.com/telerik/kendo-themes/commit/b2fa497))
+
+
+### Features
+
+* **checkbox:** allow glyph, image and marke for checked and indeterminate state ([9db64a4](https://github.com/telerik/kendo-themes/commit/9db64a4))
+* **pivotgrid:** update pivotgrid to match latest design ([4697557](https://github.com/telerik/kendo-themes/commit/4697557))
+* **radio:** allow glyph, image and marker for checked state ([f49034b](https://github.com/telerik/kendo-themes/commit/f49034b))
+* expose endpoint for swatches consuption via js ([0c7cb4f](https://github.com/telerik/kendo-themes/commit/0c7cb4f))
+
+
+
+
 <a name="0.16.0"></a>
 # [0.16.0](https://github.com/telerik/kendo-themes/compare/@progress/kendo-theme-classic@0.15.1...@progress/kendo-theme-classic@0.16.0) (2021-06-14)
 

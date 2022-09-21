@@ -1,8 +1,31 @@
-// Dependencies
-@import "../input/_variables.scss";
+// Module meta
+$_kendo-module-meta: (
+    name: "autocomplete",
+    dependencies: (
+        "input",
+        "icon",
+        "popup",
+        "list"
+    )
+);
 
 
 // Component
 @import "_variables.scss";
 @import "_layout.scss";
 @import "_theme.scss";
+
+
+// Register
+@include module-register( $_kendo-module-meta... );
+
+
+// Expose
+@mixin autocomplete-styles() {
+    @include module-render( "autocomplete" ) {
+        @include kendo-autocomplete--layout();
+        @include kendo-autocomplete--extended-layout();
+        @include kendo-autocomplete--theme();
+        @include kendo-autocomplete--extended-theme();
+    }
+}

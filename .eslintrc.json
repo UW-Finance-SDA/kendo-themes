@@ -1,8 +1,11 @@
 {
     "root": true,
-    "extends": "eslint:recommended",
+    "extends": [
+        "eslint:recommended"
+    ],
     "parserOptions": {
-        "ecmaVersion": 2018
+        "ecmaVersion": 2018,
+        "sourceType": "module"
     },
     "env": {
         "browser": true,
@@ -66,5 +69,52 @@
         "no-this-before-super": "error",
         "no-var": "error",
         "yoda": ["error", "never", { "exceptRange": true }]
-    }
+    },
+    "overrides": [
+        {
+            "files": ["tests/**/*.js"],
+            "globals": {
+                "$": "readonly",
+                "$$": "readonly",
+                "jQuery": "readonly",
+                "Mocha": "readonly",
+                "chai": "readonly",
+                "suite": "readonly",
+                "test": "readonly",
+                "before": "readonly",
+                "after": "readonly",
+                "assert": "writable",
+                "metrics": "readonly",
+                "loadFixture": "readonly",
+                "clearFixture": "readonly"
+            }
+        },
+        {
+            "files": [
+                "packages/html/**/*.ts",
+                "packages/html/**/*.tsx"
+            ],
+            "extends": [
+                "eslint:recommended",
+                "plugin:react/recommended",
+                "plugin:@typescript-eslint/eslint-recommended",
+                "plugin:@typescript-eslint/recommended"
+            ],
+            "parser": "@typescript-eslint/parser",
+            "plugins": [
+                "react",
+                "@typescript-eslint"
+            ],
+            "settings": {
+                "react": {
+                    "version": "detect"
+                }
+            },
+            "rules": {
+                "@typescript-eslint/no-empty-function": "off",
+                "@typescript-eslint/no-explicit-any": "off",
+                "@typescript-eslint/no-non-null-assertion": "off"
+            }
+        }
+    ]
 }

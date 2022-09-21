@@ -1,6 +1,10 @@
 @include exports("chat/layout") {
 
     .k-chat {
+        margin: auto;
+        max-width: $chat-width;
+        height: $chat-height;
+        max-height: 100%;
         border-width: $chat-border-width;
         border-style: solid;
         box-sizing: border-box;
@@ -8,17 +12,11 @@
         font-family: $chat-font-family;
         font-size: $chat-font-size;
         line-height: $chat-line-height;
-        height: 600px;
-        max-height: 100%;
         display: flex;
         flex-direction: column;
         overflow: hidden;
         -webkit-touch-callout: none;
         -webkit-tap-highlight-color: $rgba-transparent;
-
-
-        max-width: 500px;
-        margin: auto;
 
 
         // Message list
@@ -144,11 +142,17 @@
             border-style: solid;
             line-height: $chat-bubble-line-height;
             word-wrap: break-word;
+            white-space: pre-wrap;
+
+            a {
+                color: inherit;
+                text-decoration: underline;
+            }
         }
 
 
         // Message states
-        .k-message.k-state-selected {
+        .k-message.k-selected {
             margin-bottom: $chat-item-spacing-y;
             border: 0;
             color: inherit;
@@ -243,8 +247,7 @@
         padding-left: $chat-message-list-padding-y;
         padding-right: $chat-message-list-padding-y;
         display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
+        flex-flow: row nowrap;
         flex: 0 0 auto;
         overflow-x: auto;
         overflow-y: hidden;
@@ -264,21 +267,30 @@
 
     // Message box
     .k-message-box {
-        padding: $chat-message-box-padding-y $chat-message-box-padding-x;
+        width: 100%;
+        height: auto;
+        box-sizing: border-box;
         border-width: 1px 0 0;
         border-style: solid;
-        flex: 0 0 auto;
+        border-color: inherit !important; // sass-lint:disable-line no-important
+        border-radius: 0 !important; // sass-lint:disable-line no-important
+        flex: none;
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
 
-        // Input
-        .k-input {
-            padding: 0;
+        &:focus,
+        &.k-focus,
+        &:focus-within {
+            outline: 0;
+            box-shadow: none;
         }
 
+        // Input
+        .k-input {}
+
         .k-button {
-            padding: 0;
+            border-width: 0;
             flex-shrink: 0;
 
             svg {
@@ -286,11 +298,6 @@
                 height: 20px;
                 fill: currentColor;
                 display: inline-block;
-            }
-
-            &::before,
-            &::after {
-                display: none;
             }
 
             .k-rtl &,
@@ -344,8 +351,7 @@
     // Deck
     .k-chat .k-card-deck .k-card-wrap {
         display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
+        flex-flow: row nowrap;
         align-items: stretch;
         flex: 0 0 auto;
         padding-bottom: 5px; // accommodate for focused box shadow on OSX
@@ -354,7 +360,7 @@
             flex: 0 0 auto;
         }
 
-        &.k-state-selected {
+        &.k-selected {
             background: none;
         }
     }
@@ -374,8 +380,7 @@
         padding: 0;
         border-radius: 50px;
         display: inline-flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
+        flex-flow: row nowrap;
 
         span {
             width: $chat-typing-indicator-dot-size;
@@ -411,55 +416,53 @@
 
     .k-chat-toolbar,
     .k-chat .k-toolbar-box {
+        padding: $chat-toolbar-padding-y $chat-toolbar-padding-x;
         width: 100%;
+        border-width: 1px 0 0;
         box-sizing: border-box;
+        flex: none;
         overflow: hidden;
         position: relative;
-        flex: 0 0 auto;
+
+        &::before {
+            display: none;
+        }
 
         .k-button-list {
             // Needed for native scrolling. Will uncoment when it's implemented.
             // margin-bottom: -20px;
             // padding-bottom: 20px;
             display: flex;
-            flex-direction: row;
-            flex-wrap: nowrap;
+            flex-flow: row nowrap;
             overflow: hidden;
             // overflow-x: auto;
             scroll-behavior: smooth;
-            padding: $chat-toolbar-padding-y $chat-toolbar-padding-x;
+        }
 
-            // fix for flex container disregarding the right padding
-            &::after {
-                content: "";
-                padding-right: $chat-toolbar-padding-x;
-            }
-
-            .k-button + .k-button {
-                margin-left: $chat-toolbar-spacing;
-                flex-shrink: 0;
-            }
+        .k-button {
+            flex: none;
         }
 
 
         .k-scroll-button {
+            // IMPORTANT: if we don't set padding, the browser will set for us
+            padding: 0 map-get( $spacing, 1 );
+            height: 100%;
+            aspect-ratio: auto;
             position: absolute;
             z-index: 2;
-            top: 50%;
-            transform: translateY(-50%);
+            top: 0;
+
+            .k-button-icon {
+                min-width: auto;
+                min-height: auto;
+            }
         }
         .k-scroll-button-left {
             left: 0;
         }
         .k-scroll-button-right {
             right: 0;
-        }
-
-        .k-button {
-            border-width: 0;
-            color: inherit;
-            background: none;
-            flex-shrink: 0;
         }
 
 

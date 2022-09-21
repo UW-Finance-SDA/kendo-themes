@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en" class="k-no-animations" style="--kendo-scrollbar-width:15px;">
+<head>
+    <title>ImageEditor Resize Pane</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" data-role="kendo-theme" href="/packages/default/dist/all.css">
+    <link rel="stylesheet" href="/packages/html/assets/styles.css">
+    <script src="/packages/html/assets/scripts.js"></script>
+</head>
+<body id="app" class="k-body">
+    <div id="test-area" class="k-d-grid k-grid-cols-1">
+        <h4>Image Editor Resize Pane</h4>
+        <div class="k-widget k-imageeditor">
+            <div class="k-imageeditor-header">
+                <div class="k-imageeditor-toolbar k-toolbar k-widget">
+                    <button class="k-button k-button-md k-button-solid k-button-solid-base k-rounded-md k-icon-button">
+                        <span class="k-button-icon k-icon k-i-upload"></span>
+                    </button>
+                    <button class="k-button k-button-md k-button-solid k-button-solid-base k-rounded-md k-icon-button">
+                        <span class="k-button-icon k-icon k-i-download"></span>
+                    </button>
+                    <div class="k-separator"></div>
+                    <button class="k-button k-button-md k-button-solid k-button-solid-base k-rounded-md k-icon-button">
+                        <span class="k-button-icon k-icon k-i-undo"></span>
+                    </button>
+                    <button class="k-button k-button-md k-button-solid k-button-solid-base k-rounded-md k-icon-button">
+                        <span class="k-button-icon k-icon k-i-redo"></span>
+                    </button>
+                    <div class="k-separator"></div>
+                    <button class="k-button k-button-md k-button-solid k-button-solid-base k-rounded-md k-icon-button">
+                        <span class="k-button-icon k-icon k-i-crop"></span>
+                    </button>
+                    <button class="k-button k-button-md k-button-solid k-button-solid-base k-rounded-md k-icon-button">
+                        <span class="k-button-icon k-icon k-i-image-resize"></span>
+                    </button>
+                    <button class="k-button k-button-md k-button-solid k-button-solid-base k-rounded-md k-icon-button">
+                        <span class="k-button-icon k-icon k-i-zoom-in"></span>
+                    </button>
+                    <button class="k-button k-button-md k-button-solid k-button-solid-base k-rounded-md k-icon-button">
+                        <span class="k-button-icon k-icon k-i-zoom-out"></span>
+                    </button>
+                    <div>
+                        <span class="k-dropdown k-picker k-picker-md k-picker-solid k-rounded-md">
+                            <span class="k-input-inner">
+                                <span class="k-input-value-text">Zoom options</span>
+                            </span>
+                            <button class="k-input-button k-button k-button-md k-button-solid k-button-solid-base k-icon-button">
+                                <span class="k-button-icon k-icon k-i-arrow-s"></span>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="k-imageeditor-content" style="height: 482px;">
+                <div class="k-imageeditor-canvas-container">
+                    <div class="k-imageeditor-canvas">
+                        <canvas width="61" height="68" style="height: 68px;"></canvas>
+                    </div>
+                </div>
+                <div class="k-imageeditor-action-pane">
+                    <div class="k-imageeditor-pane-form k-widget k-form">
+                        <fieldset class="k-form-fieldset">
+                            <legend class="k-form-legend">Resize image</legend>
+                            <div class="k-form-layout k-d-grid k-grid-cols-2" style="gap: 0px 8px;">
+                                <div class="k-form-field  k-col-span-1-1 k-col-span-1">
+                                    <label class="k-label k-form-label">Width:</label>
+                                    <div class="k-form-field-wrap">
+                                        <span class="k-numerictextbox k-input k-input-md k-input-solid k-rounded-md">
+                                            <input type="text" class="k-input-inner" placeholder="" autocomplete="off" value="61">
+                                            <span class="k-input-spinner k-spin-button">
+                                                <button class="k-spinner-increase k-button k-button-md k-button-solid k-button-solid-base k-icon-button">
+                                                    <span class="k-button-icon k-icon k-i-arrow-n"></span>
+                                                </button>
+                                                <button class="k-spinner-decrease k-button k-button-md k-button-solid k-button-solid-base k-icon-button">
+                                                    <span class="k-button-icon k-icon k-i-arrow-s"></span>
+                                                </button>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="k-form-field k-colspan-1 k-col-span-1">
+                                    <label class="k-label k-form-label">&nbsp;</label>
+                                    <div class="k-form-field-wrap">
+                                        <span class="k-dropdown k-picker k-picker-md k-picker-solid k-rounded-md">
+                                            <span class="k-input-inner">
+                                                <span class="k-input-value-text">Pixels</span>
+                                            </span>
+                                            <button class="k-input-button k-button k-button-md k-button-solid k-button-solid-base k-icon-button">
+                                                <span class="k-button-icon k-icon k-i-arrow-s"></span>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="k-form-field k-colspan-1 k-col-span-1">
+                                    <label class="k-label k-form-label">Height:</label>
+                                    <div class="k-form-field-wrap">
+                                        <span class="k-numerictextbox k-input k-input-md k-input-solid k-rounded-md">
+                                            <input type="text" class="k-input-inner" placeholder="" autocomplete="off" value="68">
+                                            <span class="k-input-spinner k-spin-button">
+                                                <button class="k-spinner-increase k-button k-button-md k-button-solid k-button-solid-base k-icon-button">
+                                                    <span class="k-button-icon k-icon k-i-arrow-n"></span>
+                                                </button>
+                                                <button class="k-spinner-decrease k-button k-button-md k-button-solid k-button-solid-base k-icon-button">
+                                                    <span class="k-button-icon k-icon k-i-arrow-s"></span>
+                                                </button>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="k-form-field k-colspan-1 k-col-span-1">
+                                    <label class="k-label k-form-label">&nbsp;</label>
+                                    <div class="k-form-field-wrap">
+                                        <span class="k-dropdown k-picker k-picker-md k-picker-solid k-rounded-md">
+                                            <span class="k-input-inner">
+                                                <span class="k-input-value-text">Pixels</span>
+                                            </span>
+                                            <button class="k-input-button k-button k-button-md k-button-solid k-button-solid-base k-icon-button">
+                                                <span class="k-button-icon k-icon k-i-arrow-s"></span>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="k-form-field k-colspan-2 k-col-span-2">
+                                    <label class="k-label k-form-label">Lock aspect ratio:</label>
+                                    <div class="k-form-field-wrap">
+                                        <span class="k-checkbox-wrap">
+                                            <input type="checkbox" class="k-checkbox k-checkbox-md k-rounded-md">
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <div class="k-form-buttons">
+                            <button class="k-button k-button-md k-button-solid k-button-solid-base k-rounded-md">
+                                <span class="k-button-text">Cancel</span>
+                            </button>
+                            <button class="k-button k-button-md k-button-solid k-button-solid-primary k-rounded-md">
+                                <span class="k-button-text">Confirm</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

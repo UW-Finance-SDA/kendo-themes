@@ -2,7 +2,6 @@
 
     // Image Editor
     .k-imageeditor {
-        @include use-background-clip();
         margin: $imageeditor-margin-y $imageeditor-margin-x;
         padding: $imageeditor-padding-y $imageeditor-padding-x;
         border-width: $imageeditor-border-width;
@@ -14,6 +13,12 @@
         line-height: $imageeditor-line-height;
         -webkit-touch-callout: none;
         -webkit-tap-highlight-color: $rgba-transparent;
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
     }
 
 
@@ -51,15 +56,20 @@
 
     // Action Pane
     .k-imageeditor-action-pane {
+        padding: $imageeditor-action-pane-padding-y $imageeditor-action-pane-padding-x;
+        width: $imageeditor-action-pane-width;
         border-width: 0;
         border-left-width: $imageeditor-content-border-width;
         border-style: solid;
         border-color: inherit;
-        flex-shrink: 0;
+        box-sizing: border-box;
+        flex: none;
         overflow-y: auto;
-    }
-    .k-imageeditor-action-pane > .k-form {
-        padding: $imageeditor-action-pane-padding-y $imageeditor-action-pane-padding-x;
+
+        .k-input-inner,
+        .k-input-value-text {
+            text-overflow: clip;
+        }
     }
 
 
@@ -149,10 +159,6 @@
         .k-imageeditor-canvas {
             flex-direction: row;
             align-self: flex-start;
-        }
-
-        .k-imageeditor-action-pane {
-            flex: 0 0 auto;
         }
     }
 

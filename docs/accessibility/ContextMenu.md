@@ -1,8 +1,8 @@
 ---
 title: Context Menu
-category: components
+category: accessibility
 slug: context-menu
-position: 11
+position: 12
 ---
 # ContextMenu Keyboard Support
 

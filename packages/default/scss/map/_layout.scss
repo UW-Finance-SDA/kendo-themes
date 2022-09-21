@@ -3,11 +3,18 @@
     // Layout
     .k-map {
         height: 600px;
+        box-sizing: border-box;
         border-width: $map-border-width;
         border-style: solid;
         font-size: $map-font-size;
         line-height: $map-line-height;
         font-family: $map-font-family;
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
 
 
         // Scroll
@@ -73,33 +80,37 @@
 
         // Buttons
         .k-button {
-            margin: 0;
             padding: 0;
-            border-radius: 100%;
+            width: auto;
+            height: auto;
             line-height: 1;
             box-shadow: none;
             position: absolute;
 
-            &:not(:hover) {
-                border-color: transparent;
-                background: none;
+            .k-icon {
+                min-width: 0;
+                min-height: 0;
             }
         }
+        .k-navigator-n,
         .k-navigator-up {
             transform: translateX(-50%);
             top: $map-navigator-padding;
             left: 50%;
         }
+        .k-navigator-e,
         .k-navigator-right {
             transform: translateY(-50%);
             right: $map-navigator-padding;
             top: 50%;
         }
-        .k-navigator-down  {
+        .k-navigator-s,
+        .k-navigator-down {
             transform: translateX(-50%);
             bottom: $map-navigator-padding;
             left: 50%;
         }
+        .k-navigator-w,
         .k-navigator-left {
             transform: translateY(-50%);
             left: $map-navigator-padding;
@@ -116,12 +127,6 @@
         display: flex;
 
         .k-pdf-export & { display: none; }
-
-
-        // Buttons
-        .k-button {
-            padding: $button-padding-y;
-        }
     }
 
 }

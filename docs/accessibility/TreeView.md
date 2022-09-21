@@ -1,8 +1,8 @@
 ---
 title: Tree View
-category: components
+category: accessibility
 slug: tree-view
-position: 50
+position: 52
 ---
 # TreeView Keyboard Support
 

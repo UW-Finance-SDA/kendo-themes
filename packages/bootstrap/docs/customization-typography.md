@@ -26,10 +26,36 @@ The following table lists the available variables for customization.
 </thead>
 <tbody>
         <tr>
+    <td>$enable-typography</td>
+    <td>Bool</td>
+<td>
+
+`false`
+
+</td>
+<td>
+
+`false`
+
+</td>
+</tr>
+<tr>
+    <td colspan="4" class="theme-variables-description-container"><div><b>Description</b><div class="theme-variables-description">Global typography styles for the Kendo Bootstrap theme.</div></div>
+    </td>
+</tr>
+<tr>
     <td>$font-size</td>
-    <td></td>
-    <td>$font-size-base</td>
-    <td></td>
+    <td>Number</td>
+<td>
+
+`$font-size-base`
+
+</td>
+<td>
+
+`1rem`
+
+</td>
 </tr>
 <tr>
     <td colspan="4" class="theme-variables-description-container"><div><b>Description</b><div class="theme-variables-description">Base font size across all components.</div></div>
@@ -37,9 +63,17 @@ The following table lists the available variables for customization.
 </tr>
 <tr>
     <td>$font-family</td>
-    <td></td>
-    <td>$font-family-base</td>
-    <td></td>
+    <td>List</td>
+<td>
+
+`$font-family-sans-serif`
+
+</td>
+<td>
+
+`system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"`
+
+</td>
 </tr>
 <tr>
     <td colspan="4" class="theme-variables-description-container"><div><b>Description</b><div class="theme-variables-description">Font family across all components.</div></div>
@@ -47,9 +81,17 @@ The following table lists the available variables for customization.
 </tr>
 <tr>
     <td>$font-family-monospace</td>
-    <td></td>
-    <td>$font-family-monospace</td>
-    <td>$font-family-monospace</td>
+    <td>List</td>
+<td>
+
+`$font-family-monospace`
+
+</td>
+<td>
+
+`SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace`
+
+</td>
 </tr>
 <tr>
     <td colspan="4" class="theme-variables-description-container"><div><b>Description</b><div class="theme-variables-description">Font family for monospaced text. Used for styling the code.</div></div>
@@ -57,9 +99,17 @@ The following table lists the available variables for customization.
 </tr>
 <tr>
     <td>$line-height</td>
-    <td></td>
-    <td>$line-height-base</td>
-    <td></td>
+    <td>Number</td>
+<td>
+
+`$line-height-base`
+
+</td>
+<td>
+
+`1.5`
+
+</td>
 </tr>
 <tr>
     <td colspan="4" class="theme-variables-description-container"><div><b>Description</b><div class="theme-variables-description">Line height used along with $font-size.</div></div>

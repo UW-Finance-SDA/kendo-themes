@@ -1,102 +1,144 @@
 // Chip
-$chips-margin: 8px !default;
 
-$chip-padding-x: 6px !default;
-$chip-padding-y: 4px !default;
-$chip-height: 32px !default;
-$chip-border-radius: $chip-height / 2 !default;
-$chip-font-size: 16px !default;
+/// Width of the border around the button.
+/// @group chip
+$kendo-chip-border-width: 1px !default;
+/// The spacing between the text and the icons of the chip.
+/// @group chip
+$kendo-chip-spacing: map-get( $spacing, 1 ) !default;
 
-$chip-selected-icon-size: 24px !default;
-$chip-selected-icon-offset: 6px !default;
-$chip-selected-icon-no-icon-offset: 0px !default;
-$chip-selected-icon-font-size: $chip-font-size !default;
+/// Horizontal padding of the chip.
+/// @group chip
+$kendo-chip-padding-x: map-get( $spacing, 1 ) !default;
+$kendo-chip-padding-x-sm: map-get( $spacing, 1 ) !default;
+$kendo-chip-padding-x-md: map-get( $spacing, 1 ) !default;
+$kendo-chip-padding-x-lg: map-get( $spacing, 1 ) !default;
 
-$chip-content-padding-x: 6px !default;
+/// Vertical padding of the chip.
+/// @group chip
+$kendo-chip-padding-y: map-get( $spacing, 1 ) !default;
+$kendo-chip-padding-y-sm: map-get( $spacing, 1 ) - map-get( $spacing, thin )  !default;
+$kendo-chip-padding-y-md: map-get( $spacing, 1 ) !default;
+$kendo-chip-padding-y-lg: map-get( $spacing, 1 ) + map-get( $spacing, thin ) !default;
 
-$chip-icons-size: 24px !default;
-$chip-icon-margin: 0px !default;
-$chip-remove-icon-margin: 0px !default;
-$chip-remove-icon-font-size: 14px !default;
+/// Font sizes of the chip.
+/// @group chip
+$kendo-chip-font-size: $font-size-md !default;
+$kendo-chip-font-size-sm: $font-size-sm !default;
+$kendo-chip-font-size-md: $font-size-md !default;
+$kendo-chip-font-size-lg: $font-size-md !default;
 
-$chip-avatar-size: 24px !default;
+/// Line heights of the chip that are connected to the $font-size.
+/// @group chip
+$kendo-chip-line-height: 1.25 !default;
+$kendo-chip-line-height-sm: $kendo-chip-line-height !default;
+$kendo-chip-line-height-md: $kendo-chip-line-height !default;
+$kendo-chip-line-height-lg: $kendo-chip-line-height !default;
 
-$chip-filled-bg: #e4e7eb !default;
-$chip-filled-text: $body-text !default;
-$chip-filled-border: transparent !default;
+/// Sizes map for the chip.
+/// @group chip
+$kendo-chip-sizes: (
+    sm: (
+        padding-x: $kendo-chip-padding-x-sm,
+        padding-y: $kendo-chip-padding-y-sm,
+        font-size: $kendo-chip-font-size-sm,
+        line-height: $kendo-chip-line-height-sm
+    ),
+    md: (
+        padding-x: $kendo-chip-padding-x-md,
+        padding-y: $kendo-chip-padding-y-md,
+        font-size: $kendo-chip-font-size-md,
+        line-height: $kendo-chip-line-height-md
+    ),
+    lg: (
+        padding-x: $kendo-chip-padding-x-lg,
+        padding-y: $kendo-chip-padding-y-lg,
+        font-size: $kendo-chip-font-size-lg,
+        line-height: $kendo-chip-line-height-lg
+    )
+) !default;
 
-$chip-filled-hovered-bg: #ced3db !default;
-$chip-filled-hovered-border: transparent !default;
+/// The base background color of the chip.
+/// @group chip
+$kendo-chip-base-bg: $base-text !default;
 
-$chip-filled-focused-bg: $chip-filled-bg !default;
-$chip-filled-focused-shadow: 0 0 0 3px rgba($chip-filled-bg, .5) !default;
+/// Theme colors map for the chip.
+/// @group chip
+$kendo-chip-theme-colors: (
+    "base": $kendo-chip-base-bg,
+    "error": map-get( $kendo-theme-colors, "error" ),
+    "info": map-get( $kendo-theme-colors, "info" ),
+    "warning": map-get( $kendo-theme-colors, "warning" ),
+    "success": map-get( $kendo-theme-colors, "success" )
+) !default;
 
-$chip-filled-selected-bg: #c7cdd5 !default;
-$chip-filled-selected-border: transparent !default;
+/// The base background color of solid chip.
+/// @group chip
+$kendo-chip-solid-bg: try-tint( $kendo-chip-base-bg, 92% ) !default;
+/// The base text color of solid chip.
+/// @group chip
+$kendo-chip-solid-text: $kendo-chip-base-bg !default;
+/// The base border color of solid chip.
+/// @group chip
+$kendo-chip-solid-border: try-tint( $kendo-chip-base-bg, 70% ) !default;
+/// The base shadow of solid chip.
+/// @group chip
+$kendo-chip-solid-shadow: 0 0 0 2px rgba( $kendo-chip-base-bg, .16 ) !default;
 
-$chip-filled-success-bg: rgba($success, .15) !default;
-$chip-filled-success-text: $success !default;
-$chip-filled-success-border: transparent !default;
+/// The base background color of focused solid chip.
+/// @group chip
+$kendo-chip-solid-focus-bg: try-tint( $kendo-chip-base-bg, 92% ) !default;
+/// The base text color of focused solid chip.
+/// @group chip
+$kendo-chip-solid-focus-text: null !default;
 
-$chip-filled-warning-bg: rgba($warning, .15) !default;
-$chip-filled-warning-text: $warning !default;
-$chip-filled-warning-border: transparent !default;
+/// The base background color of hovered solid chip.
+/// @group chip
+$kendo-chip-solid-hover-bg: try-tint( $kendo-chip-base-bg, 84% ) !default;
+/// The base text color of hovered solid chip.
+/// @group chip
+$kendo-chip-solid-hover-text: null !default;
 
-$chip-filled-error-bg: rgba($error, .15) !default;
-$chip-filled-error-text: $error !default;
-$chip-filled-error-border: transparent !default;
+/// The base background color of selected solid chip.
+/// @group chip
+$kendo-chip-solid-selected-bg: try-tint( $kendo-chip-base-bg, 76% ) !default;
+/// The base text color of selected solid chip.
+/// @group chip
+$kendo-chip-solid-selected-text: null !default;
 
-$chip-filled-info-bg: rgba($info, .15) !default;
-$chip-filled-info-text: $info !default;
-$chip-filled-info-border: transparent !default;
+/// The base background color of outline chip.
+/// @group chip
+$kendo-chip-outline-bg: $component-bg !default;
+/// The base text color of outline chip.
+/// @group chip
+$kendo-chip-outline-text: $kendo-chip-base-bg !default;
+/// The base border color of outline chip.
+/// @group chip
+$kendo-chip-outline-border: $kendo-chip-base-bg !default;
+/// The base shadow of outline chip.
+/// @group chip
+$kendo-chip-outline-shadow: 0 0 0 2px rgba( $kendo-chip-base-bg, .16 ) !default;
 
-$chip-outline-bg: transparent !default;
-$chip-outline-text: #6c757d !default;
-$chip-outline-border: $chip-outline-text !default;
+/// The base background color of hovered outline chip.
+/// @group chip
+$kendo-chip-outline-hover-bg: $kendo-chip-base-bg !default;
+/// The base text color of hovered outline chip.
+/// @group chip
+$kendo-chip-outline-hover-text: contrast-wcag( $kendo-chip-base-bg ) !default;
 
-$chip-outline-hovered-bg: rgba(206, 211, 219, .3) !default;
-$chip-outline-hovered-text: $chip-outline-text !default;
-$chip-outline-hovered-border: $chip-outline-border !default;
+/// The base background color of selected outline chip.
+/// @group chip
+$kendo-chip-outline-selected-bg: $kendo-chip-outline-hover-bg !default;
+/// The base text color of selected outline chip.
+/// @group chip
+$kendo-chip-outline-selected-text: $kendo-chip-outline-hover-text !default;
 
-$chip-outline-focused-bg: $chip-outline-bg !default;
-$chip-outline-focused-text: $chip-outline-text !default;
-$chip-outline-focused-border: $chip-outline-border !default;
-$chip-outline-focused-shadow: $chip-filled-focused-shadow !default;
+// Chip List
 
-$chip-outline-selected-bg: rgba(199, 205, 213, .5) !default;
-$chip-outline-selected-text: $chip-outline-text !default;
-
-$chip-outline-success-bg: transparent !default;
-$chip-outline-success-text: $success !default;
-$chip-outline-success-border: $success !default;
-
-$chip-outline-warning-bg: transparent !default;
-$chip-outline-warning-text: $warning !default;
-$chip-outline-warning-border: $warning !default;
-
-$chip-outline-error-bg: transparent !default;
-$chip-outline-error-text: $error !default;
-$chip-outline-error-border: $error !default;
-
-$chip-outline-info-bg: transparent !default;
-$chip-outline-info-text: $info !default;
-$chip-outline-info-border: $info !default;
-
-$chip-filled-single-selected-bg: rgba($primary, .12) !default;
-$chip-filled-single-selected-text: $primary !default;
-$chip-filled-single-selected-border: transparent !default;
-
-$chip-outline-single-selected-bg: $chip-filled-single-selected-bg !default;
-$chip-outline-single-selected-text: $primary !default;
-$chip-outline-single-selected-border: $primary !default;
-
-$chip-multiple-selected-icon-bg: rgba(0, 0, 0, .36) !default;
-$chip-multiple-selected-icon-text: #ffffff !default;
-
-
-$chip-primary-focus-shadow: null !default;
-$chip-secondary-focus-shadow: null !default;
-$chip-info-focus-shadow: null !default;
-$chip-success-focus-shadow: null !default;
-$chip-warning-focus-shadow: null !default;
-$chip-error-focus-shadow: null !default;
+/// The sizes of the chip list.
+/// @group chip
+$kendo-chip-list-sizes: (
+    sm: map-get( $spacing, 1 ),
+    md: map-get( $spacing, 1 ),
+    lg: map-get( $spacing, 1 )
+) !default;

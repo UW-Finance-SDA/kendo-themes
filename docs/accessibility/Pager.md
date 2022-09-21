@@ -1,8 +1,8 @@
 ---
 title: Pager
-category: components
+category: accessibility
 slug: pager
-position: 31
+position: 33
 ---
 # Pager Keyboard Support
 

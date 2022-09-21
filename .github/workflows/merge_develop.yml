@@ -4,9 +4,6 @@ defaults:
   run:
     shell: bash
 
-env:
-  CI: true
-
 on: [workflow_dispatch]
 
 jobs:
@@ -22,6 +19,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: master
+          token: ${{ secrets.GH_TOKEN }}
 
       - name: Merge develop to master
         run: |

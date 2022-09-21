@@ -4,19 +4,19 @@ defaults:
   run:
     shell: bash
 
-env:
-  CI: true
-  TESTS_DIR: ./tests
-
 on:
   push:
     branches:
       - '**'
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
 
-  build-themes:
-    name: Build themes
+  run-tests:
+    name: Run tests
 
     runs-on: ubuntu-latest
 
@@ -26,23 +26,23 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Setup node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
+          cache: 'npm'
           node-version: 14.x
 
-      - name: Setup node cache
-        uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
       - name: Install
-        run: npm ci
+        run: |
+          npm ci
+          npm run bootstrap
 
-      - name: Bootstrap
-        run: npm run bootstrap
+      - name: Lint scripts
+        run: |
+          npm run eslint
+          npm run check-types
+
+      - name: Lint styles
+        run: npm run sasslint
 
       - name: Ensure standalone build
         run: npm run sass:standalone
@@ -50,60 +50,8 @@ jobs:
       - name: Build themes
         run: npm run sass:flat
 
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: themes
-          path: packages/*/dist/all.css
-          if-no-files-found: error
-
-  run-tests:
-    name: Run tests
-    needs: build-themes
-
-    runs-on: ubuntu-latest
-
-    steps:
-
-      - name: Checkout branch
-        uses: actions/checkout@v2
-
-      # - name: Setup Chrome
-      #   run: |
-      #     export CHROME_SOURCE_URL=https://dl.google.com/dl/linux/direct/google-chrome-stable_current_amd64.deb
-      #     wget --no-verbose -O /tmp/$(basename $CHROME_SOURCE_URL) $CHROME_SOURCE_URL
-      #     sudo apt install /tmp/$(basename $CHROME_SOURCE_URL)
-      #     google-chrome --version
-
-      - name: Setup node
-        uses: actions/setup-node@v1
-        with:
-          node-version: 14.x
-
-      - name: Setup node cache
-        uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
-      - name: Download artifacts
-        uses: actions/download-artifact@v2
-        with:
-          name: themes
-          path: tests/.tmp/dist/themes
-
-      # - name: List artifacts
-      #   run: ls -R tests/.tmp/dist/themes
-
-      - name: Install
-        run: npm ci
-        working-directory: ${{ env.TESTS_DIR }}
-
-      - name: Karma
-        run: npm run karma-github
-        working-directory: ${{ env.TESTS_DIR }}
+      - name: Build scripts
+        run: npm run build:scripts
 
   ci-unit:
     name: CI | Unit

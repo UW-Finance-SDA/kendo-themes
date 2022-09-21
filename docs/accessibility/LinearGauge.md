@@ -1,8 +1,8 @@
 ---
 title: Linear Gauge
-category: components
+category: accessibility
 slug: linear-gauge
-position: 22
+position: 23
 ---
 # LinearGauge Keyboard Support
 

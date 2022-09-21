@@ -8,6 +8,9 @@ $drawer-font-size: $font-size !default;
 $drawer-line-height: $line-height !default;
 $drawer-content-padding-x: $padding-x !default;
 $drawer-content-padding-y: $padding-y !default;
+$drawer-item-level-padding-x: map-get( $spacing, 4 ) !default;
+
+$drawer-item-level-count: 5 !default;
 
 $drawer-scrollbar-width: 7px !default;
 $drawer-scrollbar-color: rgba(156, 156, 156, .7) !default;
@@ -27,7 +30,7 @@ $drawer-hovered-bg: $hovered-bg !default;
 $drawer-hovered-text: $hovered-text !default;
 
 $drawer-focused-bg: $drawer-bg !default;
-$drawer-focused-shadow: $list-item-focused-shadow !default;
+$drawer-focused-shadow: $kendo-list-item-focus-shadow !default;
 
 $drawer-selected-bg: $selected-bg !default;
 $drawer-selected-text: $selected-text !default;

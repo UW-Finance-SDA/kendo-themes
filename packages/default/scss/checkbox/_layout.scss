@@ -1,228 +1,188 @@
 @include exports( "checkbox/layout" ) {
 
-    // Container box
+    // Checkbox
     .k-checkbox {
-        @include border-radius( $checkbox-radius );
         margin: 0;
         padding: 0;
-        width: $checkbox-size;
-        height: $checkbox-size;
         line-height: initial;
-        border-width: $checkbox-border-width;
+        border-width: $kendo-checkbox-border-width;
         border-style: solid;
         outline: 0;
-        box-sizing: border-box;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
         display: inline-block;
+        flex: none;
         vertical-align: middle;
         position: relative;
+        cursor: pointer;
         -webkit-appearance: none;
     }
 
-    // Checkmark
+
+    // Checkbox indicator
     .k-checkbox::before {
-        width: $checkbox-icon-size;
-        height: $checkbox-icon-size;
-        font-size: $checkbox-icon-size;
-        line-height: 1;
-        transform: scale(0) translate(-50%, -50%);
-        overflow: hidden;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-
-        @if $checkbox-icon-type == "svg" {
-            content: "";
-            background-repeat: no-repeat;
-            background-size: 50%;
-            background-position: 50%;
-            background-image: $checkbox-icon-svg;
-        } @else {
-            content: $checkbox-icon-glyph;
-            font-family: "WebComponentsIcons", monospace;
+        @if $kendo-checkbox-indicator-type == "glyph" {
+            content: $kendo-checkbox-checked-glyph;
+            width: 1em;
+            height: 1em;
+            font-family: $kendo-checkbox-glyph-font-family;
+            line-height: 1;
+            transform: translate(-50%, -50%) scale(0);
+            overflow: hidden;
+            position: absolute;
+            top: 50%;
+            left: 50%;
         }
-    }
-
-    // Hover state
-    .k-checkbox:hover,
-    .k-checkbox.k-state-hover {
-        cursor: pointer;
     }
 
 
     // Checked state
-    .k-checkbox:checked::before,
-    .k-checkbox.k-checked::before {
-        @include border-radius( $checkbox-radius );
-        transform: scale(1) translate(-50%, -50%);
+    .k-checkbox:checked,
+    .k-checkbox.k-checked {
+        @if $kendo-checkbox-indicator-type == "image" {
+            background-image: $kendo-checkbox-checked-image;
+        }
+
+        @if $kendo-checkbox-indicator-type == "glyph" {
+            &::before {
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
     }
 
 
     // Indeterminate state
-    .k-checkbox:indeterminate::before,
-    .k-checkbox.k-state-indeterminate::before,
-    .k-checkbox.k-indeterminate::before {
-        content: "";
-        background-color: currentColor;
-        transform: scale(1) translate(-50%, -50%);
+    .k-checkbox:indeterminate,
+    .k-checkbox.k-indeterminate {
+        @if $kendo-checkbox-indicator-type == "image" {
+            background-image: $kendo-checkbox-indeterminate-image;
+        }
 
-        @if $checkbox-indeterminate-style == "dash" {
-            width: $checkbox-dash-width;
-            height: $checkbox-dash-height;
-        } @else {
-            width: $checkbox-square-width;
-            height: $checkbox-square-height;
+        @if $kendo-checkbox-indicator-type == "glyph" {
+            &::before {
+                content: $kendo-checkbox-indeterminate-glyph;
+                transform: scale(1) translate(-50%, -50%);
+            }
         }
     }
 
 
     // Disabled state
     .k-checkbox:disabled,
-    .k-checkbox.k-disabled,
-    .k-checkbox:disabled + .k-checkbox-label,
-    .k-checkbox.k-disabled + .k-checkbox-label {
+    .k-checkbox.k-disabled {
         @include disabled( $disabled-styling );
     }
 
-    .k-checkbox + .k-checkbox-label {
-        display: inline;
+
+    // Checkbox wrap
+    .k-checkbox-wrap {
+        flex: none;
+        display: inline-flex;
+        flex-flow: row nowrap;
+        gap: 0;
+        align-items: center;
+        align-self: flex-start;
+        vertical-align: middle;
+        position: relative;
+
+        &::before {
+            content: "\200b";
+            width: 0px;
+            overflow: hidden;
+            flex: none;
+            display: inline-block;
+            vertical-align: top;
+        }
     }
+
 
     // Checkbox label
     .k-checkbox-label {
         margin: 0;
         padding: 0;
-        line-height: $checkbox-line-height;
         display: inline-flex;
         align-items: flex-start;
+        gap: $kendo-checkbox-label-margin-x;
         vertical-align: middle;
         position: relative;
         cursor: pointer;
 
-        .k-label {
-            cursor: pointer;
-        }
-
-        // Hide empty label
-        &:empty {
-            display: none;
-        }
-
-        // Keep it "visible" in jquery grid
-        &.k-no-text {
-            min-width: 1px;
-        }
-
         .k-ripple {
-            top: $checkbox-size / 2;
-            left: $checkbox-size / 2;
-            right: auto;
-            bottom: auto;
-            width: $checkbox-size * 5 / 2;
-            height: $checkbox-size * 5 / 2;
-            transform: translate(-50%, -50%);
-            border-radius: 50%;
-
             // Hide ripple temporarily
             visibility: hidden !important; // sass-lint:disable-line no-important
         }
-
-        .k-ripple-blob {
-            // sass-lint:disable-block no-important
-            // use !important until ripple can apply these styles from the script
-            top: 50% !important;
-            left: 50% !important;
-            width: 200% !important;
-            height: 200% !important;
-        }
     }
+    .k-checkbox + .k-label,
+    .k-checkbox-wrap + .k-label,
     .k-checkbox + .k-checkbox-label,
-    .k-checkbox-label + .k-checkbox {
-        margin-left: $checkbox-label-margin-x;
-    }
-    .k-checkbox-label > .k-checkbox {
-        margin-right: $checkbox-label-margin-x;
-        flex-shrink: 0;
-    }
-    kendo-label.k-checkbox-label > .k-checkbox:last-child {
-        margin-right: 0;
-    }
-    kendo-label.k-checkbox-label > .k-label:first-child {
-        margin-right: $checkbox-label-margin-x;
-    }
-    kendo-label.k-checkbox-label > .k-label {
+    .k-checkbox-wrap + .k-checkbox-label {
         display: inline;
+        margin-inline-start: $kendo-checkbox-label-margin-x;
+    }
+
+
+    // Empty label
+    .k-checkbox-label:empty {
+        display: none !important; // sass-lint:disable-line no-important
+    }
+    .k-checkbox-label.k-no-text {
+        min-width: 1px;
     }
 
 
     // Checkbox list
     .k-checkbox-list {
-        margin: $checkbox-list-margin;
-        padding: $checkbox-list-padding;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 0;
         list-style: none;
+    }
+    .k-checkbox-item,
+    .k-checkbox-list-item {
+        padding: $kendo-checkbox-list-item-padding-y $kendo-checkbox-list-item-padding-x;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        align-content: center;
+        gap: map-get( $spacing, 1 );
 
-        .k-checkbox-item {
-            padding: $checkbox-list-item-padding-y $checkbox-list-item-padding-x;
+        .k-checkbox-label {
+            margin: 0;
         }
     }
-
-    .k-list-horizontal {
-        .k-checkbox-item {
-            display: inline-block;
-            margin: 0 $checkbox-list-horizontal-item-margin-x 0 0;
-
-            &:last-child {
-                margin-right: 0;
-            }
-        }
+    .k-checkbox-list-horizontal,
+    .k-checkbox-list.k-list-horizontal {
+        display: flex;
+        flex-flow: row wrap;
+        gap: $kendo-checkbox-list-spacing;
     }
 
 
-    // RTL
-    .k-rtl,
-    [dir="rtl"] {
-        .k-checkbox + .k-checkbox-label,
-        .k-checkbox-label + .k-checkbox {
-            margin-left: 0;
-            margin-right: $checkbox-label-margin-x;
-        }
-        .k-checkbox-label > .k-checkbox {
-            margin-right: 0;
-            margin-left: $checkbox-label-margin-x;
-        }
-        kendo-label.k-checkbox-label > .k-checkbox:last-child {
-            margin-left: 0;
-        }
-        kendo-label.k-checkbox-label > .k-label:first-child {
-            margin-right: 0;
-            margin-left: $checkbox-label-margin-x;
-        }
-
-        .k-list-horizontal {
-            .k-checkbox-item {
-                margin-right: 0;
-                margin-left: $checkbox-list-horizontal-item-margin-x;
-
-                &:last-child {
-                    margin-left: 0;
-                }
-            }
-        }
-    }
-
+    // Ripple
     .k-ripple-container {
         .k-checkbox::after {
             content: "";
             display: block;
             position: absolute;
-            left: 0;
-            top: 0;
-            width: $checkbox-ripple-size;
-            height: $checkbox-ripple-size;
-            margin-left: $checkbox-ripple-margin;
-            margin-top: $checkbox-ripple-margin;
+            left: 50%;
+            top: 50%;
             border-radius: 100%;
-            z-index: 1;
-            transform: scale(0);
+            z-index: -1;
+            transition: opacity 100ms linear, transform 150ms cubic-bezier(.4, 0, .2, 1);
+            transform: translate(-50%, -50%) scale(0);
+            transform-origin: center center;
+        }
+
+        .k-checkbox:focus,
+        .k-checkbox.k-focus {
+            box-shadow: none !important; // sass-lint:disable-line no-important
+
+            &::after {
+                transform: translate(-50%, -50%) scale(1);
+            }
         }
 
         .k-checkbox:disabled::after,
@@ -231,24 +191,26 @@
         }
     }
 
-}
 
+    // Checkbox size
+    @each $size, $size-props in $kendo-checkbox-sizes {
+        $_size: map-get( $size-props, size );
+        $_glyph-size: map-get( $size-props, glyph-size );
+        $_ripple-size: map-get( $size-props, ripple-size );
 
+        .k-checkbox-#{$size} {
+            width: $_size;
+            height: $_size;
 
-
-@include exports( "checkbox/layout/edge" ) {
-
-    .k-checkbox::-ms-check {
-        border-width: 0;
-        border-color: inherit;
-        color: inherit;
-        background-color: inherit;
-    }
-
-    // IE 11 hack
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        .k-checkbox::-ms-check {
-            border-width: 1px;
+            &::before {
+                font-size: $_glyph-size;
+            }
+        }
+        .k-ripple-container {
+            .k-checkbox-#{size}::after {
+                width: $_ripple-size;
+                height: $_ripple-size;
+            }
         }
     }
 

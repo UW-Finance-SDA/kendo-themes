@@ -16,11 +16,13 @@
         overflow: hidden;
 
         .k-wizard-steps {
+            box-sizing: border-box;
             display: flex;
             overflow: hidden;
         }
 
         .k-wizard-step {
+            box-sizing: border-box;
             padding: calc(#{$wizard-content-padding-x / 4} + 2px);
             width: 100%;
             display: flex;
@@ -29,7 +31,7 @@
             justify-content: space-between;
 
             &:focus,
-            &.k-state-focused {
+            &.k-focus {
                 outline-width: 1px;
                 outline-style: dotted;
                 outline-offset: -1px;
@@ -37,11 +39,13 @@
         }
 
         .k-wizard-content {
+            box-sizing: border-box;
             overflow-y: auto;
         }
 
         .k-wizard-buttons {
             margin-top: $wizard-content-padding-y;
+            box-sizing: border-box;
             display: flex;
             flex-wrap: nowrap;
             align-items: center;
@@ -96,9 +100,7 @@
         }
 
         .k-wizard-content {
-            flex-grow: 1;
-            flex-shrink: 1;
-            flex-basis: auto;
+            flex: 1 1 0%;
         }
 
         .k-wizard-steps {

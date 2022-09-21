@@ -3,7 +3,6 @@
     kendo-scrollview.k-scrollview-wrap,
     kendo-scrollview.k-scrollview,
     div.k-scrollview {
-        @extend .k-text-selection !optional;
         @include fill(
             $scrollview-text,
             $scrollview-bg,
@@ -32,7 +31,7 @@
     }
 
     .k-scrollview:focus,
-    .k-scrollview-wrap:focus  {
+    .k-scrollview-wrap:focus {
         outline: none;
 
     }
@@ -50,7 +49,7 @@
         -webkit-tap-highlight-color: $scrollview-arrow-tap-highlight-color;
 
         &:focus,
-        &.k-state-focus {
+        &.k-focus {
             color: $scrollview-navigation-color;
             opacity: $scrollview-navigation-hover-opacity;
 
@@ -60,7 +59,7 @@
         }
 
         &:hover,
-        &.k-state-hover {
+        &.k-hover {
             color: $scrollview-navigation-color;
             opacity: $scrollview-navigation-hover-opacity;
 
@@ -72,7 +71,6 @@
     .k-scrollview-nav > .k-link {
         background: $scrollview-pagebutton-bg;
         border: $scrollview-pagebutton-border;
-        background-clip: padding-box;
 
         &.k-primary {
             background: $scrollview-pagebutton-primary-bg;
@@ -80,13 +78,13 @@
         }
 
         &:focus,
-        &.k-state-focused {
+        &.k-focus {
             box-shadow: $scrollview-pagebutton-shadow;
         }
     }
 
     .k-scrollview-nav > .k-link:hover,
-    .k-scrollview-nav > .k-link.k-state-hover {
+    .k-scrollview-nav > .k-link.k-hover {
         box-shadow: $scrollview-pagebutton-shadow;
     }
 

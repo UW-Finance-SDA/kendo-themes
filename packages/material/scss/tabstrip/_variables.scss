@@ -77,17 +77,19 @@ $tabstrip-item-selected-border: null !default;
 /// @group tabstrip
 $tabstrip-item-selected-gradient: null !default;
 
-$tabstrip-item-focused-shadow: $list-item-focused-shadow !default;
+$tabstrip-item-focused-shadow: $kendo-list-item-focus-shadow !default;
+
+$tabstrip-item-dragging-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12), 0 2px 4px -1px rgba(0, 0, 0, .2) !default;
 
 $tabstrip-indicator-size: 2px !default;
 $tabstrip-indicator-color: $primary !default;
 
 /// Horizontal padding of tabstrip content
 /// @group tabstrip
-$tabstrip-content-padding-x: $tabstrip-item-padding-x !default;
+$tabstrip-content-padding-x: map-get( $spacing, 4 ) !default;
 /// Vertical padding of tabstrip content
 /// @group tabstrip
-$tabstrip-content-padding-y: $tabstrip-item-padding-y !default;
+$tabstrip-content-padding-y: map-get( $spacing, 4 ) !default;
 /// Width of border around tabstrip content
 /// @group tabstrip
 $tabstrip-content-border-width: 0px !default;

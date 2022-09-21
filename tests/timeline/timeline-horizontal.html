@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en" class="k-no-animations" style="--kendo-scrollbar-width:15px;">
+<head>
+    <title>Timeline Horizontal</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" data-role="kendo-theme" href="/packages/default/dist/all.css">
+    <link rel="stylesheet" href="/packages/html/assets/styles.css">
+    <script src="/packages/html/assets/scripts.js"></script>
+</head>
+<body id="app" class="k-body">
+    <style>
+        .k-card-image {
+            display: block;
+            height: 200px;
+            width: 200px;
+            background: #cccccc;
+        }
+
+    </style>
+    <div id="test-area">
+        <div class="k-timeline k-timeline-horizontal">
+            <div class="k-timeline-track-wrap">
+                <button class="k-timeline-arrow k-timeline-arrow-left k-button k-button-md k-button-solid k-button-solid-base k-rounded-md k-icon-button">
+                    <span class="k-button-icon k-icon k-i-arrow-60-left"></span>
+                </button>
+                <button class="k-timeline-arrow k-timeline-arrow-right k-button k-button-md k-button-solid k-button-solid-base k-rounded-md k-icon-button">
+                    <span class="k-button-icon k-icon k-i-arrow-60-right"></span>
+                </button>
+                <div class="k-timeline-track">
+                    <ul class="k-timeline-scrollable-wrap">
+                        <li class="k-timeline-track-item">
+                            <span class="k-timeline-flag">2015</span>
+                        </li>
+                        <li class="k-timeline-track-item">
+                            <div class="k-timeline-date-wrap">
+                                <span class="k-timeline-date">Jan 14, 2015</span>
+                            </div>
+                            <a class="k-timeline-circle" href="#"></a>
+                        </li>
+                        <li class="k-timeline-track-item k-focus">
+                            <div class="k-timeline-date-wrap">
+                                <span class="k-timeline-date">Jun 1, 2015</span>
+                            </div>
+                            <a class="k-timeline-circle" href="#"></a>
+                        </li>
+                        <li class="k-timeline-track-item">
+                            <div class="k-timeline-date-wrap">
+                                <span class="k-timeline-date">Sep 29, 2015</span>
+                            </div>
+                            <a class="k-timeline-circle" href="#"></a>
+                        </li>
+                        <li class="k-timeline-track-item">
+                            <span class="k-timeline-flag">2016</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="k-timeline-events-list">
+                <ul class="k-timeline-scrollable-wrap">
+                    <li class="k-timeline-event">
+                        <div class="k-timeline-card">
+                            <div class="k-card k-card-vertical k-card-with-callout">
+                                <span class="k-card-callout k-callout-n k-timeline-card-callout"></span>
+                                <div class="k-card-inner">
+                                    <div class="k-card-header">
+                                        <div class="k-card-title">Title</div>
+                                        <div class="k-card-subtitle">Subtitle</div>
+                                    </div>
+                                    <div class="k-card-body">
+                                        <div class="k-card-description">
+                                            <p>Card Description Here</p>
+                                            <span class="k-card-image"></span>
+                                        </div>
+                                    </div>
+                                    <div class="k-actions k-actions-start k-actions-horizontal k-card-actions">
+                                        <button class="k-button k-button-md k-button-flat k-button-flat-primary k-rounded-md">
+                                            <span class="k-button-text">Action 1</span>
+                                        </button>
+                                        <button class="k-button k-button-md k-button-flat k-button-flat-primary k-rounded-md">
+                                            <span class="k-button-text">Action 2</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+// Module meta
+$_kendo-module-meta: (
+    name: "utils",
+    dependencies: ()
+);
+
+
+// Component
+@import "_grid.scss";
+@import "_flex.scss";
+
+
+// Register
+@include module-register( $_kendo-module-meta... );
+
+
+// Expose
+@mixin utils-styles() {
+    @include module-render( "utils" ) {
+        @include kendo-utils--grid();
+        @include kendo-utils--flex();
+    }
+}

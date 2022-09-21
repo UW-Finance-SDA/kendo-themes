@@ -1,8 +1,8 @@
 ---
 title: Masked Text Box
-category: components
+category: accessibility
 slug: masked-text-box
-position: 26
+position: 28
 ---
 # MaskedTextBox Keyboard Support
 

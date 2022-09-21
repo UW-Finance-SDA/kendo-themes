@@ -26,19 +26,27 @@
         0: 0
     ) !default;
 
-    $utils-border-color: $theme-colors !default;
+    $utils-border-color: $kendo-theme-colors !default;
 
     $utils-border-radius-sides: (
         default: border-radius,
         top: ( border-top-left-radius, border-top-right-radius ),
         right: ( border-top-right-radius, border-bottom-right-radius ),
         bottom: ( border-bottom-left-radius, border-bottom-right-radius ),
-        left: ( border-bottom-left-radius, border-top-left-radius )
+        left: ( border-bottom-left-radius, border-top-left-radius ),
+        top-left: border-top-left-radius,
+        top-right: border-top-right-radius,
+        bottom-left: border-bottom-left-radius,
+        bottom-right: border-bottom-right-radius
     ) !default;
 
     $utils-border-radius: (
-        default: map-get( $spacing, 1 ),
-        0: 0
+        default: $kendo-border-radius-md,
+        0: 0,
+        sm: $kendo-border-radius-sm,
+        md: $kendo-border-radius-md,
+        lg: $kendo-border-radius-lg,
+        full: 9999px
     ) !default;
 
 
@@ -84,6 +92,11 @@
                 $_selector-suffix: if( $radius == default, "", "-#{$radius}" );
 
                 .k-#{$_selector-base}#{$_selector-suffix} {
+                    @each $prop in $props {
+                        #{$prop}: $value;
+                    }
+                }
+                .\!k-#{$_selector-base}#{$_selector-suffix} {
                     @each $prop in $props {
                         #{$prop}: $value !important;
                     }

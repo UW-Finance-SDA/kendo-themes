@@ -4,11 +4,6 @@ defaults:
   run:
     shell: bash
 
-env:
-  CI: true
-  GH_TOKEN: ${{ secrets.GH_TOKEN }}
-  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
 on: [workflow_dispatch]
 
 jobs:
@@ -23,6 +18,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: master
+          fetch-depth: '0'
           token: ${{ secrets.GH_TOKEN }}
 
       - name: Setup git
@@ -37,41 +33,39 @@ jobs:
           git merge --ff-only --quiet origin/develop
 
       - name: Setup node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
+          cache: 'npm'
           node-version: 14.x
-
-      - name: Setup node cache
-        uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
-      - name: Add token
-        run: printf "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
+          registry-url: 'https://registry.npmjs.org'
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Install
-        run: npm ci
-
-      - name: Bootstrap
-        run: npm run bootstrap
+        run: |
+          npm ci
+          npm run bootstrap
 
       - name: Build themes for dist
         run: |
+          npm run sass
           npm run sass:flat
+          npm run dist:swatches
 
       - name: Lerna publish
         run: |
-          npx lerna publish --conventional-commits
-
-      - name: Push to GitHub
-        run: |
-          git push origin master --tags --quiet > /dev/null 2>&1
-          git push origin master:develop --quiet > /dev/null 2>&1
+          npx lerna publish --conventional-commits --conventional-graduate --create-release github
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: Mark checks as successful
         run: |
           commit=$(git rev-parse HEAD)
           ./build/mark-checks.sh $commit
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+
+      - name: Push to GitHub
+        run: |
+          git push origin master --tags --quiet > /dev/null 2>&1
+          git push origin master:develop --quiet > /dev/null 2>&1

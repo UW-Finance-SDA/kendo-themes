@@ -1,9 +1,26 @@
-// Dependencies
-@import "../input/_variables.scss";
-@import "../button/_variables.scss";
+// Module meta
+$_kendo-module-meta: (
+    name: "combobox",
+    dependencies: ()
+);
 
 
 // Component
 @import "_variables.scss";
 @import "_layout.scss";
 @import "_theme.scss";
+
+
+// Register
+@include module-register( $_kendo-module-meta... );
+
+
+// Expose
+@mixin combobox-styles() {
+    @include module-render( "combobox" ) {
+        @include kendo-combobox--layout();
+        @include kendo-combobox--extended-layout();
+        @include kendo-combobox--theme();
+        @include kendo-combobox--extended-theme();
+    }
+}

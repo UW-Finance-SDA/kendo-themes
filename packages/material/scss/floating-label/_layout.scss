@@ -5,13 +5,13 @@
 
 
     // Floating label
-    .k-textbox-container,
     .k-floating-label-container {
 
         > .k-label {
             transform-origin: left bottom;
         }
 
+        [dir="rtl"] &,
         .k-rtl &,
         &[dir="rtl"] {
 

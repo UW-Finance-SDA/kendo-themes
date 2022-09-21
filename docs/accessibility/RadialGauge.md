@@ -1,8 +1,8 @@
 ---
 title: Radial Gauge
-category: components
+category: accessibility
 slug: radial-gauge
-position: 33
+position: 35
 ---
 # RadialGauge Keyboard Support
 

@@ -1,8 +1,8 @@
 ---
 title: Validation Tooltip
-category: components
+category: accessibility
 slug: validation-tooltip
-position: 54
+position: 56
 ---
 # ValidationTooltip Keyboard Support
 

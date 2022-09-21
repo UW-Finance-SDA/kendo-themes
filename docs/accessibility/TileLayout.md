@@ -1,8 +1,8 @@
 ---
 title: Tile Layout
-category: components
+category: accessibility
 slug: tile-layout
-position: 44
+position: 46
 ---
 # TileLayout Keyboard Support
 

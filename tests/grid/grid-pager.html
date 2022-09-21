@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en" class="k-no-animations" style="--kendo-scrollbar-width:15px;">
+<head>
+    <title>Grid Pager</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" data-role="kendo-theme" href="/packages/default/dist/all.css">
+    <link rel="stylesheet" href="/packages/html/assets/styles.css">
+    <script src="/packages/html/assets/scripts.js"></script>
+</head>
+<body id="app" class="k-body">
+    <div id="test-area" class="k-d-grid k-grid-cols-2">
+        <span>jQuery grid</span>
+        <span>Angular grid</span>
+        <section>
+            <div class="k-widget k-grid k-grid-no-scrollbar">
+                <div class="k-grid-header">
+                    <div class="k-grid-header-wrap">
+                        <table>
+                            <colgroup>
+                                <col style="width: 100px;">
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th class="k-header">100px</th>
+                                    <th class="k-header">no width</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+                <div class="k-grid-content">
+                    <table class="k-grid-table">
+                        <colgroup>
+                            <col style="width: 100px;">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Row</td>
+                            </tr>
+                            <tr class="k-alt">
+                                <td>2</td>
+                                <td>Alt row</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="k-widget k-pager k-grid-pager k-focus">
+                    <a class="k-link k-pager-nav k-pager-first k-disabled">
+                        <span class="k-icon k-i-arrow-end-left"></span>
+                    </a>
+                    <a class="k-link k-pager-nav k-disabled">
+                        <span class="k-icon k-i-arrow-w"></span>
+                    </a>
+                    <div class="k-pager-numbers-wrap">
+                        <select class="k-picker k-dropdown-list k-dropdown">
+                            <option>1</option>
+                        </select>
+                        <ul class="k-pager-numbers">
+                            <li>
+                                <span class="k-link k-selected">1</span>
+                            </li>
+                            <li>
+                                <a class="k-link">2</a>
+                            </li>
+                            <li>
+                                <a class="k-link">3</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <a class="k-link k-pager-nav">
+                        <span class="k-icon k-i-arrow-e"></span>
+                    </a>
+                    <a class="k-link k-pager-nav k-pager-last">
+                        <span class="k-icon k-i-arrow-end-right"></span>
+                    </a>
+                    <span class="k-pager-info k-label">1 - 6 of 9 items</span>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="k-widget k-grid k-grid-no-scrollbar">
+                <div class="k-grid-aria-root">
+                    <div class="k-grid-header">
+                        <div class="k-grid-header-wrap">
+                            <table>
+                                <colgroup>
+                                    <col style="width: 100px;">
+                                    <col>
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th class="k-header">100px</th>
+                                        <th class="k-header">no width</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="k-grid-container">
+                        <div class="k-grid-content k-virtual-content">
+                            <div>
+                                <table class="k-grid-table">
+                                    <colgroup>
+                                        <col style="width: 100px;">
+                                        <col>
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Row</td>
+                                        </tr>
+                                        <tr class="k-alt">
+                                            <td>2</td>
+                                            <td>Alt row</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="k-height-container">
+                                <div style="height: 0px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="k-widget k-pager k-grid-pager k-focus">
+                    <div>
+                        <a class="k-link k-pager-nav k-pager-first k-disabled">
+                            <span class="k-icon k-i-seek-w"></span>
+                        </a>
+                        <a class="k-link k-pager-nav k-disabled">
+                            <span class="k-icon k-i-arrow-w"></span>
+                        </a>
+                    </div>
+                    <div>
+                        <ul class="k-pager-numbers">
+                            <li>
+                                <a class="k-link k-selected">1</a>
+                            </li>
+                            <li>
+                                <a class="k-link">2</a>
+                            </li>
+                            <li>
+                                <a class="k-link">3</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <a class="k-link k-pager-nav">
+                            <span class="k-icon k-i-arrow-e"></span>
+                        </a>
+                        <a class="k-link k-pager-nav k-pager-last">
+                            <span class="k-icon k-i-seek-e"></span>
+                        </a>
+                    </div>
+                    <div class="k-pager-info k-label">1 - 2 of 5 items</div>
+                </div>
+            </div>
+        </section>
+        <span>jQuery grid pager top</span>
+        <span>Angular grid pager top</span>
+        <section>
+            <div class="k-widget k-grid k-grid-no-scrollbar">
+                <div class="k-widget k-pager k-grid-pager k-grid-pager-top">
+                    <a class="k-link k-pager-nav k-pager-first k-disabled">
+                        <span class="k-icon k-i-arrow-end-left"></span>
+                    </a>
+                    <a class="k-link k-pager-nav k-disabled">
+                        <span class="k-icon k-i-arrow-w"></span>
+                    </a>
+                    <div class="k-pager-numbers-wrap">
+                        <select class="k-picker k-dropdown-list k-dropdown">
+                            <option>1</option>
+                        </select>
+                        <ul class="k-pager-numbers">
+                            <li>
+                                <span class="k-link k-selected">1</span>
+                            </li>
+                            <li>
+                                <a class="k-link">2</a>
+                            </li>
+                            <li>
+                                <a class="k-link">3</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <a class="k-link k-pager-nav">
+                        <span class="k-icon k-i-arrow-e"></span>
+                    </a>
+                    <a class="k-link k-pager-nav k-pager-last">
+                        <span class="k-icon k-i-arrow-end-right"></span>
+                    </a>
+                    <span class="k-pager-info k-label">1 - 6 of 9 items</span>
+                </div>
+                <div class="k-grid-header">
+                    <div class="k-grid-header-wrap">
+                        <table>
+                            <colgroup>
+                                <col style="width: 100px;">
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th class="k-header">100px</th>
+                                    <th class="k-header">no width</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+                <div class="k-grid-content">
+                    <table class="k-grid-table">
+                        <colgroup>
+                            <col style="width: 100px;">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Row</td>
+                            </tr>
+                            <tr class="k-alt">
+                                <td>2</td>
+                                <td>Alt row</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="k-widget k-grid k-grid-no-scrollbar">
+                <div class="k-widget k-pager k-grid-pager k-grid-pager-top">
+                    <div>
+                        <a class="k-link k-pager-nav k-pager-first k-disabled">
+                            <span class="k-icon k-i-seek-w"></span>
+                        </a>
+                        <a class="k-link k-pager-nav k-disabled">
+                            <span class="k-icon k-i-arrow-w"></span>
+                        </a>
+                    </div>
+                    <div>
+                        <ul class="k-pager-numbers">
+                            <li>
+                                <a class="k-link k-selected">1</a>
+                            </li>
+                            <li>
+                                <a class="k-link">2</a>
+                            </li>
+                            <li>
+                                <a class="k-link">3</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <a class="k-link k-pager-nav">
+                            <span class="k-icon k-i-arrow-e"></span>
+                        </a>
+                        <a class="k-link k-pager-nav k-pager-last">
+                            <span class="k-icon k-i-seek-e"></span>
+                        </a>
+                    </div>
+                    <div class="k-pager-info k-label">1 - 2 of 5 items</div>
+                </div>
+                <div class="k-grid-aria-root">
+                    <div class="k-grid-header">
+                        <div class="k-grid-header-wrap">
+                            <table>
+                                <colgroup>
+                                    <col style="width: 100px;">
+                                    <col>
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th class="k-header">100px</th>
+                                        <th class="k-header">no width</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="k-grid-container">
+                        <div class="k-grid-content k-virtual-content">
+                            <div>
+                                <table class="k-grid-table">
+                                    <colgroup>
+                                        <col style="width: 100px;">
+                                        <col>
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Row</td>
+                                        </tr>
+                                        <tr class="k-alt">
+                                            <td>2</td>
+                                            <td>Alt row</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="k-height-container">
+                                <div style="height: 0px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

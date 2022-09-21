@@ -1,0 +1,26 @@
+// Module meta
+$_kendo-module-meta: (
+    name: "listview",
+    dependencies: ()
+);
+
+
+// Component
+@import "_variables.scss";
+@import "_layout.scss";
+@import "_theme.scss";
+
+
+// Register
+@include module-register( $_kendo-module-meta... );
+
+
+// Expose
+@mixin listview-styles() {
+    @include module-render( "listview" ) {
+        @include kendo-listview--layout();
+        @include kendo-listview--extended-layout();
+        @include kendo-listview--theme();
+        @include kendo-listview--extended-theme();
+    }
+}

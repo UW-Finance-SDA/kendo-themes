@@ -1,8 +1,8 @@
 ---
 title: Text Area
-category: components
+category: accessibility
 slug: text-area
-position: 42
+position: 44
 ---
 # Splitter Keyboard Support
 

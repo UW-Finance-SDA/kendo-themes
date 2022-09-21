@@ -1,0 +1,30 @@
+// Module meta
+$_kendo-module-meta: (
+    name: "calendar",
+    dependencies: (
+        "button",
+        "icon",
+        "list"
+    )
+);
+
+
+// Component
+@import "_variables.scss";
+@import "_layout.scss";
+@import "_theme.scss";
+
+
+// Register
+@include module-register( $_kendo-module-meta... );
+
+
+// Expose
+@mixin calendar-styles() {
+    @include module-render( "calendar" ) {
+        @include kendo-calendar--layout();
+        @include kendo-calendar--extended-layout();
+        @include kendo-calendar--theme();
+        @include kendo-calendar--extended-theme();
+    }
+}

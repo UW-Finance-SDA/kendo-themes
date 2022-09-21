@@ -1,8 +1,8 @@
 ---
 title: Splitter
-category: components
+category: accessibility
 slug: splitter
-position: 38
+position: 40
 ---
 # Splitter Keyboard Support
 

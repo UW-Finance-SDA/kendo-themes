@@ -10,8 +10,10 @@ $enable-transitions: true !default;
 $enable-flex-classes: true !default;
 $enable-grid-classes: true !default;
 
-$use-background-clip: false !default;
 $use-calc-badge-size: true !default;
+$use-input-button-width: false !default;
+$use-input-spinner-width: false !default;
+$use-input-spinner-icon-offset: false !default;
 $use-picker-select-width: false !default;
 
 
@@ -55,16 +57,19 @@ $spacing: (
     hair: 1px
 ) !default;
 
+$default-scrollbar-width: 17px !default;
+
 
 // Apply material theme, as early as possible
 $primary-palette-name: indigo !default;
 $secondary-palette-name: pink !default;
 $tertiary-palette-name: teal !default;
+$adjust-contrast: true !default;
 $theme-type: light !default; // light or dark
 
-$primary-palette: material-palette($primary-palette-name) !default;
-$secondary-palette: material-palette($secondary-palette-name, A200, A100, A400) !default;
-$tertiary-palette: material-palette($tertiary-palette-name) !default;
+$primary-palette: material-palette( $primary-palette-name, 500, 300, 700, $adjust-contrast ) !default;
+$secondary-palette: material-palette( $secondary-palette-name, 500, 300, 700, $adjust-contrast ) !default;
+$tertiary-palette: material-palette( $tertiary-palette-name, 500, 300, 700, $adjust-contrast ) !default;
 
 $theme: material-theme(
     $primary-palette,
@@ -120,9 +125,10 @@ $padding-x-lg: $padding-x * 1.5 !default;
 $padding-y-lg: $padding-y * 1.5 !default;
 
 /// Border radius for all components.
-$border-radius: 2px !default;
-$border-radius-sm: $border-radius / 2 !default;
-$border-radius-lg: $border-radius * 2 !default;
+$kendo-border-radius: map-get( $spacing, 1 ) !default;
+$kendo-border-radius-sm: $kendo-border-radius / 2 !default;
+$kendo-border-radius-md: $kendo-border-radius !default;
+$kendo-border-radius-lg: $kendo-border-radius * 1.5 !default;
 
 $panel-padding-x: $padding-x !default;
 $panel-padding-y: $padding-y !default;
@@ -134,22 +140,17 @@ $nav-item-margin: 2px !default;
 $nav-item-padding-x: $padding-x !default;
 $nav-item-padding-y: $padding-y !default;
 
+$table-cell-padding-x: 24px !default;
+$table-cell-padding-y: 10px !default;
 $header-cell-padding-x: 24px !default;
 $header-cell-padding-y: 10px !default;
-$cell-padding-x: 24px !default;
-$cell-padding-y: 10px !default;
-$cell-padding: 8px !default;
-// $cell-padding-sm: $table-sm-cell-padding !default;
 
-$zindex-popup: 1;
-$zindex-window: 2;
+$zindex-popup: 1 !default;
+$zindex-window: 2 !default;
 
 
 // Color settings
-$is-dark-theme: map-get($theme, is-dark);
-
-$white: #ffffff !default;
-$black: #000000 !default;
+$dark-theme: map-get($theme, is-dark) !default;
 
 
 // Theme colors
@@ -157,7 +158,7 @@ $black: #000000 !default;
 /// Used for primary buttons and for elements of primary importance across the theme.
 /// @group color-system
 /// @type Color
-$primary: material-color( $primary-palette, default ) !default;
+$primary: material-color( $primary-palette, main ) !default;
 $primary-lighter: material-color( $primary-palette, lighter ) !default;
 $primary-darker: material-color( $primary-palette, darker ) !default;
 
@@ -165,12 +166,12 @@ $primary-darker: material-color( $primary-palette, darker ) !default;
 /// Used to provide contrast between the background and foreground colors.
 /// @group color-system
 /// @type Color
-$primary-contrast: material-color( $primary-palette, default-contrast ) !default;
+$primary-contrast: material-color( $primary-palette, main-contrast ) !default;
 
 /// The secondary color of the theme.
 /// @group color-system
 /// @type Color
-$secondary: material-color( $secondary-palette, default ) !default;
+$secondary: material-color( $secondary-palette, main ) !default;
 $secondary-lighter: material-color( $secondary-palette, lighter ) !default;
 $secondary-darker: material-color( $secondary-palette, darker ) !default;
 
@@ -178,12 +179,12 @@ $secondary-darker: material-color( $secondary-palette, darker ) !default;
 /// Used to provide contrast between the background and foreground colors.
 /// @group color-system
 /// @type Color
-$secondary-contrast: material-color( $secondary-palette, default-contrast ) !default;
+$secondary-contrast: material-color( $secondary-palette, main-contrast ) !default;
 
 /// The tertiary color of the theme.
 /// @group color-system
 /// @type Color
-$tertiary: material-color($tertiary-palette, default) !default;
+$tertiary: material-color($tertiary-palette, main) !default;
 $tertiary-lighter: material-color($tertiary-palette, lighter) !default;
 $tertiary-darker: material-color($tertiary-palette, darker) !default;
 
@@ -191,7 +192,7 @@ $tertiary-darker: material-color($tertiary-palette, darker) !default;
 /// Used to provide contrast between the background and foreground colors.
 /// @group color-system
 /// @type Color
-$tertiary-contrast: material-color($tertiary-palette, default-contrast) !default;
+$tertiary-contrast: material-color($tertiary-palette, main-contrast) !default;
 
 /// The color for informational messages and states.
 /// @group color-system
@@ -231,14 +232,12 @@ $dark: get-base-hue( gray, 800 ) !default;
 /// @type Color
 $light: get-base-hue( gray, 100 ) !default;
 
-/// Inverse color of the theme. Depending on the theme luminance dark or lught, it will be light or dark
+/// Inverse color of the theme. Depending on the theme luminance dark or light, it will be light or dark
 /// @group color-system
-$inverse: if( $is-dark-theme, $light, $dark ) !default;
+$inverse: if( $dark-theme, $light, $dark ) !default;
 
 
-$theme-colors: () !default;
-// sass-lint:disable indentation
-$theme-colors: map-merge((
+$kendo-theme-colors: (
     "primary": $primary,
     "secondary": $secondary,
     "tertiary": $tertiary,
@@ -249,8 +248,7 @@ $theme-colors: map-merge((
     "dark": $dark,
     "light": $light,
     "inverse": $inverse
-), $theme-colors);
-// sass-lint:enable indentation
+) !default;
 
 // Cursor utility classes
 $cursors: ( auto, default, none, context-menu, help, pointer, progress, wait, cell, crosshair, text,
@@ -259,15 +257,33 @@ $cursors: ( auto, default, none, context-menu, help, pointer, progress, wait, ce
     row-resize, all-scroll, zoom-in, zoom-out, grab, grabbing ) !default;
 
 
-// Color constants
-$rgba-transparent: rgba( $black, 0 );
+// Root styles
+$body-bg: map-get($theme, body-bg) !default;
+$body-text: map-get($theme, body-text) !default;
 
-$gradient-transparent-to-black: rgba( black, 0), black;
-$gradient-transparent-to-white: rgba( white, 0), white;
-$gradient-black-to-transparent: black, rgba( black, 0);
-$gradient-white-to-transparent: white, rgba( white, 0);
+$subtle-text: map-get($theme, subtle-text) !default;
+$disabled-text: map-get($theme, disabled-text) !default;
 
-$gradient-rainbow: #ff0000, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff, #ff0000;
+$app-bg: $body-bg !default;
+$app-text: $body-text !default;
+$app-border: map-get($theme, component-border) !default;
+
+
+// Components
+
+// Component
+/// Background color of a component.
+/// Note: do not use this variable directly. Instead derive it as `$component-name-bg` e.g. `$grid-bg: $component-bg !default;`.
+/// @group component
+$component-bg: map-get($theme, component-bg) !default;
+/// Text color of a component.
+/// Note: do not use this variable directly. Instead derive it as `$component-name-text` e.g. `$grid-text: component-text !default;`.
+/// @group component
+$component-text: map-get($theme, component-text) !default;
+/// Border color of a component.
+/// Note: do not use this variable directly. Instead derive it as `$component-name-border` e.g. `$grid-border: component-border !default;`.
+/// @group component
+$component-border: map-get($theme, component-border) !default;
 
 
 /// The background of the components' chrome area.
@@ -316,34 +332,6 @@ $disabled-opacity: .6 !default;
 $font-size: 14px !default;
 $font-family: Roboto, "Helvetica Neue", sans-serif !default;
 $line-height: 2 !default;
-
-// Root styles
-$body-bg: map-get($theme, body-bg) !default;
-$body-text: map-get($theme, body-text) !default;
-
-$subtle-text: map-get($theme, subtle-text) !default;
-$disabled-text: map-get($theme, disabled-text) !default;
-
-$app-bg: $body-bg !default;
-$app-text: $body-text !default;
-$app-border: map-get($theme, component-border) !default;
-
-
-// Components
-
-// Component
-/// Background color of a component.
-/// Note: do not use this variable directly. Instead derive it as `$component-name-bg` e.g. `$grid-bg: $component-bg !defualt;`.
-/// @group component
-$component-bg: map-get($theme, component-bg) !default;
-/// Text color of a component.
-/// Note: do not use this variable directly. Instead derive it as `$component-name-text` e.g. `$grid-text: component-text !default;`.
-/// @group component
-$component-text: map-get($theme, component-text) !default;
-/// Border color of a component.
-/// Note: do not use this variable directly. Instead derive it as `$component-name-border` e.g. `$grid-border: component-border !default;`.
-/// @group component
-$component-border: map-get($theme, component-border) !default;
 
 
 // Drop Hint
@@ -398,25 +386,6 @@ $node-selected-border: $selected-border !default;
 $node-selected-gradient: null !default;
 
 
-// List
-$list-item-padding-x: $padding-x * 1.5 !default;
-$list-item-padding-y: $padding-y / 2 !default;
-
-$list-item-bg: null !default;
-$list-item-text: $component-text !default;
-
-$list-item-hovered-bg: $hovered-bg !default;
-$list-item-hovered-text: $hovered-text !default;
-
-$list-item-selected-bg: $component-bg !default;
-$list-item-selected-text: $secondary !default;
-
-$list-item-focused-shadow: null !default;
-
-$list-container-shadow: 0 5px 10px 0 rgba(0, 0, 0, .06) !default;
-$list-container-no-data-text: rgba( $body-text, .5 ) !default;
-
-
 // Placeholder
 $placeholder-line-width: 100% !default;
 $placeholder-line-height: 10px !default;
@@ -424,7 +393,10 @@ $placeholder-bg: rgba(0, 0, 0, .1) !default;
 
 
 // Loading
-
+$loading-bg: $component-bg !default;
+$loading-text: currentColor !default;
+$loading-opacity: .3 !default;
+$zindex-loading: 100 !default;
 
 // Table
 
@@ -459,8 +431,8 @@ $drag-clue-font-size: $font-size !default;
 $drag-clue-font-family: $font-family !default;
 $drag-clue-line-height: ( 20 / 14 ) !default;
 
-$drag-clue-bg: mix( $black, $white, 8%) !default;
-$drag-clue-text: map-get( $theme, body-text ) !default;
+$drag-clue-bg: try-shade( $body-bg ) !default;
+$drag-clue-text: $body-text !default;
 $drag-clue-border: null !default;
 $drag-clue-gradient: null !default;
 $drag-clue-shadow: $box-shadow-depth-3 !default;
@@ -475,10 +447,7 @@ $grid-gap: 10px !default;
 
 
 // Disabled Styling maps
-$disabled-styling: () !default;
-// sass-lint:disable indentation
-$disabled-styling: map-merge((
+$disabled-styling: (
     opacity: $disabled-opacity,
     filter: $disabled-filter
-), $disabled-styling);
-// sass-lint:enable indentation
+) !default;

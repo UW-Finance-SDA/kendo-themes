@@ -1,8 +1,8 @@
 ---
 title: Text Box
-category: components
+category: accessibility
 slug: text-box
-position: 43
+position: 45
 ---
 # TextBox Keyboard Support
 

@@ -18,29 +18,29 @@
         }
 
         // Hover state
-        tbody tr:hover,
-        tbody tr.k-state-hover {
+        tbody>tr:not(.k-detail-row):hover,
+        tbody>tr:not(.k-detail-row).k-hover {
             color: $grid-hovered-text;
             background-color: $grid-hovered-bg;
         }
 
         // Selected state
-        th.k-state-selected,
-        td.k-state-selected,
-        tr.k-state-selected > td {
+        th.k-selected,
+        td.k-selected,
+        tr.k-selected > td {
             color: $grid-selected-text;
             background-color: $grid-selected-bg;
         }
 
         // Focused state
-        td.k-state-focused,
-        th.k-state-focused,
+        td.k-focus,
+        th.k-focus,
         th:focus,
         .k-master-row > td:focus,
         .k-grouping-row > td:focus,
         .k-detail-row > td:focus,
         .k-group-footer > td:focus,
-        .k-grid-pager.k-state-focused,
+        .k-grid-pager.k-focus,
         .k-grid-pager:focus {
             box-shadow: $grid-focused-shadow;
         }
@@ -74,23 +74,17 @@
             }
 
             // Selected state
-            .k-state-selected td {
+            .k-selected td {
                 @include fill( $bg: $grid-sticky-selected-bg );
             }
 
-            .k-state-selected.k-alt td {
+            .k-selected.k-alt td {
                 @include fill( $bg: $grid-sticky-selected-alt-bg );
             }
 
-            // Hovered state
-            .k-state-hover td,
-            tr:hover td {
-                @include fill( $bg: $grid-sticky-hovered-bg );
-            }
-
             // Selected hover
-            .k-state-selected:hover td,
-            .k-state-selected.k-state-hover td {
+            .k-selected:hover td,
+            .k-selected.k-hover td {
                 @include fill( $bg: $grid-sticky-selected-hovered-bg );
             }
         }
@@ -122,10 +116,10 @@
     }
     .k-grouping-header .k-group-indicator {
         @include fill(
-            $button-text,
-            $button-bg,
-            $button-border,
-            $button-gradient
+            $kendo-button-text,
+            $kendo-button-bg,
+            $kendo-button-border,
+            $kendo-button-gradient
         );
     }
 
@@ -136,19 +130,21 @@
 
         .k-i-sort-asc-sm,
         .k-i-sort-desc-sm,
+        .k-i-sort-asc-small,
+        .k-i-sort-desc-small,
         .k-sort-order {
             color: $grid-sorting-indicator-text;
         }
 
         .k-grid-filter,
         .k-header-column-menu,
+        .k-grid-header-menu,
         .k-hierarchy-cell .k-icon {
             &:focus,
-            &.k-state-focus,
-            &.k-state-border-down {
+            &.k-focus {
                 box-shadow: inset 0 0 0 2px rgba( 0, 0, 0, .1 );
             }
-            &.k-state-active {
+            &.k-active {
                 color: $selected-text;
                 background-color: $selected-bg;
             }
@@ -201,35 +197,35 @@
         }
 
         // Selected state
-        &.k-state-selected .k-grid-content-sticky,
-        &.k-state-selected .k-grid-row-sticky,
-        td.k-grid-content-sticky.k-state-selected {
+        &.k-selected .k-grid-content-sticky,
+        &.k-selected .k-grid-row-sticky,
+        td.k-grid-content-sticky.k-selected {
             @include fill( $bg: $grid-sticky-selected-bg );
         }
 
-        &.k-state-selected.k-alt .k-grid-content-sticky,
-        &.k-state-selected.k-alt .k-grid-row-sticky,
-        &.k-alt td.k-grid-content-sticky.k-state-selected {
+        &.k-selected.k-alt .k-grid-content-sticky,
+        &.k-selected.k-alt .k-grid-row-sticky,
+        &.k-alt td.k-grid-content-sticky.k-selected {
             @include fill( $bg: $grid-sticky-selected-alt-bg );
         }
 
 
         // Hovered state
         &:hover .k-grid-content-sticky,
+        &.k-hover .k-grid-content-sticky,
         &:hover .k-grid-row-sticky,
-        &.k-state-hover .k-grid-content-sticky,
-        &.k-state-hover .k-grid-row-sticky {
+        &.k-hover .k-grid-row-sticky {
             background-color: $grid-sticky-hovered-bg;
         }
 
 
         // Selected hover
-        &.k-state-selected:hover .k-grid-content-sticky,
-        &.k-state-selected:hover .k-grid-row-sticky,
-        &.k-state-selected.k-state-hover .k-grid-content-sticky,
-        &.k-state-selected.k-state-hover .k-grid-row-sticky,
-        &:hover td.k-grid-content-sticky.k-state-selected,
-        &.k-state-hover td.k-grid-content-sticky.k-state-selected {
+        &.k-selected:hover .k-grid-content-sticky,
+        &.k-selected.k-hover .k-grid-content-sticky,
+        &.k-selected:hover .k-grid-row-sticky,
+        &.k-selected.k-hover .k-grid-row-sticky,
+        &:hover td.k-grid-content-sticky.k-selected,
+        &.k-hover td.k-grid-content-sticky.k-selected {
             background-color: $grid-sticky-selected-hovered-bg;
         }
     }
@@ -242,7 +238,7 @@
             background-color: $grid-sticky-bg;
 
             &:hover,
-            &.k-state-hover {
+            &.k-hover {
                 background-color: $grid-sticky-hovered-bg;
             }
         }
@@ -253,7 +249,7 @@
             background-color: $grid-sticky-bg;
 
             &:hover td,
-            &.k-state-hover td {
+            &.k-hover td {
                 background-color: $grid-sticky-hovered-bg;
             }
         }
@@ -264,44 +260,44 @@
         }
 
         // Selected state
-        tr.k-state-selected .k-grid-content-sticky,
-        .k-state-selected.k-grid-row-sticky td,
-        .k-grid-row-sticky td.k-state-selected,
-        .k-state-selected.k-grid-content-sticky {
+        tr.k-selected .k-grid-content-sticky,
+        .k-selected.k-grid-row-sticky td,
+        .k-grid-row-sticky td.k-selected,
+        .k-selected.k-grid-content-sticky {
             @include fill( $bg: $grid-sticky-selected-bg );
         }
 
-        tr.k-state-selected.k-alt .k-grid-content-sticky,
-        .k-state-selected.k-alt.k-grid-row-sticky td,
-        .k-alt .k-state-selected.k-grid-content-sticky {
+        tr.k-selected.k-alt .k-grid-content-sticky,
+        .k-selected.k-alt.k-grid-row-sticky td,
+        .k-alt .k-selected.k-grid-content-sticky {
             @include fill( $bg: $grid-sticky-selected-alt-bg );
         }
 
         // Hover state
         tr:hover .k-grid-content-sticky,
-        tr.k-state-hover .k-grid-content-sticky,
+        tr.k-hover .k-grid-content-sticky,
         .k-grid-row-sticky:hover td,
-        .k-grid-row-sticky.k-state-hover td,
+        .k-grid-row-sticky.k-hover td,
         .k-grid-row-sticky.k-alt:hover td,
-        .k-grid-row-sticky.k-alt.k-state-hover td,
+        .k-grid-row-sticky.k-alt.k-hover td,
         .k-alt:hover .k-grid-content-sticky,
-        .k-alt.k-state-hover .k-grid-content-sticky {
+        .k-alt.k-hover .k-grid-content-sticky {
             background-color: $grid-sticky-hovered-bg;
         }
 
         // Selected + Hover
-        tr.k-state-selected:hover .k-grid-content-sticky,
-        tr.k-state-selected.k-state-hover .k-grid-content-sticky,
-        .k-state-selected.k-grid-row-sticky:hover td,
-        .k-state-selected.k-grid-row-sticky.k-state-hover td,
-        .k-state-selected.k-alt.k-grid-row-sticky:hover td,
-        .k-state-selected.k-alt.k-grid-row-sticky.k-state-hover td,
-        tr.k-state-selected.k-alt:hover .k-grid-content-sticky,
-        tr.k-state-selected.k-alt.k-state-hover .k-grid-content-sticky,
-        .k-grid-row-sticky:hover td.k-state-selected,
-        .k-grid-row-sticky.k-state-hover td.k-state-selected,
-        tr:hover .k-grid-content-sticky.k-state-selected,
-        tr.k-state-hover .k-grid-content-sticky.k-state-selected {
+        tr.k-selected:hover .k-grid-content-sticky,
+        tr.k-selected.k-hover .k-grid-content-sticky,
+        .k-selected.k-grid-row-sticky:hover td,
+        .k-selected.k-grid-row-sticky.k-hover td,
+        .k-selected.k-alt.k-grid-row-sticky:hover td,
+        .k-selected.k-alt.k-grid-row-sticky.k-hover td,
+        tr.k-selected.k-alt:hover .k-grid-content-sticky,
+        tr.k-selected.k-alt.k-hover .k-grid-content-sticky,
+        .k-grid-row-sticky:hover td.k-selected,
+        .k-grid-row-sticky.k-hover td.k-selected,
+        tr:hover .k-grid-content-sticky.k-selected,
+        tr.k-hover .k-grid-content-sticky.k-selected {
             background-color: $grid-sticky-selected-hovered-bg;
         }
     }
@@ -312,7 +308,7 @@
         }
 
         &:hover .k-grid-content-sticky,
-        &.k-state-hover .k-grid-content-sticky {
+        &.k-hover .k-grid-content-sticky {
             @include fill( $bg: $grid-sticky-hovered-bg );
         }
     }
@@ -324,7 +320,7 @@
         }
 
         &:hover .k-grid-footer-sticky,
-        &.k-state-hover .k-grid-footer-sticky {
+        &.k-hover .k-grid-footer-sticky {
             @include fill( $bg: $grid-sticky-footer-hovered-bg );
         }
     }
@@ -361,13 +357,13 @@
     .k-column-list-item:hover,
     .k-columnmenu-item:hover {
         @include fill(
-            $list-item-hovered-text,
-            $list-item-hovered-bg
+            $kendo-list-item-hover-text,
+            $kendo-list-item-hover-bg
         );
     }
     .k-columnmenu-item:focus,
-    .k-columnmenu-item.k-state-focus {
-        @include box-shadow( $list-item-focused-shadow );
+    .k-columnmenu-item.k-focus {
+        @include box-shadow( $kendo-list-item-focus-shadow );
     }
 
     .k-column-list-wrapper {
@@ -375,10 +371,10 @@
     }
 
     .k-columnmenu-item {
-        &.k-state-selected {
+        &.k-selected {
             @include fill(
-                $list-item-selected-text,
-                $list-item-selected-bg
+                $kendo-list-item-selected-text,
+                $kendo-list-item-selected-bg
             );
         }
     }
@@ -395,28 +391,28 @@
 
             .k-item {
                 @include fill(
-                    $list-item-text,
-                    $list-item-bg
+                    $kendo-list-item-text,
+                    $kendo-list-item-bg
                 );
 
                 &:hover,
-                &.k-state-hover {
+                &.k-hover {
                     @include fill(
-                        $list-item-hovered-text,
-                        $list-item-hovered-bg
+                        $kendo-list-item-hover-text,
+                        $kendo-list-item-hover-bg
                     );
                 }
 
-                &.k-state-selected {
+                &.k-selected {
                     @include fill(
-                        $list-item-selected-text,
-                        $list-item-selected-bg
+                        $kendo-list-item-selected-text,
+                        $kendo-list-item-selected-bg
                     );
                 }
 
                 &:focus,
-                &.k-state-focused {
-                    @include box-shadow( $list-item-focused-shadow );
+                &.k-focus {
+                    @include box-shadow( $kendo-list-item-focus-shadow );
                 }
             }
         }

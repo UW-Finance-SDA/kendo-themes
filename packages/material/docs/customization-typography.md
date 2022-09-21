@@ -26,10 +26,36 @@ The following table lists the available variables for customization.
 </thead>
 <tbody>
         <tr>
+    <td>$enable-typography</td>
+    <td>Bool</td>
+<td>
+
+`false`
+
+</td>
+<td>
+
+`false`
+
+</td>
+</tr>
+<tr>
+    <td colspan="4" class="theme-variables-description-container"><div><b>Description</b><div class="theme-variables-description">Global typography styles for the Kendo Material theme.</div></div>
+    </td>
+</tr>
+<tr>
     <td>$font-size</td>
-    <td></td>
-    <td>14px</td>
-    <td>14px</td>
+    <td>Number</td>
+<td>
+
+`14px`
+
+</td>
+<td>
+
+`14px`
+
+</td>
 </tr>
 <tr>
     <td colspan="4" class="theme-variables-description-container"><div><b>Description</b><div class="theme-variables-description">Base font size across all components.</div></div>
@@ -37,9 +63,17 @@ The following table lists the available variables for customization.
 </tr>
 <tr>
     <td>$font-family</td>
-    <td></td>
-    <td>Roboto, "Helvetica Neue", sans-serif</td>
-    <td>Roboto, "Helvetica Neue", sans-serif</td>
+    <td>List</td>
+<td>
+
+`Roboto, "Helvetica Neue", sans-serif`
+
+</td>
+<td>
+
+`Roboto, "Helvetica Neue", sans-serif`
+
+</td>
 </tr>
 <tr>
     <td colspan="4" class="theme-variables-description-container"><div><b>Description</b><div class="theme-variables-description">Font family across all components.</div></div>
@@ -47,9 +81,17 @@ The following table lists the available variables for customization.
 </tr>
 <tr>
     <td>$font-family-monospace</td>
-    <td></td>
-    <td>Consolas, "Ubuntu Mono", "Lucida Console", "Courier New", monospace</td>
-    <td>Consolas, "Ubuntu Mono", "Lucida Console", "Courier New", monospace</td>
+    <td>List</td>
+<td>
+
+`Consolas, "Ubuntu Mono", "Lucida Console", "Courier New", monospace`
+
+</td>
+<td>
+
+`Consolas, "Ubuntu Mono", "Lucida Console", "Courier New", monospace`
+
+</td>
 </tr>
 <tr>
     <td colspan="4" class="theme-variables-description-container"><div><b>Description</b><div class="theme-variables-description">Font family for monospaced text. Used for styling the code.</div></div>
@@ -57,9 +99,17 @@ The following table lists the available variables for customization.
 </tr>
 <tr>
     <td>$line-height</td>
-    <td></td>
-    <td>(28 / 14)</td>
-    <td>(28 / 14)</td>
+    <td>Number</td>
+<td>
+
+`(28 / 14)`
+
+</td>
+<td>
+
+`2`
+
+</td>
 </tr>
 <tr>
     <td colspan="4" class="theme-variables-description-container"><div><b>Description</b><div class="theme-variables-description">Line height used along with $font-size.</div></div>

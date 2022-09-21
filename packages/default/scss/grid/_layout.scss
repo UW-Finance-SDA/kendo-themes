@@ -1,26 +1,26 @@
 @include exports("grid/layout") {
 
-    $filter-rows-span-size: calc( #{$line-height-em} + #{$input-padding-y * 2} + #{$input-border-width * 2}) !default;
+    // TODO: see why we need this variable
+    // $filter-rows-span-size: calc( #{$line-height-em} + #{$kendo-input-padding-y-md * 2} + #{$kendo-input-border-width * 2}) !default;
+    $filter-rows-span-size: null !default;
 
     $grid-group-dropclue-size: 6px;
     $grid-group-dropclue-line-size: $grid-group-dropclue-size / 3;
-    $grid-group-dropclue-height: $button-calc-size !default;
+    $grid-group-dropclue-height: $kendo-button-calc-size !default;
     $grid-group-dropclue-top: 3px !default;
 
-    $edit-cell-input-space: calc(-#{$cell-padding} - #{$input-border-width}) !default;
-    $edit-cell-textbox-width: calc(100% + ((#{$cell-padding} + #{$input-border-width}) * 2)) !default;
-
-    $grid-row-inner-height: calc( #{$line-height-em} + #{$cell-padding-y * 2} );
-    // $grid-row-half-inner-height: calc( #{$line-height-em / 2} + #{$cell-padding-y} );
+    $grid-row-inner-height: calc( #{$line-height-em} + #{$table-cell-padding-y * 2} );
+    // $grid-row-half-inner-height: calc( #{$line-height-em / 2} + #{$table-cell-padding-y} );
 
     // be cautious when changing the next line; see https://github.com/MoOx/reduce-css-calc/issues/38
-    $grid-command-cell-padding-y: calc( #{$cell-padding-y} - (#{$button-calc-size} - #{$line-height-em}) / 2 ) !default;
+    $grid-command-cell-padding-y: calc( #{$table-cell-padding-y} - (#{$kendo-button-calc-size} - #{$line-height-em}) / 2 ) !default;
 
-    $grid-form-component-vertical-align: middle !default;
     $grid-hierarchy-col-width: ($icon-size * 2) !default;
 
-    $grid-group-indicator-border-radius: $border-radius !default;
-    $grid-group-indicator-gap: $cell-padding-y !default;
+    $grid-group-indicator-border-radius: $kendo-border-radius-md !default;
+    $grid-group-indicator-gap: $table-cell-padding-y !default;
+    $grid-group-indicator-button-opacity: $kendo-input-clear-value-opacity !default;
+    $grid-group-indicator-button-hover-opacity: $kendo-input-clear-value-hover-opacity !default;
 
     $grid-grouping-row-border-top: 1px !default;
     $grid-group-footer-border-y: 1px !default;
@@ -30,11 +30,9 @@
     $grid-sorted-icon-spacing: calc( #{$padding-x} - 1px ) !default;
 
     // helper variables
-    $grid-filterable-icon-spacing: calc( #{$button-calc-size} + #{$grid-header-menu-icon-spacing} );
-    $default-scrollbar-width: 17px;
+    $grid-filterable-icon-spacing: calc( #{$kendo-button-calc-size} + #{$grid-header-menu-icon-spacing} );
 
     .k-grid {
-        @include use-background-clip();
         border-width: $grid-border-width;
         border-style: solid;
         box-sizing: border-box;
@@ -159,7 +157,7 @@
         }
 
         .k-grouping-row .k-icon {
-            margin-left: calc( #{$icon-size / 2} - #{$cell-padding-x} );
+            margin-left: calc( #{$icon-size / 2} - #{$table-cell-padding-x} );
             margin-right: ($icon-size / 2);
             text-decoration: none;
         }
@@ -179,7 +177,7 @@
             overflow: visible;
 
             > .k-icon {
-                padding: $cell-padding-y 0;
+                padding: $table-cell-padding-y 0;
                 width: 100%;
                 height: 100%;
                 // That causes an issue with grid material. Commenting it for now
@@ -310,7 +308,8 @@
                 }
 
                 .k-grid-filter,
-                .k-header-column-menu {
+                .k-header-column-menu,
+                .k-grid-header-menu {
                     right: auto;
                     left: $grid-header-menu-icon-spacing;
                 }
@@ -325,26 +324,14 @@
                 border-right-width: 0;
             }
 
-            .k-filtercell-operator {
-                margin-left: 0;
-                margin-right: $cell-padding-y / 2;
-            }
-
             .k-dirty {
                 border-color: currentColor currentColor transparent transparent;
                 left: auto;
                 right: 0;
             }
 
-            .k-edit-cell,
-            .k-grid-edit-row > td {
-                >.k-textbox,
-                >.k-widget {
-                    margin-right: $edit-cell-input-space;
-                }
-            }
-
-            .k-grid-header-wrap.k-auto-scrollable {
+            .k-grid-header-wrap,
+            .k-grid-footer-wrap {
                 margin-left: -1px;
                 margin-right: 0;
             }
@@ -362,7 +349,7 @@
 
             .k-grouping-row .k-icon {
                 margin-left: #{$icon-size / 2};
-                margin-right: calc( #{$icon-size / 2} - #{$cell-padding-x} );
+                margin-right: calc( #{$icon-size / 2} - #{$table-cell-padding-x} );
             }
 
             .k-column-resizer {
@@ -403,6 +390,7 @@
 
         .k-grid-filter,
         .k-header-column-menu,
+        .k-grid-header-menu,
         .k-hierarchy-cell .k-icon {
             border-width: 0;
         }
@@ -428,12 +416,6 @@
     }
 
 
-    // Grid search
-    .k-grid-search {
-        width: $grid-search-width;
-    }
-
-
     // Grouping header
     .k-grouping-header {
         padding: $grid-grouping-header-padding-y $grid-grouping-header-padding-x;
@@ -447,7 +429,7 @@
 
         &::before {
             content: "";
-            height: $button-calc-size;
+            height: $kendo-button-calc-size;
             display: inline-block;
             vertical-align: middle;
         }
@@ -480,7 +462,7 @@
     .k-group-indicator {
         @include border-radius( $grid-group-indicator-border-radius );
         margin: 0;
-        padding: $button-padding-y $button-padding-x;
+        padding: $kendo-button-padding-y $kendo-button-padding-x;
         border-width: 1px;
         border-style: solid;
         display: inline-flex;
@@ -509,7 +491,7 @@
             padding: 0;
             width: auto;
             height: auto;
-            opacity: .5;
+            opacity: $grid-group-indicator-button-opacity;
 
             &::before,
             &::after {
@@ -517,13 +499,9 @@
             }
 
             &:hover {
-                opacity: 1;
+                opacity: $grid-group-indicator-button-hover-opacity;
             }
         }
-    }
-
-    .k-group-indicator {
-        margin-right: ( $grid-group-indicator-gap / 2 );
     }
 
     .k-group-indicator + .k-group-indicator {
@@ -565,17 +543,13 @@
     // Grid header / footer
     .k-grid-header-wrap,
     .k-grid-footer-wrap {
+        margin-right: -1px;
         width: 100%;
-        border-width: 0 1px 0 0;
+        border-width: 0 $grid-cell-vertical-border-width 0 0;
         border-style: solid;
         border-color: inherit;
         position: relative;
         overflow: hidden;
-    }
-
-    .k-grid-header-wrap.k-auto-scrollable,
-    .k-grid-footer-wrap {
-        margin-right: -1px;
     }
 
     .k-grid-header-locked + .k-grid-header-wrap.k-auto-scrollable {
@@ -588,11 +562,12 @@
 
     .k-grid-header,
     .k-grid-footer {
-        flex: 0 0 auto;
-        padding-right: $default-scrollbar-width;
+        padding-inline-start: 0;
+        padding-inline-end: var(--kendo-scrollbar-width, #{$default-scrollbar-width});
         border-width: 0;
         border-style: solid;
         border-color: inherit;
+        flex: 0 0 auto;
 
         table {
             table-layout: fixed;
@@ -606,13 +581,7 @@
         align-items: stretch;
     }
 
-    .k-ie div.k-grid-header {
-        display: block;
-    }
-
     .k-grid-header {
-        padding-inline-start: 0;
-        padding-inline-end: var(--kendo-scrollbar-width, $default-scrollbar-width);
         border-bottom-width: 1px;
         font-size: $grid-header-font-size;
 
@@ -648,8 +617,7 @@
             text-overflow: ellipsis;
             outline: 0;
 
-            .k-ie &,
-            .k-edge & {
+            .k-ie & {
                 margin: 0;
                 padding: 0;
             }
@@ -660,9 +628,8 @@
         .k-filterable {
             padding-right: $grid-filterable-icon-spacing;
 
-            .k-ie &,
-            .k-edge & {
-                padding-right: calc( #{ $button-calc-size } + #{ $grid-header-menu-icon-spacing });
+            .k-ie & {
+                padding-right: calc( #{ $kendo-button-calc-size } + #{ $grid-header-menu-icon-spacing });
             }
         }
 
@@ -671,10 +638,11 @@
         }
 
         .k-grid-filter,
-        .k-header-column-menu {
-            padding: $button-padding-y;
-            width: $button-calc-size;
-            height: $button-calc-size;
+        .k-header-column-menu,
+        .k-grid-header-menu {
+            padding: $kendo-button-padding-y;
+            width: $kendo-button-calc-size;
+            height: $kendo-button-calc-size;
             box-sizing: border-box;
             outline: 0;
             line-height: $form-line-height;
@@ -684,28 +652,21 @@
             justify-content: center;
             position: absolute;
             right: $grid-header-menu-icon-spacing;
-            bottom: calc( #{ $grid-header-padding-y } + #{ $line-height-em / 2 } - #{ $button-inner-calc-size / 2 } );
+            bottom: calc( #{ $grid-header-padding-y } + #{ $line-height-em / 2 } - #{ $kendo-button-inner-calc-size / 2 } );
             z-index: 1;
-
-            .k-ie &,
-            .k-edge & {
-                position: static;
-                float: right;
-                margin-top: calc( (#{ $button-calc-size } - #{ $form-line-height * 1em}) / -2);
-                margin-bottom: calc( (#{ $button-calc-size } - #{ $form-line-height * 1em}) / -2);
-                margin-right: calc( -1 * #{ $button-calc-size });
-            }
 
             &:hover {
                 cursor: pointer;
             }
         }
 
-        .k-header > .k-link > .k-icon {
+        .k-cell-inner > .k-link > .k-icon {
             &.k-i-sort-desc-sm,
-            &.k-i-sort-asc-sm {
+            &.k-i-sort-asc-sm,
+            &.k-i-sort-asc-small,
+            &.k-i-sort-desc-small {
                 vertical-align: text-top;
-                margin-left: $grid-sorted-icon-spacing;
+                margin-inline-start: $grid-sorted-icon-spacing;
             }
         }
 
@@ -715,7 +676,7 @@
             height: $icon-size;
             font-size: $grid-sorting-index-font-size;
             margin-top: $grid-sorting-index-spacing-y;
-            margin-left: $grid-sorting-index-spacing-x;
+            margin-inline-start: $grid-sorting-index-spacing-x;
         }
     }
 
@@ -730,9 +691,7 @@
     }
 
     .k-grid-footer {
-        padding-inline-start: 0;
-        padding-inline-end: var(--kendo-scrollbar-width, $default-scrollbar-width);
-        border-width: 1px 0 0;
+        border-top-width: 1px;
 
         td {
             height: $line-height-em;
@@ -757,14 +716,6 @@
         padding: 4px 8px;
     }
 
-    .k-grid-columnmenu-popup {
-        width: 230px;
-
-        &.k-popup {
-            padding: $grid-column-menu-popup-padding-y $grid-column-menu-popup-padding-x;
-        }
-    }
-
     // Filter row
     .k-filter-row {
         line-height: $form-line-height;
@@ -783,77 +734,38 @@
         .k-multiselect {
             height: auto;
         }
-
-        .k-filtercell .k-widget.k-sized-input {
-            flex: 0 1 auto;
-        }
     }
 
     .k-filtercell {
         width: auto;
         display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
 
         > span,
         .k-filtercell-wrapper {
+            width: 100%;
             display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            gap: ( $grid-cell-padding-y / 2 );
             flex: 1 1 auto;
 
-            > label {
-                vertical-align: middle;
+            > .k-button {
+                flex: none;
             }
         }
 
-        .k-filtercell-wrapper > .k-widget {
-            width: 100%;
-        }
-
-        > span {
-            .k-button {
-                visibility: visible;
-                pointer-events: all;
-            }
-
-            .k-button,
-            .k-dropdown-operator {
-                margin-left: $grid-cell-padding-y / 2;
-
-                .k-ie & {
-                    min-width: $button-inner-calc-size;
-                }
-            }
-
-            .k-widget {
-                width: auto;
-            }
-        }
-
-        .k-filtercell-operator {
-            > .k-button.k-clear-button-visible {
-                visibility: visible;
-                height: $button-calc-size;
-            }
-
-            > .k-button:not(.k-clear-button-visible) {
-                visibility: hidden;
-                pointer-events: none;
-            }
-        }
-
-        .k-filtercell-operator {
-            margin-left: $grid-cell-padding-y / 2;
-        }
-
-        .k-widget:not(.k-dropdown-operator),
-        .k-filtercell-wrapper > .k-textbox {
-            display: flex;
+        .k-input,
+        .k-picker {
+            width: auto;
             flex: 1 1 auto;
         }
-
-        .k-filtercell-wrapper > .k-textbox {
-            width: 100%;
-            min-width: 0;
+        .k-color-picker,
+        .k-dropdown-operator {
+            width: min-content;
+            flex: none;
         }
-
     }
 
     // Grid content
@@ -887,62 +799,53 @@
     }
 
 
+    // Checkboxes
+    .k-grid th,
+    .k-grid td {
+        > .k-radio,
+        > .k-radio-wrap,
+        > .k-checkbox,
+        > .k-checkbox-wrap {
+            vertical-align: top;
+        }
+    }
+
+
     // Edit row
-    .k-grid-edit-row {
-
-        td {
-            text-overflow: clip;
-        }
-
-        .k-widget,
-        .k-button,
-        .k-textbox {
-            height: auto;
-            // Commented out pending a better approach
-            //     margin-top: -$input-padding-y;
-            //     margin-bottom: -$input-padding-y;
-        }
-
-        .k-edit-cell {
-            padding-top: 0;
-            padding-bottom: 0;
-        }
-    }
-
-    .k-edit-cell,
-    .k-grid-edit-row > td {
-        > .k-textbox,
-        > .k-widget:not(.k-switch) {
-            margin-left: $edit-cell-input-space;
-        }
-    }
-
-    .k-grid-edit-row td,
-    .k-edit-cell {
-        > .k-textbox,
-        > .k-widget:not(.k-switch) {
-            width: $edit-cell-textbox-width;
-        }
-    }
-
-    .k-grid-edit-row td > .k-textbox,
-    .k-grid-edit-row td > .k-widget,
-    .k-command-cell > .k-button,
-    .k-edit-cell > .k-textbox,
-    .k-edit-cell > .k-widget {
-        vertical-align: $grid-form-component-vertical-align;
-    }
-
-    .k-grid .k-grid-edit-row td:not(.k-hierarchy-cell),
+    .k-grid .k-edit-cell,
     .k-grid .k-command-cell,
-    .k-grid .k-edit-cell {
-        padding: $grid-command-cell-padding-y $grid-cell-padding-x;
+    .k-grid .k-grid-edit-row td {
+        padding: $grid-edit-cell-padding-y $grid-edit-cell-padding-x;
+        text-overflow: clip;
     }
 
-    .k-command-cell > .k-button {
-        margin-left: $grid-command-cell-button-spacing;
-        margin-right: $grid-command-cell-button-spacing;
+    .k-grid .k-edit-cell,
+    .k-grid .k-grid-edit-row td {
+
+        > input:not([type="checkbox"]):not([type="radio"]),
+        > select,
+        > .k-widget:not(.k-switch) {
+            width: 100%;
+            vertical-align: middle;
+            box-sizing: border-box;
+        }
+        > .k-radio,
+        > .k-checkbox,
+        > .k-radio-wrap,
+        > .k-checkbox-wrap {
+            vertical-align: middle;
+        }
     }
+
+    .k-grid .k-command-cell > .k-button {
+        vertical-align: middle;
+    }
+    .k-grid .k-command-cell > .k-button + .k-button {
+        margin-left: $grid-command-cell-button-spacing;
+        margin-inline-end: unset;
+        margin-inline-start: $grid-command-cell-button-spacing;
+    }
+
 
     // Resize handle
     .k-grid > .k-resize-handle,
@@ -1023,8 +926,7 @@
     }
 
     .k-grid-content,
-    .k-grid-content-locked,
-    .k-pager-wrap {
+    .k-grid-content-locked {
         white-space: normal;
     }
 
@@ -1057,8 +959,8 @@
         }
     }
 
-    .k-grid-header-locked>table,
-    .k-grid-header-wrap>table {
+    .k-grid-header-locked > table,
+    .k-grid-header-wrap > table {
         margin-bottom: -1px;
     }
 
@@ -1107,8 +1009,9 @@
             border-right: 0;
         }
 
-        .k-grid-header .k-grid-column-menu {
-            z-index: 5;
+        .k-grid-header .k-grid-column-menu,
+        .k-grid-header .k-grid-header-menu {
+            z-index: 1;
         }
     }
 
@@ -1137,12 +1040,16 @@
     }
 
     .k-grid.k-grid-no-scrollbar {
-        .k-grid-header {
-            padding: 0;
+
+        .k-grid-header-wrap,
+        .k-grid-footer-wrap {
+            margin: 0;
+            border-width: 0;
         }
 
-        .k-grid-header-wrap {
-            border-width: 0;
+        .k-grid-header,
+        .k-grid-footer {
+            padding: 0;
         }
 
         .k-grid-content {
@@ -1162,23 +1069,24 @@
     }
 
     .k-grid-norecords-template {
+        box-sizing: border-box;
+        margin: 0 auto;
         width: 20em;
         height: 4em;
-        line-height: 4em;
-        margin: 0 auto;
         border: 1px solid;
+        line-height: 4em;
     }
 
     .k-header > .k-cell-inner {
-        margin: (-1 * $grid-header-padding-y) calc(-1 * calc( #{$button-calc-size} - #{$grid-cell-padding-x})) (-1 * $grid-header-padding-y) (-1 * $grid-cell-padding-x);
+        margin: (-1 * $grid-header-padding-y) (-1 * $grid-header-padding-x);
     }
 
     .k-filterable {
         > .k-cell-inner {
-            margin: (-1 * $grid-header-padding-y) calc(-1 * #{$button-calc-size}) (-1 * $grid-header-padding-y) (-1 * $grid-cell-padding-x);
+            margin-inline-end: calc(-1 * #{$grid-filterable-icon-spacing});
 
             .k-link {
-                padding-right: 0;
+                padding-inline-end: 0;
             }
         }
     }
@@ -1187,6 +1095,7 @@
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
+        justify-content: inherit;
         overflow: hidden;
 
         > .k-link {
@@ -1195,6 +1104,7 @@
             display: flex;
             flex-flow: row nowrap;
             align-items: center;
+            justify-content: inherit;
             flex: 1;
             overflow: hidden;
 
@@ -1213,12 +1123,15 @@
         }
 
         .k-grid-filter,
-        .k-header-column-menu {
+        .k-header-column-menu,
+        .k-grid-header-menu {
             position: static;
+            margin-inline-end: $grid-header-menu-icon-spacing;
         }
 
         .k-grid-filter,
         .k-header-column-menu,
+        .k-grid-header-menu,
         .k-hierarchy-cell .k-icon {
             text-align: center;
             display: inline-block;
@@ -1310,79 +1223,81 @@
 
 @include exports( "filtermenu/layout" ) {
 
+    // Filter menu
+    .k-filter-menu-popup {
+        width: $grid-column-menu-width;
+    }
+    .k-filter-menu {
+        box-sizing: border-box;
+    }
+    .k-filter-menu-container {
+        padding: map-get( $spacing, 2 );
+        box-sizing: border-box;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: stretch;
+        gap: map-get( $spacing, 2 );
+
+        .k-filter-and {
+            width: min-content;
+            align-self: start;
+        }
+
+        .k-actions {
+            margin: 0;
+            padding: 0;
+        }
+
+        // Angular specific
+        kendo-numeric-filter-menu,
+        kendo-grid-string-filter-menu,
+        kendo-grid-date-filter-menu,
+        kendo-grid-numeric-filter-menu,
+        kendo-grid-filter-menu-input-wrapper {
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: stretch;
+            gap: map-get( $spacing, 2 );
+        }
+    }
+    .k-ie .k-filter-menu-container {
+        > * { margin-top: map-get( $spacing, 2 ); }
+        > :first-child { margin-top: 0; }
+
+        // Angular specific
+        .k-filter-and,
+        kendo-grid-filter-menu-input-wrapper > * {
+            margin-top: map-get( $spacing, 2 );
+        }
+        kendo-grid-filter-menu-input-wrapper > :first-child {
+            margin-top: 0;
+        }
+    }
+
     .k-filter-menu.k-popup,
     .k-grid-filter-popup.k-popup {
 
         .k-filter-menu-container {
-            width: $grid-filter-menu-width;
+            width: $grid-column-menu-width;
         }
     }
 
-    .k-filter-menu.k-popup,
-    .k-grid-filter-popup.k-popup,
-    .k-popup .k-filter-menu,
-    .k-popup .k-grid-filter-popup {
-        .k-multicheck-wrap {
-            padding: $grid-filter-menu-item-spacing-y $grid-filter-menu-item-spacing-x 0;
-
-            .k-item {
-                padding: $grid-column-menu-list-item-padding-y 0;
-            }
-
-            .k-check-all-wrap {
-                padding-bottom: ($grid-column-menu-list-item-padding-y * 2);
-                border-bottom-width: $grid-filter-menu-check-all-border-bottom-width;
-                border-bottom-style: solid;
-            }
-        }
-
-        .k-filter-help-text {
-            padding: $grid-filter-menu-item-spacing-y $grid-filter-menu-item-spacing-x 0;
-        }
-
-        .k-filter-selected-items {
-            padding: $grid-filter-menu-item-spacing-y $grid-filter-menu-item-spacing-x 0;
-        }
-    }
-
-    .k-filter-menu {
-        $item-spacing: $spacer-y / 2;
-        $form-padding: $spacer-y;
-        $form-padding-y: $form-padding - $item-spacing;
-
-        .k-filter-menu-container {
-            box-sizing: border-box;
-        }
-
-        .k-widget,
-        .k-radio-list,
-        .k-textbox,
-        .k-searchbox {
-            margin: $grid-filter-menu-item-spacing-y $grid-filter-menu-item-spacing-x 0;
-            width: calc( 100% - ( 2 * #{$grid-filter-menu-item-spacing-x} ) );
-            box-sizing: border-box;
-            display: flex;
-        }
-
-        .k-widget.k-filter-and {
-            width: 6em;
-        }
-
-        .k-widget.k-button-group {
-            width: auto;
-            display: inline-flex;
-        }
-
-        .k-switch {
-            width: $switch-size;
-            display: inline-flex;
-        }
-    }
-
-    .k-multicheck-wrap {
+    .k-popup .k-multicheck-wrap {
+        margin: 0;
+        padding: 0;
         max-height: 300px;
+        font-size: $kendo-list-font-size;
+        line-height: $kendo-list-line-height;
         white-space: nowrap;
         overflow: auto;
+        list-style: none;
+
+        .k-item,
+        .k-check-all-wrap {
+            padding: $grid-column-menu-list-item-padding-y $grid-column-menu-list-item-padding-x;
+            display: flex;
+            flex-flow: row nowrap;
+        }
     }
 
     .k-filter-selected-items {
@@ -1406,17 +1321,48 @@
         .k-detail-row {
             display: none !important;
         }
-
-        input.k-input,
-        span.k-input,
-        input.k-textbox {
-            width: 0 !important;
-        }
     }
 
 }
 
 @include exports("columnmenu/layout") {
+
+    // Column menu
+    .k-column-menu-popup,
+    .k-grid-columnmenu-popup {
+        width: $grid-column-menu-width;
+        box-sizing: border-box;
+
+        &.k-popup {
+            padding: $grid-column-menu-popup-padding-y $grid-column-menu-popup-padding-x;
+        }
+        .k-popup > & {
+            max-width: 100%;
+        }
+
+        .k-actions {
+            margin: 0;
+        }
+
+    }
+    .k-column-menu {
+        box-sizing: border-box;
+
+        .k-menu:not(.k-context-menu) {
+            font-weight: 400;
+        }
+
+        .k-expander {
+            border: 0;
+            background: inherit;
+
+            .k-columnmenu-item {
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+
     .k-column-list {
         padding: 0;
         margin: 0;
@@ -1432,10 +1378,17 @@
     }
 
     .k-column-list-item {
-        position: relative;
-        display: block;
         margin: 0;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        gap: 4px;
         cursor: pointer;
+        position: relative;
+
+        .k-checkbox-label {
+            margin: 0;
+        }
     }
 
     .k-columns-items-wrap {
@@ -1461,32 +1414,6 @@
         overflow: hidden;
     }
 
-    .k-filter-menu,
-    .k-column-list-wrapper,
-    .k-columnmenu-item-content {
-
-        .k-actions,
-        .k-action-buttons,
-        .k-columnmenu-actions {
-            margin-top: ($grid-filter-menu-item-spacing-y / 2);
-            padding: $grid-filter-menu-item-spacing-y $grid-filter-menu-item-spacing-x;
-
-            .k-button {
-                flex: 1 1 50%;
-            }
-        }
-
-        .k-actions {
-            &.k-actions-start,
-            &.k-actions-center,
-            &.k-actions-end {
-                .k-button {
-                    flex: 0 1 auto;
-                }
-            }
-        }
-    }
-
     .k-column-menu-group-header {
         padding: $grid-column-menu-group-header-padding-y $grid-column-menu-group-header-padding-x;
         display: flex;
@@ -1505,49 +1432,11 @@
         flex: 1 1 auto;
     }
 
-    .k-column-menu {
-        .k-menu:not(.k-context-menu) {
-            font-weight: 400;
-        }
-
-        .k-expander {
-            border: 0;
-            background: inherit;
-
-            .k-columnmenu-item {
-                display: flex;
-                align-items: center;
-            }
-        }
-    }
-
     [dir="rtl"],
     .k-rtl {
-        .k-columnmenu-item  > .k-icon {
+        .k-columnmenu-item > .k-icon {
             margin-left: $icon-spacing;
             margin-right: 0;
-        }
-
-        .k-header > .k-cell-inner {
-            margin-right: (-1 * $grid-cell-padding-x);
-            margin-left: calc(-1 * calc( #{$button-calc-size} - #{$grid-cell-padding-x}));
-
-            .k-sort-order {
-                margin-right: $grid-sorting-index-spacing-x;
-                margin-left: 0;
-            }
-        }
-
-        .k-filterable {
-            > .k-cell-inner {
-                margin-right: (-1 * $grid-cell-padding-x);
-                margin-left: calc(-1 * #{$button-calc-size});
-
-                .k-link {
-                    padding-right: $grid-header-padding-x;
-                    padding-left: 0;
-                }
-            }
         }
     }
 }
@@ -1555,12 +1444,12 @@
 @include exports("grid/layout/IE") {
     // TODO: Remove once we drop IE support
 
-    $default-scrollbar-width: 17px;
     .k-ie {
         .k-grid-header,
         .k-grid-footer {
             padding-right: $default-scrollbar-width;
             padding-left: 0;
+            display: block;
         }
 
         [dir = "rtl"],

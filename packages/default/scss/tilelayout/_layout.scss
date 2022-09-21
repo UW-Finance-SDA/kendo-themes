@@ -1,7 +1,6 @@
 @include exports("tilelayout/layout") {
 
     .k-tilelayout {
-        @include use-background-clip();
         border-width: $tilelayout-border-width;
         border-style: solid;
         box-sizing: border-box;
@@ -14,6 +13,11 @@
             @include box-shadow( none );
             border-width: $tilelayout-card-border-width;
         }
+    }
+
+    .k-tilelayout-item {
+        position: relative;
+        z-index: 0;
     }
 
     .k-layout-item-hint {

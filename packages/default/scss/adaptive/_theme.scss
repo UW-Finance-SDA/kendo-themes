@@ -2,7 +2,6 @@
 
     .k-pane-wrapper,
     .k-view {
-        @extend .k-text-selection !optional;
         @include fill(
             $adaptive-text,
             $adaptive-bg,
@@ -63,18 +62,9 @@
         }
 
         .k-grid-edit-form,
-        .k-grid-column-menu,
+        .k-grid-header-menu,
         .k-grid-filter-menu,
         .k-scheduler-edit-form {
-
-            .k-header {
-                color: $adaptive-menu-text;
-                background-color: $adaptive-menu-bg;
-
-                .k-link {
-                    color: inherit;
-                }
-            }
 
             .k-item,
             .k-link {
@@ -92,11 +82,11 @@
 
         .k-column-menu {
 
-            .k-listgroup-item.k-state-selected {
+            .k-listgroup-item.k-selected {
                 color: $adaptive-grid-sort-text;
                 background: none;
             }
-            .k-listgroup-item.k-state-selected .k-link {
+            .k-listgroup-item.k-selected .k-link {
                 color: inherit;
             }
         }

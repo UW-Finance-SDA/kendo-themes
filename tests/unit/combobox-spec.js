@@ -1,9 +1,10 @@
 /// <reference path='lib/types.d.ts' />
 
-suite('Combobox', () => {
+suite.skip('Combobox', () => {
 
     before( () => {
         loadFixture('/html/combobox.html');
+        window.kendo.Html.init();
     });
     after( () => {
         clearFixture();

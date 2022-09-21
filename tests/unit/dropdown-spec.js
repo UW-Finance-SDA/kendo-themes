@@ -1,9 +1,10 @@
 /// <reference path='lib/types.d.ts' />
 
-suite('Dropdown', () => {
+suite.skip('Dropdown', () => {
 
     before( () => {
         loadFixture('/html/dropdown.html');
+        window.kendo.Html.init();
     });
     after( () => {
         clearFixture();

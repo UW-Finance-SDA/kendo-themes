@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en" class="k-no-animations" style="--kendo-scrollbar-width:15px;">
+<head>
+    <title>ListView</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" data-role="kendo-theme" href="/packages/default/dist/all.css">
+    <link rel="stylesheet" href="/packages/html/assets/styles.css">
+    <script src="/packages/html/assets/scripts.js"></script>
+</head>
+<body id="app" class="k-body">
+    <style>
+        .k-listview-item {
+            padding: 10px;
+            display: inline-block;
+            outline: 1px dashed;
+        }
+
+    </style>
+    <div id="test-area" class="k-d-grid k-grid-cols-2">
+        <section>
+            <span>No layout</span>
+            <div class="k-widget k-listview">
+                <div class="k-listview-content">
+                    <div class="k-listview-item">Listview item</div>
+                    <div class="k-listview-item">Listview item</div>
+                    <div class="k-listview-item">Listview item</div>
+                    <div class="k-listview-item">Listview item</div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <span>Flex layout</span>
+            <div class="k-widget k-listview">
+                <div class="k-listview-content k-d-flex k-flex-col k-flex-nowrap">
+                    <div class="k-listview-item">Listview item</div>
+                    <div class="k-listview-item">Listview item</div>
+                    <div class="k-listview-item">Listview item</div>
+                    <div class="k-listview-item">Listview item</div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <span>Grid layout</span>
+            <div class="k-widget k-listview">
+                <div class="k-listview-content k-d-grid k-grid-cols-2">
+                    <div class="k-listview-item">Listview item</div>
+                    <div class="k-listview-item">Listview item</div>
+                    <div class="k-listview-item">Listview item</div>
+                    <div class="k-listview-item">Listview item</div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <span>Interactive states</span>
+            <div class="k-widget k-listview k-listview-grid">
+                <div class="k-listview-content k-d-grid k-grid-cols-2">
+                    <div class="k-listview-item">Normal item</div>
+                    <div class="k-listview-item k-focus">Focus item</div>
+                    <div class="k-listview-item k-selected">Selected item</div>
+                    <div class="k-listview-item k-selected k-focus">Selected focus item</div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

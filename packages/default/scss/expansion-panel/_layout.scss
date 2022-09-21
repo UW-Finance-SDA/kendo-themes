@@ -2,8 +2,6 @@
 
     // Base
     .k-expander {
-        @include use-background-clip();
-
         border-width: $expander-border-width;
         border-style: solid;
         box-sizing: border-box;
@@ -16,6 +14,12 @@
         flex-direction: column;
         -webkit-touch-callout: none;
         -webkit-tap-highlight-color: $rgba-transparent;
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
 
         .k-rtl &,
         &.k-rtl,
@@ -56,7 +60,6 @@
     // Expander content
     .k-expander-content {
         padding: $expander-content-padding-y $expander-content-padding-x;
-        box-sizing: border-box;
     }
 
     // Multiple expanders

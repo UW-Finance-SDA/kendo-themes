@@ -1,0 +1,49 @@
+{
+  "name": "@progress/kendo-themes-html",
+  "description": "A collection of HTML helpers used for developing Kendo UI themes",
+  "version": "5.8.2-dev.0",
+  "author": "Progress",
+  "license": "Apache-2.0",
+  "keywords": [
+    "Kendo UI",
+    "Theme",
+    "HTML",
+    "Helpers"
+  ],
+  "main": "dist/index.js",
+  "files": [
+    "dist/**/*.js",
+    "dist/**/*.js.map",
+    "src/**/**.ts",
+    "src/**/**.tsx"
+  ],
+  "homepage": "https://github.com/telerik/kendo-themes/tree/master/packages/html",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/telerik/kendo-themes.git",
+    "directory": "packages/html"
+  },
+  "bugs": {
+    "url": "https://github.com/telerik/kendo-themes/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "node ./scripts/build.js",
+    "build:tests": "node ./scripts/build-tests.js",
+    "watch:tests": "node ./scripts/build-tests.js --watch",
+    "check-types": "npx tsc src/index.ts --noEmit --emitDeclarationOnly false --jsx react",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.2",
+    "esbuild": "^0.15.0",
+    "glob": "^8.0.3",
+    "typescript": "^4.7.2"
+  }
+}

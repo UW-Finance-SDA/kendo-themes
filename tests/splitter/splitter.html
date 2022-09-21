@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en" class="k-no-animations" style="--kendo-scrollbar-width:15px;">
+<head>
+    <title>Splitter</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" data-role="kendo-theme" href="/packages/default/dist/all.css">
+    <link rel="stylesheet" href="/packages/html/assets/styles.css">
+    <script src="/packages/html/assets/scripts.js"></script>
+</head>
+<body id="app" class="k-body">
+    <div id="test-area">
+        <div class="k-widget k-splitter k-splitter-flex k-splitter-vertical" style="height: 280px;">
+            <div class="k-pane-flex k-pane" style="order: 0;">
+                <div class="k-widget k-splitter k-splitter-flex k-splitter-horizontal">
+                    <div class="k-pane-static k-pane k-scrollable" style="flex-basis: 20%; order: 0;">
+                        <p>Collapsible pane
+                            <br>Size = 20%
+                        </p>
+                    </div>
+                    <div class="k-pane k-scrollable" style="order: 2;">
+                        <p>Fluid, scollable pane</p>
+                        <p>Content</p>
+                        <p>Content</p>
+                        <p>Content</p>
+                        <p>Content</p>
+                        <p>Content</p>
+                        <p>Content</p>
+                    </div>
+                    <div class="k-pane-static k-pane" style="flex-basis: 30%; order: 4;">
+                        <p>Collapsible pane
+                            <br>Size = 30%
+                        </p>
+                    </div>
+                    <div class="k-pane-static k-pane" style="flex-basis: 10px; order: 6;"></div>
+                    <div class="k-pane-static k-pane" style="flex-basis: 10px; order: 8;"></div>
+                    <div class="k-pane-static k-pane" style="flex-basis: 10px; order: 10;"></div>
+                    <div class="k-splitbar k-splitbar-horizontal k-splitbar-draggable-horizontal" style="order: 1;">
+                        <div class="k-collapse-prev">
+                            <span class="k-icon k-i-arrow-w"></span>
+                        </div>
+                        <div class="k-resize-handle"></div>
+                    </div>
+                    <div class="k-splitbar k-splitbar-horizontal k-splitbar-draggable-horizontal" style="order: 3;">
+                        <div class="k-resize-handle"></div>
+                        <div class="k-collapse-next">
+                            <span class="k-icon k-i-arrow-e"></span>
+                        </div>
+                    </div>
+                    <div class="k-splitbar k-splitbar-horizontal k-splitbar-draggable-horizontal" style="order: 5;">
+                        <div class="k-collapse-prev">
+                            <span class="k-icon k-i-arrow-w"></span>
+                        </div>
+                        <div class="k-resize-handle"></div>
+                        <div class="k-collapse-next">
+                            <span class="k-icon k-i-arrow-e"></span>
+                        </div>
+                    </div>
+                    <div class="k-splitbar k-hover k-splitbar-horizontal k-splitbar-draggable-horizontal" style="order: 7;">
+                        <div class="k-collapse-prev">
+                            <span class="k-icon k-i-arrow-w"></span>
+                        </div>
+                        <div class="k-resize-handle"></div>
+                        <div class="k-collapse-next">
+                            <span class="k-icon k-i-arrow-e"></span>
+                        </div>
+                    </div>
+                    <div class="k-splitbar k-focus k-splitbar-horizontal k-splitbar-draggable-horizontal" style="order: 9;">
+                        <div class="k-collapse-prev">
+                            <span class="k-icon k-i-arrow-w"></span>
+                        </div>
+                        <div class="k-resize-handle"></div>
+                        <div class="k-collapse-next">
+                            <span class="k-icon k-i-arrow-e"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="k-pane-static k-pane k-scrollable" style="flex-basis: 80px; order: 2;">
+                <p>Pane size: 80px</p>
+            </div>
+            <div class="k-pane-static k-pane k-scrollable" style="flex-basis: 80px; order: 4;">
+                <p>Static pane
+                    <br>Size = 80px
+                </p>
+            </div>
+            <div class="k-pane-static k-pane k-scrollable" hidden="" style="order: 6;">
+                <h2>Hidden pane, should be invisible!</h2>
+            </div>
+            <div class="k-splitbar k-splitbar-vertical k-splitbar-draggable-vertical" style="order: 1;">
+                <div class="k-resize-handle"></div>
+            </div>
+            <div class="k-splitbar k-splitbar-vertical k-splitbar-static-vertical" style="order: 3;">
+                <div class="k-resize-handle"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

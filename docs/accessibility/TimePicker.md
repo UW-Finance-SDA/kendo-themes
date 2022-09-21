@@ -1,8 +1,8 @@
 ---
 title: Time Picker
-category: components
+category: accessibility
 slug: time-picker
-position: 45
+position: 47
 ---
 # TimePicker Keyboard Support
 

@@ -9,9 +9,11 @@ $enable-transitions: true !default;
 $enable-flex-classes: true !default;
 $enable-grid-classes: true !default;
 
-$use-background-clip: true !default;
-$use-calc-badge-size: true !default;
-$use-picker-select-width: true !default;
+$use-calc-badge-size: false !default;
+$use-input-button-width: false !default;
+$use-input-spinner-width: false !default;
+$use-input-spinner-icon-offset: false !default;
+$use-picker-select-width: false !default;
 
 
 // Spacing
@@ -53,8 +55,13 @@ $spacing: (
 ) !default;
 
 
+// Icons
+$icon-size: 16px !default;
+$icon-spacing: map-get( $spacing, 1 ) !default;
+
+
 // Color settings
-$is-dark-theme: false !default;
+$dark-theme: false !default;
 
 
 // Theme colors
@@ -136,14 +143,12 @@ $dark: #404040 !default;
 /// @type Color
 $light: #ebebeb !default;
 
-/// Inverse color of the theme. Depending on the theme luminance dark or lught, it will be light or dark
+/// Inverse color of the theme. Depending on the theme luminance dark or light, it will be light or dark
 /// @group color-system
-$inverse: if( $is-dark-theme, $light, $dark ) !default;
+$inverse: if( $dark-theme, $light, $dark ) !default;
 
 
-$theme-colors: () !default;
-// sass-lint:disable indentation
-$theme-colors: map-merge((
+$kendo-theme-colors: (
     "primary": $primary,
     "secondary": $secondary,
     "tertiary": $tertiary,
@@ -154,8 +159,7 @@ $theme-colors: map-merge((
     "dark": $dark,
     "light": $light,
     "inverse": $inverse
-), $theme-colors);
-// sass-lint:enable indentation
+) !default;
 
 
 // Typography
@@ -167,7 +171,7 @@ $font-size-xs: 10px !default;
 $font-size-sm: 12px !default;
 $font-size-md: 14px !default;
 $font-size-lg: 16px !default;
-$font-size-xl: 18px !default;
+$font-size-xl: 20px !default;
 
 /// Font family across all components.
 /// @group typography
@@ -182,7 +186,7 @@ $font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Roboto Mono", 
 $line-height: (20 / 14) !default;
 $line-height-sm: 1.2 !default;
 $line-height-lg: 1.5 !default;
-$line-height-em: $line-height * 1em;
+$line-height-em: calc( #{$line-height} * 1em ) !default;
 
 
 // Font weight
@@ -210,7 +214,7 @@ $link-hover-text: $primary-darker !default;
 
 // Component
 /// Background color of a component.
-/// Note: do not use this variable directly. Instead derive it as `$component-name-bg` e.g. `$grid-bg: $component-bg !defualt;`.
+/// Note: do not use this variable directly. Instead derive it as `$component-name-bg` e.g. `$grid-bg: $component-bg !default;`.
 /// @group component
 $component-bg: $body-bg !default;
 /// Text color of a component.
@@ -248,3 +252,9 @@ $selected-text: contrast-wcag( $selected-bg ) !default;
 $selected-border: rgba( black, .1 ) !default;
 /// The gradient background of selected items.
 $selected-gradient: none !default;
+
+
+// Layout
+$grid-cols: 12 !default;
+$grid-rows: 10 !default;
+$grid-gap: 10px !default;

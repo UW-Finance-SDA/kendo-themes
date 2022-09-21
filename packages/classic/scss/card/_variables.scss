@@ -2,7 +2,7 @@
 $card-padding-x: map-get( $spacing, lg ) !default;
 $card-padding-y: map-get( $spacing, md ) !default;
 $card-border-width: 1px !default;
-$card-border-radius: $border-radius-lg !default;
+$card-border-radius: $kendo-border-radius-lg !default;
 $card-inner-border-radius: calc( #{$card-border-radius} - #{$card-border-width} ) !default;
 $card-font-family: $font-family !default;
 $card-font-size: $font-size !default;
@@ -38,12 +38,23 @@ $card-footer-text: $header-text !default;
 $card-footer-border: $header-border !default;
 
 $card-title-margin-bottom: map-get( $spacing, sm ) !default;
+$card-title-font-size: $h5-font-size !default;
+$card-title-font-family: null !default;
+$card-title-line-height: 1.25 !default;
+$card-title-font-weight: $font-weight-normal !default;
+$card-title-letter-spacing: null !default;
+
 $card-subtitle-margin-bottom: map-get( $spacing, sm ) !default;
+$card-subtitle-font-size: $font-size-sm !default;
+$card-subtitle-font-family: null !default;
+$card-subtitle-line-height: normal !default;
+$card-subtitle-font-weight: $font-weight-normal !default;
+$card-subtitle-letter-spacing: null !default;
 $card-subtitle-text: $subtle-text !default;
 
 $card-img-max-width: 100px !default;
 $card-avatar-size: 45px !default;
-$card-avatar-spacing:  $card-header-padding-x !default;
+$card-avatar-spacing: $card-header-padding-x !default;
 
 $card-actions-padding-x: map-get( $spacing, 2 ) !default;
 $card-actions-padding-y: map-get( $spacing, 2 ) !default;
@@ -51,17 +62,7 @@ $card-actions-border-width: 1px !default;
 $card-actions-gap: map-get( $spacing, 2 ) !default;
 
 $card-deck-scroll-button-radius: 0px !default;
-$card-deck-scroll-button-offset: -$button-border-width !default;
+$card-deck-scroll-button-offset: -$kendo-button-border-width !default;
 
 $card-callout-width: 20px !default;
 $card-callout-height: 20px !default;
-
-$card-callout-box-shadow-n: null !default;
-$card-callout-box-shadow-e: null !default;
-$card-callout-box-shadow-s: null !default;
-$card-callout-box-shadow-w: null !default;
-
-$card-focus-callout-box-shadow-n: 1px -1px 4px 0 rgba( black, .06) !default;
-$card-focus-callout-box-shadow-e: 2px -1px 4px 0 rgba( black, .06) !default;
-$card-focus-callout-box-shadow-s: 2px -2px 4px 0 rgba( black, .06) !default;
-$card-focus-callout-box-shadow-w: 2px -1px 4px 0 rgba( black, .06) !default;

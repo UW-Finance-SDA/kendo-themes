@@ -1,24 +1,34 @@
 name: CI | Visual
 
-env:
-  CI: true
-
 on:
   push:
     branches-ignore:
-      # - 'main'
       - 'master'
       - 'develop'
+      - 'v4-dev'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
+
+  compile-themes:
+    name: Compile themes
+    uses: ./.github/workflows/compile_themes.yml
+
+  create-snapshots:
+    name: Create snapshots
+    uses: ./.github/workflows/create_snapshots.yml
+
   run-tests:
     name: Run tests
-
     runs-on: ubuntu-latest
+    needs: [ compile-themes, create-snapshots ]
 
     strategy:
       matrix:
-        theme: [default, bootstrap, material, classic]
+        theme: [default, bootstrap, material, classic, nouvelle, fluent]
 
     steps:
       - name: Checkout branch
@@ -27,24 +37,19 @@ jobs:
       - name: Print Firefox version
         run: firefox --version
 
-      - name: Setup node
-        uses: actions/setup-node@v2
+      - name: Download artifacts
+        uses: actions/download-artifact@v2
         with:
-          node-version: 14.x
+          path: .tmp
 
-      - name: Install
-        run: |
-          npm ci
-          npm run bootstrap
+      - name: Unpack artifacts
+        run: find .tmp -name "*.tar" -type f -exec tar -xf {} \;
 
-      - name: Build test assets
-        run: npm run sass:flat
-
-      - name: Visual tests
+      - name: Create screenshots
         run: ./build/create-screenshots.sh ${{ matrix.theme }}
 
       - name: Pack screenshots
-        run: tar -cf screenshots-${{ matrix.theme }}.tar tests/visual/output/${{ matrix.theme }}
+        run: tar -cf screenshots-${{ matrix.theme }}.tar tests/_output/${{ matrix.theme }}
 
       - name: Upload screenshots
         uses: actions/upload-artifact@v2
@@ -63,20 +68,20 @@ jobs:
       - name: Checkout branch
         uses: actions/checkout@v2
 
-      - name: Download screenshots
+      - name: Download artifacts
         uses: actions/download-artifact@v2
         with:
           path: .tmp
 
-      - name: Unpack screenshots
-        run: find .tmp -name "screenshots-*.tar" -type f -exec tar -xf {} \;
+      - name: Unpack artifacts
+        run: find .tmp -name "*.tar" -type f -exec tar -xf {} \;
 
       - name: Compare artifacts
         run: |
           HAS_CHANGES=0
           HAS_NEW=0
-          git diff --exit-code --quiet -- tests/visual/output/ || HAS_CHANGES=1
-          [[ $(git ls-files --others --exclude-standard tests/visual/output) ]] && HAS_NEW=1
+          git diff --exit-code --quiet -- tests/ || HAS_CHANGES=1
+          [[ $(git ls-files --others --exclude-standard tests/) ]] && HAS_NEW=1
           echo "HAS_CHANGES=$HAS_CHANGES" >> $GITHUB_ENV
           echo "HAS_NEW=$HAS_NEW" >> $GITHUB_ENV
 
@@ -86,13 +91,13 @@ jobs:
           git config user.email "kendouiteam@progress.com"
 
       - name: Push changes to GitHub
-        if: ${{ env.HAS_CHANGES == 1 || env.HAS_NEW == 1 }}
+        if: ${{ (env.HAS_CHANGES == 1 || env.HAS_NEW == 1) }}
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
-          echo "Visual tests have detected changes. Updating screenshots."
+          echo "Visual tests have detected changes. Updating markup and screenshots."
 
-          git add tests/visual/output
+          git add tests/
           git commit -m "chore: update visual previews"
 
           git push

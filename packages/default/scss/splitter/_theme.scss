@@ -1,7 +1,6 @@
 @include exports("splitter/theme") {
 
     .k-splitter {
-        @extend .k-text-selection !optional;
         @include fill(
             $splitter-text,
             $splitter-bg,
@@ -15,15 +14,14 @@
         background-color: $splitbar-bg;
     }
     .k-splitbar:hover,
-    .k-splitbar.k-state-hover,
+    .k-splitbar.k-hover,
     .k-splitbar-horizontal-hover,
     .k-splitbar-vertical-hover {
         color: $splitbar-hover-text;
         background-color: $splitbar-hover-bg;
     }
-    .k-splitbar:active,
-    .k-splitbar.k-state-focus,
-    .k-splitbar.k-state-focused {
+    .k-splitbar:focus,
+    .k-splitbar.k-focus {
         color: $splitbar-selected-text;
         background: $splitbar-selected-bg;
     }

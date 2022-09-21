@@ -1,8 +1,8 @@
 ---
 title: Scheduler
-category: components
+category: accessibility
 slug: scheduler
-position: 36
+position: 38
 ---
 # Scheduler Keyboard Support
 

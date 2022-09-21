@@ -1,8 +1,8 @@
 ---
 title: Date Range Picker
-category: components
+category: accessibility
 slug: date-range-picker
-position: 14
+position: 15
 ---
 # DateRangePicker Keyboard Support
 

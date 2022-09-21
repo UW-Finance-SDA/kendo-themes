@@ -7,7 +7,7 @@
             $expander-border
         );
 
-        &.k-state-focus {
+        &.k-focus {
             box-shadow: $expander-focus-shadow;
         }
     }
@@ -21,12 +21,11 @@
         outline: none;
 
         &:hover,
-        &.k-state-hover {
+        &.k-hover {
             background-color: $expander-header-hover-bg;
         }
 
-        // Should be removed
-        &.k-state-focused {
+        &.k-focus {
             background-color: $expander-header-focused-bg;
             box-shadow: $expander-header-focused-shadow;
         }
@@ -37,6 +36,6 @@
     }
 
     .k-expander-sub-title {
-        opacity: $expander-header-sub-title-opacity;
+        color: $expander-header-sub-title-text;
     }
 }

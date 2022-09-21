@@ -27,9 +27,19 @@ The following table lists the available variables for customization.
 <tbody>
         <tr>
     <td>$autocomplete-bg</td>
-    <td></td>
-    <td>$input-bg</td>
-    <td>$component-bg</td>
+    <td>Color</td>
+<td>
+
+`$kendo-input-bg`
+
+</td>
+<td>
+
+<span class="color-preview" style="background-color: #ffffff"></span>
+
+`#ffffff`
+
+</td>
 </tr>
 <tr>
     <td colspan="4" class="theme-variables-description-container"><div><b>Description</b><div class="theme-variables-description">The background of the autocomplete.</div></div>
@@ -37,9 +47,19 @@ The following table lists the available variables for customization.
 </tr>
 <tr>
     <td>$autocomplete-text</td>
-    <td></td>
-    <td>$input-text</td>
-    <td>$component-text</td>
+    <td>Color</td>
+<td>
+
+`$kendo-input-text`
+
+</td>
+<td>
+
+<span class="color-preview" style="background-color: #656565"></span>
+
+`#656565`
+
+</td>
 </tr>
 <tr>
     <td colspan="4" class="theme-variables-description-container"><div><b>Description</b><div class="theme-variables-description">The text color of the autocomplete.</div></div>
@@ -47,9 +67,19 @@ The following table lists the available variables for customization.
 </tr>
 <tr>
     <td>$autocomplete-border</td>
-    <td></td>
-    <td>$input-border</td>
-    <td>$interactive-border</td>
+    <td>Color</td>
+<td>
+
+`$kendo-input-border`
+
+</td>
+<td>
+
+<span class="color-preview" style="background-color: rgba(0, 0, 0, 0.08)"></span>
+
+`rgba(0, 0, 0, 0.08)`
+
+</td>
 </tr>
 <tr>
     <td colspan="4" class="theme-variables-description-container"><div><b>Description</b><div class="theme-variables-description">The border color of the autocomplete.</div></div>
@@ -57,9 +87,19 @@ The following table lists the available variables for customization.
 </tr>
 <tr>
     <td>$autocomplete-hover-bg</td>
-    <td></td>
-    <td>$input-hover-bg</td>
-    <td>$input-bg</td>
+    <td>Color</td>
+<td>
+
+`$kendo-input-hover-bg`
+
+</td>
+<td>
+
+<span class="color-preview" style="background-color: #ffffff"></span>
+
+`#ffffff`
+
+</td>
 </tr>
 <tr>
     <td colspan="4" class="theme-variables-description-container"><div><b>Description</b><div class="theme-variables-description">The background of hovered autocomplete.</div></div>
@@ -67,9 +107,19 @@ The following table lists the available variables for customization.
 </tr>
 <tr>
     <td>$autocomplete-hover-text</td>
-    <td></td>
-    <td>$input-hover-text</td>
-    <td>$input-text</td>
+    <td>Color</td>
+<td>
+
+`$kendo-input-hover-text`
+
+</td>
+<td>
+
+<span class="color-preview" style="background-color: #656565"></span>
+
+`#656565`
+
+</td>
 </tr>
 <tr>
     <td colspan="4" class="theme-variables-description-container"><div><b>Description</b><div class="theme-variables-description">The text color of hovered autocomplete.</div></div>
@@ -77,9 +127,19 @@ The following table lists the available variables for customization.
 </tr>
 <tr>
     <td>$autocomplete-hover-border</td>
-    <td></td>
-    <td>$input-hover-border</td>
-    <td>$hover-border</td>
+    <td>Color</td>
+<td>
+
+`$kendo-input-hover-border`
+
+</td>
+<td>
+
+<span class="color-preview" style="background-color: rgba(0, 0, 0, 0.1536)"></span>
+
+`rgba(0, 0, 0, 0.1536)`
+
+</td>
 </tr>
 <tr>
     <td colspan="4" class="theme-variables-description-container"><div><b>Description</b><div class="theme-variables-description">The border color of hovered autocomplete.</div></div>
@@ -87,9 +147,19 @@ The following table lists the available variables for customization.
 </tr>
 <tr>
     <td>$autocomplete-focus-text</td>
-    <td></td>
-    <td>$input-focus-text</td>
-    <td>$input-text</td>
+    <td>Color</td>
+<td>
+
+`$kendo-input-focus-text`
+
+</td>
+<td>
+
+<span class="color-preview" style="background-color: #656565"></span>
+
+`#656565`
+
+</td>
 </tr>
 <tr>
     <td colspan="4" class="theme-variables-description-container"><div><b>Description</b><div class="theme-variables-description">The text color of focus autocomplete.</div></div>
@@ -97,9 +167,19 @@ The following table lists the available variables for customization.
 </tr>
 <tr>
     <td>$autocomplete-focus-bg</td>
-    <td></td>
-    <td>$input-focus-bg</td>
-    <td>$input-bg</td>
+    <td>Color</td>
+<td>
+
+`$kendo-input-focus-bg`
+
+</td>
+<td>
+
+<span class="color-preview" style="background-color: #ffffff"></span>
+
+`#ffffff`
+
+</td>
 </tr>
 <tr>
     <td colspan="4" class="theme-variables-description-container"><div><b>Description</b><div class="theme-variables-description">The background color of focus autocomplete.</div></div>
@@ -107,9 +187,19 @@ The following table lists the available variables for customization.
 </tr>
 <tr>
     <td>$autocomplete-focus-border</td>
-    <td></td>
-    <td>$input-focus-border</td>
-    <td>$input-hover-border</td>
+    <td>Color</td>
+<td>
+
+`$kendo-input-focus-border`
+
+</td>
+<td>
+
+<span class="color-preview" style="background-color: rgba(0, 0, 0, 0.1536)"></span>
+
+`rgba(0, 0, 0, 0.1536)`
+
+</td>
 </tr>
 <tr>
     <td colspan="4" class="theme-variables-description-container"><div><b>Description</b><div class="theme-variables-description">The border color of focus autocomplete.</div></div>

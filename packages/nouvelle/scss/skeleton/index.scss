@@ -1,0 +1,26 @@
+// Module meta
+$_kendo-module-meta: (
+    name: "skeleton",
+    dependencies: ()
+);
+
+
+// Component
+@import "_variables.scss";
+@import "_layout.scss";
+@import "_theme.scss";
+
+
+// Register
+@include module-register( $_kendo-module-meta... );
+
+
+// Expose
+@mixin skeleton-styles() {
+    @include module-render( "skeleton" ) {
+        @include kendo-skeleton--layout();
+        @include kendo-skeleton--extended-layout();
+        @include kendo-skeleton--theme();
+        @include kendo-skeleton--extended-theme();
+    }
+}

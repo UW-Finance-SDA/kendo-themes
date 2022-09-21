@@ -1,8 +1,8 @@
 ---
 title: Circular Gauge
-category: components
+category: accessibility
 slug: circular-gauge
-position: 9
+position: 10
 ---
 # CircularGauge Keyboard Support
 

@@ -1,8 +1,8 @@
 ---
 title: Validation Message
-category: components
+category: accessibility
 slug: validation-message
-position: 52
+position: 54
 ---
 # ValidationMessage Keyboard Support
 

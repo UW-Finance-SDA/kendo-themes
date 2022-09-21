@@ -42,17 +42,27 @@
             }
         }
 
-        // Hover & Actve state
+        // Hover & Active state
         &:hover,
-        &.k-state-active {
+        &.k-hover
+        &.k-active {
             border-color: $panel-border;
         }
+    }
+
+    // Resizable images
+    .k-editor-resize-handle {
+        background-color: $editor-resize-handle-bg;
+        border-color: $editor-resize-handle-border;
+    }
+    .ProseMirror-selectednode { // sass-lint:disable-line class-name-format
+        outline-color: $editor-selectednode-outline-color;
     }
 
 
     // Insert table
     .k-ct-popup {
-        .k-state-selected {
+        .k-selected {
             @include fill( $selected-text, $selected-bg, $selected-border, none );
         }
     }
@@ -76,13 +86,4 @@
         }
     }
 
-    // Find and replace dialog
-    .k-editor-find-replace {
-        .k-matches-container {
-            @include fill (
-                $bg: $editor-find-line-bg
-            );
-        }
-
-    }
 }

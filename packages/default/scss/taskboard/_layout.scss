@@ -10,6 +10,12 @@
         display: flex;
         flex-direction: column;
         position: relative;
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
     }
 
     // Toolbar
@@ -78,7 +84,6 @@
     .k-taskboard-column-cards {
         padding: $taskboard-column-cards-padding-y $taskboard-column-cards-padding-x;
         min-height: 100%;
-        box-sizing: border-box;
         display: flex;
         flex-direction: column;
         gap: $taskboard-column-cards-gap 0;
@@ -86,7 +91,8 @@
 
     // Edit/New Columns
     .k-taskboard-column-new {
-        max-height: $taskboard-column-new-calc-height;
+        // TODO: we need better way
+        // max-height: $taskboard-column-new-calc-height;
     }
 
     .k-taskboard-column-new,
@@ -98,10 +104,6 @@
         .k-taskboard-column-header-text {
             flex: 1 1 100%;
         }
-
-        .k-textbox {
-            width: 100%;
-        }
     }
 
     // Preview/Edit Pane
@@ -110,7 +112,6 @@
         width: $taskboard-pane-width;
         border-width: $taskboard-pane-border-width;
         border-style: solid;
-        box-sizing: border-box;
         display: flex;
         flex-direction: column;
         position: absolute;
@@ -119,10 +120,10 @@
         bottom: 0;
         overflow: hidden;
         z-index: 2;
-        gap: $taskboard-pane-gap;
     }
 
     .k-taskboard-pane-header {
+        padding: $taskboard-pane-header-padding-y $taskboard-pane-header-padding-x;
         font-weight: $taskboard-pane-header-font-weight;
         display: flex;
         flex-direction: row;
@@ -140,14 +141,12 @@
     }
 
     .k-taskboard-pane-content {
-        margin: $taskboard-pane-content-padding-y (-$taskboard-pane-content-padding-x);
         padding: $taskboard-pane-content-padding-y $taskboard-pane-content-padding-x;
         overflow: auto;
         flex: 1 1 auto;
     }
 
     .k-taskboard-pane-actions {
-        margin: (-$taskboard-pane-actions-padding-y) (-$taskboard-pane-actions-padding-x);
         padding: $taskboard-pane-actions-padding-y $taskboard-pane-actions-padding-x;
     }
 
@@ -182,9 +181,9 @@
             overflow-wrap: anywhere;
 
             &:focus,
-            &.k-state-focus,
+            &.k-focus,
             &:hover,
-            &.k-state-hover {
+            &.k-hover {
                 text-decoration: underline;
             }
         }

@@ -2,37 +2,6 @@
 
 @include exports("edit-form/layout/material") {
 
-    // Tabstrip
-    .k-edit-form-container .k-tabstrip-wrapper {
-        margin-top: 0;
-        margin-bottom: 0;
-    }
-    .k-edit-form-container .k-tabstrip.k-root-tabs {
-        margin-bottom: $window-inner-padding-y;
-    }
-    .k-edit-form-container .k-tabstrip .k-tabstrip-items {
-        padding: 0;
-    }
-    .k-edit-form-container .k-tabstrip .k-content {
-        padding: $window-inner-padding-y $window-inner-padding-x;
-        border-width: 0;
-    }
-
-
-    // Edit buttons
-    .k-edit-buttons {
-        padding: 8px;
-
-        .k-button {
-            @extend .k-button-flat;
-        }
-    }
-    .k-edit-form-container .k-edit-buttons {
-        border-top-width: 0;
-        padding: 8px;
-    }
-
-
     // Fields
     .k-edit-label {
         padding: 0;
@@ -49,13 +18,6 @@
         float: none;
         display: flex;
         flex-direction: row;
-
-        .k-numerictextbox,
-        .k-textbox,
-        .k-dropdown {
-            width: auto;
-            flex: 1 1 auto;
-        }
 
         > div {
             width: auto;
@@ -76,9 +38,6 @@
                 left: 0; // TODO: Remove once we drop IE support
             }
         }
-    }
-    .k-no-flexbox .k-edit-field {
-        display: block;
     }
 
 }

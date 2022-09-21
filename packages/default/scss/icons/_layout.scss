@@ -3,11 +3,14 @@
 @include exports( "icons/layout" ) {
     $icon-font-url: map-get( $data-uris, "WebComponentsIcons.ttf" ) !default;
 
-    @font-face {
-        font-family: "WebComponentsIcons";
-        font-style: normal;
-        font-weight: normal;
-        src: url(#{$icon-font-url}) format( "truetype" );
+    // Keep this as a root selector, because nested themes will not work
+    @at-root {
+        @font-face {
+            font-family: "WebComponentsIcons";
+            font-style: normal;
+            font-weight: normal;
+            src: url(#{$icon-font-url}) format( "truetype" );
+        }
     }
 
     .k-icon {
@@ -15,7 +18,7 @@
         height: 1em;
         outline: 0;
         font-size: $icon-size;
-        font-family: "WebComponentsIcons";
+        font-family: "WebComponentsIcons"; // stylelint-disable-line
         font-style: normal;
         font-variant: normal;
         font-weight: normal;
@@ -38,7 +41,6 @@
             text-decoration: none;
         }
     }
-    .k-no-flexbox { display: inline-block; }
 
     .k-svg-icon {
         width: 1em;
@@ -185,15 +187,19 @@
     .k-i-arrows-no-change::before { content: "\e011"; }
     .k-i-arrow-overflow-down::before { content: "\e012"; }
     .k-i-chevron-up::before { content: "\e013"; }
+    .k-i-chevron-double-up::before { content: "\e05e"; }
     .k-i-arrow-chevron-up::before { content: "\e013"; }
     .k-i-arrowhead-n::before { content: "\e013"; }
     .k-i-chevron-right::before { content: "\e014"; }
+    .k-i-chevron-double-right::before { content: "\e05f"; }
     .k-i-arrow-chevron-right::before { content: "\e014"; }
     .k-i-arrowhead-e::before { content: "\e014"; }
     .k-i-chevron-down::before { content: "\e015"; }
+    .k-i-chevron-double-down::before { content: "\e060"; }
     .k-i-arrow-chevron-down::before { content: "\e015"; }
     .k-i-arrowhead-s::before { content: "\e015"; }
     .k-i-chevron-left::before { content: "\e016"; }
+    .k-i-chevron-double-left::before { content: "\e061"; }
     .k-i-arrow-chevron-left::before { content: "\e016"; }
     .k-i-arrowhead-w::before { content: "\e016"; }
     .k-i-arrow-up::before { content: "\e017"; }
@@ -279,6 +285,8 @@
     .k-i-display-inline-flex::before { content: "\e059"; }
     .k-i-gap-column::before { content: "\e05a"; }
     .k-i-gap-row::before { content: "\e05b"; }
+    .k-i-handle-resize-alt::before { content: "\e05c"; }
+    .k-i-handle-resize::before { content: "\e05d"; }
     .k-i-undo::before { content: "\e100"; }
     .k-i-undo-large::before { content: "\e100"; }
     .k-i-redo::before { content: "\e101"; }
@@ -639,6 +647,7 @@
     .k-i-justify-between-vertical::before { content: "\e552"; }
     .k-i-justify-content-around-alt::before { content: "\e553"; }
     .k-i-justify-around-vertical::before { content: "\e553"; }
+    .k-i-color-canvas::before { content: "\e554"; }
     .k-i-file-wrench::before { content: "\e600"; }
     .k-i-page-properties::before { content: "\e600"; }
     .k-i-bold::before { content: "\e601"; }
@@ -1039,6 +1048,7 @@
     .k-i-file-image::before { content: "\e93d"; }
     .k-i-file-presentation::before { content: "\e93e"; }
     .k-i-file-data::before { content: "\e93f"; }
+    .k-i-report-element::before { content: "\e94a"; }
     .k-i-file-disc-image::before { content: "\e940"; }
     .k-i-file-programming::before { content: "\e941"; }
     .k-i-parameters-byte-array::before { content: "\e942"; }
@@ -1049,6 +1059,8 @@
     .k-i-files-validation::before { content: "\e945"; }
     .k-i-data-rest::before { content: "\e946"; }
     .k-i-file-typescript::before { content: "\e947"; }
+    .k-i-data-ods::before { content: "\e948"; }
+    .k-i-file-report::before { content: "\e949"; }
     .k-i-table-position-start::before { content: "\e6a2"; }
     .k-i-table-position-left::before { content: "\e6a2"; }
     .k-i-table-position-center::before { content: "\e6a3"; }
@@ -1064,6 +1076,11 @@
     .k-i-replace-all::before { content: "\e6ad"; }
     .k-i-letter-space::before { content: "\e6ae"; }
     .k-i-line-height::before { content: "\e6af"; }
+    .k-i-blockquote::before { content: "\e6b0"; }
+    .k-i-list-latin-big::before { content: "\e6b1"; }
+    .k-i-list-latin-small::before { content: "\e6b2"; }
+    .k-i-list-unordered-square::before { content: "\e6b3"; }
+    .k-i-list-unordered-outline::before { content: "\e6b4"; }
     .k-i-graph::before { content: "\ea00"; }
     .k-i-chart-column-clustered::before { content: "\ea01"; }
     .k-i-chart-column-stacked::before { content: "\ea02"; }
@@ -1098,11 +1115,6 @@
     .k-i-chart-radar-filled::before { content: "\ea1f"; }
     .k-i-chart-rose::before { content: "\ea20"; }
     .k-i-chart-choropleth::before { content: "\ea21"; }
-
-
-    // Manual aliases
-    .k-plus { @extend .k-i-plus; }
-    .k-minus { @extend .k-i-minus; }
 
 
     // RTL icons

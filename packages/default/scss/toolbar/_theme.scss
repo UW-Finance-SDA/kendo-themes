@@ -11,29 +11,62 @@
         @include box-shadow( $toolbar-shadow );
 
 
-        // Overflow anchor
-        .k-overflow-anchor {
-            color: inherit;
-            background: transparent;
-        }
-
-
         // Separator
         .k-separator {
             border-color: $toolbar-separator-border;
         }
 
 
-        // Button disabled state
-        .k-button.k-state-disabled {
-            &::after {
-                opacity: 0;
-            }
+        // Template item
+        .k-toolbar-item:focus,
+        .k-toolbar-item.k-focus {
+            @include box-shadow( $kendo-button-focus-shadow );
         }
 
 
         // Button group
         .k-button-group {}
+
+    }
+
+
+    // Overflow container
+    .k-overflow-container {
+
+        .k-button {
+
+            // Hover state
+            &:hover,
+            &.k-hover {
+                color: $kendo-menu-popup-item-hover-text;
+                background: $kendo-menu-popup-item-hover-bg;
+            }
+
+            // Button focus state
+            &:focus,
+            &.k-focus {
+                box-shadow: $kendo-menu-popup-item-focus-shadow;
+            }
+
+            // Active state
+            &:active,
+            &.k-active {
+                color: $kendo-menu-popup-item-hover-text;
+                background: $kendo-menu-popup-item-hover-bg;
+            }
+
+            // Selected
+            &.k-selected {
+                color: $kendo-menu-popup-item-expanded-text;
+                background: $kendo-menu-popup-item-expanded-bg;
+            }
+
+            // Disabled state
+            &:disabled,
+            &.k-disabled {
+                color: inherit;
+            }
+        }
 
     }
 

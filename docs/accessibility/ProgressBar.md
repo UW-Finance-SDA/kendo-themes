@@ -1,8 +1,8 @@
 ---
 title: Progress Bar
-category: components
+category: accessibility
 slug: progress-bar
-position: 32
+position: 34
 ---
 # ChunkProgressBar Keyboard Support
 

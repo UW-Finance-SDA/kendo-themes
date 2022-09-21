@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en" class="k-no-animations" style="--kendo-scrollbar-width:15px;">
+<head>
+    <title>Avatar</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" data-role="kendo-theme" href="/packages/default/dist/all.css">
+    <link rel="stylesheet" href="/packages/html/assets/styles.css">
+    <script src="/packages/html/assets/scripts.js"></script>
+</head>
+<body id="app" class="k-body">
+    <style>
+        #test-area {
+            grid-template-columns: 120px repeat(3, 1fr);
+            align-items: center;
+        }
+
+    </style>
+    <div id="test-area" class="k-d-grid">
+        <span>
+            <small>rounded / size</small>
+        </span>
+        <span>small</span>
+        <span>medium</span>
+        <span>large</span>
+        <span>null</span>
+        <span class="k-d-flex k-gap-1">
+            <div class="k-avatar k-avatar-sm k-avatar-solid k-avatar-solid-primary">
+                <span class="k-avatar-image">
+                    <img src="/packages/html/assets/avatar.jpg">
+                </span>
+            </div>
+            <div class="k-avatar k-avatar-sm k-avatar-solid k-avatar-solid-primary">
+                <span class="k-avatar-icon">
+                    <span class="k-icon k-i-x"></span>
+                </span>
+            </div>
+            <div class="k-avatar k-avatar-sm k-avatar-outline k-avatar-outline-primary k-avatar-bordered">
+                <span class="k-avatar-text">JO</span>
+            </div>
+        </span>
+        <span class="k-d-flex k-gap-1">
+            <div class="k-avatar k-avatar-md k-avatar-solid k-avatar-solid-primary">
+                <span class="k-avatar-image">
+                    <img src="/packages/html/assets/avatar.jpg">
+                </span>
+            </div>
+            <div class="k-avatar k-avatar-md k-avatar-solid k-avatar-solid-primary">
+                <span class="k-avatar-icon">
+                    <span class="k-icon k-i-x"></span>
+                </span>
+            </div>
+            <div class="k-avatar k-avatar-md k-avatar-outline k-avatar-outline-primary k-avatar-bordered">
+                <span class="k-avatar-text">JO</span>
+            </div>
+        </span>
+        <span class="k-d-flex k-gap-1">
+            <div class="k-avatar k-avatar-lg k-avatar-solid k-avatar-solid-primary">
+                <span class="k-avatar-image">
+                    <img src="/packages/html/assets/avatar.jpg">
+                </span>
+            </div>
+            <div class="k-avatar k-avatar-lg k-avatar-solid k-avatar-solid-primary">
+                <span class="k-avatar-icon">
+                    <span class="k-icon k-i-x"></span>
+                </span>
+            </div>
+            <div class="k-avatar k-avatar-lg k-avatar-outline k-avatar-outline-primary k-avatar-bordered">
+                <span class="k-avatar-text">JO</span>
+            </div>
+        </span>
+        <span>small</span>
+        <span class="k-d-flex k-gap-1">
+            <div class="k-avatar k-rounded-sm k-avatar-sm k-avatar-solid k-avatar-solid-primary">
+                <span class="k-avatar-image">
+                    <img src="/packages/html/assets/avatar.jpg">
+                </span>
+            </div>
+            <div class="k-avatar k-rounded-sm k-avatar-sm k-avatar-solid k-avatar-solid-primary">
+                <span class="k-avatar-icon">
+                    <span class="k-icon k-i-x"></span>
+                </span>
+            </div>
+            <div class="k-avatar k-rounded-sm k-avatar-sm k-avatar-outline k-avatar-outline-primary k-avatar-bordered">
+                <span class="k-avatar-text">JO</span>
+            </div>
+        </span>
+        <span class="k-d-flex k-gap-1">
+            <div class="k-avatar k-rounded-sm k-avatar-md k-avatar-solid k-avatar-solid-primary">
+                <span class="k-avatar-image">
+                    <img src="/packages/html/assets/avatar.jpg">
+                </span>
+            </div>
+            <div class="k-avatar k-rounded-sm k-avatar-md k-avatar-solid k-avatar-solid-primary">
+                <span class="k-avatar-icon">
+                    <span class="k-icon k-i-x"></span>
+                </span>
+            </div>
+            <div class="k-avatar k-rounded-sm k-avatar-md k-avatar-outline k-avatar-outline-primary k-avatar-bordered">
+                <span class="k-avatar-text">JO</span>
+            </div>
+        </span>
+        <span class="k-d-flex k-gap-1">
+            <div class="k-avatar k-rounded-sm k-avatar-lg k-avatar-solid k-avatar-solid-primary">
+                <span class="k-avatar-image">
+                    <img src="/packages/html/assets/avatar.jpg">
+                </span>
+            </div>
+            <div class="k-avatar k-rounded-sm k-avatar-lg k-avatar-solid k-avatar-solid-primary">
+                <span class="k-avatar-icon">
+                    <span class="k-icon k-i-x"></span>
+                </span>
+            </div>
+            <div class="k-avatar k-rounded-sm k-avatar-lg k-avatar-outline k-avatar-outline-primary k-avatar-bordered">
+                <span class="k-avatar-text">JO</span>
+            </div>
+        </span>
+        <span>medium</span>
+        <span class="k-d-flex k-gap-1">
+            <div class="k-avatar k-rounded-md k-avatar-sm k-avatar-solid k-avatar-solid-primary">
+                <span class="k-avatar-image">
+                    <img src="/packages/html/assets/avatar.jpg">
+                </span>
+            </div>
+            <div class="k-avatar k-rounded-md k-avatar-sm k-avatar-solid k-avatar-solid-primary">
+                <span class="k-avatar-icon">
+                    <span class="k-icon k-i-x"></span>
+                </span>
+            </div>
+            <div class="k-avatar k-rounded-md k-avatar-sm k-avatar-outline k-avatar-outline-primary k-avatar-bordered">
+                <span class="k-avatar-text">JO</span>
+            </div>
+        </span>
+        <span class="k-d-flex k-gap-1">
+            <div class="k-avatar k-rounded-md k-avatar-md k-avatar-solid k-avatar-solid-primary">
+                <span class="k-avatar-image">
+                    <img src="/packages/html/assets/avatar.jpg">
+                </span>
+            </div>
+            <div class="k-avatar k-rounded-md k-avatar-md k-avatar-solid k-avatar-solid-primary">
+                <span class="k-avatar-icon">
+                    <span class="k-icon k-i-x"></span>
+                </span>
+            </div>
+            <div class="k-avatar k-rounded-md k-avatar-md k-avatar-outline k-avatar-outline-primary k-avatar-bordered">
+                <span class="k-avatar-text">JO</span>
+            </div>
+        </span>
+        <span class="k-d-flex k-gap-1">
+            <div class="k-avatar k-rounded-md k-avatar-lg k-avatar-solid k-avatar-solid-primary">
+                <span class="k-avatar-image">
+                    <img src="/packages/html/assets/avatar.jpg">
+                </span>
+            </div>
+            <div class="k-avatar k-rounded-md k-avatar-lg k-avatar-solid k-avatar-solid-primary">
+                <span class="k-avatar-icon">
+                    <span class="k-icon k-i-x"></span>
+                </span>
+            </div>
+            <div class="k-avatar k-rounded-md k-avatar-lg k-avatar-outline k-avatar-outline-primary k-avatar-bordered">
+                <span class="k-avatar-text">JO</span>
+            </div>
+        </span>
+        <span>large</span>
+        <span class="k-d-flex k-gap-1">
+            <div class="k-avatar k-rounded-lg k-avatar-sm k-avatar-solid k-avatar-solid-primary">
+                <span class="k-avatar-image">
+                    <img src="/packages/html/assets/avatar.jpg">
+                </span>
+            </div>
+            <div class="k-avatar k-rounded-lg k-avatar-sm k-avatar-solid k-avatar-solid-primary">
+                <span class="k-avatar-icon">
+                    <span class="k-icon k-i-x"></span>
+                </span>
+            </div>
+            <div class="k-avatar k-rounded-lg k-avatar-sm k-avatar-outline k-avatar-outline-primary k-avatar-bordered">
+                <span class="k-avatar-text">JO</span>
+            </div>
+        </span>
+        <span class="k-d-flex k-gap-1">
+            <div class="k-avatar k-rounded-lg k-avatar-md k-avatar-solid k-avatar-solid-primary">
+                <span class="k-avatar-image">
+                    <img src="/packages/html/assets/avatar.jpg">
+                </span>
+            </div>
+            <div class="k-avatar k-rounded-lg k-avatar-md k-avatar-solid k-avatar-solid-primary">
+                <span class="k-avatar-icon">
+                    <span class="k-icon k-i-x"></span>
+                </span>
+            </div>
+            <div class="k-avatar k-rounded-lg k-avatar-md k-avatar-outline k-avatar-outline-primary k-avatar-bordered">
+                <span class="k-avatar-text">JO</span>
+            </div>
+        </span>
+        <span class="k-d-flex k-gap-1">
+            <div class="k-avatar k-rounded-lg k-avatar-lg k-avatar-solid k-avatar-solid-primary">
+                <span class="k-avatar-image">
+                    <img src="/packages/html/assets/avatar.jpg">
+                </span>
+            </div>
+            <div class="k-avatar k-rounded-lg k-avatar-lg k-avatar-solid k-avatar-solid-primary">
+                <span class="k-avatar-icon">
+                    <span class="k-icon k-i-x"></span>
+                </span>
+            </div>
+            <div class="k-avatar k-rounded-lg k-avatar-lg k-avatar-outline k-avatar-outline-primary k-avatar-bordered">
+                <span class="k-avatar-text">JO</span>
+            </div>
+        </span>
+        <span>full</span>
+        <span class="k-d-flex k-gap-1">
+            <div class="k-avatar k-rounded-full k-avatar-sm k-avatar-solid k-avatar-solid-primary">
+                <span class="k-avatar-image">
+                    <img src="/packages/html/assets/avatar.jpg">
+                </span>
+            </div>
+            <div class="k-avatar k-rounded-full k-avatar-sm k-avatar-solid k-avatar-solid-primary">
+                <span class="k-avatar-icon">
+                    <span class="k-icon k-i-x"></span>
+                </span>
+            </div>
+            <div class="k-avatar k-rounded-full k-avatar-sm k-avatar-outline k-avatar-outline-primary k-avatar-bordered">
+                <span class="k-avatar-text">JO</span>
+            </div>
+        </span>
+        <span class="k-d-flex k-gap-1">
+            <div class="k-avatar k-rounded-full k-avatar-md k-avatar-solid k-avatar-solid-primary">
+                <span class="k-avatar-image">
+                    <img src="/packages/html/assets/avatar.jpg">
+                </span>
+            </div>
+            <div class="k-avatar k-rounded-full k-avatar-md k-avatar-solid k-avatar-solid-primary">
+                <span class="k-avatar-icon">
+                    <span class="k-icon k-i-x"></span>
+                </span>
+            </div>
+            <div class="k-avatar k-rounded-full k-avatar-md k-avatar-outline k-avatar-outline-primary k-avatar-bordered">
+                <span class="k-avatar-text">JO</span>
+            </div>
+        </span>
+        <span class="k-d-flex k-gap-1">
+            <div class="k-avatar k-rounded-full k-avatar-lg k-avatar-solid k-avatar-solid-primary">
+                <span class="k-avatar-image">
+                    <img src="/packages/html/assets/avatar.jpg">
+                </span>
+            </div>
+            <div class="k-avatar k-rounded-full k-avatar-lg k-avatar-solid k-avatar-solid-primary">
+                <span class="k-avatar-icon">
+                    <span class="k-icon k-i-x"></span>
+                </span>
+            </div>
+            <div class="k-avatar k-rounded-full k-avatar-lg k-avatar-outline k-avatar-outline-primary k-avatar-bordered">
+                <span class="k-avatar-text">JO</span>
+            </div>
+        </span>
+    </div>
+</body>
+</html>

@@ -28,8 +28,18 @@ The following table lists the available variables for customization.
         <tr>
     <td>$accent</td>
     <td>Color</td>
-    <td>$primary</td>
-    <td>$accent</td>
+<td>
+
+`$primary`
+
+</td>
+<td>
+
+<span class="color-preview" style="background-color: #0d6efd"></span>
+
+`#0d6efd`
+
+</td>
 </tr>
 <tr>
     <td colspan="4" class="theme-variables-description-container"><div><b>Deprecated</b><div class="theme-variables-description">Will be removed in v5. Use `$primary` variable instead.</div></div><div><b>Description</b><div class="theme-variables-description">The color that focuses the user attention.</div></div>
@@ -38,8 +48,18 @@ The following table lists the available variables for customization.
 <tr>
     <td>$accent-contrast</td>
     <td>Color</td>
-    <td>contrast-wcag( $accent )</td>
-    <td>contrast-wcag( $accent )</td>
+<td>
+
+`contrast-wcag( $accent )`
+
+</td>
+<td>
+
+<span class="color-preview" style="background-color: white"></span>
+
+`white`
+
+</td>
 </tr>
 <tr>
     <td colspan="4" class="theme-variables-description-container"><div><b>Deprecated</b><div class="theme-variables-description">Will be removed in v5. Use `$primary-contrast` variable instead.</div></div><div><b>Description</b><div class="theme-variables-description">The color used along with the primary color denoted by $primary.</div></div>
@@ -48,8 +68,18 @@ The following table lists the available variables for customization.
 <tr>
     <td>$primary</td>
     <td>Color</td>
-    <td>$accent</td>
-    <td>$accent</td>
+<td>
+
+`$primary`
+
+</td>
+<td>
+
+<span class="color-preview" style="background-color: #0d6efd"></span>
+
+`#0d6efd`
+
+</td>
 </tr>
 <tr>
     <td colspan="4" class="theme-variables-description-container"><div><b>Description</b><div class="theme-variables-description">The color that focuses the user attention.<br />Used for primary buttons and for elements of primary importance across the theme.</div></div>
@@ -58,8 +88,18 @@ The following table lists the available variables for customization.
 <tr>
     <td>$primary-contrast</td>
     <td>Color</td>
-    <td>$accent-contrast</td>
-    <td>contrast-wcag( $accent )</td>
+<td>
+
+`contrast-wcag( $primary )`
+
+</td>
+<td>
+
+<span class="color-preview" style="background-color: white"></span>
+
+`white`
+
+</td>
 </tr>
 <tr>
     <td colspan="4" class="theme-variables-description-container"><div><b>Description</b><div class="theme-variables-description">The color used along with the primary color denoted by $primary.<br />Used to provide contrast between the background and foreground colors.</div></div>
@@ -68,8 +108,18 @@ The following table lists the available variables for customization.
 <tr>
     <td>$secondary</td>
     <td>Color</td>
-    <td>$secondary</td>
-    <td>$secondary</td>
+<td>
+
+`$secondary`
+
+</td>
+<td>
+
+<span class="color-preview" style="background-color: #6c757d"></span>
+
+`#6c757d`
+
+</td>
 </tr>
 <tr>
     <td colspan="4" class="theme-variables-description-container"><div><b>Description</b><div class="theme-variables-description">The secondary color of the theme.</div></div>
@@ -78,8 +128,18 @@ The following table lists the available variables for customization.
 <tr>
     <td>$secondary-contrast</td>
     <td>Color</td>
-    <td>contrast-wcag( $secondary )</td>
-    <td>contrast-wcag( $secondary )</td>
+<td>
+
+`contrast-wcag( $secondary )`
+
+</td>
+<td>
+
+<span class="color-preview" style="background-color: white"></span>
+
+`white`
+
+</td>
 </tr>
 <tr>
     <td colspan="4" class="theme-variables-description-container"><div><b>Description</b><div class="theme-variables-description">The color used along with the secondary color denoted by $secondary.<br />Used to provide contrast between the background and foreground colors.</div></div>
@@ -88,8 +148,18 @@ The following table lists the available variables for customization.
 <tr>
     <td>$tertiary</td>
     <td>Color</td>
-    <td>$purple</td>
-    <td></td>
+<td>
+
+`$purple`
+
+</td>
+<td>
+
+<span class="color-preview" style="background-color: #6f42c1"></span>
+
+`#6f42c1`
+
+</td>
 </tr>
 <tr>
     <td colspan="4" class="theme-variables-description-container"><div><b>Description</b><div class="theme-variables-description">The tertiary color of the theme.</div></div>
@@ -98,8 +168,18 @@ The following table lists the available variables for customization.
 <tr>
     <td>$tertiary-contrast</td>
     <td>Color</td>
-    <td>contrast-wcag( $tertiary )</td>
-    <td>contrast-wcag( $tertiary )</td>
+<td>
+
+`contrast-wcag( $tertiary )`
+
+</td>
+<td>
+
+<span class="color-preview" style="background-color: white"></span>
+
+`white`
+
+</td>
 </tr>
 <tr>
     <td colspan="4" class="theme-variables-description-container"><div><b>Description</b><div class="theme-variables-description">The color used along with the tertiary color denoted by $tertiary.<br />Used to provide contrast between the background and foreground colors.</div></div>
@@ -108,8 +188,18 @@ The following table lists the available variables for customization.
 <tr>
     <td>$info</td>
     <td>Color</td>
-    <td>$info</td>
-    <td>$info</td>
+<td>
+
+`$info`
+
+</td>
+<td>
+
+<span class="color-preview" style="background-color: #0dcaf0"></span>
+
+`#0dcaf0`
+
+</td>
 </tr>
 <tr>
     <td colspan="4" class="theme-variables-description-container"><div><b>Description</b><div class="theme-variables-description">The color for informational messages and states.</div></div>
@@ -118,8 +208,18 @@ The following table lists the available variables for customization.
 <tr>
     <td>$success</td>
     <td>Color</td>
-    <td>$success</td>
-    <td>$success</td>
+<td>
+
+`$success`
+
+</td>
+<td>
+
+<span class="color-preview" style="background-color: #198754"></span>
+
+`#198754`
+
+</td>
 </tr>
 <tr>
     <td colspan="4" class="theme-variables-description-container"><div><b>Description</b><div class="theme-variables-description">The color for success messages and states.</div></div>
@@ -128,8 +228,18 @@ The following table lists the available variables for customization.
 <tr>
     <td>$warning</td>
     <td>Color</td>
-    <td>$warning</td>
-    <td>$warning</td>
+<td>
+
+`$warning`
+
+</td>
+<td>
+
+<span class="color-preview" style="background-color: #ffc107"></span>
+
+`#ffc107`
+
+</td>
 </tr>
 <tr>
     <td colspan="4" class="theme-variables-description-container"><div><b>Description</b><div class="theme-variables-description">The color for warning messages and states.</div></div>
@@ -138,8 +248,18 @@ The following table lists the available variables for customization.
 <tr>
     <td>$error</td>
     <td>Color</td>
-    <td>$danger</td>
-    <td></td>
+<td>
+
+`$danger`
+
+</td>
+<td>
+
+<span class="color-preview" style="background-color: #dc3545"></span>
+
+`#dc3545`
+
+</td>
 </tr>
 <tr>
     <td colspan="4" class="theme-variables-description-container"><div><b>Description</b><div class="theme-variables-description">The color for error messages and states.</div></div>
@@ -148,8 +268,18 @@ The following table lists the available variables for customization.
 <tr>
     <td>$dark</td>
     <td>Color</td>
-    <td>$dark</td>
-    <td>$dark</td>
+<td>
+
+`$dark`
+
+</td>
+<td>
+
+<span class="color-preview" style="background-color: #212529"></span>
+
+`#212529`
+
+</td>
 </tr>
 <tr>
     <td colspan="4" class="theme-variables-description-container"><div><b>Description</b><div class="theme-variables-description">The dark color of the theme.</div></div>
@@ -158,8 +288,18 @@ The following table lists the available variables for customization.
 <tr>
     <td>$light</td>
     <td>Color</td>
-    <td>$light</td>
-    <td>$light</td>
+<td>
+
+`$light`
+
+</td>
+<td>
+
+<span class="color-preview" style="background-color: #f8f9fa"></span>
+
+`#f8f9fa`
+
+</td>
 </tr>
 <tr>
     <td colspan="4" class="theme-variables-description-container"><div><b>Description</b><div class="theme-variables-description">The light color of the theme.</div></div>
@@ -167,12 +307,22 @@ The following table lists the available variables for customization.
 </tr>
 <tr>
     <td>$inverse</td>
-    <td></td>
-    <td>if( $is-dark-theme, $light, $dark )</td>
-    <td>if( $is-dark-theme, $light, $dark )</td>
+    <td>Color</td>
+<td>
+
+`if( $dark-theme, $light, $dark )`
+
+</td>
+<td>
+
+<span class="color-preview" style="background-color: #212529"></span>
+
+`#212529`
+
+</td>
 </tr>
 <tr>
-    <td colspan="4" class="theme-variables-description-container"><div><b>Description</b><div class="theme-variables-description">Inverse color of the theme. Depending on the theme luminance dark or lught, it will be light or dark</div></div>
+    <td colspan="4" class="theme-variables-description-container"><div><b>Description</b><div class="theme-variables-description">Inverse color of the theme. Depending on the theme luminance dark or light, it will be light or dark</div></div>
     </td>
 </tr>
 </tbody>

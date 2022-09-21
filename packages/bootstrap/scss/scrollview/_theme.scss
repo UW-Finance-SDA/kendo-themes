@@ -3,7 +3,6 @@
     // refactor when https://github.com/telerik/kendo-angular-scrollview/issues/130 is done
     kendo-scrollview.k-scrollview-wrap,
     .k-scrollview {
-        @extend .k-text-selection !optional;
         @include fill(
             $scrollview-text,
             $scrollview-bg,
@@ -32,7 +31,7 @@
     }
 
     .k-scrollview:focus,
-    .k-scrollview-wrap:focus  {
+    .k-scrollview-wrap:focus {
         outline: none;
 
     }
@@ -46,7 +45,7 @@
         outline-width: 0;
 
         &:focus,
-        &.k-state-focus {
+        &.k-focus {
             color: $scrollview-navigation-color;
             opacity: $scrollview-navigation-hover-opacity;
             .k-icon::before {
@@ -56,7 +55,7 @@
         }
 
         &:hover,
-        &.k-state-hover {
+        &.k-hover {
             color: $scrollview-navigation-color;
             opacity: $scrollview-navigation-hover-opacity;
 
@@ -69,7 +68,6 @@
     .k-scrollview-nav > .k-link {
         background-color: $scrollview-pagebutton-bg;
         border-color: $scrollview-pagebutton-border;
-        background-clip: padding-box;
 
         &.k-primary {
             background: $scrollview-pagebutton-primary-bg;
@@ -78,13 +76,13 @@
 
 
         &:focus,
-        &.k-state-focused {
+        &.k-focus {
             box-shadow: $scrollview-pagebutton-shadow;
         }
     }
 
     .k-scrollview-nav > .k-link:hover,
-    .k-scrollview-nav > .k-link.k-state-hover {
+    .k-scrollview-nav > .k-link.k-hover {
         box-shadow: $scrollview-pagebutton-shadow;
     }
 

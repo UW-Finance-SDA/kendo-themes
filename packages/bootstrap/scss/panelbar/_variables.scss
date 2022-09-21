@@ -5,6 +5,9 @@ $panelbar-font-family: $font-family !default;
 $panelbar-font-size: $font-size !default;
 $panelbar-line-height: $line-height !default;
 $panelbar-border-width: 1px !default;
+$panelbar-border-style: solid !default;
+$panelbar-item-border-width: 1px !default;
+$panelbar-item-border-style: solid !default;
 
 $panelbar-header-padding-x: map-get( $spacing, 6 ) !default;
 $panelbar-header-padding-y: map-get( $spacing, 4 ) !default;
@@ -32,7 +35,7 @@ $panelbar-header-focused-bg: null !default;
 $panelbar-header-focused-text: null !default;
 $panelbar-header-focused-border: null !default;
 $panelbar-header-focused-gradient: null !default;
-$panelbar-header-focused-shadow: $list-item-focused-shadow !default;
+$panelbar-header-focused-shadow: $kendo-list-item-focus-shadow !default;
 
 $panelbar-header-hovered-focused-bg: null !default;
 $panelbar-header-hovered-focused-text: null !default;
@@ -68,7 +71,7 @@ $panelbar-item-focused-bg: null !default;
 $panelbar-item-focused-text: null !default;
 $panelbar-item-focused-border: null !default;
 $panelbar-item-focused-gradient: null !default;
-$panelbar-item-focused-shadow: $list-item-focused-shadow !default;
+$panelbar-item-focused-shadow: $kendo-list-item-focus-shadow !default;
 
 $panelbar-item-hovered-focused-bg: null !default;
 $panelbar-item-hovered-focused-text: null !default;
@@ -94,3 +97,8 @@ $panelbar-item-selected-hovered-focused-bg: null !default;
 $panelbar-item-selected-hovered-focused-text: null !default;
 $panelbar-item-selected-hovered-focused-border: null !default;
 $panelbar-item-selected-hovered-focused-gradient: null !default;
+
+$panelbar-header-expanded-bg: null !default;
+$panelbar-header-expanded-text: null !default;
+$panelbar-header-expanded-border: null !default;
+$panelbar-header-expanded-gradient: null !default;

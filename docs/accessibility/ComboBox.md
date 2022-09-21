@@ -1,8 +1,8 @@
 ---
 title: Combo Box
-category: components
+category: accessibility
 slug: combo-box
-position: 10
+position: 11
 ---
 # ComboBox Keyboard Support
 

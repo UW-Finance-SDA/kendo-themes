@@ -1,0 +1,26 @@
+// Module meta
+$_kendo-module-meta: (
+    name: "menu",
+    dependencies: ()
+);
+
+
+// Component
+@import "_variables.scss";
+@import "_layout.scss";
+@import "_theme.scss";
+
+
+// Register
+@include module-register( $_kendo-module-meta... );
+
+
+// Expose
+@mixin menu-styles() {
+    @include module-render( "menu" ) {
+        @include kendo-menu--layout();
+        @include kendo-menu--extended-layout();
+        @include kendo-menu--theme();
+        @include kendo-menu--extended-theme();
+    }
+}
